@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5314747715778994479}
   - component: {fileID: 7194115189595185868}
   - component: {fileID: 5008049512857979019}
-  m_Layer: 0
+  - component: {fileID: 4118183485981944588}
+  m_Layer: 7
   m_Name: Domino part1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,6 +102,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3914a176f3b5dd545a45d61a136e4da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DominoRed
+  isBeingPlaced: 0
+  neighbours:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!61 &5008049512857979019
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,7 +144,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -147,3 +160,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2472032, y: 1.2589748}
   m_EdgeRadius: 0
+--- !u!50 &4118183485981944588
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8789013147086901380}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
