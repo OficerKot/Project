@@ -2,24 +2,42 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
+public enum Image
+{
+    any, red, yellow
+}
 interface IDominoPart
 {
     public abstract void Property();
-    public string GetImage();
+    public Image GetImage();
     public void ChangeIsBeingPlacedFlag(bool val);
     public bool IsBeingPlaced();
+    public void ClearAllNeighbors();
 
 }
 
-public abstract class DominoPart : MonoBehaviour, IDominoPart
-{
-    [SerializeField] string image;
-    [SerializeField] bool isBeingPlaced = false;
+public enum Location
+{left, right, up, down };
 
+public abstract class DominoPart : MonoBehaviour, IDominoPart
+{ 
+    [SerializeField] Image image;
+    [SerializeField] bool isBeingPlaced = false;
+    [SerializeField] Location loc;
     [SerializeField] public List<DominoPart> neighbours = new List<DominoPart>();
 
     public abstract void Property();
-    public string GetImage()
+
+    public void ChangeLocation(Location l)
+    {
+        loc = l;
+    }
+
+    public Location GetLocation()
+    {
+        return loc;
+    }
+    public Image GetImage()
     {
         return image;
     }
@@ -48,6 +66,23 @@ public abstract class DominoPart : MonoBehaviour, IDominoPart
             neighbours.Add(dominoPart);
             RoadManager.Instance.CheckForLoop(this);
         }
+    }
+
+    public void RemoveNeighbor(DominoPart n)
+    {
+        neighbours.Remove(n);
+    }
+    public void ClearAllNeighbors()
+    {
+        foreach (DominoPart n in neighbours)
+        {
+            if(n)
+            {
+                n.RemoveNeighbor(this);
+                RoadManager.Instance.CheckForLoop(n);
+            }
+        }
+        neighbours.Clear();
     }
     bool NotAngular(Transform pos1)
     {

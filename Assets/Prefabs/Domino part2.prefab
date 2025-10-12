@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3c62bb8bcb2a1429697b73a9339cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DominoYellow
+  image: 2
   isBeingPlaced: 1
   neighbours:
   - {fileID: 0}
