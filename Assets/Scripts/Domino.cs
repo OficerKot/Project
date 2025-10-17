@@ -11,7 +11,7 @@ public class Domino : MonoBehaviour
 {
     [SerializeField] GameObject[] Parts;
     GameObject part1Prefab, part2Prefab;
-    GameObject spawnedPart1, spawnedPart2;
+    [SerializeField] DominoPart part1, part2;
     public GameObject pivot;
 
     [SerializeField] Cell curCell1, curCell2;
@@ -35,6 +35,11 @@ public class Domino : MonoBehaviour
         {
             CheckDominoClick();
         }
+
+        if (part1 && part2)
+        {
+            CheckPartRotation();
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -45,9 +50,9 @@ public class Domino : MonoBehaviour
             ClearCellData();
             curCell1 = collision.GetComponent<Cell>();
             Cell minDistCell = FindMinDistCell();
-           
+
             if (minDistCell == null)
-            { 
+            {
                 return;
             }
             else
@@ -62,7 +67,7 @@ public class Domino : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(isBeingGrabbed) ClearCellData();
+        if (isBeingGrabbed) ClearCellData();
     }
     void CheckDominoClick()
     {
@@ -71,7 +76,7 @@ public class Domino : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if (hit.collider.transform.IsChildOf(transform))
+            if (hit.collider.transform.IsChildOf(transform) && !curCell1 && !curCell2)
             {
                 PickUp();
             }
@@ -81,10 +86,9 @@ public class Domino : MonoBehaviour
     {
         float minDist = float.MaxValue;
         Cell minDistCell = null;
-        for (int i = 0; i < curCell1.GetNeighboursCount(); i++)
+        foreach (Cell nearCell in curCell1.neighbourCells)
         {
-            Cell nearCell = curCell1.neighbourCells[i];
-            if (nearCell.GetComponent<Cell>().CheckIfFree() && IsSameRotationAngle(nearCell.transform.position, curCell1.transform.position))
+            if (nearCell && CellIsOK(curCell1, nearCell))
             {
                 if (minDist > GetDistance2(pivot.transform, nearCell.transform))
                 {
@@ -95,23 +99,70 @@ public class Domino : MonoBehaviour
         }
         return minDistCell;
     }
+
+    bool CellIsOK(Cell cell1, Cell cell2)
+    {
+        if (IsSameRotationAngle(cell2.transform.position, curCell1.transform.position))
+        {
+            
+            return cell2.CheckIfFree() && CheckImages(cell1, cell2);
+        }
+        return false;
+    }
+
+    bool CheckImages(Cell cell1, Cell cell2)
+    {
+        bool part1CoordsAreBigger = part1.GetLocation() == Location.up || part1.GetLocation() == Location.right;
+        Cell[] sortedCells = GetCellsInOrder(cell2);
+        Cell cellWithBiggerCoords = sortedCells[0];
+        Cell cellWithLowerCoords = sortedCells[1];
+
+        bool image1IsOK = cellWithBiggerCoords.GetImage() == Image.any || (part1CoordsAreBigger && (part1.GetImage() == cellWithBiggerCoords.GetImage())) || (!part1CoordsAreBigger && (part2.GetImage() == cellWithBiggerCoords.GetImage()));
+        bool image2IsOK = cellWithLowerCoords.GetImage() == Image.any || (part1CoordsAreBigger && (part2.GetImage() == cellWithLowerCoords.GetImage())) || (!part1CoordsAreBigger && (part1.GetImage() == cellWithLowerCoords.GetImage()));
+
+        bool number1IsOK = cellWithBiggerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part1.GetNumber() == cellWithBiggerCoords.GetNumber())) || (!part1CoordsAreBigger && (part2.GetNumber() == cellWithBiggerCoords.GetNumber()));
+        bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2.GetNumber() == cellWithLowerCoords.GetNumber())) || (!part1CoordsAreBigger && (part1.GetNumber() == cellWithLowerCoords.GetNumber()));
+
+        return image1IsOK && image2IsOK && number1IsOK && number2IsOK;
+    }
+    Cell[] GetCellsInOrder(Cell cell)
+    {
+        Cell[] output = new Cell[2];
+        bool horizontal = Mathf.Abs(curCell1.transform.position.x - cell.transform.position.x) > 0.5f;
+        bool cell1CoordsAreBigger = horizontal && (curCell1.transform.position.x > cell.transform.position.x) || !horizontal && (curCell1.transform.position.y > cell.transform.position.y);
+
+        if (cell1CoordsAreBigger)
+        {
+            output[0] = curCell1;
+            output[1] = cell;
+        }
+        else
+        {
+            output[0] = cell;
+            output[1] = curCell1;
+        }
+        return output;
+    }
+
     void ClearCellData()
     {
         if (curCell1)
         {
             curCell1.NoHighlight();
             curCell1.SetFree(true);
+            if (curCell1.GetCurDomino()) curCell1.SetFree();
             curCell1 = null;
         }
         if (curCell2)
         {
             curCell2.NoHighlight();
             curCell2.SetFree(true);
+            if (curCell2.GetCurDomino()) curCell2.SetFree();
             curCell2 = null;
         }
 
-        spawnedPart1.GetComponent<DominoPart>().ChangeIsBeingPlacedFlag(false);
-        spawnedPart2.GetComponent<DominoPart>().ChangeIsBeingPlacedFlag(false);
+        part1.ChangeIsBeingPlacedFlag(false);
+        part2.ChangeIsBeingPlacedFlag(false);
     }
     float GetDistance2(Transform pos1, Transform pos2)
     {
@@ -127,6 +178,23 @@ public class Domino : MonoBehaviour
         Collider2D collider2 = curCell2.GetComponent<BoxCollider2D>();
 
         TeleportToCells(collider1.transform, collider2.transform);
+        AddToCells(part1, part2);
+        RoadManager.Instance.CheckForLoop(part1);
+
+
+    }
+    void AddToCells(DominoPart d1, DominoPart d2)
+    {
+        if (GetDistance2(d1.transform, curCell1.transform) > GetDistance2(d2.transform, curCell1.transform))
+        {
+            curCell1.SetCurDomino(d2);
+            curCell2.SetCurDomino(d1);
+        }
+        else
+        {
+            curCell1.SetCurDomino(d1);
+            curCell2.SetCurDomino(d2);
+        }
     }
     void TeleportToCells(Transform pos1, Transform pos2)
     {
@@ -137,8 +205,8 @@ public class Domino : MonoBehaviour
     {
         curCell1.SetFree(false);
         curCell2.SetFree(false);
-        spawnedPart1.GetComponent<DominoPart>().ChangeIsBeingPlacedFlag(true);
-        spawnedPart2.GetComponent<DominoPart>().ChangeIsBeingPlacedFlag(true);
+        part1.ChangeIsBeingPlacedFlag(true);
+        part2.ChangeIsBeingPlacedFlag(true);
     }
     bool IsSameRotationAngle(Vector3 pos1, Vector3 pos2)
     {
@@ -180,7 +248,7 @@ public class Domino : MonoBehaviour
     }
     void Rotate(float degree = 90)
     {
-        if (!spawnedPart1 || !spawnedPart2)
+        if (!part1 || !part2)
         {
             Debug.Log("Generate first");
             return;
@@ -200,6 +268,9 @@ public class Domino : MonoBehaviour
         isBeingGrabbed = true;
         if (curCell1 && curCell2)
         {
+            part1.ClearAllNeighbors();
+            part1.ClearAllNeighbors();
+
             ClearCellData();
         }
 
@@ -219,22 +290,55 @@ public class Domino : MonoBehaviour
     }
     void SpawnParts()
     {
-        if (spawnedPart2 != null) Destroy(spawnedPart1);
-        if (spawnedPart1 != null) Destroy(spawnedPart2);
-        spawnedPart1 = Instantiate(part1Prefab, gameObject.transform.position + new Vector3(0, offsetY), gameObject.transform.rotation, transform);
-        spawnedPart2 = Instantiate(part2Prefab, gameObject.transform.position, gameObject.transform.rotation, transform);
-        spawnedPart1.GetComponent<DominoPart>().ChangeIsBeingPlacedFlag(false);
-        spawnedPart2.GetComponent<DominoPart>().ChangeIsBeingPlacedFlag(false);
+        if (part2 != null) Destroy(part1);
+        if (part1 != null) Destroy(part2);
 
+        part1 = Instantiate(part1Prefab, gameObject.transform.position + new Vector3(0, offsetY), gameObject.transform.rotation, transform).GetComponent<DominoPart>();
+        part2 = Instantiate(part2Prefab, gameObject.transform.position, gameObject.transform.rotation, transform).GetComponent<DominoPart>();
+        part1.ChangeIsBeingPlacedFlag(false);
+        part2.ChangeIsBeingPlacedFlag(false);
+
+        CheckPartRotation();
+    }
+    void CheckPartRotation()
+    {
+        bool areHorizontal = Mathf.Abs(part1.transform.position.y - part2.transform.position.y) < 0.5f;
+
+        if (areHorizontal)
+        {
+            if (part1.transform.position.x > part2.transform.position.x)
+            {
+                part1.ChangeLocation(Location.right);
+                part2.ChangeLocation(Location.left);
+            }
+            if (part1.transform.position.x < part2.transform.position.x)
+            {
+                part1.ChangeLocation(Location.left);
+                part2.ChangeLocation(Location.right);
+            }
+        }
+        else
+        {
+            if (part1.transform.position.y > part2.transform.position.y)
+            {
+                part1.ChangeLocation(Location.up);
+                part2.ChangeLocation(Location.down);
+            }
+            if (part1.transform.position.y < part2.transform.position.y)
+            {
+                part1.ChangeLocation(Location.down);
+                part2.ChangeLocation(Location.up);
+            }
+        }
     }
     void SpawnPivot()
     {
         if (pivot != null) return;
 
-        BoxCollider2D collider1 = spawnedPart1.GetComponent<BoxCollider2D>();
-        BoxCollider2D collider2 = spawnedPart2.GetComponent<BoxCollider2D>();
+        BoxCollider2D collider1 = part1.GetComponent<BoxCollider2D>();
+        BoxCollider2D collider2 = part2.GetComponent<BoxCollider2D>();
 
-        Vector2 centerPosition = (spawnedPart1.transform.position + spawnedPart2.transform.position) / 2f;
+        Vector2 centerPosition = (part1.transform.position + part2.transform.position) / 2f;
 
         pivot = new GameObject("Pivot");
         pivot.transform.position = centerPosition;

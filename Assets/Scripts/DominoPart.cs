@@ -2,26 +2,69 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
+public enum Image
+{
+    any, bone
+}
+
 interface IDominoPart
 {
     public abstract void Property();
-    public string GetImage();
+    public Image GetImage();
     public void ChangeIsBeingPlacedFlag(bool val);
     public bool IsBeingPlaced();
+    public void ClearAllNeighbors();
 
 }
 
-public abstract class DominoPart : MonoBehaviour, IDominoPart
+public enum Location
 {
-    [SerializeField] string image;
+    left, right, up, down 
+};
+
+public abstract class DominoPart : MonoBehaviour, IDominoPart
+{ 
+    [SerializeField] Image image;
+
+    [SerializeField] int number;
+    [SerializeField] int loopNumber = 0;
+
     [SerializeField] bool isBeingPlaced = false;
+
+    [SerializeField] Location loc;
 
     [SerializeField] public List<DominoPart> neighbours = new List<DominoPart>();
 
+
+
     public abstract void Property();
-    public string GetImage()
+
+    public void ChangeLocation(Location l)
+    {
+        loc = l;
+    }
+
+    public Location GetLocation()
+    {
+        return loc;
+    }
+    public Image GetImage()
     {
         return image;
+    }
+
+    public int GetLoopNumber()
+    {
+        return loopNumber;
+    }
+
+    public void SetLoopNumber(int n)
+    {
+        loopNumber = n;
+    }
+    public int GetNumber()
+    {
+        return number;
     }
     public void ChangeIsBeingPlacedFlag(bool val)
     {
@@ -47,7 +90,25 @@ public abstract class DominoPart : MonoBehaviour, IDominoPart
         {
             neighbours.Add(dominoPart);
             RoadManager.Instance.CheckForLoop(this);
+
         }
+    }
+
+    public void RemoveNeighbor(DominoPart n)
+    {
+        neighbours.Remove(n);
+    }
+    public void ClearAllNeighbors()
+    {
+        foreach (DominoPart n in neighbours)
+        {
+            if(n)
+            {
+                n.RemoveNeighbor(this);
+                RoadManager.Instance.CheckForLoop(n);
+            }
+        }
+        neighbours.Clear();
     }
     bool NotAngular(Transform pos1)
     {

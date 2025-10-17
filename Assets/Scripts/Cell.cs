@@ -1,16 +1,17 @@
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
 public interface ICell
 {
-    public int GetNeighboursCount();
     public void Highlight();
     public void NoHighlight();
     public bool IsNeighbour(Cell obj);
     public bool CheckIfFree();
-    public DominoPart GetCurDomino();
+    [SerializeField] public DominoPart GetCurDomino();
     public void SetFree(bool val);
+    public void SetFree();
 }
 
 public class Cell : MonoBehaviour, ICell
@@ -21,9 +22,9 @@ public class Cell : MonoBehaviour, ICell
     Color previousColor;
 
     [SerializeField] public DominoPart curDomino;
-    [SerializeField] public Cell[] neighbourCells = new Cell[10];
-
-    int size = 0;
+    [SerializeField] Image image = Image.any;
+    [SerializeField] int number = 0;
+    [SerializeField] public List<Cell> neighbourCells = new List<Cell>();
     
     void Start()
     {
@@ -35,7 +36,15 @@ public class Cell : MonoBehaviour, ICell
     {
         if(other.gameObject.layer == 6 && NotAngular(other.transform))
         {
-            neighbourCells[size++] = other.GetComponent<Cell>();
+            neighbourCells.Add(other.GetComponent<Cell>());
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (curDomino)
+        {
+            SetImageToAllNeighbours();
         }
     }
 
@@ -43,15 +52,71 @@ public class Cell : MonoBehaviour, ICell
     {
         return curDomino;
     }
+
+    public void SetCurDomino(DominoPart domino)
+    {
+        curDomino = domino;
+        image = domino.GetImage();
+        number = domino.GetNumber();
+    }
+
+    public void SetFree()
+    {
+        isFree = true;
+        curDomino = null;
+        UnsetUmageToAllNeighbours();
+
+        image = Image.any;
+        number = 0;
+       
+    }
     bool NotAngular(Transform pos1)
     {
         return Mathf.Abs(pos1.position.x - transform.position.x) < 0.5f || Mathf.Abs(pos1.position.y - transform.position.y) < 0.5f;
     }
-    public int GetNeighboursCount()
+
+    void SetImageToAllNeighbours()
     {
-        return size;
+        foreach(Cell neighbour in neighbourCells)
+        {
+            if(neighbour && neighbour.GetImage() == Image.any)
+            {
+                neighbour.SetImage(image);
+                neighbour.SetNumber(number);
+            }
+        }
     }
 
+    void UnsetUmageToAllNeighbours()
+    {
+        foreach (Cell neighbour in neighbourCells)
+        {
+            if (neighbour && neighbour.GetImage() == image && !neighbour.GetCurDomino())
+            {
+                neighbour.SetImage(Image.any);
+                neighbour.SetNumber(0);
+            }
+        }
+    }
+    public void SetImage(Image i)
+    {
+        image = i;
+    }
+
+    public Image GetImage()
+    {
+        return image;
+    }
+
+    public int GetNumber()
+    {
+        return number;
+    }
+
+    public void SetNumber(int n)
+    {
+        number = n;
+    }
     public void Highlight()
     {
         cellSprite.color = Color.aliceBlue;
@@ -63,10 +128,9 @@ public class Cell : MonoBehaviour, ICell
     }
     public bool IsNeighbour(Cell obj)
     {
-        if (size == 0) return false;
         foreach(Cell cell in neighbourCells)
         {
-            if (cell == obj) return true;
+            if (cell && cell == obj) return true;
         }
         return false;
     }
@@ -82,6 +146,7 @@ public class Cell : MonoBehaviour, ICell
         isFree = val;
     }
 
+   
 
 
 }
