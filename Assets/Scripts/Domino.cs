@@ -76,7 +76,7 @@ public class Domino : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if (hit.collider.transform.IsChildOf(transform))
+            if (hit.collider.transform.IsChildOf(transform) && !curCell1 && !curCell2)
             {
                 PickUp();
             }
@@ -120,7 +120,10 @@ public class Domino : MonoBehaviour
         bool image1IsOK = cellWithBiggerCoords.GetImage() == Image.any || (part1CoordsAreBigger && (part1.GetImage() == cellWithBiggerCoords.GetImage())) || (!part1CoordsAreBigger && (part2.GetImage() == cellWithBiggerCoords.GetImage()));
         bool image2IsOK = cellWithLowerCoords.GetImage() == Image.any || (part1CoordsAreBigger && (part2.GetImage() == cellWithLowerCoords.GetImage())) || (!part1CoordsAreBigger && (part1.GetImage() == cellWithLowerCoords.GetImage()));
 
-        return image1IsOK && image2IsOK;
+        bool number1IsOK = cellWithBiggerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part1.GetNumber() == cellWithBiggerCoords.GetNumber())) || (!part1CoordsAreBigger && (part2.GetNumber() == cellWithBiggerCoords.GetNumber()));
+        bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2.GetNumber() == cellWithLowerCoords.GetNumber())) || (!part1CoordsAreBigger && (part1.GetNumber() == cellWithLowerCoords.GetNumber()));
+
+        return image1IsOK && image2IsOK && number1IsOK && number2IsOK;
     }
     Cell[] GetCellsInOrder(Cell cell)
     {
@@ -176,6 +179,9 @@ public class Domino : MonoBehaviour
 
         TeleportToCells(collider1.transform, collider2.transform);
         AddToCells(part1, part2);
+        RoadManager.Instance.CheckForLoop(part1);
+
+
     }
     void AddToCells(DominoPart d1, DominoPart d2)
     {

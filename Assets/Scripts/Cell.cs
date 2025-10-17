@@ -22,7 +22,8 @@ public class Cell : MonoBehaviour, ICell
     Color previousColor;
 
     [SerializeField] public DominoPart curDomino;
-    [SerializeField] public Image image = Image.any;
+    [SerializeField] Image image = Image.any;
+    [SerializeField] int number = 0;
     [SerializeField] public List<Cell> neighbourCells = new List<Cell>();
     
     void Start()
@@ -56,6 +57,7 @@ public class Cell : MonoBehaviour, ICell
     {
         curDomino = domino;
         image = domino.GetImage();
+        number = domino.GetNumber();
     }
 
     public void SetFree()
@@ -63,7 +65,9 @@ public class Cell : MonoBehaviour, ICell
         isFree = true;
         curDomino = null;
         UnsetUmageToAllNeighbours();
+
         image = Image.any;
+        number = 0;
        
     }
     bool NotAngular(Transform pos1)
@@ -78,6 +82,7 @@ public class Cell : MonoBehaviour, ICell
             if(neighbour && neighbour.GetImage() == Image.any)
             {
                 neighbour.SetImage(image);
+                neighbour.SetNumber(number);
             }
         }
     }
@@ -89,6 +94,7 @@ public class Cell : MonoBehaviour, ICell
             if (neighbour && neighbour.GetImage() == image && !neighbour.GetCurDomino())
             {
                 neighbour.SetImage(Image.any);
+                neighbour.SetNumber(0);
             }
         }
     }
@@ -102,6 +108,15 @@ public class Cell : MonoBehaviour, ICell
         return image;
     }
 
+    public int GetNumber()
+    {
+        return number;
+    }
+
+    public void SetNumber(int n)
+    {
+        number = n;
+    }
     public void Highlight()
     {
         cellSprite.color = Color.aliceBlue;

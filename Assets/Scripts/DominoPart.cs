@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 public enum Image
 {
-    any, red, yellow
+    any, bone
 }
+
 interface IDominoPart
 {
     public abstract void Property();
@@ -17,14 +18,24 @@ interface IDominoPart
 }
 
 public enum Location
-{left, right, up, down };
+{
+    left, right, up, down 
+};
 
 public abstract class DominoPart : MonoBehaviour, IDominoPart
 { 
     [SerializeField] Image image;
+
+    [SerializeField] int number;
+    [SerializeField] int loopNumber = 0;
+
     [SerializeField] bool isBeingPlaced = false;
+
     [SerializeField] Location loc;
+
     [SerializeField] public List<DominoPart> neighbours = new List<DominoPart>();
+
+
 
     public abstract void Property();
 
@@ -40,6 +51,20 @@ public abstract class DominoPart : MonoBehaviour, IDominoPart
     public Image GetImage()
     {
         return image;
+    }
+
+    public int GetLoopNumber()
+    {
+        return loopNumber;
+    }
+
+    public void SetLoopNumber(int n)
+    {
+        loopNumber = n;
+    }
+    public int GetNumber()
+    {
+        return number;
     }
     public void ChangeIsBeingPlacedFlag(bool val)
     {
@@ -65,6 +90,7 @@ public abstract class DominoPart : MonoBehaviour, IDominoPart
         {
             neighbours.Add(dominoPart);
             RoadManager.Instance.CheckForLoop(this);
+
         }
     }
 
