@@ -9,8 +9,8 @@ using UnityEngine.UI;
 
 public class Domino : MonoBehaviour
 {
-    [SerializeField] GameObject[] Parts;
     GameObject part1Prefab, part2Prefab;
+    [SerializeField] GameObject[] parts;
     [SerializeField] DominoPart part1, part2;
     public GameObject pivot;
 
@@ -20,9 +20,34 @@ public class Domino : MonoBehaviour
 
     [SerializeField] bool isBeingGrabbed = false;
 
-    private void Start()
+    public void Initialize(int p1, int p2)
     {
+        part1Prefab = parts[p1];
+        part2Prefab = parts[p2];
         GenerateParts();
+        SpawnPivot();
+    }
+
+    public void PickUp()
+    {
+        isBeingGrabbed = true;
+        if (curCell1 && curCell2)
+        {
+            part1.ClearAllNeighbors();
+            part1.ClearAllNeighbors();
+
+            ClearCellData();
+        }
+
+    }
+
+    private void OnDestroy()
+    {
+        ClearCellData();
+    }
+    public bool isPlaced()
+    {
+        return !isBeingGrabbed;
     }
     private void Update()
     {
@@ -179,7 +204,6 @@ public class Domino : MonoBehaviour
 
         TeleportToCells(collider1.transform, collider2.transform);
         AddToCells(part1, part2);
-        RoadManager.Instance.CheckForLoop(part1);
 
 
     }
@@ -263,30 +287,10 @@ public class Domino : MonoBehaviour
 
         pivot.transform.position = Vector3.Lerp(pivot.transform.position, targetPos, 1);
     }
-    void PickUp()
-    {
-        isBeingGrabbed = true;
-        if (curCell1 && curCell2)
-        {
-            part1.ClearAllNeighbors();
-            part1.ClearAllNeighbors();
-
-            ClearCellData();
-        }
-
-    }
     void GenerateParts()
     {
-        ChooseParts();
         SpawnParts();
         SpawnPivot();
-    }
-    void ChooseParts()
-    {
-        int indx1 = Random.Range(0, Parts.Length);
-        int indx2 = Random.Range(0, Parts.Length);
-        part1Prefab = Parts[indx1];
-        part2Prefab = Parts[indx2];
     }
     void SpawnParts()
     {
@@ -299,6 +303,21 @@ public class Domino : MonoBehaviour
         part2.ChangeIsBeingPlacedFlag(false);
 
         CheckPartRotation();
+    }
+    void SpawnPivot()
+    {
+        if (pivot != null) return;
+
+        BoxCollider2D collider1 = part1.GetComponent<BoxCollider2D>();
+        BoxCollider2D collider2 = part2.GetComponent<BoxCollider2D>();
+
+        Vector2 centerPosition = (part1.transform.position + part2.transform.position) / 2f;
+
+        pivot = new GameObject("Pivot");
+        pivot.transform.position = centerPosition;
+        pivot.transform.rotation = transform.rotation;
+
+        transform.SetParent(pivot.transform);
     }
     void CheckPartRotation()
     {
@@ -331,20 +350,6 @@ public class Domino : MonoBehaviour
             }
         }
     }
-    void SpawnPivot()
-    {
-        if (pivot != null) return;
 
-        BoxCollider2D collider1 = part1.GetComponent<BoxCollider2D>();
-        BoxCollider2D collider2 = part2.GetComponent<BoxCollider2D>();
-
-        Vector2 centerPosition = (part1.transform.position + part2.transform.position) / 2f;
-
-        pivot = new GameObject("Pivot");
-        pivot.transform.position = centerPosition;
-        pivot.transform.rotation = transform.rotation;
-
-        transform.SetParent(pivot.transform);
-    }
 
 }

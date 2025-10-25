@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe76f327e9b68342b4a640d4da2e85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DominoGenerator
-  Parts:
+  parts:
   - {fileID: 8789013147086901380, guid: 464e5092d835b5442a01563e1b49459d, type: 3}
   - {fileID: 6563017092507824485, guid: 75c1ea945f49e1a4c88d0ebbec260cf2, type: 3}
   - {fileID: 6563017092507824485, guid: 8ed3b7a1c1992f94db7c4214d8da602d, type: 3}

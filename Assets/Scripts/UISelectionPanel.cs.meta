@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: c9f36214d193b744e9b5473e4c3a19f5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - UIDominoPrefab: {fileID: 2431666912444899434, guid: 13f03177fa8674a43ab0cdc09229632e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Cell
   - DominoPart
-  - 
+  - UIFront
   - 
   - 
   - 
@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: UIFront
+    uniqueID: 2278652647
+    locked: 0
+  - name: UI
+    uniqueID: 371786147
+    locked: 0
   - name: DominoPart
     uniqueID: 1667205227
     locked: 0
