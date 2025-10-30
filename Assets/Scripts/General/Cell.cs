@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 
@@ -23,12 +22,11 @@ public class Cell : MonoBehaviour, ICell
 
     // попробовать заменить на GameObject curObject, домино через ScriptableObject!!!
     [SerializeField] public DominoPart curDomino;
-    [SerializeField] public Item curItem;
+    [SerializeField] Item curItem;
 
     [SerializeField] Image image = Image.any;
     [SerializeField] int number = 0;
     // ------------------------------------------------------------------------------
-    [SerializeField] Cell curCell;
     [SerializeField] public  List<Cell> neighbourCells = new List<Cell>();
 
     void Start()

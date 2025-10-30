@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class UIInventory : MonoBehaviour
 {
     [SerializeField] GameObject inventory;
-    [SerializeField] GameObject[] itemsInCells = new GameObject[18];
-    [SerializeField] GameObject[] cells = new GameObject[18];
+    [SerializeField] GameObject[] itemsInCells = new GameObject[6];
+    [SerializeField] GameObject[] cells = new GameObject[6];
     
     [SerializeField] Button inventoryButton;
 
@@ -53,6 +53,11 @@ public class UIInventory : MonoBehaviour
         if(!isOpened) inventory.SetActive(false);
     }
 
+    public void RemoveItemIcon(int cellIndx)
+    {
+        Destroy(itemsInCells[cellIndx]);
+        itemsInCells[cellIndx] = null;
+    }
     void Open()
     {
         inventory.SetActive(true);

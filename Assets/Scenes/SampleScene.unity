@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -310,6 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -409,6 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -508,6 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -607,6 +611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -706,6 +711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -805,6 +811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -821,7 +828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 132075468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cells
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +844,7 @@ Transform:
   m_GameObject: {fileID: 132075467}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.65, y: 2.44, z: 0.26}
+  m_LocalPosition: {x: -3.65, y: 2.44, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1079,6 +1086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -1178,6 +1186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -1277,6 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -1376,6 +1386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -1475,6 +1486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -1574,6 +1586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -1673,6 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -1772,6 +1786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -1871,6 +1886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -1970,6 +1986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -2069,6 +2086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -2163,6 +2181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -2267,6 +2286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -2366,6 +2386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -2465,6 +2486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -2564,6 +2586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -2663,6 +2686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -2762,6 +2786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -2998,6 +3023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -3097,6 +3123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -3196,6 +3223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -3295,6 +3323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -3394,6 +3423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -3493,6 +3523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -3592,6 +3623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -3634,7 +3666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -152.1, y: -34.41249}
+  m_AnchoredPosition: {x: -28.000008, y: -147.79987}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574699058
@@ -3779,6 +3811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -3878,6 +3911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -3922,7 +3956,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000e77ad187a3012916
+  m_ApplyToSortingLayers: 00000000e77ad187a3012916cbe899b1
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -4061,6 +4095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -4160,6 +4195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -4259,6 +4295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -4302,7 +4339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -48, y: -40}
+  m_AnchoredPosition: {x: -108, y: 129}
   m_SizeDelta: {x: 30, y: 30.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &646808213
@@ -4369,7 +4406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1180510251719410368, guid: 3276c6be3c7b700489f20aeb96765e26, type: 3}
+  m_Sprite: {fileID: -4144843762343842302, guid: 043717c7021804c4bb6f3bb55813c0b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4422,7 +4459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220.4, y: 30.599993}
+  m_AnchoredPosition: {x: -161.6, y: -148}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653880787
@@ -4567,6 +4604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -4666,6 +4704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -4770,6 +4809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -4869,6 +4909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -4968,6 +5009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -5067,6 +5109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -5166,6 +5209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -5265,6 +5309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -5280,6 +5325,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1237662509407897279, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
+      propertyPath: curCell
+      value: 
+      objectReference: {fileID: 1950167647}
     - target: {fileID: 3265742574692647083, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
       propertyPath: m_Name
       value: CampfireItem
@@ -5421,6 +5470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -5520,6 +5570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -5619,6 +5670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -5718,6 +5770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -5817,6 +5870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -5916,6 +5970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -6015,6 +6070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -6114,6 +6170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -6121,63 +6178,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!1001 &826283199
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3265742574692647083, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_Name
-      value: CampfireItem (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087920031629599462, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.9369407
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087920031629599462, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.0977538
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087920031629599462, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087920031629599462, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087920031629599462, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087920031629599462, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087920031629599462, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087920031629599462, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087920031629599462, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087920031629599462, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
 --- !u!1 &828168268
 GameObject:
   m_ObjectHideFlags: 0
@@ -6314,6 +6314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -6413,6 +6414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -6512,6 +6514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -6554,7 +6557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285.975, y: 30.6}
+  m_AnchoredPosition: {x: -160.2, y: -212.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &882714421
@@ -6835,6 +6838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -6934,6 +6938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -7033,6 +7038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -7132,6 +7138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -7231,6 +7238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -7330,6 +7338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -7429,6 +7438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -7528,6 +7538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -7627,6 +7638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -7726,6 +7738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -7768,7 +7781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: -34.41249}
+  m_AnchoredPosition: {x: -28.4, y: -213}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1006284745
@@ -8017,6 +8030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -8116,6 +8130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -8294,6 +8309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -8393,6 +8409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -8492,6 +8509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -8591,6 +8609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -8690,6 +8709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -8789,6 +8809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -8888,6 +8909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -8918,7 +8940,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134430827}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8930,10 +8952,10 @@ RectTransform:
   - {fileID: 1006284744}
   - {fileID: 574699057}
   m_Father: {fileID: 1256894866}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.024993896, y: -155.41249}
+  m_AnchoredPosition: {x: -37.4, y: -215.5}
   m_SizeDelta: {x: 604.06, y: 100.93499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1142707138
@@ -9028,6 +9050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -9127,6 +9150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -9226,6 +9250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -9267,7 +9292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 515, y: 0}
+  m_AnchoredPosition: {x: 540, y: 65}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1274141536
@@ -9357,6 +9382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -9461,6 +9487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -9503,7 +9530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285.975, y: -34.41249}
+  m_AnchoredPosition: {x: -95.7, y: -147.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1277894954
@@ -9648,6 +9675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -9747,6 +9775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -9846,6 +9875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -9945,6 +9975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -10044,6 +10075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -10143,6 +10175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -10242,6 +10275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -10341,6 +10375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -10440,6 +10475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -10534,6 +10570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -10638,6 +10675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -10737,6 +10775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -10831,6 +10870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -10935,6 +10975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -11034,6 +11075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -11133,6 +11175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -11232,6 +11275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -11331,6 +11375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -11373,7 +11418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -152.5, y: 30.599993}
+  m_AnchoredPosition: {x: -94.7, y: -212.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1499942445
@@ -11518,6 +11563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -11617,6 +11663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -11716,6 +11763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -11815,6 +11863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -11914,6 +11963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -12013,6 +12063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -12112,6 +12163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -12211,6 +12263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -12310,6 +12363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -12409,6 +12463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -12508,6 +12563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -12607,6 +12663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -12706,6 +12763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -12805,6 +12863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -12904,6 +12963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -13003,6 +13063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -13148,6 +13209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -13247,6 +13309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -13346,6 +13409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -13445,6 +13509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -13481,7 +13546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f07fd72426de4643b18dd09f5a7417e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
+  itemsID: []
+  itemsCount: 000000000000000000000000000000000000000000000000
 --- !u!4 &1785662333
 Transform:
   m_ObjectHideFlags: 0
@@ -13589,6 +13655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -13688,6 +13755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -13787,6 +13855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -13886,6 +13955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -13985,6 +14055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -14084,6 +14155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -14183,6 +14255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -14282,6 +14355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -14381,6 +14455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -14422,7 +14497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 37}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884717777
@@ -14545,6 +14620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -14644,6 +14720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -14743,6 +14820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -14758,6 +14836,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1237662509407897279, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
+      propertyPath: curCell
+      value: 
+      objectReference: {fileID: 716469786}
     - target: {fileID: 3265742574692647083, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
       propertyPath: m_Name
       value: CampfireItem (1)
@@ -14894,6 +14976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -14998,6 +15081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -15097,6 +15181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -15283,6 +15368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -15315,16 +15401,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006702383}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.1, y: 2.1, z: 2.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1256894866}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: -157}
+  m_AnchoredPosition: {x: -217.58072, y: -124.29932}
   m_SizeDelta: {x: 96, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2006702385
@@ -15457,6 +15543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -15556,6 +15643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -15655,6 +15743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -15754,6 +15843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -15853,6 +15943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -15952,6 +16043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -16051,6 +16143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -16150,6 +16243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -16249,6 +16343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -16348,6 +16443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   isFree: 1
   curDomino: {fileID: 0}
+  curItem: {fileID: 0}
   image: 0
   number: 0
   neighbourCells:
@@ -16522,5 +16618,4 @@ SceneRoots:
   - {fileID: 1785662333}
   - {fileID: 722589498}
   - {fileID: 1919956320}
-  - {fileID: 826283199}
   - {fileID: 828168270}

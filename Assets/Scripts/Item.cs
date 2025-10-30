@@ -5,19 +5,57 @@ using UnityEngine.EventSystems;
 public class Item : MonoBehaviour
 {
     [SerializeField] string itemID;
+    [SerializeField] Cell curCell;
     bool isPlaced = true;
+
+    private void Start()
+    {
+        if(curCell) // то есть сами поставили вручную перед запуском на какую то клетку
+        {
+            PutInCell();
+        }
+    }
     public void OnMouseDown()
     {
-        if(!Inventory.Instance.isFull() && isPlaced)
+        if (!Inventory.Instance.isFull() && isPlaced)
         {
             Pick();
         }
 
+        else if (Input.GetKeyDown(KeyCode.Mouse0) && curCell)
+        {
+            curCell.NoHighlight();
+            PutInCell();
+        }
+
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!isPlaced && collision.gameObject.layer == 6 && !curCell)
+        {
+            if (!collision.GetComponent<Cell>().CheckIfFree()) return;
+
+            curCell = collision.GetComponent<Cell>();
+
+            curCell.Highlight();
+            return;
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (curCell)
+        {
+            curCell.NoHighlight();
+            curCell = null;
+        }
     }
 
     private void Update()
     {
-        if(!isPlaced) Move();
+        if (!isPlaced) Move();
     }
     public bool IsPlaced()
     {
@@ -35,9 +73,21 @@ public class Item : MonoBehaviour
     void Pick() // собрать с клетки
     {
         Inventory.Instance.AddItem(this);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
+    void PutInCell()
+    {
+        curCell.SetCurItem(this);
+        curCell.SetFree(false);
+        isPlaced = true;
+        transform.position = curCell.transform.position;
+        transform.Translate(0, 0, -curCell.transform.position.z);
+        Inventory.Instance.RemoveItem(this);
+        GameManager.Instance.PutInHand(null);
+    }
+
+  
     void Move() // перемещать (когда нажали на иконку)
     {
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -5,7 +5,14 @@ public class UIPickableIcon : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] string itemId;
     GameObject spawnedPlayable;
-    
+
+    private void Update()
+    {
+        if(spawnedPlayable && spawnedPlayable.GetComponent<Item>().IsPlaced())
+        {
+            spawnedPlayable = null;
+        }
+    }
     public string GetID()
     {
         return itemId;
@@ -32,8 +39,8 @@ public class UIPickableIcon : MonoBehaviour, IPointerClickHandler
     {
         spawnedPlayable = Instantiate(ItemManager.Instance.GetItemByID(itemId).prefab, transform.position, transform.rotation);
         spawnedPlayable.GetComponent<Item>().SetIsPlaced(false);
-
-        // спавн предмета
     }
+
+  
 
 }
