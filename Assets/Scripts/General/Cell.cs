@@ -9,7 +9,7 @@ public interface ICell
     public void NoHighlight();
     public bool IsNeighbour(Cell obj);
     public bool CheckIfFree();
-    [SerializeField] public DominoPart GetCurDomino();
+    public DominoPart GetCurDomino();
     public void SetFree(bool val);
     public void SetFree();
 }
@@ -21,20 +21,24 @@ public class Cell : MonoBehaviour, ICell
     SpriteRenderer cellSprite;
     Color previousColor;
 
+    // попробовать заменить на GameObject curObject, домино через ScriptableObject!!!
     [SerializeField] public DominoPart curDomino;
+    [SerializeField] public Item curItem;
+
     [SerializeField] Image image = Image.any;
     [SerializeField] int number = 0;
-    [SerializeField] public List<Cell> neighbourCells = new List<Cell>();
-    
+    // ------------------------------------------------------------------------------
+    [SerializeField] Cell curCell;
+    [SerializeField] public  List<Cell> neighbourCells = new List<Cell>();
+
     void Start()
     {
         cellSprite = gameObject.GetComponent<SpriteRenderer>();
         previousColor = cellSprite.color;
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.layer == 6 && NotAngular(other.transform))
+        if (other.gameObject.layer == 6 && NotAngular(other.transform))
         {
             neighbourCells.Add(other.GetComponent<Cell>());
         }
@@ -46,13 +50,17 @@ public class Cell : MonoBehaviour, ICell
         {
             SetImageToAllNeighbours();
         }
-    }
 
+    }
     public DominoPart GetCurDomino()
     {
         return curDomino;
     }
 
+    public Item GetCurItem()
+    {
+        return curItem;
+    }
     public void SetCurDomino(DominoPart domino)
     {
         curDomino = domino;
@@ -60,15 +68,21 @@ public class Cell : MonoBehaviour, ICell
         number = domino.GetNumber();
     }
 
+    public void SetCurItem(Item i)
+    {
+        curItem = i;
+    }
+
     public void SetFree()
     {
         isFree = true;
         curDomino = null;
+        curItem = null;
         UnsetUmageToAllNeighbours();
 
         image = Image.any;
         number = 0;
-       
+
     }
     bool NotAngular(Transform pos1)
     {
@@ -77,9 +91,9 @@ public class Cell : MonoBehaviour, ICell
 
     void SetImageToAllNeighbours()
     {
-        foreach(Cell neighbour in neighbourCells)
+        foreach (Cell neighbour in neighbourCells)
         {
-            if(neighbour && neighbour.GetImage() == Image.any)
+            if (neighbour && neighbour.GetImage() == Image.any)
             {
                 neighbour.SetImage(image);
                 neighbour.SetNumber(number);
@@ -128,13 +142,13 @@ public class Cell : MonoBehaviour, ICell
     }
     public bool IsNeighbour(Cell obj)
     {
-        foreach(Cell cell in neighbourCells)
+        foreach (Cell cell in neighbourCells)
         {
             if (cell && cell == obj) return true;
         }
         return false;
     }
-    
+
 
     public bool CheckIfFree()
     {
@@ -146,7 +160,7 @@ public class Cell : MonoBehaviour, ICell
         isFree = val;
     }
 
-   
+
 
 
 }

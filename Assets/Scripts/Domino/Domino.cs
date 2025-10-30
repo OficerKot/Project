@@ -31,6 +31,7 @@ public class Domino : MonoBehaviour
     public void PickUp()
     {
         isBeingGrabbed = true;
+
         if (curCell1 && curCell2)
         {
             part1.ClearAllNeighbors();
@@ -101,8 +102,9 @@ public class Domino : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if (hit.collider.transform.IsChildOf(transform) && !curCell1 && !curCell2)
+            if (hit.collider.transform.IsChildOf(transform) && !curCell1 && !curCell2 && GameManager.Instance.WhatInHand() == null)
             {
+                GameManager.Instance.PutInHand(gameObject);
                 PickUp();
             }
         }
@@ -197,6 +199,8 @@ public class Domino : MonoBehaviour
     void PutInTheCells()
     {
         isBeingGrabbed = false;
+        GameManager.Instance.PutInHand(null);
+
         TakeFreeSpace();
 
         Collider2D collider1 = curCell1.GetComponent<BoxCollider2D>();

@@ -40,26 +40,26 @@ public class UIDomino : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Mouse");
-        clicked = !clicked;
+
+        if (GameManager.Instance.WhatInHand() == null || GameManager.Instance.WhatInHand() == gameObject)
+        {
+            clicked = !clicked;
+        }
 
         if (clicked)
         {
+            GameManager.Instance.PutInHand(gameObject);
             SpawnPlayable();
-            
             blurImage.SetActive(true);
         }
         else
         {
+            GameManager.Instance.PutInHand(null);
             Destroy(spawnedPlayableDomino);
             spawnedPlayableDomino = null;
             blurImage.SetActive(false);
         }
     }
-
-   
-   
-  
 
     void SpawnPlayable()
     {

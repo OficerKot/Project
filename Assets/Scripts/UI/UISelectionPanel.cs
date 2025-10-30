@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UISelectionPanel : MonoBehaviour
+public class UISelectionPanel : MonoBehaviour 
 {
     [SerializeField] List<GameObject> spawnedUIDomino = new List<GameObject>();
     public static UISelectionPanel Instance;
@@ -45,7 +45,6 @@ public class UISelectionPanel : MonoBehaviour
     {
         spawnedUIDomino.Remove(d);
         Destroy(d);
-
     }
 
 }
