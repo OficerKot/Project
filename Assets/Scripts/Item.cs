@@ -12,7 +12,11 @@ public class Item : MonoBehaviour
     {
         if(curCell) // то есть сами поставили вручную перед запуском на какую то клетку
         {
-            PutInCell();
+            curCell.SetCurItem(this);
+            curCell.SetFree(false);
+            isPlaced = true;
+            transform.position = curCell.transform.position;
+            transform.Translate(0, 0, -curCell.transform.position.z);
         }
     }
     public void OnMouseDown()

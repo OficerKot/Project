@@ -4,8 +4,7 @@ using UnityEngine.UI;
 public class UIInventory : MonoBehaviour
 {
     [SerializeField] GameObject inventory;
-    [SerializeField] GameObject[] itemsInCells = new GameObject[6];
-    [SerializeField] GameObject[] cells = new GameObject[6];
+    [SerializeField] UIInventoryCell[] cells = new UIInventoryCell[6];
     
     [SerializeField] Button inventoryButton;
 
@@ -45,18 +44,25 @@ public class UIInventory : MonoBehaviour
         }
     }
 
-    public void AddItemIcon(ItemData i, int cellIndx)
+    public void AddNewItem(ItemData i, int cellIndx)
     {
         if(!isOpened) inventory.SetActive(true);
-        itemsInCells[cellIndx] = Instantiate(i.UIprefab, GameObject.Find("InventoryInterface").transform);
-        itemsInCells[cellIndx].transform.position = cells[cellIndx].transform.position;
+        cells[cellIndx].PutItem(Instantiate(i.UIprefab, GameObject.Find("InventoryInterface").transform));
         if(!isOpened) inventory.SetActive(false);
     }
 
+    public void AddOneMoreItem(int cellIndx)
+    {
+        cells[cellIndx].AddToCounter(1);
+    }
+
+    public void RemoveOneItem(int cellIndx)
+    {
+        cells[cellIndx].AddToCounter(-1);
+    }
     public void RemoveItemIcon(int cellIndx)
     {
-        Destroy(itemsInCells[cellIndx]);
-        itemsInCells[cellIndx] = null;
+        cells[cellIndx].RemoveItem();
     }
     void Open()
     {

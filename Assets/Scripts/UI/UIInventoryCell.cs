@@ -1,16 +1,48 @@
+using TMPro;
 using UnityEngine;
 
 public class UIInventoryCell : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] GameObject item;
+    [SerializeField] int itemCount;
+    [SerializeField] TextMeshProUGUI counterText;
+
+    private void Start()
     {
-        
+        if (item == null)
+        {
+            ClearCounter();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PutItem(GameObject i)
     {
-        
+        item = i;
+        if (i == null)
+        {
+            ClearCounter();
+            return;
+        }
+        i.transform.position = transform.position;
     }
+    public void RemoveItem()
+    {
+        Destroy(item);
+        item = null;
+        ClearCounter();
+    }
+    public void AddToCounter(int i)
+    {
+        itemCount += i;
+        counterText.text = itemCount.ToString();
+    }
+
+    void ClearCounter()
+    {
+        itemCount = 0;
+        counterText.text = "";
+       
+    }
+
+
 }

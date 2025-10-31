@@ -1,6 +1,7 @@
-using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
@@ -28,13 +29,16 @@ public class Inventory : MonoBehaviour
     {
         if(itemsID.Count < MAX_SIZE)
         {
+            int indx = itemsID.FindIndex(itemm => itemm == i.GetID());
             ItemData item = ItemManager.Instance.GetItemByID(i.GetID());
-            if (!itemsID.Contains(item.itemId))
+            if (indx == -1)
             {
                 itemsID.Add(item.itemId);
-                UIInventory.Instance.AddItemIcon(item, itemsID.FindIndex(itemm => itemm == item.itemId));
+                indx = itemsID.FindIndex(itemm => itemm == item.itemId);
+                UIInventory.Instance.AddNewItem(item, indx);
             }
-            itemsCount[itemsID.FindIndex(itemm => itemm == item.itemId)]++; 
+            itemsCount[indx]++;
+            UIInventory.Instance.AddOneMoreItem(indx);
         }
     }
 
@@ -44,11 +48,12 @@ public class Inventory : MonoBehaviour
         if (indx != -1)
         {
             itemsCount[indx]--;
+            UIInventory.Instance.RemoveOneItem(indx);
+
             if (itemsCount[indx] < 1)
             {
                 UIInventory.Instance.RemoveItemIcon(indx);
                 itemsID.RemoveAt(indx);
-                itemsCount[indx] = 0;
             }
       
         }
