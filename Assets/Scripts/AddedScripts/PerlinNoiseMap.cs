@@ -5,18 +5,18 @@ using UnityEngine.Tilemaps;
 
 public class PerlinNoiseMap : MonoBehaviour
 {
-    Dictionary<int, AnimatedTile> tileset;
-    public AnimatedTile emptinnes;
-    public AnimatedTile tree;
-    public AnimatedTile bush_berries;
-    public AnimatedTile bush_empty;
-    public AnimatedTile pond;
+    Dictionary<int, GameObject> tileset;
+    public GameObject emptinnes;
+    public GameObject tree;
+    public GameObject bush_berries;
+    public GameObject bush_empty;
+    public GameObject pond;
 
-    int map_width = 64;
-    int map_height = 36;
+    int map_width = 17;
+    int map_height = 9;
 
     List<List<int>> noise_grid = new List<List<int>>();
-    List<List<AnimatedTile>> tile_grid = new List<List<AnimatedTile>>();
+    List<List<GameObject>> tile_grid = new List<List<GameObject>>();
 
     Tilemap targetTilemap;
 
@@ -38,13 +38,13 @@ public class PerlinNoiseMap : MonoBehaviour
         y_offset = Random.Range(0, 1000);
         GenerateMap();
 
-        secTilesPlacer = this.transform.GetComponent<TilesPlacer>();
-        secTilesPlacer.SecondaryObs(map_width, map_height);
+        //secTilesPlacer = this.transform.GetComponent<TilesPlacer>();
+        //secTilesPlacer.SecondaryObs(map_width, map_height);
     }
 
     void CreateTileSet()
     {
-        tileset = new Dictionary<int, AnimatedTile>();
+        tileset = new Dictionary<int, GameObject>();
         tileset.Add(0, emptinnes);
         tileset.Add(1, emptinnes);
         tileset.Add(2, tree);
@@ -56,14 +56,14 @@ public class PerlinNoiseMap : MonoBehaviour
         for (int x = 0; x < map_width; ++x)
         {
             noise_grid.Add(new List<int>());
-            tile_grid.Add(new List<AnimatedTile>());
+            tile_grid.Add(new List<GameObject>());
             for (int y = 0; y < map_height; ++y)
             {
                 int tile_id = GetIdUsingPerlin(x, y);
                 noise_grid[x].Add(tile_id);
                 Debug.Log($"Tile is {tileset[tile_id]}");
                 if (tile_id != 0 && tile_id != 1)
-                    targetTilemap.SetTile(new Vector3Int(x, y, 0), tileset[tile_id]);
+                    CreateTile(tile_id, x, y);
                 else
                     continue;
 
@@ -84,5 +84,13 @@ public class PerlinNoiseMap : MonoBehaviour
             scaled_perlin = 3;
         }
         return Mathf.FloorToInt(scaled_perlin);
+    }
+    void CreateTile(int tile_id, int x, int y)
+    {
+        GameObject tile_prefab = tileset[tile_id];
+        GameObject tile = Instantiate(tile_prefab, this.transform);
+
+        tile.name = string.Format("tile_x{0}_y{1}", x, y);
+        tile.transform.localPosition = new Vector3Int(x, y, 0);
     }
 }
