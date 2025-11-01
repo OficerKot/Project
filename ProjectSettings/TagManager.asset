@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Path
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Cell
+  - DominoPart
+  - UIFront
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: UIFront
+    uniqueID: 2278652647
+    locked: 0
+  - name: UI
+    uniqueID: 371786147
+    locked: 0
+  - name: DominoPart
+    uniqueID: 1667205227
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Cell
+    uniqueID: 2979653835
+    locked: 0
+  m_RenderingLayers:
+  - Default
