@@ -18,8 +18,6 @@ public class PerlinNoiseMap : MonoBehaviour
     List<List<int>> noise_grid = new List<List<int>>();
     List<List<GameObject>> tile_grid = new List<List<GameObject>>();
 
-    Tilemap targetTilemap;
-
     //any value between 4 and 20
     float magnification = 7f;
 
@@ -30,7 +28,6 @@ public class PerlinNoiseMap : MonoBehaviour
     void Start()
     {
         this.transform.position = new Vector2(-map_width / 2, -map_height / 2);
-        targetTilemap = this.transform.GetComponent<Tilemap>();
         CreateTileSet();
         
         magnification = Random.Range(4, 20);
@@ -38,8 +35,6 @@ public class PerlinNoiseMap : MonoBehaviour
         y_offset = Random.Range(0, 1000);
         GenerateMap();
 
-        //secTilesPlacer = this.transform.GetComponent<TilesPlacer>();
-        //secTilesPlacer.SecondaryObs(map_width, map_height);
     }
 
     void CreateTileSet()
