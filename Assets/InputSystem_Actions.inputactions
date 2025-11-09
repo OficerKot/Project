@@ -477,6 +477,94 @@
             ]
         },
         {
+            "name": "Walk",
+            "id": "825b6cbc-aab3-441d-91e2-4f0cd418081c",
+            "actions": [
+                {
+                    "name": "Walk_Up",
+                    "type": "Button",
+                    "id": "62968ee8-2c82-417c-ac62-b1f2e84de289",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Walk_Down",
+                    "type": "Button",
+                    "id": "5d57cba9-768d-4d38-82e4-7b289a3c8c1b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Walk_Left",
+                    "type": "Button",
+                    "id": "5cff7b8f-7628-4dc1-bdc5-50b8438e040c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Walk_Right",
+                    "type": "Button",
+                    "id": "8ada3e47-883a-4678-a61f-796809c5141e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "71527ceb-dff0-415e-ac37-e79ae533028a",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk_Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8bb7ce73-76d5-4e71-8433-d102f0299f9c",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk_Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e3218865-3a80-403b-8a49-5e7802abcbbe",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk_Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21a77277-8199-4e4c-9ad9-fea3c39bccf0",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk_Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "UI",
             "id": "272f6d14-89ba-496f-b7ff-215263d3219f",
             "actions": [

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4403559283285223103}
   m_Layer: 7
   m_Name: Bones3
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
