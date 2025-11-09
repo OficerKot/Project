@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3406007459769713388}
   m_Layer: 7
   m_Name: Bones4
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: 1
-  vertexColor: {r: 0, g: 0, b: 0, a: 0}
   number: 4
+  loopNumber: 0
   isBeingPlaced: 0
   loc: 0
   neighbours: []
