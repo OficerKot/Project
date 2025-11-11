@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4677ca0113dbc64388e8d1e2d927739, type: 3}
+  m_Name: Bones2
+  m_EditorClassIdentifier: 
+  dominoId: bones2
+  number: 2
+  image: 1
+  prefab: {fileID: 6563017092507824485, guid: 75c1ea945f49e1a4c88d0ebbec260cf2, type: 3}
+  UIprefab: {fileID: 2274165375861150673, guid: fb4c7051532cd7849a482da55cf79ab7, type: 3}

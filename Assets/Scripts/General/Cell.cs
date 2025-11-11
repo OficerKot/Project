@@ -62,8 +62,8 @@ public class Cell : MonoBehaviour, ICell
     public void SetCurDomino(DominoPart domino)
     {
         curDomino = domino;
-        image = domino.GetImage();
-        number = domino.GetNumber();
+        image = domino.data.image;
+        number = domino.data.number;
     }
 
     public void SetCurItem(Item i)

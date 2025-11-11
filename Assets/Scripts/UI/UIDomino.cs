@@ -6,18 +6,14 @@ using Unity.VisualScripting;
 
 public class UIDomino : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] GameObject[] PartsUI;
     [SerializeField] GameObject dominoPlayablePrefab;
-    [SerializeField] GameObject blurImage;
-
     GameObject spawnedPlayableDomino;
-    GameObject part1, part2;
-
-    int part1Indx, part2Indx; // для передачи в функцию Initialize при спавне playableDomino
-
-
-   
-
+    [SerializeField] GameObject blurImage;
+    
+    DominoData part1, part2;
+    GameObject part1UI, part2UI;
+    
+ 
     [SerializeField] float offsetY = 2f;
 
     [SerializeField] bool clicked = false;
@@ -65,7 +61,7 @@ public class UIDomino : MonoBehaviour, IPointerClickHandler
     {
         spawnedPlayableDomino = Instantiate(dominoPlayablePrefab, transform.position, transform.rotation);
        
-        spawnedPlayableDomino.GetComponent<Domino>().Initialize(part1Indx, part2Indx);
+        spawnedPlayableDomino.GetComponent<Domino>().Initialize(part1, part2);
         spawnedPlayableDomino.GetComponent<Domino>().PickUp();
     }
     void GenerateParts()
@@ -76,20 +72,18 @@ public class UIDomino : MonoBehaviour, IPointerClickHandler
     }
     void ChooseParts()
     {
-        part1Indx = Random.Range(0, PartsUI.Length);
-        part2Indx = Random.Range(0, PartsUI.Length);
-        part1 = PartsUI[part1Indx];
-        part2 = PartsUI[part2Indx];
+        part1 = DominoManager.Instance.GetRandomDomino();
+        part2 = DominoManager.Instance.GetRandomDomino();
     }
     void SpawnParts()
     {
         RectTransform thisRectT = GetComponent<RectTransform>();
 
-        part1 = Instantiate(part1, transform);
-        part2 = Instantiate(part2, transform);
+        part1UI = Instantiate(part1.UIprefab, transform);
+        part2UI = Instantiate(part2.UIprefab, transform);
 
-        RectTransform part1RectT = part1.GetComponent<RectTransform>();
-        RectTransform part2RectT = part2.GetComponent<RectTransform>();
+        RectTransform part1RectT = part1UI.GetComponent<RectTransform>();
+        RectTransform part2RectT = part2UI.GetComponent<RectTransform>();
        
         part1RectT.localPosition = new Vector3(0, offsetY, 0);
         part2RectT.localPosition = new Vector3(0, -offsetY, 0);

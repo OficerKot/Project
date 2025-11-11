@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5616512432769214798}
   - component: {fileID: -8941941019329967752}
   - component: {fileID: 4215457269799052540}
-  - component: {fileID: 3406007459769713388}
+  - component: {fileID: -8243731679230695065}
   m_Layer: 7
-  m_Name: Bones4
-  m_TagString: Path
+  m_Name: Bones6
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.013733566, y: -0.0039237738}
+  m_Offset: {x: -0.07896972, y: 0.17927909}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,7 +135,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2472032, y: 1.2589748}
+  m_Size: {x: 4.348712, y: 3.9864092}
   m_EdgeRadius: 0
 --- !u!50 &4215457269799052540
 Rigidbody2D:
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3406007459769713388
+--- !u!114 &-8243731679230695065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,9 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0035bbb22d561d34e8d42243a03598db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: 1
-  number: 4
-  loopNumber: 0
+  data: {fileID: 11400000, guid: e176393958e8d624da089a7feac19d15, type: 2}
   isBeingPlaced: 0
   loc: 0
   neighbours: []
@@ -258,7 +256,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 111887145, guid: efe3eb2546aeb1e4b9c51023cc68eb0f, type: 3}
+  m_Sprite: {fileID: -233647109, guid: 3d5b12c5919186d4d86f0a2724d0fa44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
