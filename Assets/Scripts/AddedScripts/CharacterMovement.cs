@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] public GameObject collision_left;
     [SerializeField] public GameObject collision_right;
     private float walkSpeed = 7f;
-    private bool isMoving = false;
+    [SerializeField] private bool isMoving = false;
     private Vector2 targetPosition;
 
     public void OnWalk_Up()
@@ -59,7 +59,6 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (isMoving)

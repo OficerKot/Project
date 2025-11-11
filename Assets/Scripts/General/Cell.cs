@@ -136,7 +136,10 @@ public class Cell : MonoBehaviour, ICell
 
     public void NoHighlight()
     {
-        cellSprite.color = previousColor;
+        if (cellSprite)
+        {
+            cellSprite.color = previousColor;
+        }
     }
     public bool IsNeighbour(Cell obj)
     {
