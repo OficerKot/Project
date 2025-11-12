@@ -15,12 +15,27 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private bool isMoving = false;
     private Vector2 targetPosition;
 
+    void OnEnable()
+    {
+        GameManager.OnGameStateChanged += OnGameStateChanged;
+    }
+
+    void OnDisable()
+    {
+        GameManager.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+    void OnGameStateChanged(bool isGameOver)
+    {
+        enabled = !isGameOver;
+    }
     public void OnWalk_Up()
     {
         Debug.Log("Trying to walk upwards");
         if (up_available && !isMoving)
         {
-            Debug.Log("Walked!");
+            Hunger.Instance.MakeStep();
+            Clock.Instance.TimeTick();
             targetPosition = new Vector2(transform.position.x, collision_up.transform.position.y);
             isMoving = true;
         }
@@ -31,7 +46,8 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("Trying to walk downwards");
         if (down_available && !isMoving)
         {
-            Debug.Log("Walked!");
+            Hunger.Instance.MakeStep();
+            Clock.Instance.TimeTick();
             targetPosition = new Vector2(transform.position.x, collision_down.transform.position.y);
             isMoving = true;
         }
@@ -42,7 +58,8 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("Trying to walk left");
         if (left_available && !isMoving)
         {
-            Debug.Log("Walked!");
+            Hunger.Instance.MakeStep();
+            Clock.Instance.TimeTick();
             targetPosition = new Vector2(collision_left.transform.position.x, transform.position.y);
             isMoving = true;
         }
@@ -53,7 +70,8 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("Trying to walk right");
         if (right_available && !isMoving)
         {
-            Debug.Log("Walked!");
+            Hunger.Instance.MakeStep();
+            Clock.Instance.TimeTick();
             targetPosition = new Vector2(collision_right.transform.position.x, transform.position.y);
             isMoving = true;
         }
