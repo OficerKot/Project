@@ -519,6 +519,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!1 &66464930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4757027539769406566, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
+  m_PrefabInstance: {fileID: 867935523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &82457703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3044,7 +3049,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6.673077
+  orthographic size: 6.923077
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6588,7 +6593,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1695712737904718053, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1695712737904718053, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14297,6 +14302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f726f6a2571aa4f9e3d0083dc133b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 66464930}
   emptinnes: {fileID: 0}
   tree: {fileID: 6050633511597488391, guid: 74cd7a7384546404985bada8dbe8b825, type: 3}
   bush_berries: {fileID: 1823821977916891402, guid: be6376841292d1c4aa683defa1d360cb, type: 3}
