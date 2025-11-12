@@ -1,11 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class UIInventory : MonoBehaviour
 {
     [SerializeField] GameObject inventory;
-    [SerializeField] UIInventoryCell[] cells = new UIInventoryCell[6];
-    
+    public UIInventoryCell[] cellsList;
+    Dictionary<UIInventoryCell, ItemData> cells = new Dictionary<UIInventoryCell, ItemData>();
+
     [SerializeField] Button inventoryButton;
 
     public static UIInventory Instance;
@@ -13,7 +16,7 @@ public class UIInventory : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -24,15 +27,20 @@ public class UIInventory : MonoBehaviour
 
     }
 
-  
+
     void Start()
     {
+        for (int i = 0; i < Inventory.MAX_SIZE; i++)
+        {
+            cells.Add(cellsList[i], null);
+        }
+
         inventoryButton.onClick.AddListener(Interact);
     }
 
     void Interact()
     {
-        if(!isOpened)
+        if (!isOpened)
         {
             isOpened = true;
             Open();
@@ -44,25 +52,58 @@ public class UIInventory : MonoBehaviour
         }
     }
 
-    public void AddNewItem(ItemData i, int cellIndx)
+    public void AddNewItem(ItemData item)
     {
-        if(!isOpened) inventory.SetActive(true);
-        cells[cellIndx].PutItem(Instantiate(i.UIprefab, GameObject.Find("InventoryInterface").transform));
-        if(!isOpened) inventory.SetActive(false);
+        if (!isOpened) inventory.SetActive(true);
+        for (int i = 0; i < cells.Count; i++)
+        {
+            UIInventoryCell cell = cellsList[i];
+            if (cells[cell]) continue;
+            else
+            {
+                cells[cell] = item;
+                cell.PutItem(Instantiate(item.UIprefab, GameObject.Find("InventoryInterface").transform));
+                break;
+            }
+        }
+
+        if (!isOpened) inventory.SetActive(false);
     }
 
-    public void AddOneMoreItem(int cellIndx)
+    public void AddOneMoreItem(ItemData item)
     {
-        cells[cellIndx].AddToCounter(1);
+        for (int i = 0; i < cells.Count; i++)
+        {
+            UIInventoryCell cell = cellsList[i];
+            if (cells[cell] == item)
+            {
+                cell.AddToCounter(1);
+            }
+        }
     }
 
-    public void RemoveOneItem(int cellIndx)
+    public void RemoveOneItem(ItemData item)
     {
-        cells[cellIndx].AddToCounter(-1);
+        for (int i = 0; i < cells.Count; i++)
+        {
+            UIInventoryCell cell = cellsList[i];
+            if (cells[cell] == item)
+            {
+                cell.AddToCounter(-1);
+            }
+        }
     }
-    public void RemoveItemIcon(int cellIndx)
+    public void RemoveItemIcon(ItemData item)
     {
-        cells[cellIndx].RemoveItem();
+        for (int i = 0; i < cells.Count; i++)
+        {
+            UIInventoryCell cell = cellsList[i];
+            if (cells[cell] == item)
+            {
+                cells[cell] = null;
+                cell.RemoveItem();
+            }
+        }
     }
     void Open()
     {
