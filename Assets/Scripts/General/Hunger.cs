@@ -47,7 +47,10 @@ public class Hunger : MonoBehaviour
             GameManager.Instance.SetGameOver(true);
             enabled = false;
         }
-        thisImage.sprite = hungerLevels[hungerLevel];
+        else
+        {
+            thisImage.sprite = hungerLevels[hungerLevel];
+        }
     }
 
     void HungerUp()
