@@ -2180,6 +2180,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!1 &317317341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4757027539769406566, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
+  m_PrefabInstance: {fileID: 867935523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &338950027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3119,7 +3124,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.5384617
+  orthographic size: 6.923077
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -14712,13 +14717,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1819308526}
   - component: {fileID: 1819308525}
+  - component: {fileID: 1819308527}
   m_Layer: 0
-  m_Name: Obstacles
+  m_Name: Obstacles_Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1819308525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14731,6 +14737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f726f6a2571aa4f9e3d0083dc133b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 317317341}
   emptinnes: {fileID: 0}
   tree: {fileID: 6050633511597488391, guid: 74cd7a7384546404985bada8dbe8b825, type: 3}
   bush_berries: {fileID: 1823821977916891402, guid: be6376841292d1c4aa683defa1d360cb, type: 3}
@@ -14751,6 +14758,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1819308527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819308524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10d1e2cdcaaafd41ade0b9910bed108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items_count: 100
+  itemTypes:
+  - {fileID: 3265742574692647083, guid: c7cd187c912062547af4966c715b0cdb, type: 3}
+  - {fileID: 3265742574692647083, guid: 4622bf30394bacb44860fa0292e49194, type: 3}
+  - {fileID: 3265742574692647083, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
+  - {fileID: 4583192258502654501, guid: 5adda76f984dfa5448e2c6b215160dc2, type: 3}
+  - {fileID: 3265742574692647083, guid: 4fe8c79aac65b7245bcded13c58df06a, type: 3}
+  - {fileID: 3265742574692647083, guid: 95c326a8d13e99244b939054adf1476e, type: 3}
 --- !u!1001 &1826343154
 PrefabInstance:
   m_ObjectHideFlags: 0
