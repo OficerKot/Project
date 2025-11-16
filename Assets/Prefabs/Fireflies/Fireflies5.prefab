@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b430eb7baafe4a4a8bd84ccce0745ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: d70a1cd1e827d8a4abc4e0cae03dd193, type: 2}
+  data: {fileID: 0}
   isBeingPlaced: 0
   loc: 0
   neighbours: []

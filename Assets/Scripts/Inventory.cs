@@ -5,9 +5,8 @@ using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
-    const int MAX_SIZE = 6;
-    [SerializeField] List<string> itemsID = new List<string>();
-    [SerializeField] int[] itemsCount = { 0, 0, 0, 0, 0, 0 };
+    public const int MAX_SIZE = 6;
+    [SerializeField] Dictionary<string, int> itemsID = new Dictionary<string, int>();
     public static Inventory Instance;
 
     private void Awake()
@@ -29,31 +28,29 @@ public class Inventory : MonoBehaviour
     {
         if(itemsID.Count < MAX_SIZE)
         {
-            int indx = itemsID.FindIndex(itemm => itemm == i.GetID());
             ItemData item = ItemManager.Instance.GetItemByID(i.GetID());
-            if (indx == -1)
+            if (!itemsID.ContainsKey(i.GetID()))
             {
-                itemsID.Add(item.itemId);
-                indx = itemsID.FindIndex(itemm => itemm == item.itemId);
-                UIInventory.Instance.AddNewItem(item, indx);
+                itemsID.Add(item.itemId, 0);
+                UIInventory.Instance.AddNewItem(item);
             }
-            itemsCount[indx]++;
-            UIInventory.Instance.AddOneMoreItem(indx);
+            itemsID[i.GetID()]++;
+            UIInventory.Instance.AddOneMoreItem(item);
         }
     }
 
     public void RemoveItem(Item i)
     {
-        int indx = itemsID.FindIndex(item => item == i.GetID());
-        if (indx != -1)
+        ItemData item = ItemManager.Instance.GetItemByID(i.GetID());
+        if (itemsID.ContainsKey(i.GetID()))
         {
-            itemsCount[indx]--;
-            UIInventory.Instance.RemoveOneItem(indx);
+            itemsID[i.GetID()]--;
+            UIInventory.Instance.RemoveOneItem(item);
 
-            if (itemsCount[indx] < 1)
+            if (itemsID[i.GetID()]< 1)
             {
-                UIInventory.Instance.RemoveItemIcon(indx);
-                itemsID.RemoveAt(indx);
+                UIInventory.Instance.RemoveItemIcon(item);
+                itemsID.Remove(i.GetID());
             }
       
         }

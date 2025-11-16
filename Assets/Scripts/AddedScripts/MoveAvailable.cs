@@ -2,27 +2,29 @@ using UnityEngine;
 
 public class MoveAvailable : MonoBehaviour
 {
-    private Collider2D collider;
+    private Collider2D collider_;
     private CharacterMovement characterMovement;
-    private DominoBone dominoScript;
+    private DominoPart dominoScript;
     public char Direction;
 
     void Awake()
     {
         
-        characterMovement = this.transform.parent.GetComponent<CharacterMovement>();
-        collider = GetComponent<Collider2D>();
+        characterMovement = transform.parent.GetComponent<CharacterMovement>();
+        collider_ = GetComponent<Collider2D>();
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Path")
         {
+            Debug.Log("Path found!");
             switch (Direction)
             {
                 case 'U':
                     {
-                        dominoScript = other.transform.GetComponent<DominoBone>();
+                        dominoScript = other.transform.GetComponent<DominoPart>();
+                        Debug.Log($"DominoPart is {dominoScript}");
                         if (dominoScript.IsBeingPlaced())
                         {
                             characterMovement.up_available = true;
@@ -32,7 +34,7 @@ public class MoveAvailable : MonoBehaviour
                     }
                 case 'D':
                     {
-                        dominoScript = other.transform.GetComponent<DominoBone>();
+                        dominoScript = other.transform.GetComponent<DominoPart>();
                         if (dominoScript.IsBeingPlaced())
                         {
                             characterMovement.down_available = true;
@@ -42,7 +44,7 @@ public class MoveAvailable : MonoBehaviour
                     }
                 case 'L':
                     {
-                        dominoScript = other.transform.GetComponent<DominoBone>();
+                        dominoScript = other.transform.GetComponent<DominoPart>();
                         if (dominoScript.IsBeingPlaced())
                         {
                             characterMovement.left_available = true;
@@ -52,7 +54,7 @@ public class MoveAvailable : MonoBehaviour
                     }
                 case 'R':
                     {
-                        dominoScript = other.transform.GetComponent<DominoBone>();
+                        dominoScript = other.transform.GetComponent<DominoPart>();
                         if (dominoScript.IsBeingPlaced())
                         {
                             characterMovement.right_available = true;

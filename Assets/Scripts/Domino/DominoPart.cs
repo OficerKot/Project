@@ -2,15 +2,9 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
-public enum ImageEnumerator
-{
-    any, bone
-}
-
 interface IDominoPart
 {
-    public abstract void Property();
-    public ImageEnumerator GetImage();
+    public void Property();
     public void ChangeIsBeingPlacedFlag(bool val);
     public bool IsBeingPlaced();
     public void ClearAllNeighbors();
@@ -22,12 +16,10 @@ public enum Location
     left, right, up, down 
 };
 
-public abstract class DominoPart : MonoBehaviour, IDominoPart
-{ 
-    [SerializeField] ImageEnumerator image;
-
-    [SerializeField] int number;
-    [SerializeField] int loopNumber = 0;
+public class DominoPart : MonoBehaviour, IDominoPart
+{
+    public DominoData data;
+    int loopNumber = 0;
 
     [SerializeField] bool isBeingPlaced = false;
 
@@ -37,7 +29,10 @@ public abstract class DominoPart : MonoBehaviour, IDominoPart
 
 
 
-    public abstract void Property();
+    public virtual void Property()
+    {
+        //do nothing
+    }
 
     public void ChangeLocation(Location l)
     {
@@ -48,10 +43,6 @@ public abstract class DominoPart : MonoBehaviour, IDominoPart
     {
         return loc;
     }
-    public ImageEnumerator GetImage()
-    {
-        return image;
-    }
 
     public int GetLoopNumber()
     {
@@ -61,10 +52,6 @@ public abstract class DominoPart : MonoBehaviour, IDominoPart
     public void SetLoopNumber(int n)
     {
         loopNumber = n;
-    }
-    public int GetNumber()
-    {
-        return number;
     }
     public void ChangeIsBeingPlacedFlag(bool val)
     {
