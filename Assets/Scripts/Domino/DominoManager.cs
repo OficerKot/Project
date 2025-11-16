@@ -23,7 +23,7 @@ public class DominoManager : ScriptableObject
     }
 
 }
-public enum Image
+public enum ImageEnumerator
 {
     any, bone, fireflies
 }

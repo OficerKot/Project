@@ -24,7 +24,7 @@ public class Cell : MonoBehaviour, ICell
     [SerializeField] public DominoPart curDomino;
     [SerializeField] Item curItem;
 
-    [SerializeField] Image image = Image.any;
+    [SerializeField] ImageEnumerator image = ImageEnumerator.any;
     [SerializeField] int number = 0;
     // ------------------------------------------------------------------------------
     [SerializeField] public  List<Cell> neighbourCells = new List<Cell>();
@@ -78,7 +78,7 @@ public class Cell : MonoBehaviour, ICell
         curItem = null;
         UnsetUmageToAllNeighbours();
 
-        image = Image.any;
+        image = ImageEnumerator.any;
         number = 0;
 
     }
@@ -91,7 +91,7 @@ public class Cell : MonoBehaviour, ICell
     {
         foreach (Cell neighbour in neighbourCells)
         {
-            if (neighbour && neighbour.GetImage() == Image.any)
+            if (neighbour && neighbour.GetImage() == ImageEnumerator.any)
             {
                 neighbour.SetImage(image);
                 neighbour.SetNumber(number);
@@ -105,17 +105,17 @@ public class Cell : MonoBehaviour, ICell
         {
             if (neighbour && neighbour.GetImage() == image && !neighbour.GetCurDomino())
             {
-                neighbour.SetImage(Image.any);
+                neighbour.SetImage(ImageEnumerator.any);
                 neighbour.SetNumber(0);
             }
         }
     }
-    public void SetImage(Image i)
+    public void SetImage(ImageEnumerator i)
     {
         image = i;
     }
 
-    public Image GetImage()
+    public ImageEnumerator GetImage()
     {
         return image;
     }

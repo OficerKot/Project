@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: e5090fac051df5f46bb680735db6fe50
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6285086123478972082
+    second: Hunger_0
+  - first:
+      213: -5421042841466630134
+    second: Hunger_1
+  - first:
+      213: 3875212583637403130
+    second: Hunger_2
+  - first:
+      213: 6726919738809185765
+    second: Hunger_3
+  - first:
+      213: 3776763796409267940
+    second: Hunger_4
+  - first:
+      213: 4690442463143370225
+    second: Hunger_5
+  - first:
+      213: -5076371913037503330
+    second: Hunger_6
+  - first:
+      213: 5215683185740619183
+    second: Hunger_7
+  - first:
+      213: 2163281357293110895
+    second: Hunger_8
+  - first:
+      213: -8515421598822122591
+    second: Hunger_9
+  - first:
+      213: -2598578319601732988
+    second: Hunger_10
+  - first:
+      213: 1931735236109973969
+    second: Hunger_11
+  - first:
+      213: 8327254976739646860
+    second: Hunger_12
+  - first:
+      213: 4835780882307985608
+    second: Hunger_13
+  - first:
+      213: 6572689532687725886
+    second: Hunger_14
+  - first:
+      213: -445117531141181405
+    second: Hunger_15
+  - first:
+      213: -7490596056378533075
+    second: Hunger_16
+  - first:
+      213: 2373983038914184848
+    second: Hunger_17
+  - first:
+      213: 3079438140378036806
+    second: Hunger_18
+  - first:
+      213: -2710075947654361695
+    second: Hunger_19
+  - first:
+      213: -6163387775716067268
+    second: Hunger_20
+  - first:
+      213: 8176986165000885713
+    second: Hunger_21
+  - first:
+      213: 5047905177127129055
+    second: Hunger_22
+  - first:
+      213: 5987632771474677841
+    second: Hunger_23
+  - first:
+      213: 202656519061262637
+    second: Hunger_24
+  - first:
+      213: 8681093753864298054
+    second: Hunger_25
+  - first:
+      213: 2806971851167365185
+    second: Hunger_26
+  - first:
+      213: -7932762478905276599
+    second: Hunger_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hunger_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 185
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e498c437873e6c8a0800000000000000
+      internalID: -6285086123478972082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 154
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a001532f14694c4b0800000000000000
+      internalID: -5421042841466630134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_2
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 185
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af5c4d4205587c530800000000000000
+      internalID: 3875212583637403130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 154
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5f8489cd1da5d50800000000000000
+      internalID: 6726919738809185765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_4
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 185
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e6b785a9a2c96430800000000000000
+      internalID: 3776763796409267940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_5
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 154
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd9117b19cc71140800000000000000
+      internalID: 4690442463143370225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_6
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 185
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9421af04aa1d89b0800000000000000
+      internalID: -5076371913037503330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_7
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 154
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad1c0b3934d16840800000000000000
+      internalID: 5215683185740619183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 123
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f664ea2dee4850e10800000000000000
+      internalID: 2163281357293110895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abb4892c2523d980800000000000000
+      internalID: -8515421598822122591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 123
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 1, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4827b1349ceffebd0800000000000000
+      internalID: -2598578319601732988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_11
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 92
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d9b07466f6eeca10800000000000000
+      internalID: 1931735236109973969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_12
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 123
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d9baa184a509370800000000000000
+      internalID: 8327254976739646860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_13
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 92
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0b79567152c1340800000000000000
+      internalID: 4835780882307985608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_14
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 123
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e35b7ce6e42e63b50800000000000000
+      internalID: 6572689532687725886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_15
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 92
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320f709b6ff92d9f0800000000000000
+      internalID: -445117531141181405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 61
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b9d97d29e0c0890800000000000000
+      internalID: -7490596056378533075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0964849fef412f020800000000000000
+      internalID: 2373983038914184848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_18
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 61
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64ab5015cac5cba20800000000000000
+      internalID: 3079438140378036806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_19
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 30
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ad4bb1c840e36ad0800000000000000
+      internalID: -2710075947654361695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_20
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 61
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c387577197f377aa0800000000000000
+      internalID: -6163387775716067268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_21
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 30
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d55922f79d7a7170800000000000000
+      internalID: 8176986165000885713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_22
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 61
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdf848e7303cd0640800000000000000
+      internalID: 5047905177127129055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_23
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 30
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1506c352848581350800000000000000
+      internalID: 5987632771474677841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d215016c70bffc200800000000000000
+      internalID: 202656519061262637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_25
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64e91f456c0797870800000000000000
+      internalID: 8681093753864298054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_26
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 0
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 1, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148f953d60e54f620800000000000000
+      internalID: 2806971851167365185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunger_27
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 947cd451e8a29e190800000000000000
+      internalID: -7932762478905276599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a86f88219eed75f4fb37cff5b72c4e3f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hunger_0: -6285086123478972082
+      Hunger_1: -5421042841466630134
+      Hunger_10: -2598578319601732988
+      Hunger_11: 1931735236109973969
+      Hunger_12: 8327254976739646860
+      Hunger_13: 4835780882307985608
+      Hunger_14: 6572689532687725886
+      Hunger_15: -445117531141181405
+      Hunger_16: -7490596056378533075
+      Hunger_17: 2373983038914184848
+      Hunger_18: 3079438140378036806
+      Hunger_19: -2710075947654361695
+      Hunger_2: 3875212583637403130
+      Hunger_20: -6163387775716067268
+      Hunger_21: 8176986165000885713
+      Hunger_22: 5047905177127129055
+      Hunger_23: 5987632771474677841
+      Hunger_24: 202656519061262637
+      Hunger_25: 8681093753864298054
+      Hunger_26: 2806971851167365185
+      Hunger_27: -7932762478905276599
+      Hunger_3: 6726919738809185765
+      Hunger_4: 3776763796409267940
+      Hunger_5: 4690442463143370225
+      Hunger_6: -5076371913037503330
+      Hunger_7: 5215683185740619183
+      Hunger_8: 2163281357293110895
+      Hunger_9: -8515421598822122591
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

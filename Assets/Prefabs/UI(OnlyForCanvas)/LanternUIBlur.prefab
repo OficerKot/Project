@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4516779902098114515}
   - component: {fileID: 901287241429099248}
   - component: {fileID: 4685095358609083019}
-  - component: {fileID: 8086363934503132018}
   m_Layer: 5
   m_Name: LanternUIBlur
   m_TagString: Untagged
@@ -26,9 +25,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2327981576560635462}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4645377, y: 0.4645377, z: 0.4645377}
+  m_LocalScale: {x: 0.9901157, y: 0.9901157, z: 0.9901157}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,17 +75,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8086363934503132018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2327981576560635462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ec269458851ab84dbe08e4445763c7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: lantern
-  blurImage: {fileID: 0}
