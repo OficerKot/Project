@@ -15,5 +15,5 @@ MonoBehaviour:
   dominoId: fireflies
   number: 2
   image: 2
-  prefab: {fileID: 6563017092507824485, guid: 063797187c67bcd4689f09daabe1a834, type: 3}
+  prefab: {fileID: 4689632754707460671, guid: 0dc9565235dbe444fb854e65e0d201ee, type: 3}
   UIprefab: {fileID: 4894664409230234025, guid: d72adc37be768b144b740d6221420476, type: 3}
