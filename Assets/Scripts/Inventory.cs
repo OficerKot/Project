@@ -31,31 +31,36 @@ public class Inventory : MonoBehaviour
             ItemData item = ItemManager.Instance.GetItemByID(i.GetID());
             if (!itemsID.ContainsKey(i.GetID()))
             {
-                itemsID.Add(item.itemId, 0);
+                itemsID.Add(item.Id, 0);
                 UIInventory.Instance.AddNewItem(item);
             }
             itemsID[i.GetID()]++;
             UIInventory.Instance.AddOneMoreItem(item);
+            UICraftWindow.Instance.CheckInventory();
         }
     }
 
-    public void RemoveItem(Item i)
+    public void RemoveItem(ItemData i)
     {
-        ItemData item = ItemManager.Instance.GetItemByID(i.GetID());
-        if (itemsID.ContainsKey(i.GetID()))
+        if (itemsID.ContainsKey(i.Id))
         {
-            itemsID[i.GetID()]--;
-            UIInventory.Instance.RemoveOneItem(item);
+            itemsID[i.Id]--;
+            UIInventory.Instance.RemoveOneItem(i);
 
-            if (itemsID[i.GetID()]< 1)
+            if (itemsID[i.Id]< 1)
             {
-                UIInventory.Instance.RemoveItemIcon(item);
-                itemsID.Remove(i.GetID());
+                UIInventory.Instance.RemoveItemIcon(i);
+                itemsID.Remove(i.Id);
             }
       
         }
+        UICraftWindow.Instance.CheckInventory();
     }
 
+    public Dictionary<string, int> GetCurItems()
+    {
+        return itemsID;
+    }
     public bool isFull()
     {
         return itemsID.Count >= MAX_SIZE;

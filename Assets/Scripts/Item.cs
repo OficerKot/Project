@@ -4,13 +4,13 @@ using UnityEngine.EventSystems;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] string itemID;
+    [SerializeField] string ID;
     [SerializeField] Cell curCell;
     bool isPlaced = true;
 
     private void Start()
     {
-        if(curCell) // то есть сами поставили вручную перед запуском на какую то клетку
+        if(curCell) // сами поставили вручную перед запуском на какую то клетку
         {
             curCell.SetCurItem(this);
             curCell.SetFree(false);
@@ -72,9 +72,9 @@ public class Item : MonoBehaviour
     }
     public string GetID()
     {
-        return itemID;
+        return ID;
     }
-    void Pick() // собрать с клетки
+    public void Pick()
     {
         Inventory.Instance.AddItem(this);
         Destroy(gameObject);
@@ -87,12 +87,11 @@ public class Item : MonoBehaviour
         isPlaced = true;
         transform.position = curCell.transform.position;
         transform.Translate(0, 0, -curCell.transform.position.z);
-        Inventory.Instance.RemoveItem(this);
+        Inventory.Instance.RemoveItem(ItemManager.Instance.GetItemByID(ID));
         GameManager.Instance.PutInHand(null);
     }
 
-  
-    void Move() // перемещать (когда нажали на иконку)
+    void Move() 
     {
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         targetPos.z = 0;

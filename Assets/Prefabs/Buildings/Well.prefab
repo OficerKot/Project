@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6087920031629599462}
   - component: {fileID: 5104395357491924321}
   - component: {fileID: 4440623275217405271}
-  - component: {fileID: 1237662509407897279}
   - component: {fileID: 1051257574510345545}
   - component: {fileID: 4723998710663762748}
+  - component: {fileID: 5581491808778375710}
   m_Layer: 0
-  m_Name: Berry
+  m_Name: Well
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1857098683815264378, guid: bcbd90db91fc6844a97f8419b80f2b22, type: 3}
+  m_Sprite: {fileID: 2955286255927101427, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.88461536, y: 0.9230769}
+    oldSize: {x: 0.25, y: 0.26}
     newSize: {x: 0.25, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -137,20 +137,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8874216, y: 0.91714525}
   m_EdgeRadius: 0
---- !u!114 &1237662509407897279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f840c950cfd432489fab1ce0a91da23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: berry
-  curCell: {fileID: 0}
 --- !u!50 &1051257574510345545
 Rigidbody2D:
   serializedVersion: 5
@@ -191,3 +177,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+--- !u!114 &5581491808778375710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265742574692647083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579856d0f88bd624f82f9d884e3e072b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: well
+  curCell: {fileID: 0}
+  proizvoditelnost: 2
+  health: 100

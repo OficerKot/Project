@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f840c950cfd432489fab1ce0a91da23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: lantern
+  ID: lantern
   curCell: {fileID: 0}
 --- !u!61 &3915341601133718543
 BoxCollider2D:

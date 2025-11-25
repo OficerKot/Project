@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0e4706a87c386054db01ee355288b112
+guid: dfe334fcf6def1f49b59f065d95d3aae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1892718998328519320
-    second: Light 8x8_0
+      213: 7236574293015224457
+    second: solid_round_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 26
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Light 8x8_0
+      name: solid_round_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 1
-        width: 218
-        height: 221
+        x: 50
+        y: 51
+        width: 5499
+        height: 5499
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 89a2103a6e9444a10800000000000000
-      internalID: 1892718998328519320
+      spriteID: 98065ed7af97d6460800000000000000
+      internalID: 7236574293015224457
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Light 8x8_0: 1892718998328519320
+      solid_round_0: 7236574293015224457
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

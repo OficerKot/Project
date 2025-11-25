@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: cd9d986d4603c4747bc960107ec645e1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - objectToSpawn: {instanceID: 0}
+  - craftPanelPrefab: {fileID: 510867498357940643, guid: 0b2cac63a6f856242b9cf51a7805c7bb, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

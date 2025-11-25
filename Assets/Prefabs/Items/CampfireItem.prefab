@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f840c950cfd432489fab1ce0a91da23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: campfire
+  ID: campfire
   curCell: {fileID: 0}
 --- !u!50 &1051257574510345545
 Rigidbody2D:
