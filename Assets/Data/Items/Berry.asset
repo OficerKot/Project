@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec55d87d3200afc46bb8387d3236c69e, type: 3}
   m_Name: Berry
   m_EditorClassIdentifier: 
-  itemId: berry
+  Id: berry
   prefab: {fileID: 3265742574692647083, guid: 4622bf30394bacb44860fa0292e49194, type: 3}
   UIprefab: {fileID: 2342191990407282095, guid: 5480fe3d9f74dd04dadbfc5a81c5d8ae, type: 3}
+  itemsForCraft: []

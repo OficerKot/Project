@@ -14,7 +14,7 @@ public class ItemManager : ScriptableObject
     }
     public ItemData GetItemByID(string id)
     {
-        return System.Array.Find(allItems, item => item.itemId == id);
+        return System.Array.Find(allItems, item => item.Id == id);
     }
 
 }

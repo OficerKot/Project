@@ -24,38 +24,42 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public void AddItem(Item i)
+    public void AddItem(ItemData i)
     {
         if(itemsID.Count < MAX_SIZE)
         {
-            ItemData item = ItemManager.Instance.GetItemByID(i.GetID());
-            if (!itemsID.ContainsKey(i.GetID()))
+            if (!itemsID.ContainsKey(i.Id))
             {
-                itemsID.Add(item.itemId, 0);
-                UIInventory.Instance.AddNewItem(item);
+                itemsID.Add(i.Id, 0);
+                UIInventory.Instance.AddNewItem(i);
             }
-            itemsID[i.GetID()]++;
-            UIInventory.Instance.AddOneMoreItem(item);
+            itemsID[i.Id]++;
+            UIInventory.Instance.AddOneMoreItem(i);
+            UICraftWindow.Instance.CheckInventory(i);
         }
     }
 
-    public void RemoveItem(Item i)
+    public void RemoveItem(ItemData i)
     {
-        ItemData item = ItemManager.Instance.GetItemByID(i.GetID());
-        if (itemsID.ContainsKey(i.GetID()))
+        if (itemsID.ContainsKey(i.Id))
         {
-            itemsID[i.GetID()]--;
-            UIInventory.Instance.RemoveOneItem(item);
+            itemsID[i.Id]--;
+            UIInventory.Instance.RemoveOneItem(i);
 
-            if (itemsID[i.GetID()]< 1)
+            if (itemsID[i.Id]< 1)
             {
-                UIInventory.Instance.RemoveItemIcon(item);
-                itemsID.Remove(i.GetID());
+                UIInventory.Instance.RemoveItemIcon(i);
+                itemsID.Remove(i.Id);
             }
       
         }
+        UICraftWindow.Instance.CheckInventory(i);
     }
 
+    public Dictionary<string, int> GetCurItems()
+    {
+        return itemsID;
+    }
     public bool isFull()
     {
         return itemsID.Count >= MAX_SIZE;

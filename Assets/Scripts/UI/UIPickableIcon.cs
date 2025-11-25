@@ -5,7 +5,7 @@ public class UIPickableIcon : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] string itemId;
     GameObject spawnedPlayable;
-    [SerializeField] GameObject blurImage;
+    [SerializeField] GameObject blurImage = null;
 
 
     private void Update()
@@ -28,14 +28,14 @@ public class UIPickableIcon : MonoBehaviour, IPointerClickHandler
             if (GameManager.Instance.WhatInHand() == null)
             {
                 GameManager.Instance.PutInHand(gameObject);
-                blurImage.SetActive(true);
+                if(blurImage) blurImage.SetActive(true);
                 Grab();
             }
         }
         else
         {
             GameManager.Instance.PutInHand(null);
-            blurImage.SetActive(false);
+            if(blurImage) blurImage.SetActive(false);
             Destroy(spawnedPlayable);
         }
     }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec55d87d3200afc46bb8387d3236c69e, type: 3}
+  m_Name: Well
+  m_EditorClassIdentifier: 
+  Id: well
+  prefab: {fileID: 3265742574692647083, guid: d93170bf50134744487c5f080358e1f7, type: 3}
+  UIprefab: {fileID: 2342191990407282095, guid: 6e6808b4508ac0b4184ba4a10dccc777, type: 3}
+  itemsForCraft:
+  - {fileID: 11400000, guid: 798a0125585a54a45bd5212e968cabfb, type: 2}
