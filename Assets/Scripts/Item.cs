@@ -76,8 +76,12 @@ public class Item : MonoBehaviour
     }
     public void Pick()
     {
-        Inventory.Instance.AddItem(this);
-        Destroy(gameObject);
+        if (!Inventory.Instance.isFull())
+        {
+            Inventory.Instance.AddItem(ItemManager.Instance.GetItemByID(ID));
+            Destroy(gameObject);
+        }
+        else Debug.Log("FULL INVENTORY!!!");
     }
 
     void PutInCell()

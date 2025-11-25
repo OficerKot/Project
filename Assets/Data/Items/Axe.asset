@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec55d87d3200afc46bb8387d3236c69e, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  itemId: axe
+  Id: axe
   prefab: {fileID: 3265742574692647083, guid: c7cd187c912062547af4966c715b0cdb, type: 3}
   UIprefab: {fileID: 2342191990407282095, guid: 53ea1168a2a54a94b8ee01daee40930b, type: 3}
+  itemsForCraft: []

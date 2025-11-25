@@ -26,8 +26,6 @@ public class UIInventory : MonoBehaviour
         }
 
     }
-
-
     void Start()
     {
         for (int i = 0; i < Inventory.MAX_SIZE; i++)

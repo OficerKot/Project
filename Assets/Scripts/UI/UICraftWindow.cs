@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Timeline;
@@ -11,7 +12,7 @@ public class UICraftWindow : MonoBehaviour
     [SerializeField] GameObject menuObject;
     [SerializeField] GameObject curWindow;
     [SerializeField] List<Button> categoryButtons, spawnerButtons;
-    public List<ItemData> availableItems = new List<ItemData>();
+    public HashSet<ItemData> availableItems = new HashSet<ItemData>();
     bool isMenuOpen = false;
 
     private void Awake()
@@ -92,11 +93,12 @@ public class UICraftWindow : MonoBehaviour
         if (availableItems.Contains(obj))
         {
             GameObject spawnedObj = Instantiate(obj.prefab, transform.position, transform.rotation);
-            spawnedObj.GetComponent<Item>().Pick();
-            foreach(ItemData i in obj.itemsForCraft)
+            foreach (ItemData i in obj.itemsForCraft)
             {
                 Inventory.Instance.RemoveItem(i);
             }
+            spawnedObj.GetComponent<Item>().Pick();
+            CheckInventory();
             CloseMenu();
         }
         else Debug.Log("You don't have all items to craft it!");
@@ -104,17 +106,43 @@ public class UICraftWindow : MonoBehaviour
 
     public void CheckInventory()
     {
-        HashSet<ItemData> items = new HashSet<ItemData>();
+        HashSet<ItemData> itemsInInventory = new HashSet<ItemData>();
         foreach (string id in Inventory.Instance.GetCurItems().Keys)
         {
-            items.Add(ItemManager.Instance.GetItemByID(id));
+            itemsInInventory.Add(ItemManager.Instance.GetItemByID(id));
         }
         foreach (Button b in spawnerButtons)
         {
             ItemData obj = b.GetComponent<ItemSpawnerButton>().objectToSpawn;
-            if (obj.craftSet.IsSubsetOf(items)) 
+            if (obj.craftSet.IsSubsetOf(itemsInInventory))
             {
                 availableItems.Add(obj);
+                b.gameObject.SetActive(true);
+            }
+            else
+            {
+                availableItems.Remove(obj);
+            }
+        }
+    }
+    public void CheckInventory(ItemData added)
+    {
+        HashSet<ItemData> itemsInInventory = new HashSet<ItemData>();
+        foreach (string id in Inventory.Instance.GetCurItems().Keys)
+        {
+            itemsInInventory.Add(ItemManager.Instance.GetItemByID(id));
+        }
+        foreach (Button b in spawnerButtons)
+        {
+            ItemData obj = b.GetComponent<ItemSpawnerButton>().objectToSpawn;
+            if (obj.craftSet.IsSubsetOf(itemsInInventory))
+            {
+                availableItems.Add(obj);
+                b.gameObject.SetActive(true);
+            }
+            else if (obj.craftSet.Contains(added))
+            {
+                b.gameObject.SetActive(true);
             }
             else
             {
