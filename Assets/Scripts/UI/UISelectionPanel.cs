@@ -6,9 +6,10 @@ public class UISelectionPanel : MonoBehaviour
     [SerializeField] List<GameObject> spawnedUIDomino = new List<GameObject>();
     public static UISelectionPanel Instance;
     [SerializeField] GameObject UIDominoPrefab;
-    float YPos = -170;
-    float XPos = 3;
-    float XOffset = 50;
+    const int DOMINO_CNT = 5;
+    public float YPos = -170;
+    public float XPos = 5;
+    public float XOffset = 50;
 
     private void Awake()
     {
@@ -21,12 +22,40 @@ public class UISelectionPanel : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnEnable()
+    {
+        GameManager.OnGameStateChanged += OnGameStateChanged;
+    }
+
+    void OnDisable()
+    {
+        GameManager.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+    void OnGameStateChanged(bool isGameOver)
+    {
+        enabled = !isGameOver;
+    }
     private void Start()
     {
-        SpawnNewUIDomino(new Vector3(XPos, YPos, 0));
-        SpawnNewUIDomino(new Vector3(XPos + XOffset, YPos, 0));
-        SpawnNewUIDomino(new Vector3(XPos - XOffset, YPos, 0));
-        SpawnNewUIDomino(new Vector3(XPos - 2*XOffset, YPos, 0));
+        GeneratePanel();
+    }
+
+    public void GeneratePanel()
+    {
+        if(spawnedUIDomino.Count != 0)
+        {
+            foreach (var c in spawnedUIDomino)
+            {
+                Hunger.Instance.MakeStep();
+                Destroy(c);
+            }
+            spawnedUIDomino.Clear();
+        }
+        for (int i = 0; i < DOMINO_CNT; i++)
+        {
+            SpawnNewUIDomino(new Vector3(XPos + i * XOffset, YPos, 0));
+        }
     }
     public void SpawnNewUIDomino(Vector3 pos)
     {
@@ -37,10 +66,6 @@ public class UISelectionPanel : MonoBehaviour
         spawnedUIDomino.Add(newDomino);
     }
 
-    public void GiveDomino()
-    {
-        // если есть свободное место, то на одном из них спавнится новое домино)
-    }
     public void RemoveDomino(GameObject d)
     {
         spawnedUIDomino.Remove(d);
