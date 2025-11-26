@@ -34,7 +34,6 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("Trying to walk upwards");
         if (up_available && !isMoving)
         {
-            Hunger.Instance.MakeStep();
             Clock.Instance.TimeTick();
             targetPosition = new Vector2(transform.position.x, collision_up.transform.position.y);
             isMoving = true;
@@ -46,7 +45,6 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("Trying to walk downwards");
         if (down_available && !isMoving)
         {
-            Hunger.Instance.MakeStep();
             Clock.Instance.TimeTick();
             targetPosition = new Vector2(transform.position.x, collision_down.transform.position.y);
             isMoving = true;
@@ -58,7 +56,6 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("Trying to walk left");
         if (left_available && !isMoving)
         {
-            Hunger.Instance.MakeStep();
             Clock.Instance.TimeTick();
             targetPosition = new Vector2(collision_left.transform.position.x, transform.position.y);
             isMoving = true;
@@ -70,7 +67,6 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("Trying to walk right");
         if (right_available && !isMoving)
         {
-            Hunger.Instance.MakeStep();
             Clock.Instance.TimeTick();
             targetPosition = new Vector2(collision_right.transform.position.x, transform.position.y);
             isMoving = true;
