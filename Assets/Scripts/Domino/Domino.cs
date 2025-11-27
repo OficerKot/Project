@@ -19,6 +19,7 @@ public class Domino : MonoBehaviour
 
     [SerializeField] bool isBeingGrabbed = false;
 
+    [SerializeField] float health = 100;
     void OnEnable()
     {
         GameManager.OnGameStateChanged += OnGameStateChanged;
@@ -223,7 +224,23 @@ public class Domino : MonoBehaviour
         TeleportToCells(collider1.transform, collider2.transform);
         AddToCells(part1Playable, part2Playable);
 
+    }
 
+    public void TryToBreak(float hp)
+    {
+        health -= hp;
+        Debug.Log(name + " has health: " + health);
+
+        if (health <= 0)
+        {
+            RemoveFromGame();
+        }
+    }
+    void RemoveFromGame()
+    {
+        curCell1.SetFree();
+        curCell2.SetFree();
+        Destroy(gameObject);
     }
     void AddToCells(DominoPart d1, DominoPart d2)
     {

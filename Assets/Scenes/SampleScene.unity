@@ -2536,6 +2536,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4757027539769406566, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
   m_PrefabInstance: {fileID: 867935523}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &317317342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317317341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0812d2b78754b43ae4864ec4123794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchRadius: 20
+  minDistanceToHit: 3
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &338950027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7469,7 +7486,7 @@ PrefabInstance:
       objectReference: {fileID: 1050394549}
     - target: {fileID: 4699275572544553292, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
       propertyPath: m_DefaultActionMap
-      value: 825b6cbc-aab3-441d-91e2-4f0cd418081c
+      value: Walk
       objectReference: {fileID: 0}
     - target: {fileID: 4757027539769406566, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
       propertyPath: m_Name
@@ -7482,7 +7499,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4757027539769406566, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 317317342}
   m_SourcePrefab: {fileID: 100100000, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
 --- !u!1001 &880250081
 PrefabInstance:
@@ -13259,6 +13279,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1952784675}
         m_TargetAssemblyTypeName: UISelectionPanel, Assembly-CSharp
         m_MethodName: GeneratePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 317317342}
+        m_TargetAssemblyTypeName: DominoBreaker, Assembly-CSharp
+        m_MethodName: BeatTheFurthestOnes
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

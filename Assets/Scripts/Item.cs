@@ -12,11 +12,7 @@ public class Item : MonoBehaviour
     {
         if(curCell) // сами поставили вручную перед запуском на какую то клетку
         {
-            curCell.SetCurItem(this);
-            curCell.SetFree(false);
-            isPlaced = true;
-            transform.position = curCell.transform.position;
-            transform.Translate(0, 0, -curCell.transform.position.z);
+            PutInCell();
         }
     }
     public void OnMouseDown()
@@ -95,6 +91,11 @@ public class Item : MonoBehaviour
         GameManager.Instance.PutInHand(null);
     }
 
+    public void PutInCell(Cell cell)
+    {
+        curCell = cell;
+        PutInCell();
+    }
     void Move() 
     {
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
