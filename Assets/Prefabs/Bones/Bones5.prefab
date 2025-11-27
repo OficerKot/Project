@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -8941941019329967752}
   - component: {fileID: 4215457269799052540}
   - component: {fileID: -8866932693015429333}
-  - component: {fileID: -2204013555066951606}
   m_Layer: 7
   m_Name: Bones5
   m_TagString: Path
@@ -181,33 +180,6 @@ MonoBehaviour:
   isBeingPlaced: 0
   loc: 0
   neighbours: []
---- !u!114 &-2204013555066951606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6563017092507824485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 3452930901301319298}
-  animations:
-  - name: Bones5
-    fps: 5
-    frames:
-    - {fileID: 21300000, guid: e4117716a56f6194a8c8029068742c62, type: 3}
-    - {fileID: 21300000, guid: e13431b4b4ae1264a9cb508d7f187b8f, type: 3}
-    - {fileID: 21300000, guid: 7cf87c739f5f23f4ba040a269a11a03e, type: 3}
-    - {fileID: 21300000, guid: 1bf8e116d65dc5442abe8f6346a7fa87, type: 3}
-    sequenceCode: 
-    cue: 
-    triggers: []
-  loop: 0
-  speedMultiplier: 1
-  playAnimationOnStart: Bones5
 --- !u!1 &7210657461601851348
 GameObject:
   m_ObjectHideFlags: 0

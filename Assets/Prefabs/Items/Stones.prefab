@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1051257574510345545}
   - component: {fileID: 4723998710663762748}
   - component: {fileID: -3157607827569955336}
-  - component: {fileID: 3811419810533777223}
   m_Layer: 0
   m_Name: Stones
   m_TagString: Untagged
@@ -206,30 +205,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curCell: {fileID: 0}
---- !u!114 &3811419810533777223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  animations:
-  - name: Stones
-    fps: 5
-    frames:
-    - {fileID: 2667589067915142571, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: 6898035379108858973, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: -8868248462342347919, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: -1605707320451941170, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    sequenceCode: 
-    cue: 
-    triggers: []
-  loop: 0
-  speedMultiplier: 1
-  playAnimationOnStart: Stones

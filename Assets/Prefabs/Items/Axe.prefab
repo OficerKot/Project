@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1051257574510345545}
   - component: {fileID: 4723998710663762748}
   - component: {fileID: -4301595163562432020}
-  - component: {fileID: -8577004069614390732}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -206,30 +205,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curCell: {fileID: 0}
---- !u!114 &-8577004069614390732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 5104395357491924321}
-  animations:
-  - name: Axe
-    fps: 5
-    frames:
-    - {fileID: -5825250732961213246, guid: 685a5d65973230b43853b2ce56451bd1, type: 3}
-    - {fileID: -316209040919722149, guid: 685a5d65973230b43853b2ce56451bd1, type: 3}
-    - {fileID: -991003136700231826, guid: 685a5d65973230b43853b2ce56451bd1, type: 3}
-    - {fileID: -2309517609140583403, guid: 685a5d65973230b43853b2ce56451bd1, type: 3}
-    sequenceCode: 
-    cue: 
-    triggers: []
-  loop: 0
-  speedMultiplier: 1
-  playAnimationOnStart: Axe
