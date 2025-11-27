@@ -1,9 +1,13 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MenuButton : MonoBehaviour
+public class MenuButton : Notificationable
 {
-    bool hasPressed = false;
+   
     public GameObject window;
- 
+    public Category category;
+
+
+   
+
 }

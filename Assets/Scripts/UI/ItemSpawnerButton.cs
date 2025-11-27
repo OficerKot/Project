@@ -11,14 +11,18 @@ public enum Position
     left_down, left_up, right_down, right_up
 }
 
+public enum Category
+{
+    blue, green, red
+}
 
-
-public class ItemSpawnerButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ItemSpawnerButton : Notificationable, IPointerEnterHandler, IPointerExitHandler
 {
     public Position pos;
     public ItemData objectToSpawn;
     public GameObject craftPanelPrefab;
     public string description;
+    public Category category;
     Vector3 offset;
     GameObject craftPanel;
     [SerializeField] GameObject AvailableImage;
@@ -97,4 +101,5 @@ public class ItemSpawnerButton : MonoBehaviour, IPointerEnterHandler, IPointerEx
             cellIndx++;
         }
     }
+
 }
