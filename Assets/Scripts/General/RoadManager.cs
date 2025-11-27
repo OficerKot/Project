@@ -15,9 +15,6 @@ public class RoadManager : MonoBehaviour, IRoadManager
 
     [SerializeField] public GameObject[] settlementsPrefabs;
 
- 
-
-
     private void Awake()
     {
         if (Instance == null)
