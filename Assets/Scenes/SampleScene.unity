@@ -4026,6 +4026,7 @@ GameObject:
   - component: {fileID: 540965551}
   - component: {fileID: 540965550}
   - component: {fileID: 540965549}
+  - component: {fileID: 540965552}
   m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
@@ -4104,6 +4105,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540965547}
   m_CullTransparentMesh: 1
+--- !u!114 &540965552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540965547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a66891d4dbc554fa92a46e46ceba91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 540965550}
+  animations:
+  - name: Clock
+    fps: 5
+    frames:
+    - {fileID: -7025007961342625323, guid: 45532d7bef4772f49a499d771a00c84a, type: 3}
+    - {fileID: 390996379324164878, guid: 45532d7bef4772f49a499d771a00c84a, type: 3}
+    - {fileID: 5129350526374694567, guid: 45532d7bef4772f49a499d771a00c84a, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: Clock
 --- !u!1001 &547570442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5287,6 +5314,7 @@ GameObject:
   - component: {fileID: 646808215}
   - component: {fileID: 646808214}
   - component: {fileID: 646808213}
+  - component: {fileID: 646808216}
   m_Layer: 5
   m_Name: InventoryButton
   m_TagString: Untagged
@@ -5396,6 +5424,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646808211}
   m_CullTransparentMesh: 1
+--- !u!114 &646808216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646808211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a66891d4dbc554fa92a46e46ceba91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 646808214}
+  animations:
+  - name: Bag
+    fps: 5
+    frames:
+    - {fileID: -4144843762343842302, guid: 043717c7021804c4bb6f3bb55813c0b1, type: 3}
+    - {fileID: -9180689376034957691, guid: 043717c7021804c4bb6f3bb55813c0b1, type: 3}
+    - {fileID: 7142189153391108903, guid: 043717c7021804c4bb6f3bb55813c0b1, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: Bag
 --- !u!1001 &655447284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10217,6 +10271,7 @@ GameObject:
   - component: {fileID: 1163086502}
   - component: {fileID: 1163086501}
   - component: {fileID: 1163086500}
+  - component: {fileID: 1163086503}
   m_Layer: 5
   m_Name: HungerUI
   m_TagString: Untagged
@@ -10256,12 +10311,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hungerLevels:
-  - {fileID: -6285086123478972082, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
-  - {fileID: -5421042841466630134, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
-  - {fileID: 2163281357293110895, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
-  - {fileID: -8515421598822122591, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
-  - {fileID: 2373983038914184848, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
-  - {fileID: -7932762478905276599, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+  - Hunger7
+  - Hunger6
+  - Hunger5
+  - Hunger4
+  - Hunger3
+  - Hunger2
+  - Hunger1
 --- !u!114 &1163086501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10300,6 +10356,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163086498}
   m_CullTransparentMesh: 1
+--- !u!114 &1163086503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163086498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a66891d4dbc554fa92a46e46ceba91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 1163086501}
+  animations:
+  - name: Hunger7
+    fps: 5
+    frames:
+    - {fileID: -6285086123478972082, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 3875212583637403130, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 3776763796409267940, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: -5076371913037503330, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Hunger6
+    fps: 5
+    frames:
+    - {fileID: -5421042841466630134, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 6726919738809185765, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 4690442463143370225, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 5215683185740619183, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Hunger5
+    fps: 5
+    frames:
+    - {fileID: 2163281357293110895, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: -2598578319601732988, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 8327254976739646860, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 6572689532687725886, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Hunger4
+    fps: 5
+    frames:
+    - {fileID: -8515421598822122591, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 1931735236109973969, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 4835780882307985608, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: -445117531141181405, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Hunger3
+    fps: 5
+    frames:
+    - {fileID: -7490596056378533075, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 3079438140378036806, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: -6163387775716067268, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 5047905177127129055, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Hunger2
+    fps: 5
+    frames:
+    - {fileID: 2373983038914184848, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: -2710075947654361695, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 8176986165000885713, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 5987632771474677841, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Hunger1
+    fps: 5
+    frames:
+    - {fileID: 202656519061262637, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 8681093753864298054, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: 2806971851167365185, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    - {fileID: -7932762478905276599, guid: e5090fac051df5f46bb680735db6fe50, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: Hunger7
 --- !u!1001 &1166736584
 PrefabInstance:
   m_ObjectHideFlags: 0
