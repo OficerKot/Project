@@ -11,8 +11,10 @@ public class UICraftWindow : MonoBehaviour
     public static UICraftWindow Instance = null;
     [SerializeField] GameObject menuObject;
     [SerializeField] GameObject curWindow;
-    [SerializeField] List<Button> categoryButtons, spawnerButtons;
+    [SerializeField] List<MenuButton> categoryButtons;
+    [SerializeField] List<ItemSpawnerButton> spawnerButtons;
     public HashSet<ItemData> availableItems = new HashSet<ItemData>();
+    public HashSet<ItemData> exploredRecipes = new HashSet<ItemData>();
     bool isMenuOpen = false;
 
     private void Awake()
@@ -21,17 +23,18 @@ public class UICraftWindow : MonoBehaviour
     }
     private void Start()
     {
-        foreach (Button b in categoryButtons)
+        foreach (MenuButton b in categoryButtons)
         {
-            b.onClick.AddListener(() => OpenCategoryMenu(b.GetComponent<MenuButton>().window));
+            b.GetComponent<Button>().onClick.AddListener(() => OpenCategoryMenu(b.GetComponent<MenuButton>().window));
         }
-        foreach (Button b in spawnerButtons)
+        foreach (ItemSpawnerButton b in spawnerButtons)
         {
-            b.onClick.AddListener(() => Craft(b.GetComponent<ItemSpawnerButton>().objectToSpawn));
+            b.GetComponent<Button>().onClick.AddListener(() => Craft(b.GetComponent<ItemSpawnerButton>().objectToSpawn));
         }
     }
     void Update()
     {
+ 
         if (Input.GetKeyDown(KeyCode.C))
         {
             Menu();
@@ -98,22 +101,22 @@ public class UICraftWindow : MonoBehaviour
                 Inventory.Instance.RemoveItem(i);
             }
             spawnedObj.GetComponent<Item>().Pick();
-            CheckInventory();
+            CheckInventoryAfterRemove();
             CloseMenu();
         }
         else Debug.Log("You don't have all items to craft it!");
     }
 
-    public void CheckInventory()
+    public void CheckInventoryAfterRemove() // отличие в том, что не нужна проверка на новый рецепт
     {
         HashSet<ItemData> itemsInInventory = new HashSet<ItemData>();
         foreach (string id in Inventory.Instance.GetCurItems().Keys)
         {
             itemsInInventory.Add(ItemManager.Instance.GetItemByID(id));
         }
-        foreach (Button b in spawnerButtons)
+        foreach (ItemSpawnerButton b in spawnerButtons)
         {
-            ItemData obj = b.GetComponent<ItemSpawnerButton>().objectToSpawn;
+            ItemData obj = b.objectToSpawn;
             if (obj.craftSet.IsSubsetOf(itemsInInventory))
             {
                 availableItems.Add(obj);
@@ -132,17 +135,22 @@ public class UICraftWindow : MonoBehaviour
         {
             itemsInInventory.Add(ItemManager.Instance.GetItemByID(id));
         }
-        foreach (Button b in spawnerButtons)
+        foreach (ItemSpawnerButton b in spawnerButtons)
         {
-            ItemData obj = b.GetComponent<ItemSpawnerButton>().objectToSpawn;
-            if (obj.craftSet.IsSubsetOf(itemsInInventory))
-            {
-                availableItems.Add(obj);
-                b.gameObject.SetActive(true);
-            }
-            else if (obj.craftSet.Contains(added))
+            ItemData obj = b.objectToSpawn;
+            if (obj.craftSet.Contains(added))
             {
                 b.gameObject.SetActive(true);
+
+                if (!exploredRecipes.Contains(obj))
+                {
+                    AddNewRecipe(obj, b);
+                }
+
+                if (obj.craftSet.IsSubsetOf(itemsInInventory))
+                {
+                    availableItems.Add(obj);
+                }
             }
             else
             {
@@ -151,4 +159,11 @@ public class UICraftWindow : MonoBehaviour
         }
     }
 
+    void AddNewRecipe(ItemData item, ItemSpawnerButton b)
+    {
+        exploredRecipes.Add(item);
+        b.GetComponent<Notificationable>().ShowNotification();
+        MenuButton categoryButton = categoryButtons.Find(but => but.category == b.category);
+        categoryButton.ShowNotification();
+    }
 }
