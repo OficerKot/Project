@@ -2,13 +2,28 @@ using UnityEngine;
 
 public class ObstacleSnap : MonoBehaviour
 {
-    [SerializeField] Cell curCell;
+    [SerializeField] public Cell curCell;
+    [SerializeField] Item this_item;
+    [SerializeField] public bool spawned = false;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == 6)
-        {
+        { 
             curCell = other.GetComponent<Cell>();
-            curCell.SetFree(false);
+            this_item = this.GetComponent<Item>();
+            if (this_item != null)
+            {
+                Debug.Log("It was an Item");
+                if (spawned == true)
+                {
+                    this_item.PutInCellOnSpawn(curCell);
+                }
+            }
+            else
+            {
+                curCell.SetFree(false);
+            }
         }
     }
 }
