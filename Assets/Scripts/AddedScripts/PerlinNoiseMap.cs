@@ -19,7 +19,8 @@ public class PerlinNoiseMap : MonoBehaviour
     List<List<int>> noise_grid = new List<List<int>>();
 
     //any value between 4 and 20
-    float magnification = 4f;
+    float magnification_primary = 10f;
+    float magnification_secondary = 5.5f;
 
     int x_offset1 = 0, y_offset1 = 0; //<- +>, v- +^
 
@@ -37,7 +38,7 @@ public class PerlinNoiseMap : MonoBehaviour
                 noise_grid[x].Add(0);
         }
 
-        magnification = Random.Range(4, 20);
+        //magnification = Random.Range(4, 20);
         x_offset1 = Random.Range(0, 1000);
         y_offset1 = Random.Range(0, 1000);
         GenerateMap();
@@ -56,9 +57,8 @@ public class PerlinNoiseMap : MonoBehaviour
         tileset = new Dictionary<int, GameObject>();
         tileset.Add(0, emptinnes);
         tileset.Add(1, emptinnes);
-        tileset.Add(2, bush_empty);
-        tileset.Add(3, tree);
-        tileset.Add(4, pond);
+        tileset.Add(2, tree);
+        tileset.Add(3, pond);
     }
 
     void GenerateMap()
@@ -72,7 +72,7 @@ public class PerlinNoiseMap : MonoBehaviour
                 {
                     continue;
                 }
-                int tile_id = GetIdUsingPerlin(x, y, x_offset1, y_offset1);
+                int tile_id = GetIdUsingPerlin(x, y, x_offset1, y_offset1, magnification_primary);
                 noise_grid[x][y] = tile_id;
             }
         }
@@ -82,7 +82,7 @@ public class PerlinNoiseMap : MonoBehaviour
         {
             for (int y = 0; y < map_height; ++y)
             {
-                int tile_id = GetIdUsingPerlin(x, y, x_offset2, y_offset2);
+                int tile_id = GetIdUsingPerlin(x, y, x_offset2, y_offset2, magnification_secondary);
                 if (tile_id != 0 && tile_id != 1)
                 {
                     noise_grid[x][y] = 0;
@@ -102,17 +102,17 @@ public class PerlinNoiseMap : MonoBehaviour
         }
     }
 
-    int GetIdUsingPerlin(int x, int y, int x_off, int y_off)
+    int GetIdUsingPerlin(int x, int y, int x_off, int y_off, float magn)
     {
         float raw_perlin = Mathf.PerlinNoise(
-            (x - x_off) / magnification,
-            (y - y_off) / magnification
+            (x - x_off) / magn,
+            (y - y_off) / magn
         );
         float clamp_perlin = Mathf.Clamp(raw_perlin, 0.0f, 1.0f);
         float scaled_perlin = clamp_perlin * tileset.Count;
-        if (scaled_perlin == 5)
+        if (scaled_perlin == 4)
         {
-            scaled_perlin = 4;
+            scaled_perlin = 3;
         }
         return Mathf.FloorToInt(scaled_perlin);
     }
