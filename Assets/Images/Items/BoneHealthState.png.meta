@@ -1,0 +1,344 @@
+fileFormatVersion: 2
+guid: 52fb06ed916c5bb48bc5ba55b4f18487
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7382244116072760943
+    second: BoneHealthState_0
+  - first:
+      213: -9055856798475068781
+    second: BoneHealthState_1
+  - first:
+      213: 7375636549957282841
+    second: BoneHealthState_2
+  - first:
+      213: -3789382735214823036
+    second: BoneHealthState_3
+  - first:
+      213: -7679806296586431825
+    second: BoneHealthState_4
+  - first:
+      213: 6868513892997687669
+    second: BoneHealthState_5
+  - first:
+      213: -3890798985811491339
+    second: BoneHealthState_6
+  - first:
+      213: -7439909352767443824
+    second: BoneHealthState_7
+  - first:
+      213: -4932373822334854938
+    second: BoneHealthState_8
+  - first:
+      213: -6083782018638551733
+    second: BoneHealthState_9
+  - first:
+      213: 5856826834733923621
+    second: BoneHealthState_10
+  - first:
+      213: -83746925423571608
+    second: BoneHealthState_11
+  - first:
+      213: 2661048532575590922
+    second: BoneHealthState_12
+  - first:
+      213: -6040259795746912348
+    second: BoneHealthState_13
+  - first:
+      213: 6725691670421882841
+    second: BoneHealthState_14
+  - first:
+      213: 3314202012140698501
+    second: BoneHealthState_15
+  - first:
+      213: -7825078412926793751
+    second: BoneHealthState_16
+  - first:
+      213: 8321825810619718420
+    second: BoneHealthState_17
+  - first:
+      213: -951703127418635951
+    second: BoneHealthState_18
+  - first:
+      213: -7567982164333007599
+    second: BoneHealthState_19
+  - first:
+      213: 9136868429252993800
+    second: BoneHealthState_20
+  - first:
+      213: 5367081495555696378
+    second: BoneHealthState_21
+  - first:
+      213: -7300549488704352807
+    second: BoneHealthState_22
+  - first:
+      213: -1818592215937403848
+    second: BoneHealthState_23
+  - first:
+      213: 2252012428303700316
+    second: BoneHealthState_24
+  - first:
+      213: 5063864300152007540
+    second: BoneHealthState_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BoneHealthState_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 27
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f660cb729eff27660800000000000000
+      internalID: 7382244116072760943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoneHealthState_7
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 0
+        width: 25
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ca03bacd120c890800000000000000
+      internalID: -7439909352767443824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoneHealthState_8
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e89b443420bc8bb0800000000000000
+      internalID: -4932373822334854938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoneHealthState_16
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7cbe974acb76390800000000000000
+      internalID: -7825078412926793751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoneHealthState_19
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11d6074815029f690800000000000000
+      internalID: -7567982164333007599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4f3e1a099c2291c4f9f0858096be07d6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BoneHealthState_0: 7382244116072760943
+      BoneHealthState_1: -9055856798475068781
+      BoneHealthState_10: 5856826834733923621
+      BoneHealthState_11: -83746925423571608
+      BoneHealthState_12: 2661048532575590922
+      BoneHealthState_13: -6040259795746912348
+      BoneHealthState_14: 6725691670421882841
+      BoneHealthState_15: 3314202012140698501
+      BoneHealthState_16: -7825078412926793751
+      BoneHealthState_17: 8321825810619718420
+      BoneHealthState_18: -951703127418635951
+      BoneHealthState_19: -7567982164333007599
+      BoneHealthState_2: 7375636549957282841
+      BoneHealthState_20: 9136868429252993800
+      BoneHealthState_21: 5367081495555696378
+      BoneHealthState_22: -7300549488704352807
+      BoneHealthState_23: -1818592215937403848
+      BoneHealthState_24: 2252012428303700316
+      BoneHealthState_25: 5063864300152007540
+      BoneHealthState_3: -3789382735214823036
+      BoneHealthState_4: -7679806296586431825
+      BoneHealthState_5: 6868513892997687669
+      BoneHealthState_6: -3890798985811491339
+      BoneHealthState_7: -7439909352767443824
+      BoneHealthState_8: -4932373822334854938
+      BoneHealthState_9: -6083782018638551733
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

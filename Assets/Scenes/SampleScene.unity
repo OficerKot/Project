@@ -2439,8 +2439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0812d2b78754b43ae4864ec4123794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchRadius: 20
-  minDistanceToHit: 3
+  searchRadius: 30
+  minDistanceToHit: 6
   targetLayers:
     serializedVersion: 2
     m_Bits: 512
