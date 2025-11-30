@@ -85,6 +85,8 @@ GameObject:
   - component: {fileID: 6504662744539572401}
   - component: {fileID: 3806801874271198078}
   - component: {fileID: 6137690132748559516}
+  - component: {fileID: 712620081883005350}
+  - component: {fileID: 944079703220002397}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -206,6 +208,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f20a25cf1f8b8a4cb9b81e033063dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNewNotification: 0
-  window: {fileID: 0}
   notification: {fileID: 3492417441651052659}
+  window: {fileID: 0}
+  category: 0
+--- !u!114 &712620081883005350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527156413175662094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a66891d4dbc554fa92a46e46ceba91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 0}
+  animations: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: 
+--- !u!114 &944079703220002397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527156413175662094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cb294eac82d1343b88764f2ec83dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageAnimator: {fileID: 0}
