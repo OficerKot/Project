@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7185405089960739545}
   - component: {fileID: 5891969599508358568}
   - component: {fileID: 6957820598036287546}
+  - component: {fileID: 3793194761717302429}
+  - component: {fileID: 2677133842506513357}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -132,3 +134,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3793194761717302429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232546234418840368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a66891d4dbc554fa92a46e46ceba91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 5891969599508358568}
+  animations:
+  - name: ExitButton
+    fps: 5
+    frames:
+    - {fileID: 6662862563198478761, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: -6637209621059187578, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: -3610914249571651040, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: -1452793016070932448, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: ExitButton
+--- !u!114 &2677133842506513357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232546234418840368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cb294eac82d1343b88764f2ec83dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageAnimator: {fileID: 0}

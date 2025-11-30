@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1051257574510345545}
   - component: {fileID: 4723998710663762748}
   - component: {fileID: 5581491808778375710}
+  - component: {fileID: 5698552126407898044}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -193,3 +194,30 @@ MonoBehaviour:
   curCell: {fileID: 0}
   proizvoditelnost: 2
   health: 100
+--- !u!114 &5698552126407898044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265742574692647083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5104395357491924321}
+  animations:
+  - name: House
+    fps: 5
+    frames:
+    - {fileID: -7411974349392773033, guid: 1ab8986a32a9ed047ad6c49500857e5d, type: 3}
+    - {fileID: -8800952261794890131, guid: 1ab8986a32a9ed047ad6c49500857e5d, type: 3}
+    - {fileID: -4498830320754123391, guid: 1ab8986a32a9ed047ad6c49500857e5d, type: 3}
+    - {fileID: -6236921177719994883, guid: 1ab8986a32a9ed047ad6c49500857e5d, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: House
