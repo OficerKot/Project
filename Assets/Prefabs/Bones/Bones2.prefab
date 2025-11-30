@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8941941019329967752}
   - component: {fileID: 4215457269799052540}
   - component: {fileID: 6189966747457233871}
+  - component: {fileID: -4959834172178469112}
   m_Layer: 7
   m_Name: Bones2
   m_TagString: Path
@@ -180,6 +181,31 @@ MonoBehaviour:
   isBeingPlaced: 0
   loc: 0
   neighbours: []
+--- !u!114 &-4959834172178469112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563017092507824485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 3452930901301319298}
+  animations:
+  - name: Bones2
+    fps: 5
+    frames:
+    - {fileID: 21300000, guid: 9387ba5b9923b09448ee2228d5153b43, type: 3}
+    - {fileID: 21300000, guid: e48cd221295e9d94494ca92f21bc498a, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: Bones2
 --- !u!1 &7210657461601851348
 GameObject:
   m_ObjectHideFlags: 0
