@@ -632,6 +632,8 @@ GameObject:
   - component: {fileID: 106115569}
   - component: {fileID: 106115568}
   - component: {fileID: 106115567}
+  - component: {fileID: 106115571}
+  - component: {fileID: 106115572}
   m_Layer: 5
   m_Name: button3
   m_TagString: Untagged
@@ -753,6 +755,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106115565}
   m_CullTransparentMesh: 1
+--- !u!114 &106115571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106115565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a66891d4dbc554fa92a46e46ceba91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 106115569}
+  animations:
+  - name: button3
+    fps: 5
+    frames:
+    - {fileID: -3889374050486932883, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: -34441634677677524, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: -7692390217380224895, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: -7787232379199921252, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: button3
+--- !u!114 &106115572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106115565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cb294eac82d1343b88764f2ec83dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageAnimator: {fileID: 0}
 --- !u!1001 &125654483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2536,6 +2578,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4757027539769406566, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
   m_PrefabInstance: {fileID: 867935523}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &317317346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1695712737904718053, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
+  m_PrefabInstance: {fileID: 867935523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &338950027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3256,6 +3303,8 @@ GameObject:
   - component: {fileID: 483064152}
   - component: {fileID: 483064151}
   - component: {fileID: 483064150}
+  - component: {fileID: 483064154}
+  - component: {fileID: 483064155}
   m_Layer: 5
   m_Name: button2
   m_TagString: Untagged
@@ -3377,6 +3426,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483064148}
   m_CullTransparentMesh: 1
+--- !u!114 &483064154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483064148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a66891d4dbc554fa92a46e46ceba91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 483064152}
+  animations:
+  - name: button2
+    fps: 5
+    frames:
+    - {fileID: -3239431320403598033, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: 3590532335336621777, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: -3532334307607341307, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: -5198925313915138775, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: button2
+--- !u!114 &483064155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483064148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cb294eac82d1343b88764f2ec83dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageAnimator: {fileID: 0}
 --- !u!1 &484872117
 GameObject:
   m_ObjectHideFlags: 0
@@ -3665,6 +3754,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3814,6 +3904,22 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238898435c0b3604bbc3f3ab29d34539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 1.5, y: 1.5, z: 0}
+  damping: 0.25
+  target: {fileID: 317317346}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &523342677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17208,6 +17314,8 @@ GameObject:
   - component: {fileID: 1909557950}
   - component: {fileID: 1909557949}
   - component: {fileID: 1909557952}
+  - component: {fileID: 1909557953}
+  - component: {fileID: 1909557954}
   m_Layer: 5
   m_Name: button1
   m_TagString: Untagged
@@ -17329,6 +17437,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   window: {fileID: 1184158028}
+--- !u!114 &1909557953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909557947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a66891d4dbc554fa92a46e46ceba91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 1909557950}
+  animations:
+  - name: button1
+    fps: 5
+    frames:
+    - {fileID: 5197848295541880194, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: 1154214953680629629, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: 7375522552185693102, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    - {fileID: -5796616621500702633, guid: 20f0c261f633fb445a2bbe1d9fd9f5ca, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: button1
+--- !u!114 &1909557954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909557947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cb294eac82d1343b88764f2ec83dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageAnimator: {fileID: 0}
 --- !u!1001 &1914992881
 PrefabInstance:
   m_ObjectHideFlags: 0

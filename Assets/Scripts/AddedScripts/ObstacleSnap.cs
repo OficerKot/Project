@@ -14,7 +14,6 @@ public class ObstacleSnap : MonoBehaviour
             this_item = this.GetComponent<Item>();
             if (this_item != null)
             {
-                Debug.Log("It was an Item");
                 if (spawned == true)
                 {
                     this_item.PutInCellOnSpawn(curCell);

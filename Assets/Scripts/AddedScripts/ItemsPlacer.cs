@@ -54,11 +54,9 @@ public class ItemsPlacer : MonoBehaviour
         int item_id = Random.Range(0, itemsCount-1);
         GameObject item_prefab = itemTypes[item_id];
         GameObject item = Instantiate(item_prefab, this.transform);
-        Debug.Log("Item instantiated");
 
         item.name = string.Format("item_{0}_x{1}_y{2}", item_prefab.name, x, y);
         item.transform.localPosition = new Vector3Int(x, y, 0);
-        Debug.Log("Name and Transform are set");
 
         obs_snap = item.GetComponent<ObstacleSnap>();
         obs_snap.spawned = true;
