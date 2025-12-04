@@ -1,62 +1,62 @@
 
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DominoBreaker : MonoBehaviour
 {
-    public float searchRadius = 20, minDistanceToHit = 5;
+    public float maxDistanceToHit = 20, minDistanceToHit = 5;
+    public int maxDominoToBreak = 5;
+    public float damage = 10;
     [SerializeField] private LayerMask targetLayers;
-    Domino dominoToHit;
-    Collider2D[] colliders;
-    public void BeatTheFurthestOnes()
+    Collider2D[] searchRadius;
+    public void GetColliders()
     {
-        colliders = Physics2D.OverlapCircleAll(transform.position, searchRadius, targetLayers);
-        Debug.Log($"=== Поиск по слоям ===");
-        Debug.Log($"Маска слоев: {targetLayers.value}");
-        Debug.Log($"Найдено объектов: {colliders.Length}");
-        if (colliders.Length > 0)
+        searchRadius = Physics2D.OverlapCircleAll(transform.position, maxDistanceToHit, targetLayers);    
+    }
+
+    float CountProbability(float dist)
+    {
+        if(dist > maxDistanceToHit)
         {
-            dominoToHit = GetRandDominoFromRadius();
-            if (GetDist(dominoToHit.transform.position, transform.position) < minDistanceToHit)
+            return 1;
+        }
+        if (dist < minDistanceToHit)
+        {
+            return 0;
+        }
+        else return dist / maxDistanceToHit;
+    }
+
+    public void HitSomeDomino()
+    {
+        GetColliders();
+        foreach(Collider2D domino in searchRadius)
+        {
+            Transform pos = domino.GetComponent<Transform>();
+            float probability = CountProbability(GetDist(pos.position, transform.position));
+            Debug.Log("For " + domino.name + " probability is: " + probability);
+            float randFloat = Random.Range(0, 1f);
+            if(probability >= randFloat)
             {
-                TryToFindAny();
-            }
-            else
-            {
-                dominoToHit.TryToBreak(GetDist(dominoToHit.transform.position, transform.position));
+                domino.GetComponent<Domino>().TryToBreak(damage);
             }
         }
 
-    }
-
-    Domino GetRandDominoFromRadius()
-    {
-        int indx = Random.Range(0, colliders.Length);
-        return colliders[indx].GetComponent<Domino>();
     }
     float GetDist(Vector3 a, Vector3 b)
     {
         return Mathf.Sqrt(Mathf.Pow(a.x - b.x, 2) + Mathf.Pow(a.y - b.y, 2) + Mathf.Pow(a.z - b.z, 2));
     }
 
-    void TryToFindAny()
-    {
-        foreach (Collider2D d in colliders)
-        {
-            dominoToHit = d.GetComponent<Domino>();
-            if (GetDist(dominoToHit.transform.position, transform.position) >= minDistanceToHit)
-            {
-                dominoToHit.TryToBreak(GetDist(dominoToHit.transform.position, transform.position));
-                return;
-            }
-        }
-    }
 
 #if UNITY_EDITOR
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, searchRadius);
-
+        Gizmos.DrawWireSphere(transform.position, maxDistanceToHit);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, minDistanceToHit);
 #endif
     }
 }
