@@ -24,6 +24,7 @@ public class PerlinNoiseMap : MonoBehaviour
 
     int x_offset1 = 0, y_offset1 = 0; //<- +>, v- +^
 
+    private Vector3 safepoint;
     private ItemsPlacer itemsPlacer;
 
     void Start()
@@ -44,7 +45,7 @@ public class PerlinNoiseMap : MonoBehaviour
         GenerateMap();
 
         itemsPlacer = this.GetComponent<ItemsPlacer>();
-        itemsPlacer.PlaceItems(map_width, map_height);
+        itemsPlacer.PlaceItems(map_width, map_height, safepoint);
     }
 
     public List<List<int>> GetNoiseGrid()
@@ -63,7 +64,7 @@ public class PerlinNoiseMap : MonoBehaviour
 
     void GenerateMap()
     {
-        Vector3 safepoint = new Vector3(Player.transform.position.x - this.transform.position.x, Player.transform.position.y - this.transform.position.y, 0);
+        safepoint = new Vector3(Player.transform.position.x - this.transform.position.x, Player.transform.position.y - this.transform.position.y, 0);
         for (int x = 0; x < map_width; ++x)
         {
             for (int y = 0; y < map_height; ++y)
