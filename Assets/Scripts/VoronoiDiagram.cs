@@ -8,7 +8,7 @@ public class VoronoiDiagram : MonoBehaviour
     [SerializeField] private Color[] possibleColors;
 
     private int imgSize;
-    private int gridSize = 5;
+    private int gridSize = 3;
     private int pixelsPerCell;
     private RawImage image;
     private Vector2Int[,] pointsPositions;
