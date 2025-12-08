@@ -2439,8 +2439,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0812d2b78754b43ae4864ec4123794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchRadius: 30
-  minDistanceToHit: 6
+  maxDistanceToHit: 40
+  minDistanceToHit: 5
+  maxDominoToBreak: 5
+  damage: 10
   targetLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -13368,7 +13370,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 317317342}
         m_TargetAssemblyTypeName: DominoBreaker, Assembly-CSharp
-        m_MethodName: BeatTheFurthestOnes
+        m_MethodName: HitSomeDomino
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
