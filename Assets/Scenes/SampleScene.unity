@@ -9773,7 +9773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &907618199
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9879,7 +9879,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 129.48, y: 100}
   m_EdgeRadius: 0
 --- !u!1001 &909287341
 PrefabInstance:
@@ -11283,7 +11283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1056137944
@@ -15743,7 +15743,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.7, y: 22.8}
+  m_AnchoredPosition: {x: 0, y: 22.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482185403
@@ -15759,11 +15759,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6664960311811703741, guid: efdb9e832eae43c419554c329f5cd447, type: 3}
-  midOffsetKoef: 6.58
   spawnedCells: []
   windowCollider: {fileID: 907618202}
+  startPos: {x: -53.4, y: 8.5, z: 0}
   defaultOffset: 13
-  startPos: {x: -51.7, y: 8.5, z: 0}
+  scaleKoef: 4
   maxDefaultElements: 9
 --- !u!1001 &1482421054
 PrefabInstance:

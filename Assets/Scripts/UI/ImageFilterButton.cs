@@ -1,34 +1,34 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NumFilterButton : MonoBehaviour
+public class ImageFilterButton : MonoBehaviour
 {
-    Image imageComponent;
+    public GameObject blurObject;
     bool clicked;
-    public int number;
+    public ImageEnumerator image;
     Button b;
     void Start()
     {
         clicked = false;
         b = GetComponent<Button>();
-        imageComponent = GetComponent<Image>();
         b.onClick.AddListener(ApplyFilter);
     }
+
     void ApplyFilter()
     {
-        SigilsMenu.Instance.ApplyFilter(number);
+        SigilsMenu.Instance.ApplyFilter(image);
         if (clicked)
         {
             clicked = false;
-            imageComponent.color = Color.white;
+            Debug.Log("Unactivated");
+            blurObject.SetActive(false);
         }
         else
         {
             clicked = true;
-            imageComponent.color = Color.gray6;
+            Debug.Log("Activated");
+            blurObject.SetActive(true);
         }
 
     }
 }
-
-

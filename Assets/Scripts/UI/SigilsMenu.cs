@@ -14,11 +14,15 @@ public class SigilsMenu : MonoBehaviour
     List<DominoData> sortedDominoList = new List<DominoData>();
     HashSet<ImageEnumerator> imageFilters = new HashSet<ImageEnumerator>();
     HashSet<int> numberFilters = new HashSet<int>();
+    int prevAvailableCount;
+
     private void Awake()
     {
         if(Instance == null)
         {
             Instance = this;
+            prevAvailableCount = DominoManager.Instance.available.Count;
+            FillAvailable();
         }
         else
         {
@@ -27,6 +31,7 @@ public class SigilsMenu : MonoBehaviour
     }
     private void Update()
     {
+       
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (isMenuOpen)
@@ -39,9 +44,12 @@ public class SigilsMenu : MonoBehaviour
             }
         }
 
-        if (spawnedIcons.Count != DominoManager.Instance.available.Count)
+        if (prevAvailableCount != DominoManager.Instance.available.Count) 
         {
+            Debug.Log("Update");
             UpdateAvailable();
+            CellsPlacer.Instance.UpdateButtons();
+            prevAvailableCount = DominoManager.Instance.available.Count;
         }
 
     }
@@ -71,7 +79,7 @@ public class SigilsMenu : MonoBehaviour
         UpdateAvailable();
     }
 
-    void FillAvailable() // DominoManager.Instance.GetDomino(d.image, 1).UIprefab для фильтров 
+    void FillAvailable() 
     {
         if (DominoManager.Instance.HasAvailable())
         {
