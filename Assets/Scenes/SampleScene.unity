@@ -4234,7 +4234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
-  damping: 0
+  damping: 0.35
   target: {fileID: 317317347}
   velocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &523342677
