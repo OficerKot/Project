@@ -18,7 +18,7 @@ public class MoveAvailable : MonoBehaviour
     {
         if (other.tag == "Path")
         {
-            Debug.Log("Path found!");
+            //Debug.Log("Path found!");
             switch (Direction)
             {
                 case 'U':

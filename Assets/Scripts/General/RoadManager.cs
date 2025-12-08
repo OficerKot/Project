@@ -104,7 +104,7 @@ public class RoadManager : MonoBehaviour, IRoadManager
                         return true;
                     }
                 }
-                else if (neighbour != previous) return true;
+                else if (neighbour != previous && curWay.Count > 4) return true;
             }
             
         }

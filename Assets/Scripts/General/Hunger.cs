@@ -5,15 +5,14 @@ public class Hunger : MonoBehaviour
 {
     public const int stepsLimit = 5;
     public static Hunger Instance;
-    [SerializeField] Sprite[] hungerLevels;
-    Image thisImage;
+    [SerializeField] string[] hungerLevels;
+    ImageAnimator thisImageAnimator;
     int hungerLevel, stepsCounter;
 
     void Start()
     {
-        thisImage = GetComponent<Image>();
+        thisImageAnimator = GetComponent<ImageAnimator>();
         hungerLevel = 0;
-        thisImage.sprite = hungerLevels[hungerLevel];
         stepsCounter = 0;
     }
 
@@ -49,7 +48,7 @@ public class Hunger : MonoBehaviour
         }
         else
         {
-            thisImage.sprite = hungerLevels[hungerLevel];
+            thisImageAnimator.ForcePlay(hungerLevels[hungerLevel]);
         }
     }
 

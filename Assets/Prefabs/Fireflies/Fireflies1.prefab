@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 8792559992131990169}
   - component: {fileID: 125027042842842284}
   - component: {fileID: 771872327868908671}
+  - component: {fileID: 2117834041195668683}
   m_Layer: 7
   m_Name: Fireflies1
   m_TagString: Path
@@ -264,3 +265,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.25, y: 1.25}
   m_EdgeRadius: 0
+--- !u!114 &2117834041195668683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689632754707460671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8716023788376117855}
+  animations:
+  - name: Fireflies1
+    fps: 5
+    frames:
+    - {fileID: 21300000, guid: 644185bb7c6647142a71248e167c5638, type: 3}
+    - {fileID: 21300000, guid: 5c8a27dbda921e746b525405e7cdbf7e, type: 3}
+    - {fileID: 21300000, guid: 6d31420252ec92c4f991a92b5e210364, type: 3}
+    - {fileID: 21300000, guid: e0c815ecd7cdee04488b9df7884a2660, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: Fireflies1

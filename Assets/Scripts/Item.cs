@@ -80,6 +80,12 @@ public class Item : MonoBehaviour
         else Debug.Log("FULL INVENTORY!!!");
     }
 
+    public void PutInCellOnSpawn(Cell cell)
+    {
+        curCell = cell;
+        PutInCell();
+    }
+
     void PutInCell()
     {
         curCell.SetCurItem(this);

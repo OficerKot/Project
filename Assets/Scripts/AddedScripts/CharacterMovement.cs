@@ -31,7 +31,7 @@ public class CharacterMovement : MonoBehaviour
     }
     public void OnWalk_Up()
     {
-        Debug.Log("Trying to walk upwards");
+        //Debug.Log("Trying to walk upwards");
         if (up_available && !isMoving)
         {
             Clock.Instance.TimeTick();
@@ -42,7 +42,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnWalk_Down()
     {
-        Debug.Log("Trying to walk downwards");
+        //Debug.Log("Trying to walk downwards");
         if (down_available && !isMoving)
         {
             Clock.Instance.TimeTick();
@@ -53,7 +53,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnWalk_Left()
     {
-        Debug.Log("Trying to walk left");
+        //Debug.Log("Trying to walk left");
         if (left_available && !isMoving)
         {
             Clock.Instance.TimeTick();
@@ -64,7 +64,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnWalk_Right()
     {
-        Debug.Log("Trying to walk right");
+        //Debug.Log("Trying to walk right");
         if (right_available && !isMoving)
         {
             Clock.Instance.TimeTick();

@@ -2,6 +2,7 @@ using TMPro;
 using TreeEditor;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -12,17 +13,18 @@ public class Domino : MonoBehaviour
     DominoPart part1Playable, part2Playable;
     [SerializeField] DominoData part1, part2;
     public GameObject pivot;
+    bool isBeingGrabbed = false;
+    Cell curCell1, curCell2;
 
-    [SerializeField] Cell curCell1, curCell2;
-
+    [SerializeField] SpriteRenderer healthStateObject;
+    [SerializeField] List<Sprite> healhStates;
     [SerializeField] float offsetY = 2f;
-
-    [SerializeField] bool isBeingGrabbed = false;
-
     [SerializeField] float health = 100;
+    float startHealth;
     void OnEnable()
     {
         GameManager.OnGameStateChanged += OnGameStateChanged;
+
     }
 
     void OnDisable()
@@ -38,7 +40,7 @@ public class Domino : MonoBehaviour
     {
         part1 = p1;
         part2 = p2;
-
+        startHealth = health;
         GenerateParts();
         SpawnPivot();
     }
@@ -230,11 +232,12 @@ public class Domino : MonoBehaviour
     {
         health -= hp;
         Debug.Log(name + " has health: " + health);
-
         if (health <= 0)
         {
             RemoveFromGame();
         }
+        int k = (int)startHealth / healhStates.Count;
+        healthStateObject.sprite = healhStates[(int)health/k ];
     }
     void RemoveFromGame()
     {

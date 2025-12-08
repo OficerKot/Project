@@ -12,6 +12,8 @@ public class ItemsPlacer : MonoBehaviour
     public GameObject[] itemTypes;
     private int itemsCount;
     private PerlinNoiseMap perlin;
+    private Cell cell;
+    private ObstacleSnap obs_snap;
     private List<List<int>> noise_grid;
 
     void Awake()
@@ -22,13 +24,10 @@ public class ItemsPlacer : MonoBehaviour
 
     public void PlaceItems(int width, int height)
     {
-        Debug.Log("PlaceItems called");
         map_width = width;
         map_height = height;
         itemsCount = itemTypes.Length;
-        Debug.Log($"Length = {itemTypes.Length}");
         GenerateTiles(items_count);
-        Debug.Log("Generated!");
     }
 
     void GenerateTiles(int items_count)
@@ -58,5 +57,8 @@ public class ItemsPlacer : MonoBehaviour
 
         item.name = string.Format("item_{0}_x{1}_y{2}", item_prefab.name, x, y);
         item.transform.localPosition = new Vector3Int(x, y, 0);
+
+        obs_snap = item.GetComponent<ObstacleSnap>();
+        obs_snap.spawned = true;
     }
 }

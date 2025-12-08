@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1237662509407897279}
   - component: {fileID: 1051257574510345545}
   - component: {fileID: 4723998710663762748}
-  - component: {fileID: -7431074150693169590}
+  - component: {fileID: 3445792820017763758}
+  - component: {fileID: -4478845979243375026}
   m_Layer: 0
   m_Name: Berry
   m_TagString: Untagged
@@ -192,7 +193,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
---- !u!114 &-7431074150693169590
+--- !u!114 &3445792820017763758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265742574692647083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5104395357491924321}
+  animations:
+  - name: Berry
+    fps: 5
+    frames:
+    - {fileID: 2778267843588853002, guid: bcbd90db91fc6844a97f8419b80f2b22, type: 3}
+    - {fileID: 1857098683815264378, guid: bcbd90db91fc6844a97f8419b80f2b22, type: 3}
+    - {fileID: 8697392434886404793, guid: bcbd90db91fc6844a97f8419b80f2b22, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: Berry
+--- !u!114 &-4478845979243375026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,3 +232,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curCell: {fileID: 0}
+  this_item: {fileID: 0}
