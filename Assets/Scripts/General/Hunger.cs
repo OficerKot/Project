@@ -54,6 +54,12 @@ public class Hunger : MonoBehaviour
 
     void HungerUp()
     {
-
+        if (hungerLevel > 0)
+            hungerLevel--;
+        thisImageAnimator.ForcePlay(hungerLevels[hungerLevel]);
+    }
+    public void CallHungerUp()
+    {
+        HungerUp();
     }
 }

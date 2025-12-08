@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8386460687464962531}
   - component: {fileID: 9084209806075707928}
   - component: {fileID: 6758885814436890381}
+  - component: {fileID: -7159717991973574712}
   - component: {fileID: 4116706721653000829}
   m_Layer: 5
   m_Name: BerryUI
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-7159717991973574712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2342191990407282095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b034b6ab4876443a14783bbe02ef3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  berry: {fileID: 11400000, guid: a88c999c3e4cc8442b9ec55e80fb54f0, type: 2}
 --- !u!114 &4116706721653000829
 MonoBehaviour:
   m_ObjectHideFlags: 0
