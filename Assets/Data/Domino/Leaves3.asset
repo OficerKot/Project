@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4677ca0113dbc64388e8d1e2d927739, type: 3}
+  m_Name: Leaves3
+  m_EditorClassIdentifier: 
+  dominoId: leaves3
+  number: 3
+  image: 3
+  prefab: {fileID: 6563017092507824485, guid: 436d346fef6f6cc4a9e8e3ca53d6b690, type: 3}
+  UIprefab: {fileID: 498944148122918774, guid: 829eb3de504c215498b65a00621962f9, type: 3}

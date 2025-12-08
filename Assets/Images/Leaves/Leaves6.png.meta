@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: c4045c991a833a440b88114359deaa7a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3234568437426354524
+    second: Leaves6_0
+  - first:
+      213: -3882408215810210469
+    second: Leaves6_1
+  - first:
+      213: 2573329510124890269
+    second: Leaves6_2
+  - first:
+      213: 555135138497379142
+    second: Leaves6_3
+  - first:
+      213: -3015568673411536796
+    second: Leaves6_4
+  - first:
+      213: 7252909944282551585
+    second: Leaves6_5
+  - first:
+      213: -2164570719481021051
+    second: Leaves6_6
+  - first:
+      213: -8139972770129182914
+    second: Leaves6_7
+  - first:
+      213: 2394536727957363794
+    second: Leaves6_8
+  - first:
+      213: 4440137938835425012
+    second: Leaves6_9
+  - first:
+      213: -5546915328857397208
+    second: Leaves6_10
+  - first:
+      213: -8780039744494772415
+    second: Leaves6_11
+  - first:
+      213: 8647949263303196376
+    second: Leaves6_12
+  - first:
+      213: -5937837654502594365
+    second: Leaves6_13
+  - first:
+      213: 8086724693795183036
+    second: Leaves6_14
+  - first:
+      213: 8580485369318460762
+    second: Leaves6_15
+  - first:
+      213: -3791553845592516800
+    second: Leaves6_16
+  - first:
+      213: 2374843894910927662
+    second: Leaves6_17
+  - first:
+      213: 3345396805435029106
+    second: Leaves6_18
+  - first:
+      213: 123865702815431531
+    second: Leaves6_19
+  - first:
+      213: -3195285050522201849
+    second: Leaves6_20
+  - first:
+      213: 5966027719692235510
+    second: Leaves6_21
+  - first:
+      213: -7483757389414884677
+    second: Leaves6_22
+  - first:
+      213: -4079235966921083501
+    second: Leaves6_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Leaves6_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8deb9c24900b30870800000000000000
+      internalID: 8647949263303196376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leaves6_13
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c82f6dfc10989da0800000000000000
+      internalID: -5937837654502594365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leaves6_22
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bba98b21e4a542890800000000000000
+      internalID: -7483757389414884677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leaves6_23
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395fba43084a367c0800000000000000
+      internalID: -4079235966921083501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9d01c74f13cc846449a1ba8083bcff8b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Leaves6_0: 3234568437426354524
+      Leaves6_1: -3882408215810210469
+      Leaves6_10: -5546915328857397208
+      Leaves6_11: -8780039744494772415
+      Leaves6_12: 8647949263303196376
+      Leaves6_13: -5937837654502594365
+      Leaves6_14: 8086724693795183036
+      Leaves6_15: 8580485369318460762
+      Leaves6_16: -3791553845592516800
+      Leaves6_17: 2374843894910927662
+      Leaves6_18: 3345396805435029106
+      Leaves6_19: 123865702815431531
+      Leaves6_2: 2573329510124890269
+      Leaves6_20: -3195285050522201849
+      Leaves6_21: 5966027719692235510
+      Leaves6_22: -7483757389414884677
+      Leaves6_23: -4079235966921083501
+      Leaves6_3: 555135138497379142
+      Leaves6_4: -3015568673411536796
+      Leaves6_5: 7252909944282551585
+      Leaves6_6: -2164570719481021051
+      Leaves6_7: -8139972770129182914
+      Leaves6_8: 2394536727957363794
+      Leaves6_9: 4440137938835425012
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

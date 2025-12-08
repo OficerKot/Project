@@ -1,10 +1,21 @@
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 [CreateAssetMenu(fileName = "DominoManager", menuName = "Domino/DominoManager")]
 
 public class DominoManager : ScriptableObject
 {
-    public DominoData[] allDomino;
+    public List<DominoData> allDomino;
+    public List<DominoData> available, basic;
+
+    public Dictionary<ImageEnumerator, int> order = new Dictionary<ImageEnumerator, int>()
+    {
+        {ImageEnumerator.bone, 1} , {ImageEnumerator.fireflies, 2}, {ImageEnumerator.leaves, 3 }
+    };
+
     public static DominoManager Instance;
 
     private void OnEnable()
@@ -13,17 +24,27 @@ public class DominoManager : ScriptableObject
     }
     public DominoData GetDominoByID(string id)
     {
-        return System.Array.Find(allDomino, domino => domino.dominoId == id);
+        return allDomino.Find(domino => domino.dominoId == id);
     }
 
     public DominoData GetRandomDomino()
     {
-        int indx = Random.Range(0, allDomino.Length);
-        return allDomino[indx];
+        List<DominoData> allAvailable = basic.ToList();
+        allAvailable.AddRange(available);
+        int indx = Random.Range(0, allAvailable.Count);
+        return allAvailable[indx];
     }
 
+    public DominoData GetDomino(ImageEnumerator image, int number)
+    {
+       return allDomino.Find(d => d.image == image && d.number == number);
+    }
+    public bool HasAvailable()
+    {
+        return available.Count > 0;
+    }
 }
 public enum ImageEnumerator
 {
-    any, bone, fireflies
+    any, bone, fireflies, leaves
 }
