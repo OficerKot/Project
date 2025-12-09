@@ -5,12 +5,31 @@ public class ItemManager : ScriptableObject
 {
     public ItemData[] allItems;
 
-    public static ItemManager Instance;
- 
+    private static ItemManager _instance;
+    public static ItemManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = Resources.Load<ItemManager>("ItemManager");
+
+                if (_instance == null)
+                {
+                    _instance = CreateInstance<ItemManager>();
+                    Debug.LogWarning("Created new ItemManager instance. Consider creating it as an asset.");
+                }
+            }
+            return _instance;
+        }
+    }
 
     private void OnEnable()
     {
-        Instance = this;
+        if (_instance == null)
+        {
+            _instance = this;
+        }
     }
     public ItemData GetItemByID(string id)
     {

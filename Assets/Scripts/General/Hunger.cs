@@ -1,11 +1,13 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Hunger : MonoBehaviour
 {
-    public const int stepsLimit = 5;
+    public int stepsLimit = 5;
     public static Hunger Instance;
     [SerializeField] string[] hungerLevels;
+    [SerializeField] TMP_InputField hungerInput;
     ImageAnimator thisImageAnimator;
     int hungerLevel, stepsCounter;
 
@@ -18,7 +20,7 @@ public class Hunger : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -30,8 +32,17 @@ public class Hunger : MonoBehaviour
 
     public void MakeStep()
     {
+        if (hungerInput.text == "")
+        {
+            stepsLimit = 5;
+        }
+        else
+        {
+            stepsLimit = int.Parse(hungerInput.text);
+        }
+
         stepsCounter++;
-        if(stepsCounter >= stepsLimit)
+        if (stepsCounter >= stepsLimit)
         {
             stepsCounter = 0;
             HungerDown();

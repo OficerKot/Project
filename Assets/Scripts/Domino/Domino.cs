@@ -1,11 +1,7 @@
-using TMPro;
-using TreeEditor;
-using Unity.VisualScripting;
+
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
+
 
 
 public class Domino : MonoBehaviour

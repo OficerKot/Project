@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
+
 
 [CreateAssetMenu(fileName = "DominoManager", menuName = "Domino/DominoManager")]
 
@@ -16,11 +16,31 @@ public class DominoManager : ScriptableObject
         {ImageEnumerator.bone, 1} , {ImageEnumerator.fireflies, 2}, {ImageEnumerator.leaves, 3 }
     };
 
-    public static DominoManager Instance;
+    private static DominoManager _instance;
+    public static DominoManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = Resources.Load<DominoManager>("DominoManager");
+
+                if (_instance == null)
+                {
+                    _instance = CreateInstance<DominoManager>();
+                    Debug.LogWarning("Created new DominoManager instance. Consider creating it as an asset.");
+                }
+            }
+            return _instance;
+        }
+    }
 
     private void OnEnable()
     {
-        Instance = this;
+        if (_instance == null)
+        {
+            _instance = this;
+        }
     }
     public DominoData GetDominoByID(string id)
     {

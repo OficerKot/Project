@@ -1,6 +1,3 @@
-
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class DominoBreaker : MonoBehaviour
@@ -57,7 +54,8 @@ public class DominoBreaker : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, maxDistanceToHit);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, minDistanceToHit);
-#endif
+
     }
+#endif
 }
 
