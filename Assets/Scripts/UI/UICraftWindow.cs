@@ -151,11 +151,12 @@ public class UICraftWindow : MonoBehaviour
                 {
                     availableItems.Add(obj);
                 }
+                else
+                {
+                    availableItems.Remove(obj);
+                }
             }
-            else
-            {
-                availableItems.Remove(obj);
-            }
+      
         }
     }
 
