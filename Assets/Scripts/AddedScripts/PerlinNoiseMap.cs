@@ -39,9 +39,7 @@ public class PerlinNoiseMap : MonoBehaviour
     public void Start()
     {
         this.transform.position = new Vector2(-map_width / 2, -map_height / 2);
-        Debug.Log("Creating tilesets");
         CreateTileSets();
-        Debug.Log("Tilesets are success");
 
         for (int x = 0; x < map_width; ++x)
         {
@@ -115,9 +113,9 @@ public class PerlinNoiseMap : MonoBehaviour
         tileset_swamp.Add(3, tree);
 
         tileset_cemetery = new Dictionary<int, GameObject>();
-        tileset_cemetery.Add(0, emptinnes);
-        tileset_cemetery.Add(1, emptinnes);
-        tileset_cemetery.Add(2, pond);
+        tileset_cemetery.Add(0, pond);
+        tileset_cemetery.Add(1, pond);
+        tileset_cemetery.Add(2, planks);
         tileset_cemetery.Add(3, planks);
     }
 

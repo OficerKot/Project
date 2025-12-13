@@ -1808,6 +1808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 959552272}
+  gameCamera: {fileID: 0}
 --- !u!1001 &861683609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4074,10 +4075,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10d1e2cdcaaafd41ade0b9910bed108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items_count: 200
+  items_count: 50
   itemTypes:
   - {fileID: 3265742574692647083, guid: c7cd187c912062547af4966c715b0cdb, type: 3}
-  - {fileID: 3265742574692647083, guid: 4622bf30394bacb44860fa0292e49194, type: 3}
+  - {fileID: 1823821977916891402, guid: be6376841292d1c4aa683defa1d360cb, type: 3}
   - {fileID: 3265742574692647083, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
   - {fileID: 4583192258502654501, guid: 5adda76f984dfa5448e2c6b215160dc2, type: 3}
   - {fileID: 3265742574692647083, guid: 4fe8c79aac65b7245bcded13c58df06a, type: 3}

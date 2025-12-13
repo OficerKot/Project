@@ -56,8 +56,8 @@ public class DominoBreaker : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, searchRadius);
-
-#endif
     }
+#endif
+
 }
 

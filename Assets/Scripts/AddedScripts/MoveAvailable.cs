@@ -25,7 +25,7 @@ public class MoveAvailable : MonoBehaviour
                     {
                         dominoScript = other.transform.GetComponent<DominoPart>();
                         Debug.Log($"DominoPart is {dominoScript}");
-                        if (dominoScript.IsBeingPlaced())
+                        if (dominoScript.IsBeingPlaced() && !GameManager.Instance.WhatInHand())
                         {
                             characterMovement.up_available = true;
                             characterMovement.collision_up = other.gameObject;
@@ -35,7 +35,7 @@ public class MoveAvailable : MonoBehaviour
                 case 'D':
                     {
                         dominoScript = other.transform.GetComponent<DominoPart>();
-                        if (dominoScript.IsBeingPlaced())
+                        if (dominoScript.IsBeingPlaced() && !GameManager.Instance.WhatInHand())
                         {
                             characterMovement.down_available = true;
                             characterMovement.collision_down = other.gameObject;
@@ -45,7 +45,7 @@ public class MoveAvailable : MonoBehaviour
                 case 'L':
                     {
                         dominoScript = other.transform.GetComponent<DominoPart>();
-                        if (dominoScript.IsBeingPlaced())
+                        if (dominoScript.IsBeingPlaced() && !GameManager.Instance.WhatInHand())
                         {
                             characterMovement.left_available = true;
                             characterMovement.collision_left = other.gameObject;
@@ -55,7 +55,7 @@ public class MoveAvailable : MonoBehaviour
                 case 'R':
                     {
                         dominoScript = other.transform.GetComponent<DominoPart>();
-                        if (dominoScript.IsBeingPlaced())
+                        if (dominoScript.IsBeingPlaced() && !GameManager.Instance.WhatInHand())
                         {
                             characterMovement.right_available = true;
                             characterMovement.collision_right = other.gameObject;
@@ -74,22 +74,26 @@ public class MoveAvailable : MonoBehaviour
             {
                 case 'U':
                     {
-                        characterMovement.up_available = false;
+                        if (!GameManager.Instance.WhatInHand())
+                            characterMovement.up_available = false;
                         break;
                     }
                 case 'D':
                     {
-                        characterMovement.down_available = false;
+                        if (!GameManager.Instance.WhatInHand())
+                            characterMovement.down_available = false;
                         break;
                     }
                 case 'L':
                     {
-                        characterMovement.left_available = false;
+                        if (!GameManager.Instance.WhatInHand())
+                            characterMovement.left_available = false;
                         break;
                     }
                 case 'R':
                     {
-                        characterMovement.right_available = false;
+                        if (!GameManager.Instance.WhatInHand())
+                            characterMovement.right_available = false;
                         break;
                     }
                 default: break;

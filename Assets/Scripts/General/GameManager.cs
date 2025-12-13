@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static event Action<bool> OnGameStateChanged;
     bool isGameOver;
     [SerializeField] GameObject gameOverText;
+    [SerializeField] private Camera gameCamera;
 
     GameObject inHand = null;
     private void Awake()
@@ -47,5 +48,9 @@ public class GameManager : MonoBehaviour
     public void PutInHand(GameObject obj)
     {
         inHand = obj;
+    }
+    public Camera GetCamera()
+    {
+        return gameCamera;
     }
 }
