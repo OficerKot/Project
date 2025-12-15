@@ -9036,6 +9036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 959552272}
+  gameCamera: {fileID: 0}
 --- !u!1001 &843455817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17097,6 +17098,63 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!1001 &1556824745
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3047066013497621055, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_Name
+      value: CellsGrid_Generated
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620714269628800413, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620714269628800413, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620714269628800413, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620714269628800413, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620714269628800413, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620714269628800413, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620714269628800413, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620714269628800413, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620714269628800413, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620714269628800413, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c987634d774e1da488bca7899c3c8ff0, type: 3}
 --- !u!1001 &1569072361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19551,6 +19609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cells_Grid
       objectReference: {fileID: 0}
+    - target: {fileID: 6971765689243025545, guid: 666d1dcf9f3d6a3459c3284028f77f33, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8274867687887245178, guid: 666d1dcf9f3d6a3459c3284028f77f33, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -20112,6 +20174,10 @@ MonoBehaviour:
   bush_berries: {fileID: 1823821977916891402, guid: be6376841292d1c4aa683defa1d360cb, type: 3}
   bush_empty: {fileID: 521832652927124571, guid: bdd3f7f48eb2d8647aadf65deecbaf60, type: 3}
   pond: {fileID: 6280323227994927791, guid: 0f3042d5f969ef2478d7d366b615b010, type: 3}
+  cactus: {fileID: 6050633511597488391, guid: 2e5f4f08a017c6f4db2a62c4606b1367, type: 3}
+  planks: {fileID: 6280323227994927791, guid: 0e625c7f06765a64fb68c45421d5fe53, type: 3}
+  quagmire: {fileID: 6280323227994927791, guid: 7546e8a65b623ad4abc29e31f7acbad8, type: 3}
+  sourceTexture: {fileID: 2800000, guid: c555678b8bc1d074b9fdd550826f45a8, type: 3}
 --- !u!4 &1819308526
 Transform:
   m_ObjectHideFlags: 0
@@ -20142,7 +20208,7 @@ MonoBehaviour:
   items_count: 100
   itemTypes:
   - {fileID: 3265742574692647083, guid: c7cd187c912062547af4966c715b0cdb, type: 3}
-  - {fileID: 3265742574692647083, guid: 4622bf30394bacb44860fa0292e49194, type: 3}
+  - {fileID: 1823821977916891402, guid: be6376841292d1c4aa683defa1d360cb, type: 3}
   - {fileID: 3265742574692647083, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
   - {fileID: 4583192258502654501, guid: 5adda76f984dfa5448e2c6b215160dc2, type: 3}
   - {fileID: 3265742574692647083, guid: 4fe8c79aac65b7245bcded13c58df06a, type: 3}
@@ -23454,3 +23520,4 @@ SceneRoots:
   - {fileID: 828168270}
   - {fileID: 1964279777}
   - {fileID: 646703360}
+  - {fileID: 1556824745}
