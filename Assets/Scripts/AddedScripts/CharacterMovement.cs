@@ -3,17 +3,15 @@ using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] public bool up_available;
-    [SerializeField] public bool down_available;
-    [SerializeField] public bool left_available;
-    [SerializeField] public bool right_available;
-    [SerializeField] public GameObject collision_up;
-    [SerializeField] public GameObject collision_down;
-    [SerializeField] public GameObject collision_left;
-    [SerializeField] public GameObject collision_right;
-    private float walkSpeed = 7f;
+    [SerializeField] float walkSpeed = 7f;
     [SerializeField] private bool isMoving = false;
-    private Vector2 targetPosition;
+    [SerializeField] public Transform targetPosition;
+    public LayerMask whatAllowsMovement;
+
+    private void Awake()
+    {
+        targetPosition.parent = null;
+    }
 
     void OnEnable()
     {
@@ -29,57 +27,72 @@ public class CharacterMovement : MonoBehaviour
     {
         enabled = !isGameOver;
     }
+
     public void OnWalk_Up()
     {
-        //Debug.Log("Trying to walk upwards");
-        if (up_available && !isMoving)
+        //Debug.Log("Throwing upwards");
+        if (!isMoving && !GameManager.Instance.WhatInHand() && 
+            Physics2D.OverlapCircle(targetPosition.position + new Vector3(0, 1, 0), .01f, whatAllowsMovement))
         {
             Clock.Instance.TimeTick();
-            targetPosition = new Vector2(transform.position.x, collision_up.transform.position.y);
+            targetPosition.position += new Vector3(0, 1, 0);
             isMoving = true;
         }
+        //else
+        //    targetPosition.position = gameObject.transform.position;
     }
 
     public void OnWalk_Down()
     {
-        //Debug.Log("Trying to walk downwards");
-        if (down_available && !isMoving)
+        //Debug.Log("Throwing downwards");
+        if (!isMoving && !GameManager.Instance.WhatInHand() &&
+            Physics2D.OverlapCircle(targetPosition.position + new Vector3(0, -1, 0), .01f, whatAllowsMovement))
         {
             Clock.Instance.TimeTick();
-            targetPosition = new Vector2(transform.position.x, collision_down.transform.position.y);
+            targetPosition.position += new Vector3(0, -1, 0);
             isMoving = true;
         }
+        //else
+        //    targetPosition.position = gameObject.transform.position;
     }
 
     public void OnWalk_Left()
     {
-        //Debug.Log("Trying to walk left");
-        if (left_available && !isMoving)
+        //Debug.Log("Throwing left");
+        if (!isMoving && !GameManager.Instance.WhatInHand() &&
+             Physics2D.OverlapCircle(targetPosition.position + new Vector3(-1, 0, 0), .01f, whatAllowsMovement))
         {
             Clock.Instance.TimeTick();
-            targetPosition = new Vector2(collision_left.transform.position.x, transform.position.y);
+            targetPosition.position += new Vector3(-1, 0, 0);
             isMoving = true;
         }
+        //else
+        //    targetPosition.position = gameObject.transform.position;
     }
 
     public void OnWalk_Right()
     {
-        //Debug.Log("Trying to walk right");
-        if (right_available && !isMoving)
+        //Debug.Log("Throwing right");
+        if (!isMoving && !GameManager.Instance.WhatInHand() &&
+            Physics2D.OverlapCircle(targetPosition.position + new Vector3(1, 0, 0), .01f, whatAllowsMovement))
         {
             Clock.Instance.TimeTick();
-            targetPosition = new Vector2(collision_right.transform.position.x, transform.position.y);
+            targetPosition.position += new Vector3(1, 0, 0);
             isMoving = true;
         }
+        //else
+        //    targetPosition.position = gameObject.transform.position;
     }
-
+    
     void FixedUpdate()
     {
         if (isMoving)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, walkSpeed*Time.fixedDeltaTime);
-            if (transform.position.x == targetPosition.x && transform.position.y == targetPosition.y)
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition.position, walkSpeed*Time.fixedDeltaTime);
+            if (transform.position.x == targetPosition.position.x && transform.position.y == targetPosition.position.y)
+            {
                 isMoving = false;
+            }
         }
     }
 }

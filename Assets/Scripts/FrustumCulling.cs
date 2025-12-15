@@ -4,7 +4,7 @@ public class FrustumCulling : MonoBehaviour
 {
     private Camera targetCamera;
     private Renderer targetRenderer;
-    private Collider2D col;
+    private Rigidbody2D rb;
 
     private void Awake()
     {
@@ -16,10 +16,10 @@ public class FrustumCulling : MonoBehaviour
         {
             targetRenderer = GetComponent<Renderer>();
         }
-        col = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Vector2 cameraMin = targetCamera.ViewportToWorldPoint(new Vector3(0, 0, 0));
         Vector2 cameraMax = targetCamera.ViewportToWorldPoint(new Vector3(1, 1, 0));
@@ -30,6 +30,10 @@ public class FrustumCulling : MonoBehaviour
 
         bool isVisible = cameraViewRect.Overlaps(objectRect);
         targetRenderer.enabled = isVisible;
-        col.enabled = isVisible;
+        if (isVisible)
+        {
+            rb.WakeUp();
+        }else
+            rb.Sleep();
     }
 }
