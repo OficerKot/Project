@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,12 +23,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     private void Start()
     {
         isGameOver = false;
         gameOverText.SetActive(false);
     }
+
+
 
     public void SetGameOver(bool val)
     {

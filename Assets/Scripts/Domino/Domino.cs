@@ -1,11 +1,7 @@
-using TMPro;
-using TreeEditor;
-using Unity.VisualScripting;
+
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
+
 
 
 public class Domino : MonoBehaviour
@@ -167,7 +163,7 @@ public class Domino : MonoBehaviour
         bool number1IsOK = cellWithBiggerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part1Playable.data.number == cellWithBiggerCoords.GetNumber())) || (!part1CoordsAreBigger && (part2Playable.data.number == cellWithBiggerCoords.GetNumber()));
         bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2Playable.data.number == cellWithLowerCoords.GetNumber())) || (!part1CoordsAreBigger && (part1Playable.data.number == cellWithLowerCoords.GetNumber()));
 
-        return image1IsOK && image2IsOK && number1IsOK && number2IsOK;
+        return (image1IsOK && image2IsOK) || (number1IsOK && number2IsOK);
     }
     Cell[] GetCellsInOrder(Cell cell)
     {

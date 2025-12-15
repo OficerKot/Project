@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 3492417441651052659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.41011983, y: 0.41011983, z: 0.41011983}
+  m_LocalScale: {x: 0.27454156, y: 0.27454156, z: 0.27454156}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6096935935162288348}
@@ -85,8 +85,6 @@ GameObject:
   - component: {fileID: 6504662744539572401}
   - component: {fileID: 3806801874271198078}
   - component: {fileID: 6137690132748559516}
-  - component: {fileID: 712620081883005350}
-  - component: {fileID: 944079703220002397}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -211,33 +209,3 @@ MonoBehaviour:
   notification: {fileID: 3492417441651052659}
   window: {fileID: 0}
   category: 0
---- !u!114 &712620081883005350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5527156413175662094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9a66891d4dbc554fa92a46e46ceba91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageRenderer: {fileID: 0}
-  animations: []
-  loop: 0
-  speedMultiplier: 1
-  playAnimationOnStart: 
---- !u!114 &944079703220002397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5527156413175662094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49cb294eac82d1343b88764f2ec83dea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageAnimator: {fileID: 0}
