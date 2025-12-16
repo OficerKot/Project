@@ -144,7 +144,6 @@ public class Domino : MonoBehaviour
     {
         if (IsSameRotationAngle(cell2.transform.position, curCell1.transform.position))
         {
-            
             return cell2.CheckIfFree() && CheckImages(cell1, cell2);
         }
         return false;
@@ -163,7 +162,19 @@ public class Domino : MonoBehaviour
         bool number1IsOK = cellWithBiggerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part1Playable.data.number == cellWithBiggerCoords.GetNumber())) || (!part1CoordsAreBigger && (part2Playable.data.number == cellWithBiggerCoords.GetNumber()));
         bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2Playable.data.number == cellWithLowerCoords.GetNumber())) || (!part1CoordsAreBigger && (part1Playable.data.number == cellWithLowerCoords.GetNumber()));
 
+<<<<<<< Updated upstream
         return (image1IsOK && image2IsOK) || (number1IsOK && number2IsOK);
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+        return image1IsOK && image2IsOK && number1IsOK && number2IsOK;
+=======
+        return (image1IsOK || number1IsOK) && (number2IsOK || image2IsOK);
+>>>>>>> Stashed changes
+=======
+        return (image1IsOK || number1IsOK) && (number2IsOK || image2IsOK);
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     }
     Cell[] GetCellsInOrder(Cell cell)
     {

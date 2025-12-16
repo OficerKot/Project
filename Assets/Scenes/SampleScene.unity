@@ -4573,6 +4573,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 --- !u!1 &540965547
 GameObject:
   m_ObjectHideFlags: 0
@@ -4625,6 +4630,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399bd09b865096145b811649a3b25596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+=======
+  timeSpeed: 2
+  maxLightIntensity: 1
+  timeLimit: 12
+  globalLight: {fileID: 619394801}
+>>>>>>> Stashed changes
   ClockHand: {fileID: 1788097645}
 --- !u!114 &540965550
 MonoBehaviour:
@@ -4690,6 +4702,10 @@ MonoBehaviour:
   loop: 0
   speedMultiplier: 1
   playAnimationOnStart: Clock
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 --- !u!1001 &547570442
 PrefabInstance:
   m_ObjectHideFlags: 0

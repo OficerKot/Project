@@ -18,13 +18,22 @@ public class MoveAvailable : MonoBehaviour
     {
         if (other.tag == "Path")
         {
+<<<<<<< Updated upstream
             //Debug.Log("Path found!");
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+            Debug.Log("Path found!");
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
             switch (Direction)
             {
                 case 'U':
                     {
                         dominoScript = other.transform.GetComponent<DominoPart>();
-                        Debug.Log($"DominoPart is {dominoScript}");
                         if (dominoScript.IsBeingPlaced())
                         {
                             characterMovement.up_available = true;

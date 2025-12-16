@@ -46,7 +46,7 @@ public class Item : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (curCell)
+        if (curCell && !isPlaced)
         {
             curCell.NoHighlight();
             curCell = null;
