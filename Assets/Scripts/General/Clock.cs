@@ -30,27 +30,34 @@ public class Clock : MonoBehaviour
         time = 0;
         globalLight.intensity = maxLightIntensity;
         lightIntensityDestination = -1;
-        time = 0;
+        CalculateSteps();
 
     }
 
     public void TimeTick()
     {
-        CalculateSteps();
         time += timeStep;
+        Debug.Log("Cur time: " + time + ", time limit: " + timeLimit);
         if (time > timeLimit)
         {
             time = 0;
             lightIntensityDestination *= -1;
         }
+        if (lightIntensityDestination < 0 && globalLight.intensity <= 0)
+        {
+            globalLight.intensity = 0;
+        }
+        else if (lightIntensityDestination > 0 && globalLight.intensity >= maxLightIntensity)
+        {
+            globalLight.intensity = maxLightIntensity;
+        }
         globalLight.intensity += lightIntensityDestination * lightStep;
-        Debug.Log(globalLight.intensity);
         ClockHand.Rotate(Vector3.back, rotationStep);
     }
 
     void CalculateSteps()
     {
-        timeStep = 1f / (timeLimit * timeSpeed); 
+        timeStep = 1 / timeSpeed; 
         lightStep = maxLightIntensity / (timeLimit * timeSpeed); 
         rotationStep = 360f / (timeLimit * timeSpeed); 
     }
