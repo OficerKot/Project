@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6152188278455406784}
   - component: {fileID: 2947423514173112908}
   - component: {fileID: 8468734209634712013}
-  m_Layer: 0
+  - component: {fileID: 6546289766859735058}
+  m_Layer: 6
   m_Name: Cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,3 +163,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6546289766859735058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3822876281156303225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4f108f7a03a6f4bb10cad127439bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFree: 1
+  curDomino: {fileID: 0}
+  curItem: {fileID: 0}
+  image: 0
+  number: 0
+  neighbourCells: []

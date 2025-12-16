@@ -1,11 +1,17 @@
 using UnityEngine;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 public class Clock : MonoBehaviour
 {
     int time;
     public static Clock Instance;
 =======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 using UnityEngine.Rendering.Universal;
 
 public class Clock : MonoBehaviour
@@ -18,6 +24,12 @@ public class Clock : MonoBehaviour
     [SerializeField] float maxLightIntensity;
     [SerializeField] int timeLimit = 12;
     [SerializeField] Light2D globalLight;
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     [SerializeField] Transform ClockHand;
  
@@ -36,17 +48,31 @@ public class Clock : MonoBehaviour
     void Start()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         time = 0;
 =======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         globalLight.intensity = maxLightIntensity;
         lightIntensityDestination = -1;
         time = 0;
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 
     public void TimeTick()
     {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         time++;
         RotateClockHand();
@@ -57,6 +83,10 @@ public class Clock : MonoBehaviour
         ClockHand.Rotate(Vector3.back, 10);
     }
 =======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         CalculateSteps();
         time += timeStep;
         if (time > timeLimit)
@@ -76,5 +106,11 @@ public class Clock : MonoBehaviour
         rotationStep = 360f / (timeLimit * timeSpeed); 
     }
  
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

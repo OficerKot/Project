@@ -22,21 +22,25 @@ public class ItemsPlacer : MonoBehaviour
         noise_grid = perlin.GetNoiseGrid();
     }
 
-    public void PlaceItems(int width, int height)
+    public void PlaceItems(int width, int height, Vector3 safepoint)
     {
         map_width = width;
         map_height = height;
         itemsCount = itemTypes.Length;
-        GenerateTiles(items_count);
+        GenerateTiles(items_count, safepoint);
     }
 
-    void GenerateTiles(int items_count)
+    void GenerateTiles(int items_count, Vector3 safepoint)
     {
         for (int i  = 0; i<items_count; ++i)
         {
             int x = Random.Range(0, map_width);
             int y = Random.Range(0, map_height);
-            
+            if ((safepoint.x - x) * (safepoint.x - x) + (safepoint.y - y) * (safepoint.y - y) <= 16)
+            {
+                continue;
+            }
+
             if (noise_grid[x][y] == 0 || noise_grid[x][y] == 1)
             {
                 CreateItem(x, y);

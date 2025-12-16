@@ -163,10 +163,16 @@ public class Domino : MonoBehaviour
         bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2Playable.data.number == cellWithLowerCoords.GetNumber())) || (!part1CoordsAreBigger && (part1Playable.data.number == cellWithLowerCoords.GetNumber()));
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         return (image1IsOK && image2IsOK) || (number1IsOK && number2IsOK);
 =======
 <<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 <<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
         return image1IsOK && image2IsOK && number1IsOK && number2IsOK;
 =======
         return (image1IsOK || number1IsOK) && (number2IsOK || image2IsOK);
@@ -174,6 +180,12 @@ public class Domino : MonoBehaviour
 =======
         return (image1IsOK || number1IsOK) && (number2IsOK || image2IsOK);
 >>>>>>> Stashed changes
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
     Cell[] GetCellsInOrder(Cell cell)

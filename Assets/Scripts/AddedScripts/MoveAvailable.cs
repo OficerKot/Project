@@ -3,31 +3,32 @@ using UnityEngine;
 public class MoveAvailable : MonoBehaviour
 {
     private Collider2D collider_;
-    private CharacterMovement characterMovement;
+    private CharacterMovement charMov;
     private DominoPart dominoScript;
-    public char Direction;
 
     void Awake()
     {
-        
-        characterMovement = transform.parent.GetComponent<CharacterMovement>();
+        charMov = transform.parent.GetComponent<CharacterMovement>();
         collider_ = GetComponent<Collider2D>();
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Path")
         {
 <<<<<<< Updated upstream
-            //Debug.Log("Path found!");
+<<<<<<< Updated upstream
+            Debug.Log("There's a path");
+            //charMov.SetMovable(true);
 =======
 <<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 <<<<<<< Updated upstream
             Debug.Log("Path found!");
 =======
 >>>>>>> Stashed changes
 =======
->>>>>>> Stashed changes
 >>>>>>> Stashed changes
             switch (Direction)
             {
@@ -73,36 +74,12 @@ public class MoveAvailable : MonoBehaviour
                     }
                 default: break;
             }
+>>>>>>> Stashed changes
         }
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Path")
+        else
         {
-            switch (Direction)
-            {
-                case 'U':
-                    {
-                        characterMovement.up_available = false;
-                        break;
-                    }
-                case 'D':
-                    {
-                        characterMovement.down_available = false;
-                        break;
-                    }
-                case 'L':
-                    {
-                        characterMovement.left_available = false;
-                        break;
-                    }
-                case 'R':
-                    {
-                        characterMovement.right_available = false;
-                        break;
-                    }
-                default: break;
-            }
+            Debug.Log("No path, heading back...");
+            //charMov.SetMovable(false);
         }
     }
 }
