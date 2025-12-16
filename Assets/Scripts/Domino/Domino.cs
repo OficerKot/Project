@@ -1,7 +1,10 @@
-
+using TMPro;
+using TreeEditor;
+using Unity.VisualScripting;
 using UnityEngine;
-using System.Collections.Generic;
-
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 
 public class Domino : MonoBehaviour
@@ -9,34 +12,18 @@ public class Domino : MonoBehaviour
     DominoPart part1Playable, part2Playable;
     [SerializeField] DominoData part1, part2;
     public GameObject pivot;
-    bool isBeingGrabbed = false;
-    Cell curCell1, curCell2;
 
-    [SerializeField] SpriteRenderer healthStateObject;
-    [SerializeField] List<Sprite> healhStates;
+    [SerializeField] Cell curCell1, curCell2;
+
     [SerializeField] float offsetY = 2f;
-    [SerializeField] float health = 100;
-    float startHealth;
-    void OnEnable()
-    {
-        GameManager.OnGameStateChanged += OnGameStateChanged;
 
-    }
+    [SerializeField] bool isBeingGrabbed = false;
 
-    void OnDisable()
-    {
-        GameManager.OnGameStateChanged -= OnGameStateChanged;
-    }
-
-    void OnGameStateChanged(bool isGameOver)
-    {
-        enabled = !isGameOver; 
-    }
     public void Initialize(DominoData p1, DominoData p2)
     {
         part1 = p1;
         part2 = p2;
-        startHealth = health;
+
         GenerateParts();
         SpawnPivot();
     }
@@ -156,36 +143,20 @@ public class Domino : MonoBehaviour
         Cell cellWithBiggerCoords = sortedCells[0];
         Cell cellWithLowerCoords = sortedCells[1];
 
-        bool image1IsOK = cellWithBiggerCoords.GetImage() == ImageEnumerator.any || (part1CoordsAreBigger && (part1Playable.data.image == cellWithBiggerCoords.GetImage())) || (!part1CoordsAreBigger && (part2Playable.data.image == cellWithBiggerCoords.GetImage()));
-        bool image2IsOK = cellWithLowerCoords.GetImage() == ImageEnumerator.any || (part1CoordsAreBigger && (part2Playable.data.image == cellWithLowerCoords.GetImage())) || (!part1CoordsAreBigger && (part1Playable.data.image == cellWithLowerCoords.GetImage()));
+        bool image1IsOK = cellWithBiggerCoords.GetImage() == Image.any || (part1CoordsAreBigger && (part1Playable.data.image == cellWithBiggerCoords.GetImage())) || (!part1CoordsAreBigger && (part2Playable.data.image == cellWithBiggerCoords.GetImage()));
+        bool image2IsOK = cellWithLowerCoords.GetImage() == Image.any || (part1CoordsAreBigger && (part2Playable.data.image == cellWithLowerCoords.GetImage())) || (!part1CoordsAreBigger && (part1Playable.data.image == cellWithLowerCoords.GetImage()));
 
         bool number1IsOK = cellWithBiggerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part1Playable.data.number == cellWithBiggerCoords.GetNumber())) || (!part1CoordsAreBigger && (part2Playable.data.number == cellWithBiggerCoords.GetNumber()));
         bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2Playable.data.number == cellWithLowerCoords.GetNumber())) || (!part1CoordsAreBigger && (part1Playable.data.number == cellWithLowerCoords.GetNumber()));
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        return (image1IsOK && image2IsOK) || (number1IsOK && number2IsOK);
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
         return image1IsOK && image2IsOK && number1IsOK && number2IsOK;
 =======
         return (image1IsOK || number1IsOK) && (number2IsOK || image2IsOK);
 >>>>>>> Stashed changes
 =======
         return (image1IsOK || number1IsOK) && (number2IsOK || image2IsOK);
->>>>>>> Stashed changes
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
     }
     Cell[] GetCellsInOrder(Cell cell)
@@ -245,24 +216,7 @@ public class Domino : MonoBehaviour
         TeleportToCells(collider1.transform, collider2.transform);
         AddToCells(part1Playable, part2Playable);
 
-    }
 
-    public void TryToBreak(float hp)
-    {
-        health -= hp;
-        Debug.Log(name + " has health: " + health);
-        if (health <= 0)
-        {
-            RemoveFromGame();
-        }
-        int k = (int)startHealth / healhStates.Count;
-        healthStateObject.sprite = healhStates[(int)health/k ];
-    }
-    void RemoveFromGame()
-    {
-        curCell1.SetFree();
-        curCell2.SetFree();
-        Destroy(gameObject);
     }
     void AddToCells(DominoPart d1, DominoPart d2)
     {

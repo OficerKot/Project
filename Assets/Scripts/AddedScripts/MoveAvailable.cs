@@ -3,27 +3,22 @@ using UnityEngine;
 public class MoveAvailable : MonoBehaviour
 {
     private Collider2D collider_;
-    private CharacterMovement charMov;
+    private CharacterMovement characterMovement;
     private DominoPart dominoScript;
+    public char Direction;
 
     void Awake()
     {
-        charMov = transform.parent.GetComponent<CharacterMovement>();
+        
+        characterMovement = transform.parent.GetComponent<CharacterMovement>();
         collider_ = GetComponent<Collider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Path")
         {
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-            Debug.Log("There's a path");
-            //charMov.SetMovable(true);
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 <<<<<<< Updated upstream
             Debug.Log("Path found!");
 =======
@@ -74,12 +69,36 @@ public class MoveAvailable : MonoBehaviour
                     }
                 default: break;
             }
->>>>>>> Stashed changes
         }
-        else
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Path")
         {
-            Debug.Log("No path, heading back...");
-            //charMov.SetMovable(false);
+            switch (Direction)
+            {
+                case 'U':
+                    {
+                        characterMovement.up_available = false;
+                        break;
+                    }
+                case 'D':
+                    {
+                        characterMovement.down_available = false;
+                        break;
+                    }
+                case 'L':
+                    {
+                        characterMovement.left_available = false;
+                        break;
+                    }
+                case 'R':
+                    {
+                        characterMovement.right_available = false;
+                        break;
+                    }
+                default: break;
+            }
         }
     }
 }
