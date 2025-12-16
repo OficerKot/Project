@@ -30,7 +30,7 @@ public class Domino : MonoBehaviour
 
     void OnGameStateChanged(bool isGameOver)
     {
-        enabled = !isGameOver; 
+        enabled = !isGameOver;
     }
     public void Initialize(DominoData p1, DominoData p2)
     {
@@ -144,7 +144,7 @@ public class Domino : MonoBehaviour
     {
         if (IsSameRotationAngle(cell2.transform.position, curCell1.transform.position))
         {
-            
+
             return cell2.CheckIfFree() && CheckImages(cell1, cell2);
         }
         return false;
@@ -233,7 +233,7 @@ public class Domino : MonoBehaviour
             RemoveFromGame();
         }
         int k = (int)startHealth / healhStates.Count;
-        healthStateObject.sprite = healhStates[(int)health/k ];
+        healthStateObject.sprite = healhStates[(int)health / k];
     }
     void RemoveFromGame()
     {

@@ -2979,25 +2979,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4757027539769406566, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
   m_PrefabInstance: {fileID: 867935523}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &317317342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317317341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0812d2b78754b43ae4864ec4123794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDistanceToHit: 20
-  minDistanceToHit: 3
-  maxDominoToBreak: 5
-  damage: 10
-  targetLayers:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!4 &317317347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1695712737904718053, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
@@ -4625,6 +4606,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399bd09b865096145b811649a3b25596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeSpeed: 2
+  maxLightIntensity: 1.5
+  timeLimit: 12
+  globalLight: {fileID: 619394801}
   ClockHand: {fileID: 1788097645}
 --- !u!114 &540965550
 MonoBehaviour:
@@ -9336,10 +9321,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4757027539769406566, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 317317342}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
 --- !u!1 &868985201
 GameObject:
@@ -16921,7 +16903,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 317317342}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DominoBreaker, Assembly-CSharp
         m_MethodName: HitSomeDomino
         m_Mode: 1
