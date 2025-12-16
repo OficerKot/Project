@@ -6,6 +6,7 @@ public class UIPickableIcon : MonoBehaviour, IPointerClickHandler
     [SerializeField] string itemId;
     GameObject spawnedPlayable;
     [SerializeField] GameObject blurImage = null;
+    private bool disposable = false;
 
 
     private void Update()
@@ -20,9 +21,17 @@ public class UIPickableIcon : MonoBehaviour, IPointerClickHandler
     {
         return itemId;
     }
+    public void SetDisposable()
+    {
+        disposable = true;
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (disposable)
+        {
+            return;
+        }
         if (spawnedPlayable == null)
         {
             if (GameManager.Instance.WhatInHand() == null)
