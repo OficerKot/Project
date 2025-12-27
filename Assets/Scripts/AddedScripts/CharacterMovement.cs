@@ -5,6 +5,7 @@ public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] float walkSpeed = 7f;
     [SerializeField] private bool isMoving = false;
+    bool canMove = true;
     [SerializeField] public Transform targetPosition;
     public LayerMask whatAllowsMovement;
 
@@ -12,24 +13,22 @@ public class CharacterMovement : MonoBehaviour
     {
         targetPosition.parent = null;
     }
-
     void OnEnable()
     {
         GameManager.OnGameStateChanged += OnGameStateChanged;
-    }
 
+    }
     void OnDisable()
     {
         GameManager.OnGameStateChanged -= OnGameStateChanged;
     }
-
-    void OnGameStateChanged(bool isGameOver)
+    void OnGameStateChanged(bool isGamePaused)
     {
-        enabled = !isGameOver;
+        canMove = !isGamePaused;
     }
-
     public void OnWalk_Up()
     {
+        if (!canMove) return;
         //Debug.Log("Throwing upwards");
         if (!isMoving && !GameManager.Instance.WhatInHand() && 
             Physics2D.OverlapCircle(targetPosition.position + new Vector3(0, 1, 0), .01f, whatAllowsMovement))
@@ -44,6 +43,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnWalk_Down()
     {
+        if (!canMove) return;
         //Debug.Log("Throwing downwards");
         if (!isMoving && !GameManager.Instance.WhatInHand() &&
             Physics2D.OverlapCircle(targetPosition.position + new Vector3(0, -1, 0), .01f, whatAllowsMovement))
@@ -58,6 +58,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnWalk_Left()
     {
+        if (!canMove) return;
         //Debug.Log("Throwing left");
         if (!isMoving && !GameManager.Instance.WhatInHand() &&
              Physics2D.OverlapCircle(targetPosition.position + new Vector3(-1, 0, 0), .01f, whatAllowsMovement))
@@ -72,6 +73,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnWalk_Right()
     {
+        if (!canMove) return;
         //Debug.Log("Throwing right");
         if (!isMoving && !GameManager.Instance.WhatInHand() &&
             Physics2D.OverlapCircle(targetPosition.position + new Vector3(1, 0, 0), .01f, whatAllowsMovement))

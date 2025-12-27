@@ -49,9 +49,9 @@ public class Inventory : MonoBehaviour
                 UIInventory.Instance.RemoveItemIcon(i);
                 itemsID.Remove(i.Id);
             }
-      
+            UICraftWindow.Instance.CheckInventory(i);
         }
-        UICraftWindow.Instance.CheckInventory(i);
+  
     }
 
     public Dictionary<string, int> GetCurItems()
