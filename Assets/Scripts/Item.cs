@@ -8,6 +8,21 @@ public class Item : MonoBehaviour
     [SerializeField] Cell curCell;
     bool isPlaced = true;
 
+    void OnEnable()
+    {
+        GameManager.OnGameStateChanged += OnGameStateChanged;
+
+    }
+
+    void OnDisable()
+    {
+        GameManager.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+    void OnGameStateChanged(bool isGamePaused)
+    {
+        GetComponent<BoxCollider2D>().enabled = !isGamePaused;
+    }
     private void Start()
     {
         if(curCell) // сами поставили вручную перед запуском на какую то клетку

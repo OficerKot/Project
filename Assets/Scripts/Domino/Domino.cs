@@ -28,9 +28,9 @@ public class Domino : MonoBehaviour
         GameManager.OnGameStateChanged -= OnGameStateChanged;
     }
 
-    void OnGameStateChanged(bool isGameOver)
+    void OnGameStateChanged(bool isGamePaused)
     {
-        enabled = !isGameOver;
+        GetComponent<Collider2D>().enabled = !isGamePaused;
     }
     public void Initialize(DominoData p1, DominoData p2)
     {
