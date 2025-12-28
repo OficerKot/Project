@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec55d87d3200afc46bb8387d3236c69e, type: 3}
+  m_Name: Obelisk
+  m_EditorClassIdentifier: 
+  Id: obelisk
+  prefab: {fileID: 3265742574692647083, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
+  UIprefab: {fileID: 2342191990407282095, guid: 8f0cf2018da89424dba1e0663d0d4117, type: 3}
+  itemsForCraft: []

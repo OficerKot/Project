@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static event Action<bool> OnGameStateChanged;
     bool paused = false;
     [SerializeField] GameObject gameOverText;
+    [SerializeField] GameObject winText;
     [SerializeField] private Camera gameCamera;
 
     GameObject inHand = null;
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        paused = !paused; // Меняем состояние
+        paused = !paused; 
         Time.timeScale = paused ? 0f : 1f;
         SetGameOnPause(paused);
     }
@@ -49,8 +50,17 @@ public class GameManager : MonoBehaviour
     public void SetGameOnPause(bool val)
     {
         OnGameStateChanged?.Invoke(val);
-        //gameOverText.SetActive(val);
+    }
 
+    public void Loose()
+    {
+        gameOverText.SetActive(true);
+        Pause();
+    }
+    public void Win()
+    {
+        winText.SetActive(true);
+        Pause();
     }
     public bool IsHandFree()
     {

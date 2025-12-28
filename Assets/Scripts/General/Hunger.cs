@@ -44,7 +44,7 @@ public class Hunger : MonoBehaviour
         hungerLevel++;
         if (hungerLevel == hungerLevels.Length)
         {
-            GameManager.Instance.SetGameOnPause(true);
+            GameManager.Instance.Loose();
             enabled = false;
         }
         else
