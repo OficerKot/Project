@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 
 
-public class Domino : MonoBehaviour
+public class Domino : PauseBehaviour
 {
     DominoPart part1Playable, part2Playable;
     [SerializeField] DominoData part1, part2;
@@ -17,21 +17,6 @@ public class Domino : MonoBehaviour
     [SerializeField] float offsetY = 2f;
     [SerializeField] float health = 100;
     float startHealth;
-    void OnEnable()
-    {
-        GameManager.OnGameStateChanged += OnGameStateChanged;
-
-    }
-
-    void OnDisable()
-    {
-        GameManager.OnGameStateChanged -= OnGameStateChanged;
-    }
-
-    void OnGameStateChanged(bool isGamePaused)
-    {
-        GetComponent<Collider2D>().enabled = !isGamePaused;
-    }
     public void Initialize(DominoData p1, DominoData p2)
     {
         part1 = p1;

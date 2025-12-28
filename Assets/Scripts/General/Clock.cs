@@ -1,16 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class Clock : MonoBehaviour
+public class Clock : PauseBehaviour
 {
     float time;
     public static Clock Instance;
     [SerializeField] float timeSpeed;
     [SerializeField] float maxLightIntensity, minLightIntensity;
     [SerializeField] int timeLimit = 24;
+    float hourCounter;
+    bool isActive = true;
     [SerializeField] Light2D globalLight;
     [SerializeField] Transform ClockHand;
+    public static event Action OnHourPassed;
 
+    public override void OnGamePaused(bool isGamePaused)
+    {
+        isActive = !isGamePaused;
+    }
     private void Awake()
     {
         if (Instance == null)
@@ -25,12 +33,15 @@ public class Clock : MonoBehaviour
     void Start()
     {
         time = 12;
+        hourCounter = 0;
         globalLight.intensity = maxLightIntensity; 
     }
 
     public void TimeTick()
     {
+        if (!isActive) return;
         time += timeSpeed;
+        CheckHourPassed();
 
         if (time >= timeLimit)
         {
@@ -43,6 +54,16 @@ public class Clock : MonoBehaviour
 
         UpdateLighting();
 
+    }
+
+    void CheckHourPassed()
+    {
+        hourCounter += timeSpeed;
+        for(int i = 0; i < Mathf.FloorToInt(hourCounter); i++)
+        {
+            OnHourPassed.Invoke();
+        }
+        hourCounter = timeSpeed;
     }
     void UpdateLighting()
     {

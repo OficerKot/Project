@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UISelectionPanel : MonoBehaviour 
+public class UISelectionPanel : PauseBehaviour
 {
     [SerializeField] List<GameObject> spawnedUIDomino = new List<GameObject>();
     public static UISelectionPanel Instance;
     [SerializeField] GameObject UIDominoPrefab;
+    bool isActive = true;
     const int DOMINO_CNT = 5;
     public float YPos = -170;
     public float XPos = 5;
@@ -22,27 +23,18 @@ public class UISelectionPanel : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnEnable()
-    {
-        GameManager.OnGameStateChanged += OnGameStateChanged;
-    }
-
-    void OnDisable()
-    {
-        GameManager.OnGameStateChanged -= OnGameStateChanged;
-    }
-
-    void OnGameStateChanged(bool isGameOver)
-    {
-        enabled = !isGameOver;
-    }
     private void Start()
     {
         GeneratePanel();
     }
 
+    public override void OnGamePaused(bool isGamePaused)
+    {
+        isActive = !isGamePaused;
+    }
     public void GeneratePanel()
     {
+        if (!isActive) return;
         if(spawnedUIDomino.Count != 0)
         {
             foreach (var c in spawnedUIDomino)

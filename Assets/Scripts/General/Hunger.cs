@@ -31,6 +31,7 @@ public class Hunger : MonoBehaviour
 
     public void MakeStep()
     {
+        if (Time.timeScale == 0) return;
         stepsCounter++;
         if (stepsCounter >= stepsLimit)
         {
@@ -42,9 +43,9 @@ public class Hunger : MonoBehaviour
     void HungerDown()
     {
         hungerLevel++;
-        if (hungerLevel == hungerLevels.Length)
+        if (hungerLevel >= hungerLevels.Length)
         {
-            GameManager.Instance.SetGameOnPause(true);
+            GameManager.Instance.Loose();
             enabled = false;
         }
         else

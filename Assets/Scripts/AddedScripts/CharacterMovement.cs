@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CharacterMovement : MonoBehaviour
+public class CharacterMovement : PauseBehaviour
 {
     [SerializeField] float walkSpeed = 7f;
     [SerializeField] private bool isMoving = false;
-    bool canMove = true;
+    bool isActive = true;
     [SerializeField] public Transform targetPosition;
     public LayerMask whatAllowsMovement;
 
@@ -13,22 +13,13 @@ public class CharacterMovement : MonoBehaviour
     {
         targetPosition.parent = null;
     }
-    void OnEnable()
+    public override void OnGamePaused(bool isGamePaused)
     {
-        GameManager.OnGameStateChanged += OnGameStateChanged;
-
-    }
-    void OnDisable()
-    {
-        GameManager.OnGameStateChanged -= OnGameStateChanged;
-    }
-    void OnGameStateChanged(bool isGamePaused)
-    {
-        canMove = !isGamePaused;
+        isActive = !isGamePaused;
     }
     public void OnWalk_Up()
     {
-        if (!canMove) return;
+        if (!isActive) return;
         //Debug.Log("Throwing upwards");
         if (!isMoving && !GameManager.Instance.WhatInHand() && 
             Physics2D.OverlapCircle(targetPosition.position + new Vector3(0, 1, 0), .01f, whatAllowsMovement))
@@ -43,7 +34,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnWalk_Down()
     {
-        if (!canMove) return;
+        if (!isActive) return;
         //Debug.Log("Throwing downwards");
         if (!isMoving && !GameManager.Instance.WhatInHand() &&
             Physics2D.OverlapCircle(targetPosition.position + new Vector3(0, -1, 0), .01f, whatAllowsMovement))
@@ -58,7 +49,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnWalk_Left()
     {
-        if (!canMove) return;
+        if (!isActive) return;
         //Debug.Log("Throwing left");
         if (!isMoving && !GameManager.Instance.WhatInHand() &&
              Physics2D.OverlapCircle(targetPosition.position + new Vector3(-1, 0, 0), .01f, whatAllowsMovement))
@@ -73,7 +64,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnWalk_Right()
     {
-        if (!canMove) return;
+        if (!isActive) return;
         //Debug.Log("Throwing right");
         if (!isMoving && !GameManager.Instance.WhatInHand() &&
             Physics2D.OverlapCircle(targetPosition.position + new Vector3(1, 0, 0), .01f, whatAllowsMovement))

@@ -2,27 +2,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Item : MonoBehaviour
+public class Item : PauseBehaviour
 {
     [SerializeField] string ID;
     [SerializeField] Cell curCell;
     bool isPlaced = true;
 
-    void OnEnable()
-    {
-        GameManager.OnGameStateChanged += OnGameStateChanged;
-
-    }
-
-    void OnDisable()
-    {
-        GameManager.OnGameStateChanged -= OnGameStateChanged;
-    }
-
-    void OnGameStateChanged(bool isGamePaused)
-    {
-        GetComponent<BoxCollider2D>().enabled = !isGamePaused;
-    }
     private void Start()
     {
         if(curCell) // сами поставили вручную перед запуском на какую то клетку
