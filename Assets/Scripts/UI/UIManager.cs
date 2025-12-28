@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : PauseBehaviour
 {
     Menu openedMenu = null;
+    bool isActive = true;
     [SerializeField] Menu sigilsMenu, pauseMenu, craftMenu;
     [SerializeField] KeyCode sigilsKey, pauseKey, craftKey;
 
@@ -22,10 +23,14 @@ public class UIManager : MonoBehaviour
             ToggleMenu(pauseMenu);
         }
     }
+    public override void OnGamePaused(bool isGamePaused)
+    {
+        isActive = !isGamePaused;
+    }
 
     public void ToggleMenu(Menu menu)
     {
-
+        if (!isActive && GameManager.Instance.gameEnd) return;
         if (openedMenu == menu)
         {
             menu.Close();

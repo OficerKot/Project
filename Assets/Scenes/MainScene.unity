@@ -294,6 +294,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15953618}
   m_CullTransparentMesh: 1
+--- !u!1 &18091714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 18091715}
+  - component: {fileID: 18091716}
+  m_Layer: 0
+  m_Name: DominoProtecter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &18091715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18091714}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 105264585}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &18091716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18091714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be36e8502b5c43468fb8be2be14d874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoursToProtect: 48
+  isProtecting: 0
 --- !u!1001 &28779629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -943,6 +989,7 @@ Transform:
   - {fileID: 828168270}
   - {fileID: 974587245}
   - {fileID: 1905950554}
+  - {fileID: 18091715}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124673119
@@ -3027,6 +3074,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1695712737904718053, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
   m_PrefabInstance: {fileID: 867935523}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &317317348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7663925867909768192, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
+  m_PrefabInstance: {fileID: 867935523}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317317341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0812d2b78754b43ae4864ec4123794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &338950027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10092,6 +10150,10 @@ PrefabInstance:
     - target: {fileID: 6292737781518095012, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663925867909768192, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
+      propertyPath: damage
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18151,7 +18213,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 317317348}
         m_TargetAssemblyTypeName: DominoBreaker, Assembly-CSharp
         m_MethodName: HitSomeDomino
         m_Mode: 1

@@ -7,6 +7,17 @@ public class DominoBreaker : MonoBehaviour
     public float damage = 10;
     [SerializeField] private LayerMask targetLayers;
     Collider2D[] searchRadius;
+    bool canHit = true;
+
+    private void Start()
+    {
+        DominoProtecter.OnProtectionStarted += OnProtectionStarted;
+    }
+
+    void OnProtectionStarted(bool b)
+    {
+        canHit = !b;
+    }
     public void GetColliders()
     {
         searchRadius = Physics2D.OverlapCircleAll(transform.position, maxDistanceToHit, targetLayers);    
@@ -27,6 +38,12 @@ public class DominoBreaker : MonoBehaviour
 
     public void HitSomeDomino()
     {
+        if (!canHit)
+        {
+            Debug.Log("Can't hit");
+            return;
+        }
+
         GetColliders();
         foreach(Collider2D domino in searchRadius)
         {

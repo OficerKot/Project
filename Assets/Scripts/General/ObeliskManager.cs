@@ -19,11 +19,6 @@ public class ObeliskManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
- 
-    }
-
     public void Pick(ObeliskColor c)
     {
         obelisksCount--;

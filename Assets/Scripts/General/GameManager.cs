@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public static event Action<bool> OnGameStateChanged;
+    public static event Action<bool> OnGamePaused;
     bool paused = false;
+    public bool gameEnd = false;
     [SerializeField] GameObject gameOverText;
     [SerializeField] GameObject winText;
     [SerializeField] private Camera gameCamera;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        Time.timeScale = 1f;
+        Pause();
         SceneManager.LoadScene(0);
     }
 
@@ -44,17 +45,20 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        gameEnd = false;
+        winText.SetActive(false);
         gameOverText.SetActive(false);
     }
 
     public void SetGameOnPause(bool val)
     {
-        OnGameStateChanged?.Invoke(val);
+        OnGamePaused?.Invoke(val);
     }
 
     public void Loose()
     {
         gameOverText.SetActive(true);
+        gameEnd = true;
         Pause();
     }
     public void Win()

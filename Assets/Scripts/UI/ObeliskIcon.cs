@@ -5,9 +5,13 @@ public class ObeliskIcon : MonoBehaviour
 {
     [SerializeField] ObeliskColor color;
 
-    void Start()
+    void OnEnable ()
     {
         ObeliskManager.OnObeliskCollected += OnObeliskCollected;
+    }
+    private void OnDisable()
+    {
+        ObeliskManager.OnObeliskCollected -= OnObeliskCollected;
     }
 
     void OnObeliskCollected(ObeliskColor c)
