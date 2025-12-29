@@ -11,7 +11,7 @@ interface IRoadManager
 public class RoadManager : MonoBehaviour, IRoadManager
 {
     public static RoadManager Instance;
-    int loopsCnt = 0;
+    [SerializeField] int loopsCnt = 1;
 
     [SerializeField] public GameObject[] settlementsPrefabs;
 
@@ -39,16 +39,61 @@ public class RoadManager : MonoBehaviour, IRoadManager
 
         if (HasLoopDFS(d, curWay, visited))
         {
-           Debug.Log("Loop " + curWay.Count);
-           SpawnSettlement(curWay);
-           SetNumbersToVertexInThisLoop(curWay);
+            RemoveNonCycleVertex(d, curWay);
+            SpawnSettlement(curWay);
+            SetNumbersToVertexInThisLoop(curWay);
         }
     }
 
+    void RemoveNonCycleVertex(DominoPart vertex, HashSet<DominoPart> curWay, HashSet<DominoPart> visited = null)
+    {
+        Debug.Log("Visiting " + vertex.name);
+        if (visited == null) visited = new HashSet<DominoPart>();
+        visited.Add(vertex);
+
+        if (CountNeighbours(vertex, curWay) < 2  && curWay.Contains(vertex))
+        {
+            Debug.Log("Removed " + vertex.name);
+            curWay.Remove(vertex);
+            RemoveNonCycleVertex(vertex, curWay, visited);
+        }
+        else
+        {
+            foreach (DominoPart n in vertex.neighbours)
+            {
+                if (!visited.Contains(n))
+                {
+                    RemoveNonCycleVertex(n, curWay, visited);
+                }
+            }
+        }
+    }
+
+    int CountNeighbours(DominoPart vertex, HashSet<DominoPart> curWay)
+    {
+        int count = 0;
+        foreach(DominoPart n in vertex.neighbours)
+        {
+            if (curWay.Contains(n)) count++;
+        }
+        return count;
+    }
+    int CountNeighboursInCycle(DominoPart vertex)
+    {
+        int cnt = 0;
+        foreach(DominoPart d in vertex.neighbours)
+        {
+            if(d.GetLoopNumber() != 0)
+            {
+                cnt++;
+            }
+        }
+        return cnt - CountNeighboursInCycle(vertex);
+    }
     void SetNumbersToVertexInThisLoop(HashSet<DominoPart> curWay)
     {
         loopsCnt++;
-        foreach(var vertex in curWay)
+        foreach (var vertex in curWay)
         {
             vertex.SetLoopNumber(loopsCnt);
         }
@@ -69,7 +114,7 @@ public class RoadManager : MonoBehaviour, IRoadManager
             GameObject s = Instantiate(settlementsPrefabs[0], settlementPos, transform.rotation);
             s.transform.localScale = settlementScale;
             Debug.Log(minX + " " + maxX + " " + minY + " " + maxY);
-            
+
         }
     }
 
@@ -77,7 +122,7 @@ public class RoadManager : MonoBehaviour, IRoadManager
     {
         float minX = float.MaxValue, maxX = float.MinValue, minY = float.MaxValue, maxY = float.MinValue;
         float[] coords = { minX, maxX, minY, maxY };
-        foreach(var vertex in curWay)
+        foreach (var vertex in curWay)
         {
             Vector3 pos = vertex.transform.position;
 
@@ -97,16 +142,16 @@ public class RoadManager : MonoBehaviour, IRoadManager
         {
             if (neighbour && neighbour.GetLoopNumber() == 0)
             {
-                if (!visited.Contains(neighbour) )
-                { 
-                    if (HasLoopDFS(neighbour, curWay, visited, start ))
+                if (!visited.Contains(neighbour))
+                {
+                    if (HasLoopDFS(neighbour, curWay, visited, start))
                     {
                         return true;
                     }
                 }
                 else if (neighbour != previous && curWay.Count > 4) return true;
             }
-            
+
         }
         curWay.Remove(start);
         return false;

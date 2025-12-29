@@ -148,7 +148,7 @@ public class Domino : PauseBehaviour
         bool number1IsOK = cellWithBiggerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part1Playable.data.number == cellWithBiggerCoords.GetNumber())) || (!part1CoordsAreBigger && (part2Playable.data.number == cellWithBiggerCoords.GetNumber()));
         bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2Playable.data.number == cellWithLowerCoords.GetNumber())) || (!part1CoordsAreBigger && (part1Playable.data.number == cellWithLowerCoords.GetNumber()));
 
-        return (image1IsOK && image2IsOK) || (number1IsOK && number2IsOK);
+        return (image1IsOK || number1IsOK) && (image2IsOK || number2IsOK);
     }
     Cell[] GetCellsInOrder(Cell cell)
     {
