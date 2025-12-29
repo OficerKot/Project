@@ -884,6 +884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obelisk (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3265742574692647083, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5104395357491924321, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1553,6 +1557,10 @@ PrefabInstance:
     - target: {fileID: 3265742574692647083, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
       propertyPath: m_Name
       value: Obelisk
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265742574692647083, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6087920031629599462, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5137,7 +5145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399bd09b865096145b811649a3b25596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSpeed: 0.5
+  timeSpeed: 0.2
   maxLightIntensity: 1
   minLightIntensity: 0
   timeLimit: 24
@@ -10308,7 +10316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7663925867909768192, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
       propertyPath: damage
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11638,6 +11646,10 @@ PrefabInstance:
     - target: {fileID: 3265742574692647083, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
       propertyPath: m_Name
       value: Obelisk (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265742574692647083, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5104395357491924321, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
       propertyPath: m_Sprite
@@ -22253,6 +22265,10 @@ PrefabInstance:
     - target: {fileID: 3265742574692647083, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
       propertyPath: m_Name
       value: Obelisk (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265742574692647083, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5104395357491924321, guid: 7a998a4d9cd615b4fadc1d7dcca4fce1, type: 3}
       propertyPath: m_Sprite

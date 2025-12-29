@@ -14,7 +14,7 @@ public class UIDomino : MonoBehaviour, IPointerClickHandler
     GameObject part1UI, part2UI;
     
  
-    [SerializeField] float offsetY = 2f;
+    [SerializeField] float offsetY = 0;
 
     [SerializeField] bool clicked = false;
     void Start()
