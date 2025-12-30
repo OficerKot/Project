@@ -7,7 +7,6 @@ public class Hunger : MonoBehaviour
     public int stepsLimit = 5;
     public static Hunger Instance;
     [SerializeField] string[] hungerLevels;
-    [SerializeField] TMP_InputField hungerInput;
     ImageAnimator thisImageAnimator;
     int hungerLevel, stepsCounter;
 
@@ -32,15 +31,7 @@ public class Hunger : MonoBehaviour
 
     public void MakeStep()
     {
-        if (hungerInput.text == "")
-        {
-            stepsLimit = 5;
-        }
-        else
-        {
-            stepsLimit = int.Parse(hungerInput.text);
-        }
-
+        if (Time.timeScale == 0) return;
         stepsCounter++;
         if (stepsCounter >= stepsLimit)
         {
@@ -52,9 +43,9 @@ public class Hunger : MonoBehaviour
     void HungerDown()
     {
         hungerLevel++;
-        if (hungerLevel == hungerLevels.Length)
+        if (hungerLevel >= hungerLevels.Length)
         {
-            GameManager.Instance.SetGameOver(true);
+            GameManager.Instance.Loose();
             enabled = false;
         }
         else

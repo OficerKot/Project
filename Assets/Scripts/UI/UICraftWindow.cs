@@ -6,21 +6,21 @@ using UnityEngine.Timeline;
 using UnityEngine.UI;
 
 
-public class UICraftWindow : MonoBehaviour
+public class UICraftWindow : Menu
 {
     public static UICraftWindow Instance = null;
-    [SerializeField] GameObject menuObject;
+    [SerializeField] GameObject menu;
     [SerializeField] GameObject curWindow;
     [SerializeField] List<MenuButton> categoryButtons;
     [SerializeField] List<ItemSpawnerButton> spawnerButtons;
     public HashSet<ItemData> availableItems = new HashSet<ItemData>();
     public HashSet<ItemData> exploredRecipes = new HashSet<ItemData>();
-    bool isMenuOpen = false;
 
     private void Awake()
     {
         Instance = this;
     }
+
     private void Start()
     {
         foreach (MenuButton b in categoryButtons)
@@ -32,64 +32,41 @@ public class UICraftWindow : MonoBehaviour
             b.GetComponent<Button>().onClick.AddListener(() => Craft(b.GetComponent<ItemSpawnerButton>().objectToSpawn));
         }
     }
-    void Update()
+
+    public override void Close()
     {
- 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (curWindow)
         {
-            Menu();
+            curWindow.SetActive(false);
+            curWindow = null;
         }
+        menu.SetActive(false);
     }
 
-    void Menu()
+    public override void Open()
     {
-        if (isMenuOpen)
+        if (curWindow)
         {
-            CloseMenu();
+            menu.transform.position = curWindow.transform.position;
+            curWindow.SetActive(false);
+            curWindow = null;
         }
         else
         {
-            OpenMenu();
+            menu.transform.position = Input.mousePosition;
         }
-
+        menu.SetActive(true);
     }
 
     public void OpenCategoryMenu(GameObject g)
     {
         curWindow = g;
-        menuObject.SetActive(false);
+        menu.SetActive(false);
         curWindow.SetActive(true);
-        curWindow.transform.position = menuObject.transform.position;
+        curWindow.transform.position = menu.transform.position;
     }
 
-    public void CloseMenu()
-    {
-        if (curWindow)
-        {
-            curWindow.SetActive(false);
-            curWindow = null;
-        }
-        menuObject.SetActive(false);
-        isMenuOpen = false;
 
-    }
-
-    public void OpenMenu()
-    {
-        if (curWindow)
-        {
-            menuObject.transform.position = curWindow.transform.position;
-            curWindow.SetActive(false);
-            curWindow = null;
-        }
-        else
-        {
-            menuObject.transform.position = Input.mousePosition;
-        }
-        menuObject.SetActive(true);
-        isMenuOpen = true;
-
-    }
 
     public void Craft(ItemData obj)
     {
@@ -102,7 +79,6 @@ public class UICraftWindow : MonoBehaviour
             }
             spawnedObj.GetComponent<Item>().Pick();
             CheckInventoryAfterRemove();
-            CloseMenu();
         }
         else Debug.Log("You don't have all items to craft it!");
     }

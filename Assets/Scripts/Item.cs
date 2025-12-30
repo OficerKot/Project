@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Item : MonoBehaviour
+public class Item : PauseBehaviour
 {
     [SerializeField] string ID;
     [SerializeField] Cell curCell;

@@ -1,15 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
-public class SigilsMenu : MonoBehaviour
+public class SigilsMenu : Menu
 {
     public static SigilsMenu Instance;
 
-    bool isMenuOpen = false;
     [SerializeField] float scaleKoefficient = 2.5f;
-    [SerializeField] GameObject menu;
     [SerializeField] List<Transform> cells;
+    [SerializeField] GameObject menu;
     List<GameObject> spawnedIcons = new List<GameObject>();
     List<DominoData> sortedDominoList = new List<DominoData>();
     HashSet<ImageEnumerator> imageFilters = new HashSet<ImageEnumerator>();
@@ -29,21 +29,17 @@ public class SigilsMenu : MonoBehaviour
             Destroy(this);
         }
     }
+    public override void Open()
+    {
+        menu.SetActive(true);
+        if (spawnedIcons.Count == 0) FillAvailable();
+    }
+    public override void Close()
+    {
+        menu.SetActive(false);
+    }
     private void Update()
     {
-       
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (isMenuOpen)
-            {
-                CloseMenu();
-            }
-            else
-            {
-                OpenMenu();
-            }
-        }
-
         if (prevAvailableCount != DominoManager.Instance.available.Count) 
         {
             Debug.Log("Update");
@@ -121,18 +117,6 @@ public class SigilsMenu : MonoBehaviour
         ClearAvailable();
         FillAvailable();
     }
-    public void CloseMenu()
-    {
-        menu.SetActive(false);
-        isMenuOpen = false;
-    }
-
-    public void OpenMenu()
-    {
-        menu.SetActive(true);
-        isMenuOpen = true;
-        if(spawnedIcons.Count == 0)
-        FillAvailable();
-    }
+ 
 
 }

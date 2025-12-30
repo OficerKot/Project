@@ -63,7 +63,7 @@ public class ItemSpawnerButton : Notificationable, IPointerEnterHandler, IPointe
     public void OnPointerEnter(PointerEventData eventData)
     {
 
-        craftPanel = Instantiate(craftPanelPrefab, transform.position, transform.rotation, (GameObject.Find("CraftWindow").transform));
+        craftPanel = Instantiate(craftPanelPrefab, transform.position, transform.rotation, (GameObject.Find("Craft").transform));
         RectTransform rect = craftPanel.GetComponent<RectTransform>();
         rect.localPosition += offset;
         craftPanel.GetComponent<CraftPanel>().text.text = description;

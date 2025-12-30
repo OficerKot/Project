@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 
 
-public class Domino : MonoBehaviour
+public class Domino : PauseBehaviour
 {
     DominoPart part1Playable, part2Playable;
     [SerializeField] DominoData part1, part2;
@@ -17,21 +17,6 @@ public class Domino : MonoBehaviour
     [SerializeField] float offsetY = 2f;
     [SerializeField] float health = 100;
     float startHealth;
-    void OnEnable()
-    {
-        GameManager.OnGameStateChanged += OnGameStateChanged;
-
-    }
-
-    void OnDisable()
-    {
-        GameManager.OnGameStateChanged -= OnGameStateChanged;
-    }
-
-    void OnGameStateChanged(bool isGameOver)
-    {
-        enabled = !isGameOver;
-    }
     public void Initialize(DominoData p1, DominoData p2)
     {
         part1 = p1;
@@ -163,7 +148,7 @@ public class Domino : MonoBehaviour
         bool number1IsOK = cellWithBiggerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part1Playable.data.number == cellWithBiggerCoords.GetNumber())) || (!part1CoordsAreBigger && (part2Playable.data.number == cellWithBiggerCoords.GetNumber()));
         bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2Playable.data.number == cellWithLowerCoords.GetNumber())) || (!part1CoordsAreBigger && (part1Playable.data.number == cellWithLowerCoords.GetNumber()));
 
-        return (image1IsOK && image2IsOK) || (number1IsOK && number2IsOK);
+        return (image1IsOK || number1IsOK) && (image2IsOK || number2IsOK);
     }
     Cell[] GetCellsInOrder(Cell cell)
     {

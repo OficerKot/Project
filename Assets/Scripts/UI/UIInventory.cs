@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIInventory : MonoBehaviour
+public class UIInventory : PauseBehaviour
 {
     [SerializeField] GameObject inventory;
     public UIInventoryCell[] cellsList;
@@ -12,6 +12,7 @@ public class UIInventory : MonoBehaviour
 
     public static UIInventory Instance;
     bool isOpened = false;
+    bool isActive = true;
 
     private void Awake()
     {
@@ -35,8 +36,14 @@ public class UIInventory : MonoBehaviour
         inventoryButton.onClick.AddListener(Interact);
     }
 
+    public override void OnGamePaused(bool isGamePaused)
+    {
+        isActive = !isGamePaused;
+    }
     void Interact()
     {
+        if (!isActive) return;
+
         if (!isOpened)
         {
             isOpened = true;
