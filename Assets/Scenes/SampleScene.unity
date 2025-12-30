@@ -20160,6 +20160,8 @@ MonoBehaviour:
   planks: {fileID: 6280323227994927791, guid: 0e625c7f06765a64fb68c45421d5fe53, type: 3}
   quagmire: {fileID: 6280323227994927791, guid: 7546e8a65b623ad4abc29e31f7acbad8, type: 3}
   sourceTexture: {fileID: 2800000, guid: c555678b8bc1d074b9fdd550826f45a8, type: 3}
+  magnification_primary: 5
+  magnification_secondary: 0.5
 --- !u!4 &1819308526
 Transform:
   m_ObjectHideFlags: 0
@@ -21472,8 +21474,8 @@ Transform:
   m_GameObject: {fileID: 1964279775}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2256, y: 0.4519, z: 0.28}
-  m_LocalScale: {x: 27.282566, y: 16.183952, z: 1}
+  m_LocalPosition: {x: -5.8342, y: -1.4002, z: 0.28}
+  m_LocalScale: {x: 178.96928, y: 135.67271, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -28,8 +28,8 @@ public class PerlinNoiseMap : MonoBehaviour
     List<List<int>> noise_grid = new List<List<int>>();
 
     //any value between 4 and 20
-    float magnification_primary = 10f;
-    float magnification_secondary = 5.5f;
+    [SerializeField] float magnification_primary = 5f;
+    [SerializeField] float magnification_secondary = 1.5f;
 
     int x_offset1 = 0, y_offset1 = 0; //<- +>, v- +^
 
@@ -126,7 +126,7 @@ public class PerlinNoiseMap : MonoBehaviour
         {
             for (int y = 0; y < map_height; ++y)
             {
-                if ((safepoint.x - x) * (safepoint.x - x) + (safepoint.y - y) * (safepoint.y - y) <= 16)
+                if ((safepoint.x - x) * (safepoint.x - x) + (safepoint.y - y) * (safepoint.y - y) <= 8)
                 {
                     continue;
                 }
