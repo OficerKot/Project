@@ -13,7 +13,7 @@ public class DominoManager : ScriptableObject
 
     public Dictionary<ImageEnumerator, int> order = new Dictionary<ImageEnumerator, int>()
     {
-        {ImageEnumerator.bone, 1} , {ImageEnumerator.fireflies, 2}, {ImageEnumerator.leaves, 3 }
+        {ImageEnumerator.bone, 1} , {ImageEnumerator.fireflies, 2}, {ImageEnumerator.leaves, 3 }, {ImageEnumerator.flowers, 4 }
     };
 
     private static DominoManager _instance;
@@ -66,5 +66,5 @@ public class DominoManager : ScriptableObject
 }
 public enum ImageEnumerator
 {
-    any, bone, fireflies, leaves
+    any, bone, fireflies, leaves, flowers
 }

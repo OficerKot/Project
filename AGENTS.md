@@ -2,7 +2,7 @@
 - Project name: Project
 - Unity version: Unity 6000.1.15f1
 - Active game object:
-  - Name: RoadManager
+  - Name: Domino
   - Tag: Untagged
-  - Layer: Default
+  - Layer: DominoBase
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
