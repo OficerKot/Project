@@ -11,7 +11,7 @@ public class UIPickableIcon : MonoBehaviour, IPointerClickHandler
 
     private void Update()
     {
-        if(spawnedPlayable && spawnedPlayable.GetComponent<Item>().IsPlaced())
+        if(spawnedPlayable && spawnedPlayable.GetComponent<Item>().GetIsPlaced())
         {
             spawnedPlayable = null;
             blurImage.SetActive(false);

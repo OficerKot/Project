@@ -2,7 +2,7 @@
 - Project name: Project
 - Unity version: Unity 6000.1.15f1
 - Active game object:
-  - Name: Domino
+  - Name: cell_x80_y6
   - Tag: Untagged
-  - Layer: DominoBase
+  - Layer: Cell
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

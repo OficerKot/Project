@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: 6e876f5b43e66d64b93814c037442b6e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 724523467008652441
+    second: Rockies6_0
+  - first:
+      213: 7984802865021851905
+    second: Rockies6_1
+  - first:
+      213: -5471614933855812377
+    second: Rockies6_2
+  - first:
+      213: -7913859342094132100
+    second: Rockies6_3
+  - first:
+      213: 1436170016505693427
+    second: Rockies6_4
+  - first:
+      213: 3814876555120891220
+    second: Rockies6_5
+  - first:
+      213: -4293558145725800745
+    second: Rockies6_6
+  - first:
+      213: 5847664840096142014
+    second: Rockies6_7
+  - first:
+      213: 6924427823204710232
+    second: Rockies6_8
+  - first:
+      213: 8785074375539520129
+    second: Rockies6_9
+  - first:
+      213: -726817275534169003
+    second: Rockies6_10
+  - first:
+      213: 4677562606646000784
+    second: Rockies6_11
+  - first:
+      213: -914150830829899076
+    second: Rockies6_12
+  - first:
+      213: -5253925074632866285
+    second: Rockies6_13
+  - first:
+      213: 3916339002652242000
+    second: Rockies6_14
+  - first:
+      213: -6799996456806616581
+    second: Rockies6_15
+  - first:
+      213: -1386480467864090719
+    second: Rockies6_16
+  - first:
+      213: 793574626564118943
+    second: Rockies6_17
+  - first:
+      213: 8369153888411085311
+    second: Rockies6_18
+  - first:
+      213: 4018278684329337197
+    second: Rockies6_19
+  - first:
+      213: -8535277746404333447
+    second: Rockies6_20
+  - first:
+      213: -587747520652043750
+    second: Rockies6_21
+  - first:
+      213: -4254756137621549046
+    second: Rockies6_22
+  - first:
+      213: 7374839491274122535
+    second: Rockies6_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rockies6_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3168df92bfe4617b0800000000000000
+      internalID: -5253925074632866285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rockies6_16
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a781f04c5b32cce0800000000000000
+      internalID: -1386480467864090719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rockies6_19
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6169f37c2bc3c730800000000000000
+      internalID: 4018278684329337197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rockies6_22
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a009723e5d114f4c0800000000000000
+      internalID: -4254756137621549046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0b796d2c33db9f44ebeca0359795c7c6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Rockies6_0: 724523467008652441
+      Rockies6_1: 7984802865021851905
+      Rockies6_10: -726817275534169003
+      Rockies6_11: 4677562606646000784
+      Rockies6_12: -914150830829899076
+      Rockies6_13: -5253925074632866285
+      Rockies6_14: 3916339002652242000
+      Rockies6_15: -6799996456806616581
+      Rockies6_16: -1386480467864090719
+      Rockies6_17: 793574626564118943
+      Rockies6_18: 8369153888411085311
+      Rockies6_19: 4018278684329337197
+      Rockies6_2: -5471614933855812377
+      Rockies6_20: -8535277746404333447
+      Rockies6_21: -587747520652043750
+      Rockies6_22: -4254756137621549046
+      Rockies6_23: 7374839491274122535
+      Rockies6_3: -7913859342094132100
+      Rockies6_4: 1436170016505693427
+      Rockies6_5: 3814876555120891220
+      Rockies6_6: -4293558145725800745
+      Rockies6_7: 5847664840096142014
+      Rockies6_8: 6924427823204710232
+      Rockies6_9: 8785074375539520129
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

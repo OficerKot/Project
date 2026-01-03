@@ -2,19 +2,20 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Item : PauseBehaviour
+public interface Interactable
+{
+    public void Pick();
+    public void PutInCell(Cell cell);
+    public void PutInCell();
+
+}
+
+public class Item : PauseBehaviour, Interactable
 {
     [SerializeField] string ID;
     [SerializeField] Cell curCell;
     bool isPlaced = true;
 
-    private void Start()
-    {
-        if(curCell) // сами поставили вручную перед запуском на какую то клетку
-        {
-            PutInCell();
-        }
-    }
     public void OnMouseDown()
     {
         if (!Inventory.Instance.isFull() && isPlaced)
@@ -30,6 +31,13 @@ public class Item : PauseBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        if(curCell)
+        {
+            curCell.SetFree();
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (!isPlaced && collision.gameObject.layer == 6 && !curCell)
@@ -43,7 +51,6 @@ public class Item : PauseBehaviour
 
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (curCell && !isPlaced)
@@ -52,16 +59,14 @@ public class Item : PauseBehaviour
             curCell = null;
         }
     }
-
     private void Update()
     {
         if (!isPlaced) Move();
     }
-    public bool IsPlaced()
+    public bool GetIsPlaced()
     {
         return isPlaced;
     }
-
     public void SetIsPlaced(bool val)
     {
         isPlaced = val;
@@ -77,30 +82,21 @@ public class Item : PauseBehaviour
             Inventory.Instance.AddItem(ItemManager.Instance.GetItemByID(ID));
             Destroy(gameObject);
         }
-        else Debug.Log("FULL INVENTORY!!!");
     }
-
-    public void PutInCellOnSpawn(Cell cell)
+    public void PutInCell(Cell cell)
     {
         curCell = cell;
         PutInCell();
     }
-
-    void PutInCell()
+    public void PutInCell()
     {
-        curCell.SetCurItem(this);
+        curCell.SetCurItem(gameObject);
         curCell.SetFree(false);
         isPlaced = true;
         transform.position = curCell.transform.position;
         transform.Translate(0, 0, -curCell.transform.position.z);
         Inventory.Instance.RemoveItem(ItemManager.Instance.GetItemByID(ID));
         GameManager.Instance.PutInHand(null);
-    }
-
-    public void PutInCell(Cell cell)
-    {
-        curCell = cell;
-        PutInCell();
     }
     void Move() 
     {

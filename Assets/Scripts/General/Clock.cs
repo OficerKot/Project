@@ -59,11 +59,15 @@ public class Clock : PauseBehaviour
     void CheckHourPassed()
     {
         hourCounter += timeSpeed;
-        for(int i = 0; i < Mathf.FloorToInt(hourCounter); i++)
+        if (Mathf.FloorToInt(hourCounter) > 0)
         {
-            OnHourPassed.Invoke();
+            for (int i = 0; i < Mathf.FloorToInt(hourCounter); i++)
+            {
+                OnHourPassed.Invoke();
+                Debug.Log("An hour passed. Time: " + time);
+            }
+            hourCounter = timeSpeed;
         }
-        hourCounter = timeSpeed;
     }
     void UpdateLighting()
     {
