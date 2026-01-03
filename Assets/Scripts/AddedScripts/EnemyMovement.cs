@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyMovement : PauseBehaviour
 {
-    [SerializeField] float walkSpeed = 7f;
+    [SerializeField] float walkSpeed = 1f;
     [SerializeField] private bool isMoving = false;
     orient orientation;
     bool isActive = true;
@@ -20,7 +20,21 @@ public class EnemyMovement : PauseBehaviour
     {
         targetPosition = this.gameObject.transform;
         direction = new Vector3(0, 0, 0);
-        orientation = (orient)UnityEngine.Random.Range(0, 2);
+        //orientation = (orient)UnityEngine.Random.Range(0, 2);
+
+        if (Physics2D.OverlapCircle(transform.position + new Vector3(0, 1, 0), .01f, whatAllowsMovement) ||
+            Physics2D.OverlapCircle(transform.position + new Vector3(0, -1, 0), .01f, whatAllowsMovement))
+        {
+            Debug.Log("First condition triggered");
+            orientation = orient.vert;
+        }
+        else if (Physics2D.OverlapCircle(transform.position + new Vector3(1, 0, 0), .01f, whatAllowsMovement) ||
+            Physics2D.OverlapCircle(transform.position + new Vector3(-1, 0, 0), .01f, whatAllowsMovement))
+        {
+            Debug.Log("Second condition triggered");
+            orientation = orient.hor;
+        }
+        Debug.Log($"orientation is {orientation}");
         if (orientation == orient.vert)
         {
             direction = new Vector3(0, 1, 0);
@@ -57,7 +71,7 @@ public class EnemyMovement : PauseBehaviour
     {
         if (isMoving)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition.position, walkSpeed * Time.fixedDeltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition.position, walkSpeed*Time.fixedDeltaTime);
             if (transform.position.x == targetPosition.position.x && transform.position.y == targetPosition.position.y)
             {
                 isMoving = false;

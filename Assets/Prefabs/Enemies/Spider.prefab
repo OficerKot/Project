@@ -104,7 +104,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3176213310103667748}
   animations:
   - name: Spider
-    fps: 0
+    fps: 5
     frames:
     - {fileID: -190812506593647732, guid: 69e75a022f8053a4ebb915ce19f7bd1d, type: 3}
     - {fileID: -171173510, guid: 69e75a022f8053a4ebb915ce19f7bd1d, type: 3}
@@ -121,13 +121,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2414544696436572936}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e26adb9cb8d80d54fb51c4b8c986112b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 7
+  walkSpeed: 0.1
   isMoving: 0
   whatAllowsMovement:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
