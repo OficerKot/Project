@@ -179,5 +179,5 @@ MonoBehaviour:
   curDomino: {fileID: 0}
   curItem: {fileID: 0}
   image: 0
-  number: 0
+  number: -1
   neighbourCells: []

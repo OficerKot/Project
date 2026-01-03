@@ -13,7 +13,7 @@ public class DominoManager : ScriptableObject
 
     public Dictionary<ImageEnumerator, int> order = new Dictionary<ImageEnumerator, int>()
     {
-        {ImageEnumerator.bone, 1} , {ImageEnumerator.fireflies, 2}, {ImageEnumerator.leaves, 3 }
+        {ImageEnumerator.bone, 1} , {ImageEnumerator.fireflies, 2}, {ImageEnumerator.leaves, 3 }, {ImageEnumerator.flowers, 4 }, {ImageEnumerator.axe, 5}, {ImageEnumerator.pickaxe, 6}
     };
 
     private static DominoManager _instance;
@@ -57,7 +57,7 @@ public class DominoManager : ScriptableObject
 
     public DominoData GetDomino(ImageEnumerator image, int number)
     {
-       return allDomino.Find(d => d.image == image && d.number == number);
+       return allDomino.Find(d => d.image == image && (d.number == 0 || d.number == number));
     }
     public bool HasAvailable()
     {
@@ -66,5 +66,5 @@ public class DominoManager : ScriptableObject
 }
 public enum ImageEnumerator
 {
-    any, bone, fireflies, leaves
+    any, bone, fireflies, leaves, flowers, axe, pickaxe
 }

@@ -2,7 +2,7 @@
 - Project name: Project
 - Unity version: Unity 6000.1.15f1
 - Active game object:
-  - Name: RoadManager
+  - Name: cell_x80_y6
   - Tag: Untagged
-  - Layer: Default
+  - Layer: Cell
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

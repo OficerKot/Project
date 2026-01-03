@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dominoId: bones1
   number: 1
+  neighboursNumber: 1
   image: 1
+  neighboursImage: 1
   prefab: {fileID: 8789013147086901380, guid: 464e5092d835b5442a01563e1b49459d, type: 3}
   UIprefab: {fileID: 6806147685944260444, guid: f52441464997f2c4b9694eabbcca92a7, type: 3}

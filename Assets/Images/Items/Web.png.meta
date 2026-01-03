@@ -125,12 +125,12 @@ TextureImporter:
       name: Web_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 22
-        height: 23
+        x: 0
+        y: 0
+        width: 26
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Web_1
       rect:
         serializedVersion: 2
-        x: 28
+        x: 26
         y: 0
-        width: 23
-        height: 24
+        width: 26
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,12 +169,12 @@ TextureImporter:
       name: Web_2
       rect:
         serializedVersion: 2
-        x: 53
+        x: 52
         y: 0
-        width: 24
-        height: 24
+        width: 26
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: Web_3
       rect:
         serializedVersion: 2
-        x: 81
-        y: 1
-        width: 21
-        height: 23
+        x: 78
+        y: 0
+        width: 26
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4089791505ee2d44b8bd6acbe29d9fe8
     internalID: 0
     vertices: []
     indices: 

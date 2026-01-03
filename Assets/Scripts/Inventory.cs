@@ -36,6 +36,23 @@ public class Inventory : MonoBehaviour
             UICraftWindow.Instance.CheckInventory(i);
         }
     }
+    public void AddItem(ItemData i, int count)
+    {
+        if (itemsID.Count < MAX_SIZE)
+        {
+            if (!itemsID.ContainsKey(i.Id))
+            {
+                itemsID.Add(i.Id, 0);
+                UIInventory.Instance.AddNewItem(i);
+            }
+            for (int j = 0; j < count; j++)
+            {
+                itemsID[i.Id]++;
+                UIInventory.Instance.AddOneMoreItem(i);
+            }
+            UICraftWindow.Instance.CheckInventory(i);
+        }
+    }
 
     public void RemoveItem(ItemData i)
     {
@@ -54,6 +71,10 @@ public class Inventory : MonoBehaviour
   
     }
 
+    public bool Contains(ItemData i)
+    {
+        return itemsID.ContainsKey(i.Id);
+    }
     public Dictionary<string, int> GetCurItems()
     {
         return itemsID;

@@ -69,7 +69,11 @@ public class Domino : PauseBehaviour
     {
         if (isBeingGrabbed && collision.gameObject.layer == 6)
         {
-            if (!collision.GetComponent<Cell>().CheckIfFree()) return;
+            if (!collision.GetComponent<Cell>().CheckIfFree())
+            {
+                return;
+
+            }
 
             ClearCellData();
             curCell1 = collision.GetComponent<Cell>();
@@ -130,25 +134,40 @@ public class Domino : PauseBehaviour
         if (IsSameRotationAngle(cell2.transform.position, curCell1.transform.position))
         {
 
-            return cell2.CheckIfFree() && CheckImages(cell1, cell2);
+            return cell2.CheckIfFree() && CheckCells(cell1, cell2);
         }
         return false;
     }
 
-    bool CheckImages(Cell cell1, Cell cell2)
+    bool CheckCells(Cell cell1, Cell cell2)
     {
         bool part1CoordsAreBigger = part1Playable.GetLocation() == Location.up || part1Playable.GetLocation() == Location.right;
         Cell[] sortedCells = GetCellsInOrder(cell2);
         Cell cellWithBiggerCoords = sortedCells[0];
         Cell cellWithLowerCoords = sortedCells[1];
 
-        bool image1IsOK = cellWithBiggerCoords.GetImage() == ImageEnumerator.any || (part1CoordsAreBigger && (part1Playable.data.image == cellWithBiggerCoords.GetImage())) || (!part1CoordsAreBigger && (part2Playable.data.image == cellWithBiggerCoords.GetImage()));
-        bool image2IsOK = cellWithLowerCoords.GetImage() == ImageEnumerator.any || (part1CoordsAreBigger && (part2Playable.data.image == cellWithLowerCoords.GetImage())) || (!part1CoordsAreBigger && (part1Playable.data.image == cellWithLowerCoords.GetImage()));
+        bool image1IsOK = cellWithBiggerCoords.GetImage() == ImageEnumerator.any  || 
+            (part1CoordsAreBigger && (part1Playable.data.neighboursImage == cellWithBiggerCoords.GetImage() || part1.neighboursImage == ImageEnumerator.any)) || 
+            (!part1CoordsAreBigger && (part2Playable.data.neighboursImage == cellWithBiggerCoords.GetImage() || part2.neighboursImage == ImageEnumerator.any)); 
+        bool image2IsOK = cellWithLowerCoords.GetImage() == ImageEnumerator.any || 
+            (part1CoordsAreBigger && (part2Playable.data.neighboursImage == cellWithLowerCoords.GetImage() || part2.neighboursImage == ImageEnumerator.any)) || 
+            (!part1CoordsAreBigger && (part1Playable.data.neighboursImage == cellWithLowerCoords.GetImage() || part1.neighboursImage == ImageEnumerator.any)); 
 
-        bool number1IsOK = cellWithBiggerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part1Playable.data.number == cellWithBiggerCoords.GetNumber())) || (!part1CoordsAreBigger && (part2Playable.data.number == cellWithBiggerCoords.GetNumber()));
-        bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2Playable.data.number == cellWithLowerCoords.GetNumber())) || (!part1CoordsAreBigger && (part1Playable.data.number == cellWithLowerCoords.GetNumber()));
+        bool number1IsOK = cellWithBiggerCoords.GetNumber() ==  0 || (part1CoordsAreBigger && (part1Playable.data.neighboursNumber == cellWithBiggerCoords.GetNumber()) ) || 
+            (!part1CoordsAreBigger && (part2Playable.data.neighboursNumber == cellWithBiggerCoords.GetNumber()));
+        bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2Playable.data.neighboursNumber == cellWithLowerCoords.GetNumber()) || 
+            (!part1CoordsAreBigger && (part1Playable.data.neighboursNumber == cellWithLowerCoords.GetNumber())));
 
-        return (image1IsOK || number1IsOK) && (image2IsOK || number2IsOK);
+        //Либо в клетке нет предмета, либо есть и на него можно ставить любой рисунок и подходит номер, либо только определённый рисунок и любой номер, либо подходит и рисунок и номер
+        bool item1IsOK = cellWithBiggerCoords.GetCurItem() == null || number1IsOK && (
+            (part1CoordsAreBigger && (part1Playable.data.image == cellWithBiggerCoords.GetImage() || cellWithBiggerCoords.GetImage() == ImageEnumerator.any)) || 
+            (!part1CoordsAreBigger && (part2Playable.data.image == cellWithBiggerCoords.GetImage() || cellWithBiggerCoords.GetImage() == ImageEnumerator.any)));
+
+        bool item2IsOK = cellWithLowerCoords.GetCurItem() == null || number2IsOK && (
+            (part1CoordsAreBigger && (part2Playable.data.image == cellWithLowerCoords.GetImage() || cellWithLowerCoords.GetImage() == ImageEnumerator.any)) || 
+            (!part1CoordsAreBigger && (part1Playable.data.image == cellWithLowerCoords.GetImage() || cellWithLowerCoords.GetImage() == ImageEnumerator.any)) );
+            
+        return (image1IsOK || number1IsOK) && (image2IsOK || number2IsOK) && item1IsOK && item2IsOK;
     }
     Cell[] GetCellsInOrder(Cell cell)
     {

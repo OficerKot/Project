@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dominoId: fireflies
   number: 4
+  neighboursNumber: 4
   image: 2
+  neighboursImage: 2
   prefab: {fileID: 4689632754707460671, guid: 713ff7d9da101ba4c93d06b6927440db, type: 3}
   UIprefab: {fileID: 4894664409230234025, guid: 83b961a909b707d49b040662f92cfe67, type: 3}
