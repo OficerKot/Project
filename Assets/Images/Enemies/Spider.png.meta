@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 60b7608993e20354fb4e99d61b3b6dd5
+guid: 69e75a022f8053a4ebb915ce19f7bd1d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7466070985540378945
-    second: Web_0
-  - first:
-      213: -459178439699441841
-    second: Web_1
-  - first:
-      213: -9124559110371017752
-    second: Web_2
-  - first:
-      213: 2830347677702482831
-    second: Web_3
+      213: -190812506593647732
+    second: Spider (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Web_0
+      name: Spider_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1412cf02100dc9760800000000000000
-      internalID: 7466070985540378945
+      spriteID: c83a8c549091a5df0800000000000000
+      internalID: -190812506593647732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Web_1
+      name: Spider_1
       rect:
         serializedVersion: 2
         x: 26
@@ -152,59 +130,15 @@ TextureImporter:
         width: 26
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f47523554aba0a9f0800000000000000
-      internalID: -459178439699441841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Web_2
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 0
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ebf74645dd0f5180800000000000000
-      internalID: -9124559110371017752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Web_3
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 0
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f8bee40973a674720800000000000000
-      internalID: 2830347677702482831
+      spriteID: 87810f32588be9e46967a7a19d0cbc3e
+      internalID: -171173510
       vertices: []
       indices: 
       edges: []
@@ -213,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5f0863301c213d648a3b9640c1464a6e
+    spriteID: 67cbd2910b86eab4ca62c9edb6dc4d92
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +157,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Web_0: 7466070985540378945
-      Web_1: -459178439699441841
-      Web_2: -9124559110371017752
-      Web_3: 2830347677702482831
+      Spider_0: -190812506593647732
+      Spider_1: -171173510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

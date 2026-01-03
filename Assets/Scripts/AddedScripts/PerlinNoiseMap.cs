@@ -10,7 +10,7 @@ public class PerlinNoiseMap : MonoBehaviour
     Dictionary<int, GameObject> tileset_swamp;
     Dictionary<int, GameObject> tileset_cemetery;
 
-    public GameObject Player;
+    [SerializeField] public Transform[] safezones;
     public GameObject emptinnes;
     public GameObject tree;
     public GameObject bush_berries;
@@ -83,6 +83,7 @@ public class PerlinNoiseMap : MonoBehaviour
         y_offset1 = Random.Range(0, 1000);
         GenerateMap(pixelMatrix);
 
+        safepoint = new Vector3(safezones[0].position.x, safezones[0].position.y, 0);
         itemsPlacer = this.GetComponent<ItemsPlacer>();
         itemsPlacer.PlaceItems(map_width, map_height, safepoint);
     }
@@ -121,12 +122,13 @@ public class PerlinNoiseMap : MonoBehaviour
 
     void GenerateMap(int[,] pixelMatrix)
     {
-        safepoint = new Vector3(Player.transform.position.x - this.transform.position.x, Player.transform.position.y - this.transform.position.y, 0);
         for (int x = 0; x < map_width; ++x)
         {
             for (int y = 0; y < map_height; ++y)
             {
-                if ((safepoint.x - x) * (safepoint.x - x) + (safepoint.y - y) * (safepoint.y - y) <= 8)
+                if (IntersectsSafezone(safezones[0], x, y) || IntersectsSafezone(safezones[1], x, y) ||
+                    IntersectsSafezone(safezones[2], x, y) || IntersectsSafezone(safezones[3], x, y) ||
+                    IntersectsSafezone(safezones[4], x, y))
                 {
                     continue;
                 }
@@ -160,7 +162,6 @@ public class PerlinNoiseMap : MonoBehaviour
             }
         }
     }
-
     int GetIdUsingPerlin(int x, int y, int x_off, int y_off, float magn)
     {
         float raw_perlin = Mathf.PerlinNoise(
@@ -191,5 +192,16 @@ public class PerlinNoiseMap : MonoBehaviour
 
         tile.name = string.Format("tile_x{0}_y{1}", x, y);
         tile.transform.localPosition = new Vector3Int(x, y, 0);
+    }
+
+    bool IntersectsSafezone(Transform tf, int x, int y)
+    {
+        safepoint = new Vector3(tf.position.x - this.transform.position.x, tf.position.y - this.transform.position.y, 0);
+        if ((safepoint.x - x) * (safepoint.x - x) + (safepoint.y - y) * (safepoint.y - y) <= 8)
+        {
+            return true;
+        }
+        else 
+            return false;
     }
 }
