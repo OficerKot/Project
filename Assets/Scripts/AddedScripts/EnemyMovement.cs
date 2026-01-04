@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class EnemyMovement : PauseBehaviour
 {
-    [SerializeField] float walkSpeed = 1f;
+    [SerializeField] float walkSpeed = 4f;
     [SerializeField] private bool isMoving = false;
     orient orientation;
     bool isActive = true;
-    private Transform targetPosition;
+    [SerializeField] private Transform targetPosition;
     private Vector3 direction;
+    private SpriteRenderer sprRen;
     public LayerMask whatAllowsMovement;
 
     enum orient
@@ -18,7 +19,9 @@ public class EnemyMovement : PauseBehaviour
 
     void Awake()
     {
-        targetPosition = this.gameObject.transform;
+        sprRen = GetComponent<SpriteRenderer>();
+        targetPosition.position = this.gameObject.transform.position;
+        targetPosition.parent = null;
         direction = new Vector3(0, 0, 0);
         //orientation = (orient)UnityEngine.Random.Range(0, 2);
 
@@ -43,14 +46,13 @@ public class EnemyMovement : PauseBehaviour
         {
             direction = new Vector3(1, 0, 0);
         }
-        EnemyMove();
     }
     public override void OnGamePaused(bool isGamePaused)
     {
         isActive = !isGamePaused;
     }
 
-    void EnemyMove()
+    public void EnemyMove()
     {
         if (!isActive) return;
         if (!isMoving &&
@@ -63,6 +65,7 @@ public class EnemyMovement : PauseBehaviour
         {
             direction *= -1;
             targetPosition.position += direction;
+            sprRen.flipX = !sprRen.flipX;
             isMoving = true;
         }
     }
@@ -72,10 +75,9 @@ public class EnemyMovement : PauseBehaviour
         if (isMoving)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPosition.position, walkSpeed*Time.fixedDeltaTime);
-            if (transform.position.x == targetPosition.position.x && transform.position.y == targetPosition.position.y)
+            if (transform.position == targetPosition.position)
             {
                 isMoving = false;
-                EnemyMove();
             }
         }
     }

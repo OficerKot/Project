@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6256911040378301118}
   - component: {fileID: 6476292954275135744}
   m_Layer: 0
-  m_Name: Web
+  m_Name: SpiderWeb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7466070985540378945, guid: 60b7608993e20354fb4e99d61b3b6dd5, type: 3}
+  m_Sprite: {fileID: 4783380919058496157, guid: 91ca72afe3eed5745bc5080f8b76ed3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -210,10 +210,10 @@ MonoBehaviour:
   - name: Web
     fps: 5
     frames:
-    - {fileID: 7466070985540378945, guid: 60b7608993e20354fb4e99d61b3b6dd5, type: 3}
-    - {fileID: -459178439699441841, guid: 60b7608993e20354fb4e99d61b3b6dd5, type: 3}
-    - {fileID: -9124559110371017752, guid: 60b7608993e20354fb4e99d61b3b6dd5, type: 3}
-    - {fileID: 2830347677702482831, guid: 60b7608993e20354fb4e99d61b3b6dd5, type: 3}
+    - {fileID: 4783380919058496157, guid: 91ca72afe3eed5745bc5080f8b76ed3d, type: 3}
+    - {fileID: 1133339028, guid: 91ca72afe3eed5745bc5080f8b76ed3d, type: 3}
+    - {fileID: -1064021905, guid: 91ca72afe3eed5745bc5080f8b76ed3d, type: 3}
+    - {fileID: -1591014238, guid: 91ca72afe3eed5745bc5080f8b76ed3d, type: 3}
     sequenceCode: 
     cue: 
     triggers: []
