@@ -1,22 +1,19 @@
 using System;
 using UnityEngine;
 
-public class ResourceSource : MonoBehaviour, Interactable
+public class ResourceSource : MonoBehaviour, Interactable, IBreakableObject
 {
     [SerializeField] public ItemData resource;
     [SerializeField] ImageEnumerator toolToDestroy;
     [SerializeField] public Cell curCell;
 
-    private void OnDisable()
-    {
-        if(curCell)
-        {
-            curCell.OnCellOccupied -= HandleCellOccupied;
-        }
-    }
+
     public virtual void Pick()
     {
-        Inventory.Instance.AddItem(resource);
+        if (resource)
+        {
+            Inventory.Instance.AddItem(resource);
+        }
         curCell.SetFree();
         Destroy(gameObject);
     }
@@ -24,15 +21,19 @@ public class ResourceSource : MonoBehaviour, Interactable
     {
         curCell = cell;
         PutInCell();
-        curCell.OnCellOccupied += HandleCellOccupied;
     }
 
-    void HandleCellOccupied()
+    public virtual bool CanBreak(DominoPart cur, DominoPart other)
+    {
+        return cur.data.image == toolToDestroy || other.data.image == toolToDestroy || toolToDestroy == ImageEnumerator.any;
+    }
+    public void Break()
     {
         Pick();
     }
     public virtual void PutInCell()
     {
+        curCell.SetNumber(0);
         curCell.SetImage(toolToDestroy);
         curCell.SetCurItem(gameObject);
         transform.position = curCell.transform.position;

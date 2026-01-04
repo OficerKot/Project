@@ -2,7 +2,7 @@
 - Project name: Project
 - Unity version: Unity 6000.1.15f1
 - Active game object:
-  - Name: cell_x80_y6
+  - Name: WebObst
   - Tag: Untagged
-  - Layer: Cell
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

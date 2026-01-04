@@ -12,7 +12,6 @@ public class ItemsPlacer : MonoBehaviour
     public GameObject[] itemTypes;
     private int itemsCount;
     private PerlinNoiseMap perlin;
-    private Cell cell;
     private ObstacleSnap obs_snap;
     private List<List<int>> noise_grid;
 
@@ -57,7 +56,7 @@ public class ItemsPlacer : MonoBehaviour
     {
         int item_id = Random.Range(0, itemsCount-1);
         GameObject item_prefab = itemTypes[item_id];
-        GameObject item = Instantiate(item_prefab, this.transform);
+        GameObject item = Instantiate(item_prefab, transform);
 
         item.name = string.Format("item_{0}_x{1}_y{2}", item_prefab.name, x, y);
         item.transform.localPosition = new Vector3Int(x, y, 0);
@@ -65,4 +64,11 @@ public class ItemsPlacer : MonoBehaviour
         obs_snap = item.GetComponent<ObstacleSnap>();
         obs_snap.spawned = true;
     }
+    public static void CreateItem(GameObject prefab, int x, int y)
+    {
+        GameObject item = Instantiate(prefab);
+        item.name = string.Format("item_{0}_x{1}_y{2}", prefab.name, x, y);
+        item.transform.localPosition = new Vector2(x, y);
+    }
+
 }

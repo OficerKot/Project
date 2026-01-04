@@ -21,4 +21,9 @@ public class Rockies : ResourceSource
         base.PutInCell(cell);
         curCell.SetNumber(generator.GetCount());
     }
+
+    public override bool CanBreak(DominoPart cur, DominoPart other)
+    {
+        return cur.data.number == generator.GetCount();
+    }
 }

@@ -14,20 +14,26 @@ public interface ICell
     public void SetFree();
 }
 
+public interface IBreakableObject
+{
+    public bool CanBreak(DominoPart cur, DominoPart other);
+    public void Break();
+}
 public class Cell : MonoBehaviour, ICell
 {
     [SerializeField] bool isFree = true;
     SpriteRenderer cellSprite;
     Color previousColor;
-    [SerializeField] public DominoPart curDomino;
+    [SerializeField] DominoPart curDomino;
     [SerializeField] GameObject curItem;
     [SerializeField] ImageEnumerator image = ImageEnumerator.any;
     [SerializeField] int number = 0;
     [SerializeField] public  List<Cell> neighbourCells = new List<Cell>();
-    public event Action OnCellOccupied;
+    public event Action<Cell> OnDominoPlaced;
 
     void Start()
     {
+        curDomino = null;
         number = 0;
         cellSprite = gameObject.GetComponent<SpriteRenderer>();
         previousColor = cellSprite.color;
@@ -62,11 +68,7 @@ public class Cell : MonoBehaviour, ICell
         curDomino = domino;
         image = domino.data.image;
         number = domino.data.number;
-
-        if (OnCellOccupied != null)
-        {
-            OnCellOccupied.Invoke();
-        }
+        if(OnDominoPlaced != null) OnDominoPlaced.Invoke(this);
     }
 
     public void SetCurItem(GameObject i)

@@ -12,11 +12,13 @@ GameObject:
   - component: {fileID: 1049415170963987165}
   - component: {fileID: 8449021168777780392}
   - component: {fileID: -8383789311058033598}
-  - component: {fileID: 6540504411271542106}
   - component: {fileID: 3887134121180538917}
   - component: {fileID: 577981945991435777}
+  - component: {fileID: 3680053404349635008}
+  - component: {fileID: 5272747303407704378}
+  - component: {fileID: 1216308553552166670}
   m_Layer: 0
-  m_Name: Tree
+  m_Name: WebObst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 6050633511597488391}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -7, z: 0.11}
+  m_LocalPosition: {x: 2, y: -7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -80,8 +82,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 6853316077166303748, guid: fec9f7d4f69eef54c82cc3166e9d703d, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 863171544, guid: 4652b7447d307d74ebe22501e653afeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,19 +108,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
   spriteRenderer: {fileID: 0}
   animations:
-  - name: Tree
+  - name: SpWeb
     fps: 5
     frames:
-    - {fileID: 6853316077166303748, guid: fec9f7d4f69eef54c82cc3166e9d703d, type: 3}
-    - {fileID: 4134985361545656292, guid: fec9f7d4f69eef54c82cc3166e9d703d, type: 3}
-    - {fileID: -1566730818833404899, guid: fec9f7d4f69eef54c82cc3166e9d703d, type: 3}
-    - {fileID: -7301469273254094464, guid: fec9f7d4f69eef54c82cc3166e9d703d, type: 3}
+    - {fileID: 863171544, guid: 4652b7447d307d74ebe22501e653afeb, type: 3}
+    - {fileID: -1642931351, guid: 4652b7447d307d74ebe22501e653afeb, type: 3}
+    - {fileID: 1983223632, guid: 4652b7447d307d74ebe22501e653afeb, type: 3}
+    - {fileID: 179880696, guid: 4652b7447d307d74ebe22501e653afeb, type: 3}
     sequenceCode: 
     cue: 
     triggers: []
   loop: 0
   speedMultiplier: 1
-  playAnimationOnStart: Tree
+  playAnimationOnStart: SpWeb
 --- !u!114 &-8383789311058033598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,42 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSnap
   curCell: {fileID: 0}
   spawned: 1
---- !u!58 &6540504411271542106
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6050633511597488391}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.33
 --- !u!50 &3887134121180538917
 Rigidbody2D:
   serializedVersion: 5
@@ -208,6 +174,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f32f67c88f957c4da8bdd0576f2700a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resource: {fileID: 11400000, guid: 75dd84d4cfe1035438c3a2a9cd811a5e, type: 2}
-  toolToDestroy: 5
+  resource: {fileID: 11400000, guid: c951063245bc19549b0a2d14e04e7ddc, type: 2}
+  toolToDestroy: 0
   curCell: {fileID: 0}
+--- !u!114 &3680053404349635008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050633511597488391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4451f3db2e56174a9faf6180cfc61d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderSize: {x: 2, y: 2}
+  duplicateDelay: 2
+  colliders: []
+--- !u!61 &5272747303407704378
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050633511597488391}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.88461536, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!61 &1216308553552166670
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050633511597488391}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.011873007, y: 0.028888464}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.88461536, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.4774609, y: 1.4693818}
+  m_EdgeRadius: 0
