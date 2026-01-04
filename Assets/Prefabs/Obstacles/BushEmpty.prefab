@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1027003107301862619}
   - component: {fileID: -3981687005458959756}
   - component: {fileID: 7140952154931163730}
+  - component: {fileID: 1605581581923632}
   m_Layer: 0
   m_Name: BushEmpty
   m_TagString: Untagged
@@ -130,7 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSnap
   curCell: {fileID: 0}
-  this_item: {fileID: 0}
   spawned: 0
 --- !u!58 &-3981687005458959756
 CircleCollider2D:
@@ -195,3 +195,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1605581581923632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521832652927124571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f32f67c88f957c4da8bdd0576f2700a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: {fileID: 0}
+  toolToDestroy: 0
+  curCell: {fileID: 0}

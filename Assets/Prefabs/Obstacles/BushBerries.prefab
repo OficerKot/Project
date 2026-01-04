@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3257714255238137693}
   - component: {fileID: 2519135759300862387}
   - component: {fileID: -4054607483547204983}
+  - component: {fileID: 1064138285404610418}
   m_Layer: 0
   m_Name: BushBerries
   m_TagString: Untagged
@@ -140,7 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSnap
   curCell: {fileID: 0}
-  this_item: {fileID: 0}
   spawned: 0
 --- !u!58 &-3257714255238137693
 CircleCollider2D:
@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ef828e547377643943d4bd376b701d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minDistanceToInteract: 2.5
 --- !u!50 &-4054607483547204983
 Rigidbody2D:
   serializedVersion: 5
@@ -217,3 +218,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1064138285404610418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823821977916891402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f32f67c88f957c4da8bdd0576f2700a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: {fileID: 0}
+  toolToDestroy: 0
+  curCell: {fileID: 0}

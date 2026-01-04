@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec55d87d3200afc46bb8387d3236c69e, type: 3}
+  m_Name: Web
+  m_EditorClassIdentifier: 
+  Id: web
+  prefab: {fileID: 3265742574692647083, guid: f1b7e5f1e2a091440a1df4e6b5a3fb44, type: 3}
+  UIprefab: {fileID: 2342191990407282095, guid: 2a21cbc93ee3dee49ae0b50a802ef9a8, type: 3}
+  itemsForCraft: []

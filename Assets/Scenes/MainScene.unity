@@ -6769,7 +6769,7 @@ MonoBehaviour:
   m_Intensity: 0.15
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000e77ad187a3012916cbe899b1
+  m_ApplyToSortingLayers: 00000000e77ad187a3012916cbe899b12163056b
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -10317,6 +10317,10 @@ PrefabInstance:
     - target: {fileID: 7663925867909768192, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
       propertyPath: damage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663925867909768192, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
+      propertyPath: maxDistanceToHit
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22029,7 +22033,7 @@ Transform:
   m_GameObject: {fileID: 1819308524}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.15431, y: -0.97445, z: 0}
+  m_LocalPosition: {x: 2.15431, y: -0.97445, z: -0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22051,10 +22055,10 @@ MonoBehaviour:
   itemTypes:
   - {fileID: 1823821977916891402, guid: be6376841292d1c4aa683defa1d360cb, type: 3}
   - {fileID: 3265742574692647083, guid: ad65d4a123b1c1442982ba4a40321983, type: 3}
-  - {fileID: 4583192258502654501, guid: 5adda76f984dfa5448e2c6b215160dc2, type: 3}
-  - {fileID: 3265742574692647083, guid: 8f26d95cb8a1d1a44bfe117ab13afa8a, type: 3}
   - {fileID: 3265742574692647083, guid: 26def8b76593b7943abe4b9040f80cd8, type: 3}
-  - {fileID: 3265742574692647083, guid: 95c326a8d13e99244b939054adf1476e, type: 3}
+  - {fileID: 6050633511597488391, guid: 70060bae8fd83dd4285b68ce10498aff, type: 3}
+  - {fileID: 3265742574692647083, guid: 8f26d95cb8a1d1a44bfe117ab13afa8a, type: 3}
+  - {fileID: 4583192258502654501, guid: 5adda76f984dfa5448e2c6b215160dc2, type: 3}
 --- !u!1001 &1826343154
 PrefabInstance:
   m_ObjectHideFlags: 0
