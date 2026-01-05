@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3680053404349635008}
   - component: {fileID: 5272747303407704378}
   - component: {fileID: 1216308553552166670}
+  - component: {fileID: -5303095788032708436}
   m_Layer: 0
   m_Name: WebObst
   m_TagString: Untagged
@@ -284,3 +285,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4774609, y: 1.4693818}
   m_EdgeRadius: 0
+--- !u!114 &-5303095788032708436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050633511597488391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1018ffd341389c42a22bc45a05da7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
