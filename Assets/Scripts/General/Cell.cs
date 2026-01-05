@@ -30,6 +30,7 @@ public class Cell : MonoBehaviour, ICell
     [SerializeField] int number = 0;
     [SerializeField] public  List<Cell> neighbourCells = new List<Cell>();
     public event Action<Cell> OnDominoPlaced;
+    public event Action<Cell> OnItemRemoved;
 
     void Start()
     {
@@ -68,12 +69,20 @@ public class Cell : MonoBehaviour, ICell
         curDomino = domino;
         image = domino.data.image;
         number = domino.data.number;
-        if(OnDominoPlaced != null) OnDominoPlaced.Invoke(this);
+        InvokeEvent(OnDominoPlaced);
     }
 
     public void SetCurItem(GameObject i)
     {
         curItem = i;
+        if(i == null)
+        {
+            InvokeEvent(OnItemRemoved);
+            UnsetImageToAllNeighbours();
+            image = ImageEnumerator.any;
+            number = 0;
+            return;
+        }
     }
 
     public void SetFree()
@@ -82,10 +91,17 @@ public class Cell : MonoBehaviour, ICell
         curDomino = null;
         curItem = null;
         UnsetImageToAllNeighbours();
-
         image = ImageEnumerator.any;
         number = 0;
 
+    }
+
+    void InvokeEvent(Action<Cell> action)
+    {
+        if (action != null)
+        {
+            action.Invoke(this);
+        }
     }
     bool NotAngular(Transform pos1)
     {

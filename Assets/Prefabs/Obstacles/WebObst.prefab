@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliderSize: {x: 2, y: 2}
-  duplicateDelay: 2
+  duplicateDelay: 24
   colliders: []
 --- !u!61 &5272747303407704378
 BoxCollider2D:
