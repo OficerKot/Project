@@ -14,7 +14,7 @@ public class ResourceSource : MonoBehaviour, Interactable, IBreakableObject
         {
             Inventory.Instance.AddItem(resource);
         }
-        curCell.SetFree();
+        curCell.SetCurItem(null);
         Destroy(gameObject);
     }
     public virtual void PutInCell(Cell cell)

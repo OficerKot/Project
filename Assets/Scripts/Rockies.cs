@@ -12,7 +12,7 @@ public class Rockies : ResourceSource
     public override void Pick()
     {
         Inventory.Instance.AddItem(resource, generator.GetCount());
-        curCell.SetFree();
+        curCell.SetCurItem(null);
         Destroy(gameObject);
     }
 
