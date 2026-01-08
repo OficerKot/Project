@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyMovement : PauseBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyMovement : PauseBehaviour
     private Vector3 direction;
     private SpriteRenderer sprRen;
     public LayerMask whatAllowsMovement;
+    public UnityEvent moveEvent;
 
     enum orient
     {
@@ -19,6 +21,7 @@ public class EnemyMovement : PauseBehaviour
 
     void Awake()
     {
+        EnemyManager.Instance.PutInList(this);
         sprRen = GetComponent<SpriteRenderer>();
         targetPosition.position = this.gameObject.transform.position;
         targetPosition.parent = null;
@@ -52,22 +55,24 @@ public class EnemyMovement : PauseBehaviour
         isActive = !isGamePaused;
     }
 
-    public void EnemyMove()
+    void EnemyDirection()
     {
         if (!isActive) return;
         if (!isMoving &&
              Physics2D.OverlapCircle(targetPosition.position + direction, .01f, whatAllowsMovement))
         {
-            targetPosition.position += direction;
-            isMoving = true;
+            targetPosition.position += direction; 
         }
         else if (!Physics2D.OverlapCircle(targetPosition.position + direction, .01f, whatAllowsMovement))
         {
             direction *= -1;
             targetPosition.position += direction;
             sprRen.flipX = !sprRen.flipX;
-            isMoving = true;
         }
+    }
+    public void SetIsMoving(bool value)
+    {
+        isMoving = value;
     }
 
     void FixedUpdate()
@@ -78,6 +83,7 @@ public class EnemyMovement : PauseBehaviour
             if (transform.position == targetPosition.position)
             {
                 isMoving = false;
+                EnemyDirection();
             }
         }
     }

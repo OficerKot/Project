@@ -25,6 +25,7 @@ public class CharacterMovement : PauseBehaviour
             Physics2D.OverlapCircle(targetPosition.position + new Vector3(0, 1, 0), .01f, whatAllowsMovement))
         {
             Clock.Instance.TimeTick();
+            EnemyManager.Instance.MakeStep();
             targetPosition.position += new Vector3(0, 1, 0);
             isMoving = true;
         }
@@ -40,6 +41,7 @@ public class CharacterMovement : PauseBehaviour
             Physics2D.OverlapCircle(targetPosition.position + new Vector3(0, -1, 0), .01f, whatAllowsMovement))
         {
             Clock.Instance.TimeTick();
+            EnemyManager.Instance.MakeStep();
             targetPosition.position += new Vector3(0, -1, 0);
             isMoving = true;
         }
@@ -55,6 +57,7 @@ public class CharacterMovement : PauseBehaviour
              Physics2D.OverlapCircle(targetPosition.position + new Vector3(-1, 0, 0), .01f, whatAllowsMovement))
         {
             Clock.Instance.TimeTick();
+            EnemyManager.Instance.MakeStep();
             targetPosition.position += new Vector3(-1, 0, 0);
             isMoving = true;
         }
@@ -70,6 +73,7 @@ public class CharacterMovement : PauseBehaviour
             Physics2D.OverlapCircle(targetPosition.position + new Vector3(1, 0, 0), .01f, whatAllowsMovement))
         {
             Clock.Instance.TimeTick();
+            EnemyManager.Instance.MakeStep();
             targetPosition.position += new Vector3(1, 0, 0);
             isMoving = true;
         }
