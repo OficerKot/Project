@@ -236,6 +236,7 @@ public class Domino : PauseBehaviour
 
         TeleportToCells(collider1.transform, collider2.transform);
         AddToCells(part1Playable, part2Playable);
+        EnemyManager.Instance.MakeStep();
 
     }
     public void TryToBreak(float hp)

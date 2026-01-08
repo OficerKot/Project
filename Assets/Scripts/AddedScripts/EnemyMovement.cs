@@ -12,7 +12,6 @@ public class EnemyMovement : PauseBehaviour
     private Vector3 direction;
     private SpriteRenderer sprRen;
     public LayerMask whatAllowsMovement;
-    public UnityEvent moveEvent;
 
     enum orient
     {
