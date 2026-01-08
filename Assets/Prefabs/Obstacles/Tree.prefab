@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8449021168777780392}
   - component: {fileID: -8383789311058033598}
   - component: {fileID: 6540504411271542106}
-  - component: {fileID: 7952944459973587888}
   - component: {fileID: 3887134121180538917}
+  - component: {fileID: 577981945991435777}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -132,8 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSnap
   curCell: {fileID: 0}
-  this_item: {fileID: 0}
-  spawned: 0
+  spawned: 1
 --- !u!58 &6540504411271542106
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,18 +169,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.33
---- !u!114 &7952944459973587888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6050633511597488391}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 615bfa5d1907e28498c47a2e3e1652e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &3887134121180538917
 Rigidbody2D:
   serializedVersion: 5
@@ -209,3 +196,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &577981945991435777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050633511597488391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f32f67c88f957c4da8bdd0576f2700a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: {fileID: 11400000, guid: 75dd84d4cfe1035438c3a2a9cd811a5e, type: 2}
+  toolToDestroy: 5
+  curCell: {fileID: 0}

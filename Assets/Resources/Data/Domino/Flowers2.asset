@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4677ca0113dbc64388e8d1e2d927739, type: 3}
+  m_Name: Flowers2
+  m_EditorClassIdentifier: 
+  dominoId: flowers2
+  number: 2
+  neighboursNumber: 2
+  image: 4
+  neighboursImage: 4
+  prefab: {fileID: 6563017092507824485, guid: d2105a2e8f8f87d4fb76902282f08aac, type: 3}
+  UIprefab: {fileID: 2274165375861150673, guid: 69c97dbd2c8aa394380ae0936cf4e45a, type: 3}

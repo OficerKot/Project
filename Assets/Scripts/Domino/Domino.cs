@@ -69,7 +69,11 @@ public class Domino : PauseBehaviour
     {
         if (isBeingGrabbed && collision.gameObject.layer == 6)
         {
-            if (!collision.GetComponent<Cell>().CheckIfFree()) return;
+            if (!collision.GetComponent<Cell>().CheckIfFree())
+            {
+                return;
+
+            }
 
             ClearCellData();
             curCell1 = collision.GetComponent<Cell>();
@@ -130,25 +134,51 @@ public class Domino : PauseBehaviour
         if (IsSameRotationAngle(cell2.transform.position, curCell1.transform.position))
         {
 
-            return cell2.CheckIfFree() && CheckImages(cell1, cell2);
+            return cell2.CheckIfFree() && CheckCells(cell1, cell2);
         }
         return false;
     }
 
-    bool CheckImages(Cell cell1, Cell cell2)
+    bool CheckCells(Cell cell1, Cell cell2)
     {
-        bool part1CoordsAreBigger = part1Playable.GetLocation() == Location.up || part1Playable.GetLocation() == Location.right;
+        IBreakableObject itemInCell;
         Cell[] sortedCells = GetCellsInOrder(cell2);
         Cell cellWithBiggerCoords = sortedCells[0];
         Cell cellWithLowerCoords = sortedCells[1];
 
-        bool image1IsOK = cellWithBiggerCoords.GetImage() == ImageEnumerator.any || (part1CoordsAreBigger && (part1Playable.data.image == cellWithBiggerCoords.GetImage())) || (!part1CoordsAreBigger && (part2Playable.data.image == cellWithBiggerCoords.GetImage()));
-        bool image2IsOK = cellWithLowerCoords.GetImage() == ImageEnumerator.any || (part1CoordsAreBigger && (part2Playable.data.image == cellWithLowerCoords.GetImage())) || (!part1CoordsAreBigger && (part1Playable.data.image == cellWithLowerCoords.GetImage()));
+        bool part1CoordsAreBigger = part1Playable.GetLocation() == Location.up || part1Playable.GetLocation() == Location.right;
+        DominoPart partWithBiggerCoords = part1CoordsAreBigger ? part1Playable : part2Playable;
+        DominoPart partWithLowerCoords = part1CoordsAreBigger ? part2Playable : part1Playable;
 
-        bool number1IsOK = cellWithBiggerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part1Playable.data.number == cellWithBiggerCoords.GetNumber())) || (!part1CoordsAreBigger && (part2Playable.data.number == cellWithBiggerCoords.GetNumber()));
-        bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (part1CoordsAreBigger && (part2Playable.data.number == cellWithLowerCoords.GetNumber())) || (!part1CoordsAreBigger && (part1Playable.data.number == cellWithLowerCoords.GetNumber()));
+        bool image1IsOK = cellWithBiggerCoords.GetImage() == ImageEnumerator.any ||
+            (partWithBiggerCoords.data.neighboursImage == cellWithBiggerCoords.GetImage() || partWithBiggerCoords.data.neighboursImage == ImageEnumerator.any);
+        bool image2IsOK = cellWithLowerCoords.GetImage() == ImageEnumerator.any ||
+            (partWithLowerCoords.data.neighboursImage == cellWithLowerCoords.GetImage() || partWithLowerCoords.data.neighboursImage == ImageEnumerator.any);
 
-        return (image1IsOK || number1IsOK) && (image2IsOK || number2IsOK);
+        bool number1IsOK = cellWithBiggerCoords.GetNumber() == 0 || (partWithBiggerCoords.data.neighboursNumber == cellWithBiggerCoords.GetNumber());
+        bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (partWithLowerCoords.data.neighboursNumber == cellWithLowerCoords.GetNumber());
+
+        bool item1IsOK = cellWithBiggerCoords.GetCurItem() == null;
+        bool item2IsOK = cellWithLowerCoords.GetCurItem() == null; 
+        
+        if(!item1IsOK)
+        {
+            itemInCell = cellWithBiggerCoords.GetCurItem().GetComponent<IBreakableObject>();
+            if (itemInCell != null)
+            {
+                item1IsOK = itemInCell.CanBreak(partWithBiggerCoords, partWithLowerCoords);
+            }
+        }
+        if (!item2IsOK)
+        {
+            itemInCell = cellWithLowerCoords.GetCurItem().GetComponent<IBreakableObject>();
+            if (itemInCell != null)
+            {
+                item2IsOK = itemInCell.CanBreak(partWithLowerCoords, partWithBiggerCoords);
+            }
+        }
+
+        return (image1IsOK || number1IsOK) && (image2IsOK || number2IsOK) && item1IsOK && item2IsOK;
     }
     Cell[] GetCellsInOrder(Cell cell)
     {
@@ -168,7 +198,6 @@ public class Domino : PauseBehaviour
         }
         return output;
     }
-
     void ClearCellData()
     {
         if (curCell1)
@@ -199,6 +228,7 @@ public class Domino : PauseBehaviour
         isBeingGrabbed = false;
         GameManager.Instance.PutInHand(null);
 
+        BreakItemsInCells();
         TakeFreeSpace();
 
         Collider2D collider1 = curCell1.GetComponent<BoxCollider2D>();
@@ -208,7 +238,6 @@ public class Domino : PauseBehaviour
         AddToCells(part1Playable, part2Playable);
 
     }
-
     public void TryToBreak(float hp)
     {
         health -= hp;
@@ -250,6 +279,22 @@ public class Domino : PauseBehaviour
         curCell2.SetFree(false);
         part1Playable.ChangeIsBeingPlacedFlag(true);
         part2Playable.ChangeIsBeingPlacedFlag(true);
+        
+    }
+
+    void BreakItemsInCells()
+    {
+        if(curCell1.GetCurItem())
+        {
+            IBreakableObject item1 = curCell1.GetCurItem().GetComponent<IBreakableObject>();
+            if (item1 != null) item1.Break();
+        }
+
+        if (curCell2.GetCurItem())
+        {
+            IBreakableObject item2 = curCell2.GetCurItem().GetComponent<IBreakableObject>();
+            if (item2 != null) item2.Break();
+        }
     }
     bool IsSameRotationAngle(Vector3 pos1, Vector3 pos2)
     {

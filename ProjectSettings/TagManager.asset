@@ -54,5 +54,8 @@ TagManager:
   - name: Cell
     uniqueID: 2979653835
     locked: 0
+  - name: Front
+    uniqueID: 1795515169
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -1,0 +1,298 @@
+fileFormatVersion: 2
+guid: e474a78418285274c9f969e422a5aabc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8951094541079740293
+    second: Rockies5_0
+  - first:
+      213: 1779834892954811316
+    second: Rockies5_1
+  - first:
+      213: -9087138607650438732
+    second: Rockies5_2
+  - first:
+      213: -102566182804184522
+    second: Rockies5_3
+  - first:
+      213: 8562541210857041258
+    second: Rockies5_4
+  - first:
+      213: -4033319327576957409
+    second: Rockies5_5
+  - first:
+      213: 6273115800333590973
+    second: Rockies5_6
+  - first:
+      213: -1158112804168431593
+    second: Rockies5_7
+  - first:
+      213: 3463674062915379802
+    second: Rockies5_8
+  - first:
+      213: 4550140267386517766
+    second: Rockies5_9
+  - first:
+      213: -6621672197410692542
+    second: Rockies5_10
+  - first:
+      213: 8903741603891309266
+    second: Rockies5_11
+  - first:
+      213: -6887698250127692351
+    second: Rockies5_12
+  - first:
+      213: -6158939789787070584
+    second: Rockies5_13
+  - first:
+      213: -200313687286214095
+    second: Rockies5_14
+  - first:
+      213: -3000779012690332603
+    second: Rockies5_15
+  - first:
+      213: 2908241878182780292
+    second: Rockies5_16
+  - first:
+      213: 7246523168407954372
+    second: Rockies5_17
+  - first:
+      213: -557130069765394838
+    second: Rockies5_18
+  - first:
+      213: -2682760158292288466
+    second: Rockies5_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rockies5_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd2f012feaf960a0800000000000000
+      internalID: -6887698250127692351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rockies5_14
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13218a143c7583df0800000000000000
+      internalID: -200313687286214095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rockies5_16
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ddff564962c5820800000000000000
+      internalID: 2908241878182780292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rockies5_18
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ee1f1472da448f0800000000000000
+      internalID: -557130069765394838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 99374a548d2a7514aa4b6909d4ca8ce0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Rockies5_0: 8951094541079740293
+      Rockies5_1: 1779834892954811316
+      Rockies5_10: -6621672197410692542
+      Rockies5_11: 8903741603891309266
+      Rockies5_12: -6887698250127692351
+      Rockies5_13: -6158939789787070584
+      Rockies5_14: -200313687286214095
+      Rockies5_15: -3000779012690332603
+      Rockies5_16: 2908241878182780292
+      Rockies5_17: 7246523168407954372
+      Rockies5_18: -557130069765394838
+      Rockies5_19: -2682760158292288466
+      Rockies5_2: -9087138607650438732
+      Rockies5_3: -102566182804184522
+      Rockies5_4: 8562541210857041258
+      Rockies5_5: -4033319327576957409
+      Rockies5_6: 6273115800333590973
+      Rockies5_7: -1158112804168431593
+      Rockies5_8: 3463674062915379802
+      Rockies5_9: 4550140267386517766
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

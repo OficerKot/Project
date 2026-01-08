@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,24 +14,28 @@ public interface ICell
     public void SetFree();
 }
 
+public interface IBreakableObject
+{
+    public bool CanBreak(DominoPart cur, DominoPart other);
+    public void Break();
+}
 public class Cell : MonoBehaviour, ICell
 {
     [SerializeField] bool isFree = true;
-
     SpriteRenderer cellSprite;
     Color previousColor;
-
-    // попробовать заменить на GameObject curObject, домино через ScriptableObject!!!
-    [SerializeField] public DominoPart curDomino;
-    [SerializeField] Item curItem;
-
+    [SerializeField] DominoPart curDomino;
+    [SerializeField] GameObject curItem;
     [SerializeField] ImageEnumerator image = ImageEnumerator.any;
     [SerializeField] int number = 0;
-    // ------------------------------------------------------------------------------
     [SerializeField] public  List<Cell> neighbourCells = new List<Cell>();
+    public event Action<Cell> OnDominoPlaced;
+    public event Action<Cell> OnItemRemoved;
 
     void Start()
     {
+        curDomino = null;
+        number = 0;
         cellSprite = gameObject.GetComponent<SpriteRenderer>();
         previousColor = cellSprite.color;
     }
@@ -55,7 +60,7 @@ public class Cell : MonoBehaviour, ICell
         return curDomino;
     }
 
-    public Item GetCurItem()
+    public GameObject GetCurItem()
     {
         return curItem;
     }
@@ -64,11 +69,20 @@ public class Cell : MonoBehaviour, ICell
         curDomino = domino;
         image = domino.data.image;
         number = domino.data.number;
+        InvokeEvent(OnDominoPlaced);
     }
 
-    public void SetCurItem(Item i)
+    public void SetCurItem(GameObject i)
     {
         curItem = i;
+        if(i == null)
+        {
+            InvokeEvent(OnItemRemoved);
+            UnsetImageToAllNeighbours();
+            image = ImageEnumerator.any;
+            number = 0;
+            return;
+        }
     }
 
     public void SetFree()
@@ -76,11 +90,18 @@ public class Cell : MonoBehaviour, ICell
         isFree = true;
         curDomino = null;
         curItem = null;
-        UnsetUmageToAllNeighbours();
-
+        UnsetImageToAllNeighbours();
         image = ImageEnumerator.any;
         number = 0;
 
+    }
+
+    void InvokeEvent(Action<Cell> action)
+    {
+        if (action != null)
+        {
+            action.Invoke(this);
+        }
     }
     bool NotAngular(Transform pos1)
     {
@@ -93,13 +114,13 @@ public class Cell : MonoBehaviour, ICell
         {
             if (neighbour && neighbour.GetImage() == ImageEnumerator.any)
             {
-                neighbour.SetImage(image);
+                neighbour.SetImage(curDomino.data.neighboursImage);
                 neighbour.SetNumber(number);
             }
         }
     }
 
-    void UnsetUmageToAllNeighbours()
+    void UnsetImageToAllNeighbours()
     {
         foreach (Cell neighbour in neighbourCells)
         {
@@ -150,7 +171,6 @@ public class Cell : MonoBehaviour, ICell
         return false;
     }
 
-
     public bool CheckIfFree()
     {
         return isFree;
@@ -161,7 +181,6 @@ public class Cell : MonoBehaviour, ICell
         isFree = val;
     }
 
-
-
+    
 
 }
