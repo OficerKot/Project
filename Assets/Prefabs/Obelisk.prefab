@@ -185,26 +185,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5104395357491924321}
   animations:
-  - name: Stones
+  - name: Obelisk
     fps: 5
     frames:
-    - {fileID: 2667589067915142571, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: 6898035379108858973, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: -8868248462342347919, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: -1605707320451941170, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
+    - {fileID: -4125885249053215364, guid: d184b8563a2309e48aa29f55f9c808c3, type: 3}
+    - {fileID: -4125885249053215364, guid: d184b8563a2309e48aa29f55f9c808c3, type: 3}
+    - {fileID: -4125885249053215364, guid: d184b8563a2309e48aa29f55f9c808c3, type: 3}
+    - {fileID: -4125885249053215364, guid: d184b8563a2309e48aa29f55f9c808c3, type: 3}
     sequenceCode: 
     cue: 
     triggers: []
   loop: 0
   speedMultiplier: 1
-  playAnimationOnStart: Stones
+  playAnimationOnStart: Obelisk
 --- !u!114 &-2490873520762757512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,11 +212,10 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85ff464ae5bb27544b9ca5f2fdfeab17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   curCell: {fileID: 0}
-  this_item: {fileID: 0}
   spawned: 0

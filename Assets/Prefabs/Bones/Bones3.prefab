@@ -198,8 +198,8 @@ MonoBehaviour:
   - name: Bones3
     fps: 5
     frames:
-    - {fileID: 21300000, guid: e73022cba40d55940b87bfc150226676, type: 3}
-    - {fileID: 21300000, guid: e9ade3c1770d1b14cba707913fed3c1e, type: 3}
+    - {fileID: -1345233036637759699, guid: e6d4c56a10697f542849336d1ee10008, type: 3}
+    - {fileID: -6948136272406836841, guid: e6d4c56a10697f542849336d1ee10008, type: 3}
     sequenceCode: 
     cue: 
     triggers: []

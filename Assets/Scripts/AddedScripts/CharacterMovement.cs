@@ -72,6 +72,7 @@ public class CharacterMovement : PauseBehaviour
         if(AvailableDestinaton(destination))
         {
             Clock.Instance.TimeTick();
+            EnemyManager.Instance.MakeStep();
             Move(destination);
         }
     }

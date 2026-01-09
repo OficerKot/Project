@@ -12,15 +12,19 @@ public class Obelisk : PauseBehaviour
     [SerializeField] ObeliskColor color;
     [SerializeField] Sprite collectedSprite;
     bool isActive;
+    SpriteAnimator sprAnim;
 
     private void Start()
     {
         isActive = true;
+        sprAnim = GetComponent<SpriteAnimator>();
     }
     public void OnMouseDown()
     {
         if (!isActive) return;
         ObeliskManager.Instance.Pick(color);
+        sprAnim.StopAllCoroutines();
+        sprAnim.enabled = false;
         GetComponent<SpriteRenderer>().sprite = collectedSprite;
         isActive = false;
     }
