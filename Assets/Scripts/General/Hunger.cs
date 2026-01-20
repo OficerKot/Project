@@ -64,4 +64,8 @@ public class Hunger : MonoBehaviour
     {
         HungerUp();
     }
+    public void CallHungerDown()
+    {
+        HungerDown();
+    }
 }

@@ -12,6 +12,7 @@ public class EnemyMovement : PauseBehaviour
     private Vector3 direction;
     private SpriteRenderer sprRen;
     public LayerMask whatAllowsMovement;
+    public LayerMask playerLayer;
 
     enum orient
     {
@@ -73,6 +74,14 @@ public class EnemyMovement : PauseBehaviour
     {
         isMoving = value;
     }
+    void TryToBite()
+    {
+        if (Physics2D.OverlapCircle(transform.position, .01f, playerLayer))
+        {
+            Hunger.Instance.CallHungerDown();
+            Debug.Log("Bitten");
+        }
+    }
 
     void FixedUpdate()
     {
@@ -83,6 +92,7 @@ public class EnemyMovement : PauseBehaviour
             {
                 isMoving = false;
                 EnemyDirection();
+                TryToBite();
             }
         }
     }

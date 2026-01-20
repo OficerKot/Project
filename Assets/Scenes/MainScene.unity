@@ -10399,6 +10399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4757027539769406566, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6292737781518095012, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -18496,6 +18500,10 @@ PrefabInstance:
     - target: {fileID: 2414544696436572936, guid: a2bb7d485acba9346ba5cb72aaafc9c2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139663224180015804, guid: a2bb7d485acba9346ba5cb72aaafc9c2, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
