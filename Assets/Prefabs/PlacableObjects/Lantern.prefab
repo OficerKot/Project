@@ -219,7 +219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curCell: {fileID: 0}
-  this_item: {fileID: 0}
   spawned: 0
 --- !u!1 &5399029651939233881
 GameObject:
