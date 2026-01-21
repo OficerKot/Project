@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: c555678b8bc1d074b9fdd550826f45a8
+guid: a44294bcb224c5047b67638a031803c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1778980832247700988
-    second: BiomeSeparationKinda_0
+      213: -622683130383860194
+    second: SpiderDefender_0
+  - first:
+      213: 4796752323950672722
+    second: SpiderDefender_1
+  - first:
+      213: -3584034743167721467
+    second: SpiderDefender_2
+  - first:
+      213: 1866238033607499320
+    second: SpiderDefender_3
+  - first:
+      213: -9106683889229587861
+    second: SpiderDefender_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +36,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -46,12 +58,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 26
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +125,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BiomeSeparationKinda_0
+      name: SpiderDefender_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 100
-        height: 100
+        x: 1
+        y: 1
+        width: 25
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfd5a5834a530b810800000000000000
-      internalID: 1778980832247700988
+      spriteID: e1e77d5fdf8cb57f0800000000000000
+      internalID: -622683130383860194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderDefender_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25bfb9803dc719240800000000000000
+      internalID: 4796752323950672722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderDefender_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50064ded363f24ec0800000000000000
+      internalID: -3584034743167721467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderDefender_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a92b4804f8e9180800000000000000
+      internalID: -9106683889229587861
       vertices: []
       indices: 
       edges: []
@@ -138,7 +216,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 259610eb554484c4083286ec39428a7a
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +226,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BiomeSeparationKinda_0: 1778980832247700988
+      SpiderDefender_0: -622683130383860194
+      SpiderDefender_1: 4796752323950672722
+      SpiderDefender_2: -3584034743167721467
+      SpiderDefender_3: 1866238033607499320
+      SpiderDefender_4: -9106683889229587861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

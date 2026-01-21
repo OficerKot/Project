@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,6 +16,7 @@ public class Item : PauseBehaviour, Interactable
     [SerializeField] string ID;
     [SerializeField] Cell curCell;
     bool isPlaced = true;
+    public event Action OnItemPlaced;
 
     public void OnMouseDown()
     {
@@ -23,7 +25,7 @@ public class Item : PauseBehaviour, Interactable
             Pick();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Mouse0) && curCell)
+        else if (Input.GetKeyDown(KeyCode.Mouse0) && curCell.IsFreeForDomino() && curCell.IsFree())
         {
             curCell.NoHighlight();
             PutInCell();
@@ -42,7 +44,7 @@ public class Item : PauseBehaviour, Interactable
     {
         if (!isPlaced && collision.gameObject.layer == 6 && !curCell)
         {
-            if (!collision.GetComponent<Cell>().CheckIfFree()) return;
+            if (!collision.GetComponent<Cell>().IsFree()) return;
 
             curCell = collision.GetComponent<Cell>();
 
@@ -93,6 +95,7 @@ public class Item : PauseBehaviour, Interactable
         curCell.SetCurItem(gameObject);
         curCell.SetFree(false);
         isPlaced = true;
+        OnItemPlaced?.Invoke();
         transform.position = curCell.transform.position;
         transform.Translate(0, 0, -curCell.transform.position.z);
         Inventory.Instance.RemoveItem(ItemManager.Instance.GetItemByID(ID));

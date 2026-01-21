@@ -69,7 +69,7 @@ public class Domino : PauseBehaviour
     {
         if (isBeingGrabbed && collision.gameObject.layer == 6)
         {
-            if (!collision.GetComponent<Cell>().CheckIfFree())
+            if (!collision.GetComponent<Cell>().IsFreeForDomino())
             {
                 return;
 
@@ -134,7 +134,7 @@ public class Domino : PauseBehaviour
         if (IsSameRotationAngle(cell2.transform.position, curCell1.transform.position))
         {
 
-            return cell2.CheckIfFree() && CheckCells(cell1, cell2);
+            return cell2.IsFreeForDomino() && CheckCells(cell1, cell2);
         }
         return false;
     }

@@ -8,7 +8,7 @@ public interface ICell
     public void Highlight();
     public void NoHighlight();
     public bool IsNeighbour(Cell obj);
-    public bool CheckIfFree();
+    public bool IsFreeForDomino();
     public DominoPart GetCurDomino();
     public void SetFree(bool val);
     public void SetFree();
@@ -21,19 +21,20 @@ public interface IBreakableObject
 }
 public class Cell : MonoBehaviour, ICell
 {
-    [SerializeField] bool isFree = true;
+    [SerializeField] bool isFreeForDomino = true;
     SpriteRenderer cellSprite;
     Color previousColor;
     [SerializeField] DominoPart curDomino;
     [SerializeField] GameObject curItem;
     [SerializeField] ImageEnumerator image = ImageEnumerator.any;
     [SerializeField] int number = 0;
-    [SerializeField] public  List<Cell> neighbourCells = new List<Cell>();
-    public event Action<Cell> OnDominoPlaced;
-    public event Action<Cell> OnItemRemoved;
+    [SerializeField] public List<Cell> neighbourCells = new List<Cell>();
+    public event Action<Cell> OnDuplicationAllowed;
+    public int duplicationBlockers = 0;
 
     void Start()
     {
+        CheckForDuplications();
         curDomino = null;
         number = 0;
         cellSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -46,7 +47,6 @@ public class Cell : MonoBehaviour, ICell
             neighbourCells.Add(other.GetComponent<Cell>());
         }
     }
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (curDomino)
@@ -55,6 +55,7 @@ public class Cell : MonoBehaviour, ICell
         }
 
     }
+
     public DominoPart GetCurDomino()
     {
         return curDomino;
@@ -69,40 +70,34 @@ public class Cell : MonoBehaviour, ICell
         curDomino = domino;
         image = domino.data.image;
         number = domino.data.number;
-        InvokeEvent(OnDominoPlaced);
+        CheckForDuplications();
     }
 
     public void SetCurItem(GameObject i)
     {
+        CheckForDuplications();
         curItem = i;
-        if(i == null)
+        if (i == null)
         {
-            InvokeEvent(OnItemRemoved);
             UnsetImageToAllNeighbours();
             image = ImageEnumerator.any;
             number = 0;
             return;
         }
+
     }
 
     public void SetFree()
     {
-        isFree = true;
+        isFreeForDomino = true;
         curDomino = null;
         curItem = null;
         UnsetImageToAllNeighbours();
         image = ImageEnumerator.any;
         number = 0;
-
+        CheckForDuplications();
     }
 
-    void InvokeEvent(Action<Cell> action)
-    {
-        if (action != null)
-        {
-            action.Invoke(this);
-        }
-    }
     bool NotAngular(Transform pos1)
     {
         return Mathf.Abs(pos1.position.x - transform.position.x) < 0.5f || Mathf.Abs(pos1.position.y - transform.position.y) < 0.5f;
@@ -171,16 +166,47 @@ public class Cell : MonoBehaviour, ICell
         return false;
     }
 
-    public bool CheckIfFree()
+    public bool IsFreeForDomino()
     {
-        return isFree;
+        return isFreeForDomino;
     }
 
+    public bool IsFree()
+    {
+        return curDomino == null && curItem == null;
+    }
     public void SetFree(bool val)
     {
-        isFree = val;
+        isFreeForDomino = val;
     }
 
-    
+    public bool CheckDuplicationAllowed()
+    {
+        if (curItem == null && curDomino != null && duplicationBlockers == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void CheckForDuplications()
+    {
+        if(CheckDuplicationAllowed()) OnDuplicationAllowed?.Invoke(this);
+    }
+    public void AddDuplicationBlocker()
+    {
+        duplicationBlockers++;
+        CheckForDuplications();
+    }
+
+    public void RemoveDuplicationBlocker()
+    {
+        duplicationBlockers = Mathf.Max(0, duplicationBlockers - 1);
+        CheckForDuplications();
+    }
+
 
 }

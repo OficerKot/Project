@@ -20,8 +20,7 @@ public class WebDuplicator : MonoBehaviour
             if (col && col.GetComponent<Cell>() != null)
             {
                 Cell cell = col.GetComponent<Cell>();
-                cell.OnDominoPlaced -= StartCountDown;
-                cell.OnItemRemoved -= StartCountDown;
+                cell.OnDuplicationAllowed -= StartCountDown;
             }
         }
     }
@@ -44,8 +43,8 @@ public class WebDuplicator : MonoBehaviour
                 Cell cell = col.GetComponent<Cell>();
                 if (!IsCurCell(cell))
                 {
-                    cell.OnDominoPlaced += StartCountDown;
-                    cell.OnItemRemoved += StartCountDown;
+                    cell.OnDuplicationAllowed += StartCountDown;
+         
                 }
             }
         }
@@ -72,19 +71,25 @@ public class WebDuplicator : MonoBehaviour
     }
     void StartCountDown(Cell cell)
     {
-        Debug.Log("Started");
         StartCoroutine(CountDown(cell));
     }
     IEnumerator CountDown(Cell cell)
     {
-        if (!cell.GetCurDomino() || cell.GetCurItem()) yield break;
+        if (!cell.CheckDuplicationAllowed())
+        {
+            yield break;
+        }
+        else
+        {
+            Debug.Log("Started countdown");
+        }
         int hoursPassed = 0;
         while (hoursPassed < duplicateDelay)
         {
             yield return StartCoroutine(WaitForNextHour());
             hoursPassed++;
         }
-        if (cell.GetCurDomino())
+        if (cell.CheckDuplicationAllowed())
         {
             DuplicateOn(cell);
         }

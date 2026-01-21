@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec55d87d3200afc46bb8387d3236c69e, type: 3}
+  m_Name: Planks
+  m_EditorClassIdentifier: 
+  Id: planks
+  prefab: {fileID: 6280323227994927791, guid: 0e625c7f06765a64fb68c45421d5fe53, type: 3}
+  UIprefab: {fileID: 2342191990407282095, guid: 0da40414a68a2474aad5c7283e8da154, type: 3}
+  itemsForCraft:
+  - {fileID: 11400000, guid: 75dd84d4cfe1035438c3a2a9cd811a5e, type: 2}

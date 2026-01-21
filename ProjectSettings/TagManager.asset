@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Path
+  - DuplicateBlocker
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - DominoPart
   - UIFront
   - DominoBase
-  - 
-  - 
+  - Settlement
+  - DuplicateBlocker
   - 
   - 
   - 
