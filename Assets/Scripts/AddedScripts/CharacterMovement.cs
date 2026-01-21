@@ -10,11 +10,13 @@ public class CharacterMovement : PauseBehaviour
     [SerializeField] public Transform targetPosition;
     public LayerMask whatAllowsMovement;
     public static event Action<bool> OnMovementAttempted;
+    private CharacterStates charStates;
 
 
     private void Awake()
     {
         targetPosition.parent = null;
+        charStates = GetComponent<CharacterStates>();
     }
     public override void OnGamePaused(bool isGamePaused)
     {
@@ -75,6 +77,7 @@ public class CharacterMovement : PauseBehaviour
             EnemyManager.Instance.MakeStep();
             Move(destination);
         }
+        AudioManager.Instance.Step();
     }
     void Move(Vector2 destination)
     {
@@ -87,6 +90,7 @@ public class CharacterMovement : PauseBehaviour
         else
         {
             if (OnMovementAttempted != null) OnMovementAttempted.Invoke(false);
+            charStates.CheckState();
         }
     }
     public void ControlMovement(bool val)
@@ -105,6 +109,7 @@ public class CharacterMovement : PauseBehaviour
             if (transform.position.x == targetPosition.position.x && transform.position.y == targetPosition.position.y)
             {
                 isMoving = false;
+                charStates.CheckState();
             }
         }
     }

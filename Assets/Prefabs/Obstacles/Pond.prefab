@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 9080176571428726349}
   - component: {fileID: -1784028927479900352}
   - component: {fileID: -3574511212466804215}
-  m_Layer: 0
+  - component: {fileID: 5127940268704629863}
+  - component: {fileID: 8651522374374631762}
+  m_Layer: 11
   m_Name: Pond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSnap
   curCell: {fileID: 0}
-  this_item: {fileID: 0}
   spawned: 0
 --- !u!58 &-1784028927479900352
 CircleCollider2D:
@@ -195,3 +196,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5127940268704629863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280323227994927791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1018ffd341389c42a22bc45a05da7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8651522374374631762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280323227994927791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5bddf19f6fa4544862d7c1b38188ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

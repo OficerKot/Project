@@ -80,6 +80,7 @@ public class Item : PauseBehaviour, Interactable
         if (!Inventory.Instance.isFull())
         {
             Inventory.Instance.AddItem(ItemManager.Instance.GetItemByID(ID));
+            AudioManager.Instance.Pickup();
             Destroy(gameObject);
         }
     }
