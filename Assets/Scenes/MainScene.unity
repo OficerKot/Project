@@ -22660,6 +22660,8 @@ MonoBehaviour:
   - {fileID: 6050633511597488391, guid: 70060bae8fd83dd4285b68ce10498aff, type: 3}
   - {fileID: 3265742574692647083, guid: 8f26d95cb8a1d1a44bfe117ab13afa8a, type: 3}
   - {fileID: 4583192258502654501, guid: 5adda76f984dfa5448e2c6b215160dc2, type: 3}
+  - {fileID: 1823821977916891402, guid: 73d038820be7593488de0d7eadc4090b, type: 3}
+  - {fileID: 1823821977916891402, guid: 2f9454c11ba1ce0498470cea17e68d4e, type: 3}
 --- !u!1001 &1826343154
 PrefabInstance:
   m_ObjectHideFlags: 0
