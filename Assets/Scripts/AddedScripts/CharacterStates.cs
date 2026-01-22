@@ -15,7 +15,7 @@ public class CharacterStates : MonoBehaviour
     public void CheckState()
     {
         stopperCol = Physics2D.OverlapCircle(transform.position, .01f, StopperLayers);
-        if (crawledOut == true)
+        if (stopperCol != null && crawledOut == true)
         {
             if (stopperCol.gameObject.layer == 11)
             {

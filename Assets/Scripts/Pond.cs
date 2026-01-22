@@ -3,11 +3,13 @@ using UnityEngine;
 public class Pond : MonoBehaviour
 {
     private ObstacleSnap ObsSnap;
+    private Cell curCell;
 
-    void Awake()
+    void Start()
     {
         ObsSnap = GetComponent<ObstacleSnap>();
-        //ObsSnap.curCell.SetFree();
+        curCell = ObsSnap.curCell;
+        curCell.SetFree();
+        this.enabled = false;
     }
-    
 }
