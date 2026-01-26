@@ -11,17 +11,12 @@ public class Domino : PauseBehaviour
     public GameObject pivot;
     bool isBeingGrabbed = false;
     Cell curCell1, curCell2;
-
-    [SerializeField] SpriteRenderer healthStateObject;
-    [SerializeField] List<Sprite> healhStates;
     [SerializeField] float offsetY = 2f;
-    [SerializeField] float health = 100;
-    float startHealth;
+
     public void Initialize(DominoData p1, DominoData p2)
     {
         part1 = p1;
         part2 = p2;
-        startHealth = health;
         GenerateParts();
         SpawnPivot();
     }
@@ -239,23 +234,7 @@ public class Domino : PauseBehaviour
         EnemyManager.Instance.MakeStep();
 
     }
-    public void TryToBreak(float hp)
-    {
-        health -= hp;
-        Debug.Log(name + " has health: " + health);
-        if (health <= 0)
-        {
-            RemoveFromGame();
-        }
-        int k = (int)startHealth / healhStates.Count;
-        healthStateObject.sprite = healhStates[(int)health / k];
-    }
-    void RemoveFromGame()
-    {
-        curCell1.SetFree();
-        curCell2.SetFree();
-        Destroy(gameObject);
-    }
+
     void AddToCells(DominoPart d1, DominoPart d2)
     {
         if (GetDistance2(d1.transform, curCell1.transform) > GetDistance2(d2.transform, curCell1.transform))

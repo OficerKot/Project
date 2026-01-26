@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2359715237236010630}
   - component: {fileID: 8060476965639799060}
-  - component: {fileID: 2232811290228058139}
   - component: {fileID: -1168377051682466493}
   - component: {fileID: 3915341601133718543}
   - component: {fileID: 6758035392653925705}
-  - component: {fileID: 8029645784674790270}
+  - component: {fileID: 2155311635475153715}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -93,20 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2232811290228058139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583192258502654501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f840c950cfd432489fab1ce0a91da23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: lantern
-  curCell: {fileID: 0}
 --- !u!50 &-1168377051682466493
 Rigidbody2D:
   serializedVersion: 5
@@ -115,11 +100,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4583192258502654501}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -206,7 +191,7 @@ MonoBehaviour:
   loop: 0
   speedMultiplier: 1
   playAnimationOnStart: Lantern
---- !u!114 &8029645784674790270
+--- !u!114 &2155311635475153715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,11 +200,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4583192258502654501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85ff464ae5bb27544b9ca5f2fdfeab17, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ac9ec28d1c948d468381facc839c799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: lantern
   curCell: {fileID: 0}
-  spawned: 0
+  placeAreaSize: {x: 2, y: 2}
+  protectAreaSize: {x: 4, y: 4}
 --- !u!1 &5399029651939233881
 GameObject:
   m_ObjectHideFlags: 0

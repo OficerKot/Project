@@ -8,7 +8,7 @@ public class DuplicationBlocker : MonoBehaviour
     Item thisItem;
     [SerializeField] List<Cell> affectedCells = new List<Cell>();
 
-    private void Start()
+    private void OnEnable()
     {
         thisItem = GetComponent<Item>();
         thisItem.OnItemPlaced += OnItemPlaced;
@@ -26,10 +26,13 @@ public class DuplicationBlocker : MonoBehaviour
 
     private void OnDestroy()
     {
-        thisItem.OnItemPlaced -= OnItemPlaced;
-        foreach (var cell in affectedCells)
+        if (thisItem)
         {
-            cell.RemoveDuplicationBlocker();
+            thisItem.OnItemPlaced -= OnItemPlaced;
+            foreach (var cell in affectedCells)
+            {
+                cell.RemoveDuplicationBlocker();
+            }
         }
     }
 

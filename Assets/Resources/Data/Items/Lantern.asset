@@ -15,4 +15,5 @@ MonoBehaviour:
   Id: lantern
   prefab: {fileID: 4583192258502654501, guid: 5adda76f984dfa5448e2c6b215160dc2, type: 3}
   UIprefab: {fileID: 2342191990407282095, guid: 870f496dee8690c45b0d158c08c6367b, type: 3}
-  itemsForCraft: []
+  itemsForCraft:
+  - {fileID: 11400000, guid: 75dd84d4cfe1035438c3a2a9cd811a5e, type: 2}

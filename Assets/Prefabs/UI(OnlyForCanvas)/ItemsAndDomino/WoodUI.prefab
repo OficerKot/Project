@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2067898546876541913, guid: 3fb604ae8843f604ea653d31627e4810, type: 3}
+  m_Sprite: {fileID: -1372078063, guid: 7bf180c35d2ae614c8c5a1c8c10aebf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6758885814436890381, guid: 95f0cf9270f27514d8a7754c60040fc8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1372078063, guid: 7bf180c35d2ae614c8c5a1c8c10aebf9, type: 3}
     - target: {fileID: 6758885814436890381, guid: 95f0cf9270f27514d8a7754c60040fc8, type: 3}
       propertyPath: m_Color.b
       value: 0.4867924
