@@ -6,7 +6,7 @@ public class Breakable : MonoBehaviour
 {
     [SerializeField] float health = 100;
     float startHealth;
-    [SerializeField] int protectorsCount = 0;
+    [SerializeField] List<DominoProtectionSource> protectors = new List<DominoProtectionSource> ();
     [SerializeField] SpriteRenderer healthStateObject;
     [SerializeField] List<Sprite> healhStates;
     private void Start()
@@ -14,22 +14,28 @@ public class Breakable : MonoBehaviour
         startHealth = health;
     }
 
-    public void AddProtection()
+    public void AddProtection(DominoProtectionSource source)
     {
-        protectorsCount++;
+        protectors.Add(source);
     }
-    public void RemoveProtection()
+    public void RemoveProtection(DominoProtectionSource source)
     {
-        protectorsCount--;
+        protectors.Remove(source);
     }
     public void TryToBreak(float hp)
     {
-        if (protectorsCount > 0)
+        if (protectors.Count > 0)
         {
-            Debug.Log("Is under protection!");
-            return;
+            foreach (var protector in protectors)
+            {
+                if(protector.TryToProtect())
+                {
+                    Debug.Log("Is under protection!");
+                    return;
+                }
+            }
+  
         }
-
         health -= hp;
         if (health <= 0)
         {

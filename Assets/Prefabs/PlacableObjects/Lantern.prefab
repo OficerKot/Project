@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3915341601133718543}
   - component: {fileID: 6758035392653925705}
   - component: {fileID: 2155311635475153715}
+  - component: {fileID: 2522701519713503523}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -206,7 +207,20 @@ MonoBehaviour:
   ID: lantern
   curCell: {fileID: 0}
   placeAreaSize: {x: 2, y: 2}
-  protectAreaSize: {x: 4, y: 4}
+--- !u!114 &2522701519713503523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4583192258502654501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f66f520ce9e7e4198252ceff80fe25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probability: 1
+  protectAreaSize: {x: 3, y: 3}
 --- !u!1 &5399029651939233881
 GameObject:
   m_ObjectHideFlags: 0

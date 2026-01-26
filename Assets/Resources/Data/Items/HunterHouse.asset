@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec55d87d3200afc46bb8387d3236c69e, type: 3}
-  m_Name: Well
+  m_Name: HunterHouse
   m_EditorClassIdentifier: 
-  Id: well
-  prefab: {fileID: 3265742574692647083, guid: d93170bf50134744487c5f080358e1f7, type: 3}
-  UIprefab: {fileID: 2342191990407282095, guid: 6e6808b4508ac0b4184ba4a10dccc777, type: 3}
+  Id: hunterhouse
+  prefab: {fileID: 3265742574692647083, guid: 446689d10fe2f1e48a981438e0f634e6, type: 3}
+  UIprefab: {fileID: 2342191990407282095, guid: 26ea33fcd4da8a247a0bcd895573efb2, type: 3}
   itemsForCraft:
-  - {fileID: 11400000, guid: 798a0125585a54a45bd5212e968cabfb, type: 2}
   - {fileID: 11400000, guid: 75dd84d4cfe1035438c3a2a9cd811a5e, type: 2}
+  - {fileID: 11400000, guid: c951063245bc19549b0a2d14e04e7ddc, type: 2}
