@@ -8,7 +8,6 @@ public interface Interactable
     public void Pick();
     public void PutInCell(Cell cell);
     public void PutInCell();
-
 }
 
 public class Item : PauseBehaviour, Interactable
@@ -25,12 +24,16 @@ public class Item : PauseBehaviour, Interactable
             Pick();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Mouse0) && curCell.IsFreeForDomino() && curCell.IsFree())
+        else if (Input.GetKeyDown(KeyCode.Mouse0) && curCell)
         {
             curCell.NoHighlight();
             PutInCell();
         }
 
+    }
+    public virtual bool CanPutInCell(Cell c) // у разных предметов могут быть разные условия для их установки
+    {
+        return c.IsFree();
     }
 
     private void OnDestroy()
@@ -44,10 +47,10 @@ public class Item : PauseBehaviour, Interactable
     {
         if (!isPlaced && collision.gameObject.layer == 6 && !curCell)
         {
-            if (!collision.GetComponent<Cell>().IsFree()) return;
+            Cell cell = collision.GetComponent<Cell>();
+            if (!CanPutInCell(cell)) return;
 
-            curCell = collision.GetComponent<Cell>();
-
+            curCell = cell;
             curCell.Highlight();
             return;
 
@@ -90,7 +93,7 @@ public class Item : PauseBehaviour, Interactable
         curCell = cell;
         PutInCell();
     }
-    public void PutInCell()
+    public virtual void PutInCell()
     {
         curCell.SetCurItem(gameObject);
         curCell.SetFree(false);

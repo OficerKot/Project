@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: house
-  blurImage: {fileID: 0}
+  blurImage: {fileID: 5900784217510290946}
 --- !u!1001 &8170348653032184749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,12 +101,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2342191990407282095, guid: bb47d20ceb7b5e34d81e8939710d4555, type: 3}
       propertyPath: m_Name
-      value: AxeUIBlur
+      value: HouseDark
       objectReference: {fileID: 0}
     - target: {fileID: 2342191990407282095, guid: bb47d20ceb7b5e34d81e8939710d4555, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6758885814436890381, guid: bb47d20ceb7b5e34d81e8939710d4555, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7411974349392773033, guid: 1ab8986a32a9ed047ad6c49500857e5d, type: 3}
     - target: {fileID: 8386460687464962531, guid: bb47d20ceb7b5e34d81e8939710d4555, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -141,15 +145,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386460687464962531, guid: bb47d20ceb7b5e34d81e8939710d4555, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.978252
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8386460687464962531, guid: bb47d20ceb7b5e34d81e8939710d4555, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.978252
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8386460687464962531, guid: bb47d20ceb7b5e34d81e8939710d4555, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.978252
+      value: 0.9989909
       objectReference: {fileID: 0}
     - target: {fileID: 8386460687464962531, guid: bb47d20ceb7b5e34d81e8939710d4555, type: 3}
       propertyPath: m_LocalPosition.x
@@ -207,5 +211,10 @@ PrefabInstance:
 --- !u!224 &360386101941338702 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8386460687464962531, guid: bb47d20ceb7b5e34d81e8939710d4555, type: 3}
+  m_PrefabInstance: {fileID: 8170348653032184749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5900784217510290946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2342191990407282095, guid: bb47d20ceb7b5e34d81e8939710d4555, type: 3}
   m_PrefabInstance: {fileID: 8170348653032184749}
   m_PrefabAsset: {fileID: 0}
