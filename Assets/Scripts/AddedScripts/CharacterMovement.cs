@@ -110,6 +110,7 @@ public class CharacterMovement : PauseBehaviour
             {
                 isMoving = false;
                 charStates.CheckState();
+                SignsManager.Instance.CastSignsRays();
             }
         }
     }
