@@ -21,10 +21,11 @@ public class Sign : MonoBehaviour
         Sign, DominoPart, Obstacle
     }
 
-    private void Awake()
+    private void Start()
     {
         SignsManager.Instance.PutInList(this);
         SpriteAnimator SprAnim = GetComponent<SpriteAnimator>();
+        direction = (Direction)Random.Range(0, 4);
 
         switch (direction)
         {
