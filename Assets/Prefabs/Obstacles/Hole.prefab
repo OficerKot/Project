@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSnap
   curCell: {fileID: 0}
-  spawned: 0
+  spawned: 1
 --- !u!58 &-3257714255238137693
 CircleCollider2D:
   m_ObjectHideFlags: 0

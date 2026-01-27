@@ -11444,13 +11444,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6050633511597488391, guid: 5c314d54385c01a4c95a5a3feb948643, type: 3}
-      propertyPath: m_Name
-      value: SignUp
+    - target: {fileID: 4280030749767552944, guid: 5c314d54385c01a4c95a5a3feb948643, type: 3}
+      propertyPath: direction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6050633511597488391, guid: 5c314d54385c01a4c95a5a3feb948643, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Name
+      value: Sign
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

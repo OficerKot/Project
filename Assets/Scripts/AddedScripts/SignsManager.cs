@@ -27,7 +27,8 @@ public class SignsManager : MonoBehaviour
     {
         foreach(Sign sign in signsList)
         {
-            sign.CastRay();
+            if (sign != null)
+                sign.CastRay();
         }
     }
 }

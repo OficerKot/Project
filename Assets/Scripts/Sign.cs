@@ -1,30 +1,77 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class Sign : MonoBehaviour
 {
-    [SerializeField] private Vector3 direction;
+    enum Direction
+    {
+        Up, Down, Left, Right
+    }
+
+    [SerializeField] private Direction direction;
+    private Vector3 VDirection;
     [SerializeField] private GameObject HolePrefab;
-    private RaycastHit2D[] dominos;
+    private RaycastHit2D[] RayHitsArray;
     bool RayCrossed = false;
+    float DestructionTime = 0.25f;
+
+    enum RayhitsNature
+    {
+        Sign, DominoPart, Obstacle
+    }
 
     private void Awake()
     {
         SignsManager.Instance.PutInList(this);
+        SpriteAnimator SprAnim = GetComponent<SpriteAnimator>();
+
+        switch (direction)
+        {
+            case Direction.Up:
+                {
+                    VDirection = new Vector3(0, 1, 0);
+                    break;
+                }
+            case Direction.Down:
+                {
+                    VDirection = new Vector3(0, -1, 0);
+                    break;
+                }
+            case Direction.Left:
+                {
+                    VDirection = new Vector3(-1, 0, 0);
+                    break;
+                }
+            case Direction.Right:
+                {
+                    VDirection = new Vector3(1, 0, 0);
+                    break;
+                }
+
+            default:
+                break;
+        }
+        SprAnim.ForcePlay("Sign"+direction.ToString());
+
     }
 
     public void CastRay()
     {
-        if (Physics2D.Raycast(transform.position, direction, 5f, LayerMask.GetMask("Player")))
+        if (Physics2D.Raycast(transform.position, VDirection, 5f, LayerMask.GetMask("Player")))
         {
             RayCrossed = true;
             Debug.Log("Player found!");
             return;
         }
-        else if (Physics2D.Raycast(transform.position, direction, 5f, LayerMask.GetMask("DominoBase")))
+        else if (Physics2D.Raycast(transform.position, VDirection, 5f, LayerMask.GetMask("Default", "DominoPart")))
         {
-            dominos = Physics2D.RaycastAll(transform.position, direction, 5f, LayerMask.GetMask("DominoBase"));
-            Debug.Log($"Ray touched {dominos.Length} dominos");
+            RayHitsArray = Physics2D.RaycastAll(transform.position, VDirection, 5f, LayerMask.GetMask("Default", "DominoPart"));
+            Debug.Log($"Ray touched {RayHitsArray.Length} cell-objects");
+            foreach (RaycastHit2D domino in RayHitsArray)
+            {
+                Debug.Log(domino.transform.gameObject);
+            }
         }
         if (RayCrossed)
         {
@@ -36,22 +83,54 @@ public class Sign : MonoBehaviour
     IEnumerator SpawnHoles()
     {
         int i = 0;
-        Transform holetf = this.transform;
-        foreach (RaycastHit2D domino in dominos)
+        foreach (RaycastHit2D rayhit in RayHitsArray)
         {
-            Destroy(domino.transform.gameObject);
-            holetf.transform.position += direction;
-            GameObject hole = Instantiate(HolePrefab, holetf);
+            if (rayhit)
+            {
+                RayhitsNature nature = CheckTheNature(rayhit);
+                if (nature == RayhitsNature.DominoPart)
+                {
+                    rayhit.transform.parent.gameObject.GetComponent<Domino>().PickUp();
+                    Destroy(rayhit.transform.parent.gameObject);
+                }
+                else if (nature == RayhitsNature.Obstacle && rayhit.transform.gameObject != this.gameObject)
+                {
+                    Cell curCell = rayhit.transform.gameObject.GetComponent<ObstacleSnap>().curCell;
+                    curCell.SetFree();
+                    Destroy(rayhit.transform.gameObject);
+                }
+                else continue;
+            }
+            Instantiate(HolePrefab, transform.position + (i + 1) * VDirection, Quaternion.identity);
             ++i;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(DestructionTime);
         }
-        if (i < 5)
+        while (i < 5)
         {
-            holetf.transform.position += direction;
-            GameObject hole = Instantiate(HolePrefab, holetf);
+            Instantiate(HolePrefab, transform.position + (i + 1) * VDirection, Quaternion.identity);
             ++i;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(DestructionTime);
         }
-        else StopAllCoroutines();
+        StopAllCoroutines();
     }
+
+    RayhitsNature CheckTheNature(RaycastHit2D rayhit) 
+    {
+        if (rayhit.transform.gameObject.layer == 7)
+            return RayhitsNature.DominoPart;
+        else if (rayhit.transform.gameObject.GetComponent<ObstacleSnap>() != null)
+        {
+            return RayhitsNature.Obstacle;
+        }
+        else 
+            return RayhitsNature.Sign;
+    }
+
+#if UNITY_EDITOR
+    void OnDrawGizmos()
+    {
+        Handles.DrawLine(transform.position, transform.position + 5*VDirection);
+        GUIStyle style = new GUIStyle();
+    }
+#endif
 }

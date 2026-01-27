@@ -17,12 +17,12 @@ GameObject:
   - component: {fileID: 577981945991435777}
   - component: {fileID: 4280030749767552944}
   m_Layer: 0
-  m_Name: SignUp
+  m_Name: Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1254933970565608897
 Transform:
   m_ObjectHideFlags: 0
@@ -117,9 +117,39 @@ MonoBehaviour:
     sequenceCode: 
     cue: 
     triggers: []
+  - name: SignDown
+    fps: 5
+    frames:
+    - {fileID: 4725178194427944201, guid: a4a78dbc6ebdd9c49a86bfb8213e778f, type: 3}
+    - {fileID: 4816203983586962064, guid: a4a78dbc6ebdd9c49a86bfb8213e778f, type: 3}
+    - {fileID: -1156021098783940194, guid: a4a78dbc6ebdd9c49a86bfb8213e778f, type: 3}
+    - {fileID: -2428153561229847566, guid: a4a78dbc6ebdd9c49a86bfb8213e778f, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: SignLeft
+    fps: 5
+    frames:
+    - {fileID: -7986199903849573832, guid: 81393db5b07ddb54eb1a0442c49ba874, type: 3}
+    - {fileID: 3439362956117190196, guid: 81393db5b07ddb54eb1a0442c49ba874, type: 3}
+    - {fileID: 5070124314208860595, guid: 81393db5b07ddb54eb1a0442c49ba874, type: 3}
+    - {fileID: -5717665003897157760, guid: 81393db5b07ddb54eb1a0442c49ba874, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: SignRight
+    fps: 5
+    frames:
+    - {fileID: 2438141793839393109, guid: c3c931e579217e94691f0fd940c8c267, type: 3}
+    - {fileID: -4387282833664553654, guid: c3c931e579217e94691f0fd940c8c267, type: 3}
+    - {fileID: -1894603192395479812, guid: c3c931e579217e94691f0fd940c8c267, type: 3}
+    - {fileID: 3487861354844756134, guid: c3c931e579217e94691f0fd940c8c267, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
   loop: 0
   speedMultiplier: 1
-  playAnimationOnStart: SignUp
+  playAnimationOnStart: 
 --- !u!114 &-8383789311058033598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,5 +254,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffd72d69b761904cb2182bcb87c0679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 1, z: 0}
+  direction: 0
   HolePrefab: {fileID: 1823821977916891402, guid: 73d038820be7593488de0d7eadc4090b, type: 3}
