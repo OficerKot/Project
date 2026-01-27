@@ -20,7 +20,6 @@ public class DominoProtectionSource : MonoBehaviour
     }
     public void StartProtecting()
     {
-        Debug.Log("StartProtecting called");
         var hits = Physics2D.OverlapBoxAll(transform.position, protectAreaSize, 0, LayerMask.GetMask("DominoBase"));
         if (hits.Length > 0)
         {
