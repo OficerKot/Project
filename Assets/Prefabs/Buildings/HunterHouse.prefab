@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 4440623275217405271}
   - component: {fileID: 1051257574510345545}
   - component: {fileID: 4723998710663762748}
-  - component: {fileID: 8089577211784599770}
-  - component: {fileID: 7275020838866863245}
-  - component: {fileID: -6037163842109619713}
+  - component: {fileID: 5581491808778375710}
+  - component: {fileID: 5698552126407898044}
   m_Layer: 0
-  m_Name: Well
+  m_Name: HunterHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2955286255927101427, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
+  m_Sprite: {fileID: -8589871959191218572, guid: b5baa6f447d6e5640834a7a3ab576df2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +130,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96153843, y: 1}
+    oldSize: {x: 1.8846154, y: 1.9615384}
     newSize: {x: 0.25, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -179,7 +178,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
---- !u!114 &8089577211784599770
+--- !u!114 &5581491808778375710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265742574692647083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579856d0f88bd624f82f9d884e3e072b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: hunterhouse
+  curCell: {fileID: 0}
+  proizvoditelnost: 2
+  health: 100
+--- !u!114 &5698552126407898044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,45 +208,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5104395357491924321}
   animations:
-  - name: Well
-    fps: 5
+  - name: HunterHouse
+    fps: 3
     frames:
-    - {fileID: 2955286255927101427, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
-    - {fileID: -6242212967855461409, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
-    - {fileID: 1802229783603986084, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
-    - {fileID: 5104867767190148593, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
+    - {fileID: -8589871959191218572, guid: b5baa6f447d6e5640834a7a3ab576df2, type: 3}
+    - {fileID: -7177016226678373643, guid: b5baa6f447d6e5640834a7a3ab576df2, type: 3}
+    - {fileID: -2762198704579104282, guid: b5baa6f447d6e5640834a7a3ab576df2, type: 3}
+    - {fileID: 6905603195469154393, guid: b5baa6f447d6e5640834a7a3ab576df2, type: 3}
     sequenceCode: 
     cue: 
     triggers: []
   loop: 0
   speedMultiplier: 1
-  playAnimationOnStart: Well
---- !u!114 &7275020838866863245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6403686a69e32e468982c1c66831486, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: well
-  curCell: {fileID: 0}
-  placeAreaSize: {x: 3, y: 3}
---- !u!114 &-6037163842109619713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f66f520ce9e7e4198252ceff80fe25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  probability: 0.2
-  protectAreaSize: {x: 4, y: 4}
+  playAnimationOnStart: HunterHouse

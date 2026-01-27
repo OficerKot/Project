@@ -53,7 +53,7 @@ public class DominoBreaker : MonoBehaviour
             float randFloat = Random.Range(0, 1f);
             if(probability >= randFloat)
             {
-                domino.GetComponent<Domino>().TryToBreak(damage);
+                domino.GetComponent<Breakable>().TryToBreak(damage);
             }
         }
 

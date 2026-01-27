@@ -17,3 +17,4 @@ MonoBehaviour:
   UIprefab: {fileID: 2342191990407282095, guid: 6e6808b4508ac0b4184ba4a10dccc777, type: 3}
   itemsForCraft:
   - {fileID: 11400000, guid: 798a0125585a54a45bd5212e968cabfb, type: 2}
+  - {fileID: 11400000, guid: 75dd84d4cfe1035438c3a2a9cd811a5e, type: 2}

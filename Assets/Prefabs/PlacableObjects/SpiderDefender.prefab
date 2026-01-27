@@ -13,11 +13,12 @@ GameObject:
   - component: {fileID: 4440623275217405271}
   - component: {fileID: 1051257574510345545}
   - component: {fileID: 4723998710663762748}
-  - component: {fileID: 8089577211784599770}
-  - component: {fileID: 7275020838866863245}
-  - component: {fileID: -6037163842109619713}
-  m_Layer: 0
-  m_Name: Well
+  - component: {fileID: 4211632035366988831}
+  - component: {fileID: 5834405823030286673}
+  - component: {fileID: 2620093122631921616}
+  - component: {fileID: 931304645541431792}
+  m_Layer: 11
+  m_Name: SpiderDefender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.7672997, y: -1.940367, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1273, y: 1.1273, z: 1.1273}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2955286255927101427, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
+  m_Sprite: {fileID: -622683130383860194, guid: a44294bcb224c5047b67638a031803c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,17 +128,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0029129982, y: -0.017162502}
+  m_Offset: {x: -0.0004182905, y: -0.009299576}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96153843, y: 1}
+    oldSize: {x: 0.96153843, y: 0.88461536}
     newSize: {x: 0.25, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.47507954, y: 0.5002214}
+  m_Size: {x: 0.6853671, y: 0.72675073}
   m_EdgeRadius: 0
 --- !u!50 &1051257574510345545
 Rigidbody2D:
@@ -179,34 +180,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
---- !u!114 &8089577211784599770
+--- !u!114 &4211632035366988831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5104395357491924321}
   animations:
-  - name: Well
+  - name: Stones
     fps: 5
     frames:
-    - {fileID: 2955286255927101427, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
-    - {fileID: -6242212967855461409, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
-    - {fileID: 1802229783603986084, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
-    - {fileID: 5104867767190148593, guid: 78926395d6dc0b74bbd4089b53e79684, type: 3}
+    - {fileID: 2667589067915142571, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
+    - {fileID: 6898035379108858973, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
+    - {fileID: -8868248462342347919, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
+    - {fileID: -1605707320451941170, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
     sequenceCode: 
     cue: 
     triggers: []
   loop: 0
   speedMultiplier: 1
-  playAnimationOnStart: Well
---- !u!114 &7275020838866863245
+  playAnimationOnStart: Stones
+--- !u!114 &5834405823030286673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,13 +216,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3265742574692647083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6403686a69e32e468982c1c66831486, type: 3}
+  m_Script: {fileID: 11500000, guid: 85ff464ae5bb27544b9ca5f2fdfeab17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: well
   curCell: {fileID: 0}
-  placeAreaSize: {x: 3, y: 3}
---- !u!114 &-6037163842109619713
+  spawned: 0
+--- !u!114 &2620093122631921616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,8 +230,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3265742574692647083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f66f520ce9e7e4198252ceff80fe25, type: 3}
+  m_Script: {fileID: 11500000, guid: 67f5ca453a851dd4e90ddf76082ac025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probability: 0.2
-  protectAreaSize: {x: 4, y: 4}
+  areaSize: {x: 2, y: 2}
+--- !u!114 &931304645541431792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265742574692647083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f840c950cfd432489fab1ce0a91da23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: spider_defender
+  curCell: {fileID: 0}

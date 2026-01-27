@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec55d87d3200afc46bb8387d3236c69e, type: 3}
-  m_Name: Lantern
+  m_Name: SpiderDefender
   m_EditorClassIdentifier: 
-  Id: lantern
-  prefab: {fileID: 4583192258502654501, guid: 5adda76f984dfa5448e2c6b215160dc2, type: 3}
-  UIprefab: {fileID: 2342191990407282095, guid: 870f496dee8690c45b0d158c08c6367b, type: 3}
+  Id: spider_defender
+  prefab: {fileID: 3265742574692647083, guid: 2a012f7355891f14e92955f864ef4584, type: 3}
+  UIprefab: {fileID: 2342191990407282095, guid: cf66363d635a7914b8ed335bdf4c95f7, type: 3}
   itemsForCraft:
-  - {fileID: 11400000, guid: 75dd84d4cfe1035438c3a2a9cd811a5e, type: 2}
+  - {fileID: 11400000, guid: a88c999c3e4cc8442b9ec55e80fb54f0, type: 2}
+  - {fileID: 11400000, guid: c951063245bc19549b0a2d14e04e7ddc, type: 2}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6758885814436890381}
   - component: {fileID: 4116706721653000829}
   m_Layer: 5
-  m_Name: WoodUI
+  m_Name: PlanksUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 2342191990407282095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
+  m_LocalScale: {x: 0.39022282, y: 0.39022282, z: 0.39022282}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 355133395538025522}
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1372078063, guid: 7bf180c35d2ae614c8c5a1c8c10aebf9, type: 3}
+  m_Sprite: {fileID: -3671729575880173466, guid: d61cc6ddc928be645a5dc57fd75f9ba3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec269458851ab84dbe08e4445763c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: wood
+  itemId: planks
   blurImage: {fileID: 5768615562493114494}
 --- !u!1001 &8110734983784334801
 PrefabInstance:
@@ -101,7 +101,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2342191990407282095, guid: 95f0cf9270f27514d8a7754c60040fc8, type: 3}
       propertyPath: m_Name
-      value: WoodUIBlur
+      value: PlanksUIBlur
       objectReference: {fileID: 0}
     - target: {fileID: 2342191990407282095, guid: 95f0cf9270f27514d8a7754c60040fc8, type: 3}
       propertyPath: m_IsActive
@@ -110,7 +110,7 @@ PrefabInstance:
     - target: {fileID: 6758885814436890381, guid: 95f0cf9270f27514d8a7754c60040fc8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1372078063, guid: 7bf180c35d2ae614c8c5a1c8c10aebf9, type: 3}
+      objectReference: {fileID: -3671729575880173466, guid: d61cc6ddc928be645a5dc57fd75f9ba3, type: 3}
     - target: {fileID: 6758885814436890381, guid: 95f0cf9270f27514d8a7754c60040fc8, type: 3}
       propertyPath: m_Color.b
       value: 0.4867924
@@ -157,15 +157,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386460687464962531, guid: 95f0cf9270f27514d8a7754c60040fc8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.99382794
+      value: 0.39022282
       objectReference: {fileID: 0}
     - target: {fileID: 8386460687464962531, guid: 95f0cf9270f27514d8a7754c60040fc8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.99382794
+      value: 0.39022282
       objectReference: {fileID: 0}
     - target: {fileID: 8386460687464962531, guid: 95f0cf9270f27514d8a7754c60040fc8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.99382794
+      value: 0.39022282
       objectReference: {fileID: 0}
     - target: {fileID: 8386460687464962531, guid: 95f0cf9270f27514d8a7754c60040fc8, type: 3}
       propertyPath: m_LocalPosition.x

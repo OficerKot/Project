@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,7 +8,6 @@ public interface Interactable
     public void Pick();
     public void PutInCell(Cell cell);
     public void PutInCell();
-
 }
 
 public class Item : PauseBehaviour, Interactable
@@ -15,6 +15,7 @@ public class Item : PauseBehaviour, Interactable
     [SerializeField] string ID;
     [SerializeField] Cell curCell;
     bool isPlaced = true;
+    public event Action OnItemPlaced;
 
     public void OnMouseDown()
     {
@@ -30,6 +31,10 @@ public class Item : PauseBehaviour, Interactable
         }
 
     }
+    public virtual bool CanPutInCell(Cell c) // у разных предметов могут быть разные условия для их установки
+    {
+        return c.IsFree();
+    }
 
     private void OnDestroy()
     {
@@ -42,10 +47,10 @@ public class Item : PauseBehaviour, Interactable
     {
         if (!isPlaced && collision.gameObject.layer == 6 && !curCell)
         {
-            if (!collision.GetComponent<Cell>().CheckIfFree()) return;
+            Cell cell = collision.GetComponent<Cell>();
+            if (!CanPutInCell(cell)) return;
 
-            curCell = collision.GetComponent<Cell>();
-
+            curCell = cell;
             curCell.Highlight();
             return;
 
@@ -89,11 +94,12 @@ public class Item : PauseBehaviour, Interactable
         curCell = cell;
         PutInCell();
     }
-    public void PutInCell()
+    public virtual void PutInCell()
     {
         curCell.SetCurItem(gameObject);
         curCell.SetFree(false);
         isPlaced = true;
+        OnItemPlaced?.Invoke();
         transform.position = curCell.transform.position;
         transform.Translate(0, 0, -curCell.transform.position.z);
         Inventory.Instance.RemoveItem(ItemManager.Instance.GetItemByID(ID));

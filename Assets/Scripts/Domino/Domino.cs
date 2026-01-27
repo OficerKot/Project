@@ -11,17 +11,12 @@ public class Domino : PauseBehaviour
     public GameObject pivot;
     bool isBeingGrabbed = false;
     Cell curCell1, curCell2;
-
-    [SerializeField] SpriteRenderer healthStateObject;
-    [SerializeField] List<Sprite> healhStates;
     [SerializeField] float offsetY = 2f;
-    [SerializeField] float health = 100;
-    float startHealth;
+
     public void Initialize(DominoData p1, DominoData p2)
     {
         part1 = p1;
         part2 = p2;
-        startHealth = health;
         GenerateParts();
         SpawnPivot();
     }
@@ -69,7 +64,7 @@ public class Domino : PauseBehaviour
     {
         if (isBeingGrabbed && collision.gameObject.layer == 6)
         {
-            if (!collision.GetComponent<Cell>().CheckIfFree())
+            if (!collision.GetComponent<Cell>().IsFreeForDomino())
             {
                 return;
 
@@ -134,7 +129,7 @@ public class Domino : PauseBehaviour
         if (IsSameRotationAngle(cell2.transform.position, curCell1.transform.position))
         {
 
-            return cell2.CheckIfFree() && CheckCells(cell1, cell2);
+            return cell2.IsFreeForDomino() && CheckCells(cell1, cell2);
         }
         return false;
     }
@@ -243,6 +238,7 @@ public class Domino : PauseBehaviour
         EnemyManager.Instance.MakeStep();
 
     }
+
     void ClearThePonds()
     {
         if (Physics2D.OverlapCircle(this.transform.parent.position, 0.5f, LayerMask.GetMask("Pond")))
@@ -257,23 +253,7 @@ public class Domino : PauseBehaviour
             }
         }
     }
-    public void TryToBreak(float hp)
-    {
-        health -= hp;
-        Debug.Log(name + " has health: " + health);
-        if (health <= 0)
-        {
-            RemoveFromGame();
-        }
-        int k = (int)startHealth / healhStates.Count;
-        healthStateObject.sprite = healhStates[(int)health / k];
-    }
-    void RemoveFromGame()
-    {
-        curCell1.SetFree();
-        curCell2.SetFree();
-        Destroy(gameObject);
-    }
+
     void AddToCells(DominoPart d1, DominoPart d2)
     {
         if (GetDistance2(d1.transform, curCell1.transform) > GetDistance2(d2.transform, curCell1.transform))
