@@ -19,7 +19,7 @@ public class EnemyMovement : PauseBehaviour
         vert, hor
     }
 
-    void Awake()
+    void Start()
     {
         EnemyManager.Instance.PutInList(this);
         sprRen = GetComponent<SpriteRenderer>();

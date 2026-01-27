@@ -10,6 +10,12 @@ public class SmoothCameraFollow : MonoBehaviour
     public Transform target;
     public Vector3 velocity = Vector3.zero;
 
+    private void Awake()
+    {
+        targetPosition.z = transform.position.z;
+        transform.position = targetPosition;
+    }
+
     void FixedUpdate()
     {
         targetPosition = target.position;

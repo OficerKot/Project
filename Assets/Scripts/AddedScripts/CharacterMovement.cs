@@ -15,6 +15,9 @@ public class CharacterMovement : PauseBehaviour
 
     private void Awake()
     {
+        int x = UnityEngine.Random.Range(-50, 51);
+        int y = UnityEngine.Random.Range(-50, 51);
+        transform.position = new Vector3(x, y, 0);
         targetPosition.parent = null;
         charStates = GetComponent<CharacterStates>();
     }
