@@ -17,7 +17,10 @@ public class PlayerStopper : MonoBehaviour
         character.ControlMovement(false);
         yield return StartCoroutine(WaitForMovement());
         character.ControlMovement(true);
-        GetComponent<ResourceSource>().Pick();
+        if (GetComponent<ResourceSource>() != null)
+        {
+            GetComponent<ResourceSource>().Pick();
+        }
     }
     IEnumerator WaitForMovement()
     {

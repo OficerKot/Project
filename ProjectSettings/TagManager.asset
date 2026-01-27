@@ -19,6 +19,9 @@ TagManager:
   - DominoBase
   - Settlement
   - DuplicateBlocker
+  - Player
+  - Pond
+  - Web
   - 
   - 
   - 

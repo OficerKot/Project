@@ -133,6 +133,9 @@ MonoBehaviour:
   whatAllowsMovement:
     serializedVersion: 2
     m_Bits: 128
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &4748398468865839210
 GameObject:
   m_ObjectHideFlags: 0
