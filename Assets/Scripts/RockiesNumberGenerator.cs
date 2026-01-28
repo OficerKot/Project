@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Генерирует количество камней для объекта "Камешки"
+/// </summary>
 public class RockiesNumberGenerator : MonoBehaviour
 {
     SpriteRenderer spriteRend;
