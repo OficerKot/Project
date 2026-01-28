@@ -62,7 +62,6 @@ public class Clock : PauseBehaviour
     {
         if(time < 6 && time + timeSpeed >= 6)
         {
-            Debug.Log("Night passed.");
             NightPassed?.Invoke();
         }
     }
@@ -75,7 +74,7 @@ public class Clock : PauseBehaviour
             for (int i = 0; i < hoursPassed; i++)
             {
                 OnHourPassed.Invoke();
-                Debug.Log("An hour passed. Time: " + time);
+                //Debug.Log("An hour passed. Time: " + time);
             }
             hourCounter -= hoursPassed;
         }

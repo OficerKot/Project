@@ -47,13 +47,11 @@ public class RoadManager : MonoBehaviour, IRoadManager
 
     void RemoveNonCycleVertex(DominoPart vertex, HashSet<DominoPart> curWay, HashSet<DominoPart> visited = null)
     {
-        Debug.Log("Visiting " + vertex.name);
         if (visited == null) visited = new HashSet<DominoPart>();
         visited.Add(vertex);
 
         if (CountNeighbours(vertex, curWay) < 2  && curWay.Contains(vertex))
-        {
-            Debug.Log("Removed " + vertex.name);
+        {;
             curWay.Remove(vertex);
             RemoveNonCycleVertex(vertex, curWay, visited);
         }

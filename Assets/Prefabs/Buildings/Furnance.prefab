@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4440623275217405271}
   - component: {fileID: 1051257574510345545}
   - component: {fileID: 4723998710663762748}
-  - component: {fileID: 5581491808778375710}
   - component: {fileID: 2148683800900117892}
   m_Layer: 0
   m_Name: Furnance
@@ -178,22 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
---- !u!114 &5581491808778375710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 579856d0f88bd624f82f9d884e3e072b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: furnance
-  curCell: {fileID: 0}
-  proizvoditelnost: 2
-  health: 100
 --- !u!114 &2148683800900117892
 MonoBehaviour:
   m_ObjectHideFlags: 0

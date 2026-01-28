@@ -6,20 +6,16 @@ public class Building : Item
 {
     public int proizvoditelnost;
     public int health;
+    Vector2 cornerPoint;
     [SerializeField] ItemData resource;
     [SerializeField] List<Cell> curCells = new List<Cell>();
     int count = 0;
-    public void MakeResource()
-    {
-        count += proizvoditelnost;
-    }
-
     public override void CheckCells(Cell c)
     {
         if (curCells.Count > 0) return;
         BoxCollider2D cellCollider = c.GetComponent<BoxCollider2D>();
         Vector2 midPoint = c.transform.position;
-        Vector2 cornerPoint = new Vector2(midPoint.x + cellCollider.size.x / 2, midPoint.y - cellCollider.size.y / 2);
+        cornerPoint = new Vector2(midPoint.x + cellCollider.size.x / 2, midPoint.y - cellCollider.size.y / 2);
         Collider2D[] hits = Physics2D.OverlapBoxAll(cornerPoint, cellCollider.size/2, 0, LayerMask.GetMask("Cell"));
         if (hits.Length > 0)
         {
@@ -64,7 +60,7 @@ public class Building : Item
         { 
             PutInCell();
         }
-        if (resource != null && count > 0)
+        if (GetIsPlaced() && resource != null)
         {
             PickResource();
         }
@@ -81,16 +77,14 @@ public class Building : Item
             cell.SetCurItem(gameObject);
             cell.SetFree(false);
         }
-        Cell curCell = curCells[0];
+        transform.position = cornerPoint;
         SetIsPlaced(true);
         InvokeAction();
-        transform.position = curCell.transform.position;
-        transform.Translate(0, 0, -curCell.transform.position.z);
         Inventory.Instance.RemoveItem(ItemManager.Instance.GetItemByID(GetID()));
         GameManager.Instance.PutInHand(null);
 
         StartProducing();
-    }
+    }  
     public virtual void StartProducing()
     {
         Clock.NightPassed += MakeResource;
@@ -99,13 +93,28 @@ public class Building : Item
     {
         Clock.NightPassed -= MakeResource;
     }
-
+    public void MakeResource()
+    {
+        count += proizvoditelnost;
+    }
     void PickResource()
     {
         if(!Inventory.Instance.isFull())
         {
-            Inventory.Instance.AddItem(resource,count);
-            count = 0;
+            if (count > 0)
+            {
+                Inventory.Instance.AddItem(resource, count);
+                Debug.Log("You've picked "+resource.name+ "x"+count);
+                count = 0;
+            }
+            else
+            {
+                Debug.Log("No food yet. Come back later after 6am.");
+            }
+        }
+        else
+        {
+            Debug.Log("Full inventory");
         }
     }
 
