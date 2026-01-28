@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: HunterHouse
   m_EditorClassIdentifier: 
   Id: hunterhouse
-  prefab: {fileID: 3265742574692647083, guid: 446689d10fe2f1e48a981438e0f634e6, type: 3}
-  UIprefab: {fileID: 2342191990407282095, guid: 26ea33fcd4da8a247a0bcd895573efb2, type: 3}
+  prefab: {fileID: 3265742574692647083, guid: 2316e2bfd40f7ac40b8bc5aca60088f1, type: 3}
+  UIprefab: {fileID: 2342191990407282095, guid: b0bf4a4c6a8dcc848a965c67775a3f0b, type: 3}
   itemsForCraft:
-  - {fileID: 11400000, guid: 75dd84d4cfe1035438c3a2a9cd811a5e, type: 2}
   - {fileID: 11400000, guid: c951063245bc19549b0a2d14e04e7ddc, type: 2}
+  - {fileID: 11400000, guid: 75dd84d4cfe1035438c3a2a9cd811a5e, type: 2}

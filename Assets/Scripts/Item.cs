@@ -17,7 +17,7 @@ public class Item : PauseBehaviour, Interactable
     bool isPlaced = true;
     public event Action OnItemPlaced;
 
-    public void OnMouseDown()
+    public virtual void OnMouseDown()
     {
         if (!Inventory.Instance.isFull() && isPlaced)
         {
@@ -31,11 +31,6 @@ public class Item : PauseBehaviour, Interactable
         }
 
     }
-    public virtual bool CanPutInCell(Cell c) // у разных предметов могут быть разные условия для их установки
-    {
-        return c.IsFree();
-    }
-
     private void OnDestroy()
     {
         if(curCell)
@@ -45,24 +40,36 @@ public class Item : PauseBehaviour, Interactable
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!isPlaced && collision.gameObject.layer == 6 && !curCell)
+        Cell cell = collision.GetComponent<Cell>();
+        if (!isPlaced && collision.gameObject.layer == 6 && CanPutInCell(cell))
         {
-            Cell cell = collision.GetComponent<Cell>();
-            if (!CanPutInCell(cell)) return;
-
-            curCell = cell;
-            curCell.Highlight();
-            return;
-
+            CheckCells(cell);
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    public virtual void CheckCells(Cell cell)
+    {
+        if (curCell) return;
+
+        curCell = cell;
+        curCell.Highlight();
+        return;
+    }
+
+    public virtual void TurnOffHighlightedCells()
     {
         if (curCell && !isPlaced)
         {
             curCell.NoHighlight();
             curCell = null;
         }
+    }
+    public virtual bool CanPutInCell(Cell c) // у разных предметов могут быть разные условия для их установки
+    {
+        return c.IsFree();
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        TurnOffHighlightedCells();
     }
     private void Update()
     {
@@ -98,11 +105,16 @@ public class Item : PauseBehaviour, Interactable
         curCell.SetCurItem(gameObject);
         curCell.SetFree(false);
         isPlaced = true;
-        OnItemPlaced?.Invoke();
+        InvokeAction();
         transform.position = curCell.transform.position;
         transform.Translate(0, 0, -curCell.transform.position.z);
         Inventory.Instance.RemoveItem(ItemManager.Instance.GetItemByID(ID));
         GameManager.Instance.PutInHand(null);
+    }
+
+    protected void InvokeAction()
+    {
+        OnItemPlaced?.Invoke();
     }
     void Move() 
     {
