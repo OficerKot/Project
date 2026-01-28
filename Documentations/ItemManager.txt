@@ -1,0 +1,10 @@
+Связывает все ItemData и делает возможным поиск предмета по ID.
+
+Поля:
+
+public ItemData[] allItems - список всех предметов в игре, изменяется через Inspector
+private static ItemManager _instance
+public static ItemManager Instance
+
+Методы:
+ItemData GetItemByID() - возвращает предмет по его названию

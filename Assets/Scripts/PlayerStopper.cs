@@ -2,6 +2,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Останавливает игрока при входе в триггер и возобновляет движение после попытки перемещения.
+/// Вынуждает делать более одного шага для выхода с триггера.
+/// </summary>
 public class PlayerStopper : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,6 +16,11 @@ public class PlayerStopper : MonoBehaviour
             StartCoroutine(StopPlayer(character));
         }
     }
+
+    /// <summary>
+    /// Корутина для остановки и последующего возобновления управления игроком.
+    /// </summary>
+    /// <param name="character">Компонент движения персонажа.</param>
     IEnumerator StopPlayer(CharacterMovement character)
     {
         character.ControlMovement(false);
@@ -22,6 +31,10 @@ public class PlayerStopper : MonoBehaviour
             GetComponent<ResourceSource>().Pick();
         }
     }
+
+    /// <summary>
+    /// Корутина ожидания попытки движения игрока.
+    /// </summary>
     IEnumerator WaitForMovement()
     {
         bool moved = false;

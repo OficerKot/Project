@@ -2,6 +2,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Управляет системой голода игрока с пошаговым уменьшением и визуализацией.
+/// </summary>
 public class Hunger : MonoBehaviour
 {
     public int stepsLimit = 5;
@@ -29,6 +32,9 @@ public class Hunger : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Учитывает шаг игрока, при достижении лимита уменьшает уровень сытости.
+    /// </summary>
     public void MakeStep()
     {
         if (Time.timeScale == 0) return;
@@ -40,6 +46,9 @@ public class Hunger : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Уменьшает уровень сытости. При достижении максимума вызывает проигрыш.
+    /// </summary>
     void HungerDown()
     {
         hungerLevel++;
@@ -54,16 +63,27 @@ public class Hunger : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Увеличивает уровень сытости.
+    /// </summary>
     void HungerUp()
     {
         if (hungerLevel > 0)
             hungerLevel--;
         thisImageAnimator.ForcePlay(hungerLevels[hungerLevel]);
     }
+
+    /// <summary>
+    /// Публичный метод для увеличения сытости.
+    /// </summary>
     public void CallHungerUp()
     {
         HungerUp();
     }
+
+    /// <summary>
+    /// Публичный метод для уменьшения сытости.
+    /// </summary>
     public void CallHungerDown()
     {
         HungerDown();

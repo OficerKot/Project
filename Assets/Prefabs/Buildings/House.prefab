@@ -192,8 +192,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: house
   curCell: {fileID: 0}
-  proizvoditelnost: 2
+  proizvoditelnost: 1
   health: 100
+  resource: {fileID: 0}
+  curCells: []
 --- !u!114 &5698552126407898044
 MonoBehaviour:
   m_ObjectHideFlags: 0

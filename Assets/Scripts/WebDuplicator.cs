@@ -6,12 +6,21 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
+/// <summary>
+/// Дубликатор паутины, который создает копии предмета на соседних клетках при наличии доступных домино.
+/// </summary>
 public class WebDuplicator : MonoBehaviour
 {
     public Vector2 colliderSize;
-    public float duplicateDelay; // in hours
+    /// <summary>
+    /// Интервал распространения паутины (в игровых часах)
+    /// </summary>
+    public float duplicateDelay; 
     [SerializeField] Collider2D[] colliders;
 
+    /// <summary>
+    /// Очищает все подписки на события.
+    /// </summary>
     void CleanupSubscriptions()
     {
         StopAllCoroutines();
@@ -24,6 +33,7 @@ public class WebDuplicator : MonoBehaviour
             }
         }
     }
+
     void OnDestroy() => CleanupSubscriptions();
     void OnDisable() => CleanupSubscriptions();
 
@@ -34,6 +44,10 @@ public class WebDuplicator : MonoBehaviour
         CheckNeighbours();
         ListenNeighbours();
     }
+
+    /// <summary>
+    /// Подписывается на события разрешения дублирования в соседних клетках.
+    /// </summary>
     void ListenNeighbours()
     {
         foreach (Collider2D col in colliders)
@@ -44,16 +58,22 @@ public class WebDuplicator : MonoBehaviour
                 if (!IsCurCell(cell))
                 {
                     cell.OnDuplicationAllowed += StartCountDown;
-         
                 }
             }
         }
     }
 
+    /// <summary>
+    /// Проверяет, находится ли дубликатор на клетке. Исключает повторное дублирование в одну и ту же клетку.
+    /// </summary>
     bool IsCurCell(Cell cell)
     {
         return Vector2.Distance(transform.position, cell.transform.position) <= 0.1f;
     }
+
+    /// <summary>
+    /// Проверяет соседние клетки для запуска процесса дублирования.
+    /// </summary>
     private void CheckNeighbours()
     {
         foreach (Collider2D col in colliders)
@@ -67,12 +87,21 @@ public class WebDuplicator : MonoBehaviour
                 }
             }
         }
-
     }
+
+    /// <summary>
+    /// Запускает отсчет времени до дублирования на указанной клетке.
+    /// </summary>
+    /// <param name="cell">Клетка для дублирования.</param>
     void StartCountDown(Cell cell)
     {
         StartCoroutine(CountDown(cell));
     }
+
+    /// <summary>
+    /// Корутина отсчета времени до дублирования.
+    /// </summary>
+    /// <param name="cell">Клетка для дублирования.</param>
     IEnumerator CountDown(Cell cell)
     {
         if (!cell.CheckDuplicationAllowed())
@@ -94,6 +123,10 @@ public class WebDuplicator : MonoBehaviour
             DuplicateOn(cell);
         }
     }
+
+    /// <summary>
+    /// Корутина ожидания следующего игрового часа.
+    /// </summary>
     IEnumerator WaitForNextHour()
     {
         bool hourPassed = false;
@@ -108,6 +141,10 @@ public class WebDuplicator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Создает копию предмета на указанной клетке.
+    /// </summary>
+    /// <param name="targetCell">Целевая клетка для создания копии.</param>
     void DuplicateOn(Cell targetCell)
     {
         if (!targetCell.GetCurItem() && targetCell.GetCurDomino() != null)
@@ -117,6 +154,9 @@ public class WebDuplicator : MonoBehaviour
     }
 
 #if UNITY_EDITOR
+    /// <summary>
+    /// Отрисовывает зону действия дубликатора в редакторе Unity.
+    /// </summary>
     void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, colliderSize);

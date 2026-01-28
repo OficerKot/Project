@@ -2,6 +2,10 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
+/// <summary>
+/// Управляет игровым временем, сменой дня и ночи,
+/// освещением сцены и генерацией временных событий.
+/// </summary>
 public class Clock : PauseBehaviour
 {
     float time;
@@ -13,7 +17,15 @@ public class Clock : PauseBehaviour
     bool isActive = true;
     [SerializeField] Light2D globalLight;
     [SerializeField] Transform ClockHand;
+
+    /// <summary>
+    /// Вызывается каждый раз, когда проходит один игровой час.
+    /// </summary>
     public static event Action OnHourPassed;
+    /// <summary>
+    /// Вызывается каждый раз, когда наступает 6am
+    /// </summary>
+    public static event Action NightPassed;
 
     public override void OnGamePaused(bool isGamePaused)
     {
@@ -37,9 +49,15 @@ public class Clock : PauseBehaviour
         globalLight.intensity = maxLightIntensity; 
     }
 
+    /// <summary>
+    /// Продвигает игровое время вперёд,
+    /// обновляет освещение, стрелку часов
+    /// и генерирует временные события.
+    /// </summary
     public void TimeTick()
     {
         if (!isActive) return;
+        CheckNightPassed();
         time += timeSpeed;
         CheckHourPassed();
 
@@ -56,6 +74,21 @@ public class Clock : PauseBehaviour
 
     }
 
+    /// <summary>
+    /// Проверяет момент окончания ночи и вызывает соответствующее событие.
+    /// </summary>
+    void CheckNightPassed()
+    {
+        if(time < 6 && time + timeSpeed >= 6)
+        {
+            NightPassed?.Invoke();
+        }
+    }
+
+    /// <summary>
+    /// Отслеживает прохождение игровых часов
+    /// и генерирует события для каждого часа.
+    /// </summary>
     void CheckHourPassed()
     {
         hourCounter += timeSpeed;
@@ -65,11 +98,16 @@ public class Clock : PauseBehaviour
             for (int i = 0; i < hoursPassed; i++)
             {
                 OnHourPassed.Invoke();
-                Debug.Log("An hour passed. Time: " + time);
+                //Debug.Log("An hour passed. Time: " + time);
             }
             hourCounter -= hoursPassed;
         }
     }
+
+    /// <summary>
+    /// Обновляет интенсивность глобального освещения
+    /// в зависимости от текущего времени суток.
+    /// </summary>
     void UpdateLighting()
     {
         if (globalLight == null) return;

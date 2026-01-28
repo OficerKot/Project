@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Блокирует распространение дублируемых предметов на клетки в радиусе доступности
+/// </summary>
 public class DuplicationBlocker : MonoBehaviour
 {
+    /// <summary>
+    /// Радиус блокировки
+    /// </summary>
     public Vector2 areaSize;
     Item thisItem;
     [SerializeField] List<Cell> affectedCells = new List<Cell>();
@@ -13,6 +19,10 @@ public class DuplicationBlocker : MonoBehaviour
         thisItem = GetComponent<Item>();
         thisItem.OnItemPlaced += OnItemPlaced;
     }
+
+    /// <summary>
+    /// Начало блокировки клеток после установки текущего объекта.
+    /// </summary>
     private void OnItemPlaced()
     {
         var hits = Physics2D.OverlapBoxAll(transform.position, areaSize, 0, LayerMask.GetMask("Cell"));
@@ -24,6 +34,9 @@ public class DuplicationBlocker : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Снятие блокировки со все клеток, на которых она установлена.
+    /// </summary>
     private void OnDestroy()
     {
         if (thisItem)

@@ -2,15 +2,23 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections.Generic;
 
-
+/// <summary>
+/// Интерфейс для менеджера дорог, проверяющего наличие циклов.
+/// </summary>
 interface IRoadManager
 {
     public void CheckForLoop(DominoPart d);
 }
 
+/// <summary>
+/// Управляет дорожной сетью из домино, обнаруживает циклы и создает поселения внутри них.
+/// </summary>
 public class RoadManager : MonoBehaviour, IRoadManager
 {
     public static RoadManager Instance;
+    /// <summary>
+    /// Нумерация для циклов. Каждое кольцо - новый цикл.
+    /// </summary>
     [SerializeField] int loopsCnt = 1;
 
     [SerializeField] public GameObject[] settlementsPrefabs;
@@ -28,9 +36,12 @@ public class RoadManager : MonoBehaviour, IRoadManager
         }
     }
 
+    /// <summary>
+    /// Проверяет наличие цикла, начиная с указанной части домино.
+    /// </summary>
+    /// <param name="d">Начальная часть домино для проверки.</param>
     public void CheckForLoop(DominoPart d)
     {
-
         HashSet<DominoPart> visited = new HashSet<DominoPart>();
         HashSet<DominoPart> curWay = new HashSet<DominoPart>();
 
@@ -45,15 +56,19 @@ public class RoadManager : MonoBehaviour, IRoadManager
         }
     }
 
+    /// <summary>
+    /// Удаляет вершины, не входящие в цикл, из текущего пути.
+    /// </summary>
+    /// <param name="vertex">Текущая вершина.</param>
+    /// <param name="curWay">Текущий набор вершин пути.</param>
+    /// <param name="visited">Посещенные вершины.</param>
     void RemoveNonCycleVertex(DominoPart vertex, HashSet<DominoPart> curWay, HashSet<DominoPart> visited = null)
     {
-        Debug.Log("Visiting " + vertex.name);
         if (visited == null) visited = new HashSet<DominoPart>();
         visited.Add(vertex);
 
-        if (CountNeighbours(vertex, curWay) < 2  && curWay.Contains(vertex))
+        if (CountNeighbours(vertex, curWay) < 2 && curWay.Contains(vertex))
         {
-            Debug.Log("Removed " + vertex.name);
             curWay.Remove(vertex);
             RemoveNonCycleVertex(vertex, curWay, visited);
         }
@@ -69,27 +84,44 @@ public class RoadManager : MonoBehaviour, IRoadManager
         }
     }
 
+    /// <summary>
+    /// Считает количество соседей вершины в текущем пути.
+    /// </summary>
+    /// <param name="vertex">Вершина для проверки.</param>
+    /// <param name="curWay">Текущий набор вершин пути.</param>
+    /// <returns>Количество соседей в пути.</returns>
     int CountNeighbours(DominoPart vertex, HashSet<DominoPart> curWay)
     {
         int count = 0;
-        foreach(DominoPart n in vertex.neighbours)
+        foreach (DominoPart n in vertex.neighbours)
         {
             if (curWay.Contains(n)) count++;
         }
         return count;
     }
+
+    /// <summary>
+    /// Считает количество соседей вершины, находящихся в цикле.
+    /// </summary>
+    /// <param name="vertex">Вершина для проверки.</param>
+    /// <returns>Количество соседей в цикле.</returns>
     int CountNeighboursInCycle(DominoPart vertex)
     {
         int cnt = 0;
-        foreach(DominoPart d in vertex.neighbours)
+        foreach (DominoPart d in vertex.neighbours)
         {
-            if(d.GetLoopNumber() != 0)
+            if (d.GetLoopNumber() != 0)
             {
                 cnt++;
             }
         }
         return cnt - CountNeighboursInCycle(vertex);
     }
+
+    /// <summary>
+    /// Устанавливает номер цикла для всех вершин в текущем цикле.
+    /// </summary>
+    /// <param name="curWay">Набор вершин цикла.</param>
     void SetNumbersToVertexInThisLoop(HashSet<DominoPart> curWay)
     {
         loopsCnt++;
@@ -99,6 +131,10 @@ public class RoadManager : MonoBehaviour, IRoadManager
         }
     }
 
+    /// <summary>
+    /// Создает поселение внутри обнаруженного цикла.
+    /// </summary>
+    /// <param name="curWay">Набор вершин цикла.</param>
     void SpawnSettlement(HashSet<DominoPart> curWay)
     {
         {
@@ -114,10 +150,14 @@ public class RoadManager : MonoBehaviour, IRoadManager
             GameObject s = Instantiate(settlementsPrefabs[0], settlementPos, transform.rotation);
             s.transform.localScale = settlementScale;
             Debug.Log(minX + " " + maxX + " " + minY + " " + maxY);
-
         }
     }
 
+    /// <summary>
+    /// Вычисляет граничные координаты для поселения на основе вершин цикла.
+    /// </summary>
+    /// <param name="curWay">Набор вершин цикла.</param>
+    /// <returns>Массив с минимальными и максимальными координатами X и Y.</returns>
     float[] GetSettlementCoords(HashSet<DominoPart> curWay)
     {
         float minX = float.MaxValue, maxX = float.MinValue, minY = float.MaxValue, maxY = float.MinValue;
@@ -133,6 +173,15 @@ public class RoadManager : MonoBehaviour, IRoadManager
         }
         return coords;
     }
+
+    /// <summary>
+    /// Рекурсивно ищет цикл в графе дорог методом DFS.
+    /// </summary>
+    /// <param name="start">Начальная вершина.</param>
+    /// <param name="visited">Посещенные вершины.</param>
+    /// <param name="curWay">Текущий путь.</param>
+    /// <param name="previous">Предыдущая вершина.</param>
+    /// <returns>True если найден цикл.</returns>
     bool HasLoopDFS(DominoPart start, HashSet<DominoPart> visited, HashSet<DominoPart> curWay, DominoPart previous = null)
     {
         visited.Add(start);
@@ -151,10 +200,8 @@ public class RoadManager : MonoBehaviour, IRoadManager
                 }
                 else if (neighbour != previous && curWay.Count > 4) return true;
             }
-
         }
         curWay.Remove(start);
         return false;
     }
-
 }

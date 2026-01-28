@@ -3,6 +3,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Для тех объектов, которые могут взаимодействовать с клетками
+/// </summary>
 public interface Interactable
 {
     public void Pick();
@@ -10,6 +13,9 @@ public interface Interactable
     public void PutInCell();
 }
 
+/// <summary>
+/// Класс для объектов, которые могут находиться в инвентаре, подбираться с поля и размещаться на поле с определёнными условиями
+/// </summary>
 public class Item : PauseBehaviour, Interactable
 {
     [SerializeField] string ID;
@@ -17,9 +23,9 @@ public class Item : PauseBehaviour, Interactable
     bool isPlaced = true;
     public event Action OnItemPlaced;
 
-    public void OnMouseDown()
+    public virtual void OnMouseDown()
     {
-        if (!Inventory.Instance.isFull() && isPlaced)
+        if (!Inventory.Instance.IsFull() && isPlaced)
         {
             Pick();
         }
@@ -31,11 +37,6 @@ public class Item : PauseBehaviour, Interactable
         }
 
     }
-    public virtual bool CanPutInCell(Cell c) // у разных предметов могут быть разные условия для их установки
-    {
-        return c.IsFree();
-    }
-
     private void OnDestroy()
     {
         if(curCell)
@@ -45,24 +46,47 @@ public class Item : PauseBehaviour, Interactable
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!isPlaced && collision.gameObject.layer == 6 && !curCell)
+        Cell cell = collision.GetComponent<Cell>();
+        if (!isPlaced && collision.gameObject.layer == 6 && CanPutInCell(cell))
         {
-            Cell cell = collision.GetComponent<Cell>();
-            if (!CanPutInCell(cell)) return;
-
-            curCell = cell;
-            curCell.Highlight();
-            return;
-
+            CheckCells(cell);
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    public virtual void CheckCells(Cell cell)
+    {
+        if (curCell) return;
+
+        curCell = cell;
+        curCell.Highlight();
+        return;
+    }
+
+    public virtual void TurnOffHighlightedCells()
     {
         if (curCell && !isPlaced)
         {
             curCell.NoHighlight();
             curCell = null;
         }
+    }
+
+    /// <summary>
+    /// Проверяет, можно ли поместить объект в указанную клетку.
+    /// Базовая реализация разрешает установку только в свободную клетку.
+    /// Может быть переопределён в наследниках для дополнительных условий.
+    /// </summary>
+    /// <param name="c">Клетка, в которую пытаются установить объект.</param>
+    /// <returns>
+    /// True — если объект можно установить в эту клетку,  
+    /// False — если установка запрещена.
+    /// </returns>
+    public virtual bool CanPutInCell(Cell c)
+    {
+        return c.IsFree(); 
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        TurnOffHighlightedCells();
     }
     private void Update()
     {
@@ -80,9 +104,12 @@ public class Item : PauseBehaviour, Interactable
     {
         return ID;
     }
+    /// <summary>
+    /// Сбор предмета в инвентарь
+    /// </summary>
     public void Pick()
     {
-        if (!Inventory.Instance.isFull())
+        if (!Inventory.Instance.IsFull())
         {
             Inventory.Instance.AddItem(ItemManager.Instance.GetItemByID(ID));
             AudioManager.Instance.Pickup();
@@ -94,16 +121,24 @@ public class Item : PauseBehaviour, Interactable
         curCell = cell;
         PutInCell();
     }
+    /// <summary>
+    /// Установка предмета в клетку/множество клеток
+    /// </summary>
     public virtual void PutInCell()
     {
         curCell.SetCurItem(gameObject);
         curCell.SetFree(false);
         isPlaced = true;
-        OnItemPlaced?.Invoke();
+        InvokeAction();
         transform.position = curCell.transform.position;
         transform.Translate(0, 0, -curCell.transform.position.z);
         Inventory.Instance.RemoveItem(ItemManager.Instance.GetItemByID(ID));
         GameManager.Instance.PutInHand(null);
+    }
+
+    protected void InvokeAction()
+    {
+        OnItemPlaced?.Invoke();
     }
     void Move() 
     {

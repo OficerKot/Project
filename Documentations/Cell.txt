@@ -1,10 +1,12 @@
 Скрипт, присутствующий у каждой клетки
 
 Поля:
-- bool isFree - свободна ли клетка
-- cellSprite и previuosColor - для смены цвета
-- DominoPart curDomino - что лежит в этой клетке
-- List<Cell> neighbourCells - соседние клетки
+bool isFree - свободна ли клетка
+cellSprite и previuosColor - для смены цвета
+DominoPart curDomino - что лежит в этой клетке
+List<Cell> neighbourCells - соседние клетки
+
+Методы:
 
 public:
 Highlight(), NoHiglight() - выделение цветом

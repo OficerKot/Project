@@ -1,6 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Инвентарь игрока.
+/// Хранит предметы по ID и их количество,
+/// ограничен максимальным размером и автоматически обновляет UI.
+/// </summary>
 public class Inventory : MonoBehaviour
 {
     public const int MAX_SIZE = 6;
@@ -9,11 +14,11 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(this);
-     
+
         }
         else
         {
@@ -21,10 +26,13 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Добавление предмета в ивентарь
+    /// </summary>
+    /// <param name="i">Данные добавляемого предмета.</param>
     public void AddItem(ItemData i)
     {
-        if(itemsID.Count < MAX_SIZE)
+        if (itemsID.Count < MAX_SIZE)
         {
             if (!itemsID.ContainsKey(i.Id))
             {
@@ -36,6 +44,11 @@ public class Inventory : MonoBehaviour
             UICraftWindow.Instance.CheckInventory(i);
         }
     }
+    /// <summary>
+    /// Добавление нескольких предметов в инвентарь
+    /// </summary>
+    /// <param name="i">Данные предмета</param>
+    /// <param name="count">Количество</param>
     public void AddItem(ItemData i, int count)
     {
         if (itemsID.Count < MAX_SIZE)
@@ -54,6 +67,10 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Удаление предмета из инвентаря
+    /// </summary>
+    /// <param name="i">Данные предмета</param>
     public void RemoveItem(ItemData i)
     {
         if (itemsID.ContainsKey(i.Id))
@@ -61,25 +78,40 @@ public class Inventory : MonoBehaviour
             itemsID[i.Id]--;
             UIInventory.Instance.RemoveOneItem(i);
 
-            if (itemsID[i.Id]< 1)
+            if (itemsID[i.Id] < 1)
             {
                 UIInventory.Instance.RemoveItemIcon(i);
                 itemsID.Remove(i.Id);
             }
             UICraftWindow.Instance.CheckInventory(i);
         }
-  
+
     }
 
+    /// <summary>
+    /// Проверка на наличие предмета в инвентаре
+    /// </summary>
+    /// <param name="i">Данные предмета</param>
+    /// <returns></returns>
     public bool Contains(ItemData i)
     {
         return itemsID.ContainsKey(i.Id);
     }
+
+    /// <summary>
+    /// Возвращает текущие предметы инвентаря.
+    /// </summary>
+    /// <returns>Словарь ID предметов и их количества.</returns>
     public Dictionary<string, int> GetCurItems()
     {
         return itemsID;
     }
-    public bool isFull()
+
+    /// <summary>
+    /// Проверяет наличие свободного места в инвентаре
+    /// </summary>
+    /// <returns></returns>
+    public bool IsFull()
     {
         return itemsID.Count >= MAX_SIZE;
     }
