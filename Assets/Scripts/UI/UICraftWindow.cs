@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 
-
+/// <summary>
+/// Окно крафта предметов с системой рецептов и категорий.
+/// </summary>
 public class UICraftWindow : Menu
 {
     public static UICraftWindow Instance = null;
@@ -33,6 +35,9 @@ public class UICraftWindow : Menu
         }
     }
 
+    /// <summary>
+    /// Закрывает окно крафта.
+    /// </summary>
     public override void Close()
     {
         if (curWindow)
@@ -43,6 +48,9 @@ public class UICraftWindow : Menu
         menu.SetActive(false);
     }
 
+    /// <summary>
+    /// Открывает окно крафта в позиции курсора мыши.
+    /// </summary>
     public override void Open()
     {
         if (curWindow)
@@ -58,6 +66,10 @@ public class UICraftWindow : Menu
         menu.SetActive(true);
     }
 
+    /// <summary>
+    /// Открывает меню выбранной категории.
+    /// </summary>
+    /// <param name="g">Окно категории для открытия.</param>
     public void OpenCategoryMenu(GameObject g)
     {
         curWindow = g;
@@ -66,8 +78,10 @@ public class UICraftWindow : Menu
         curWindow.transform.position = menu.transform.position;
     }
 
-
-
+    /// <summary>
+    /// Создает предмет, если есть необходимые компоненты.
+    /// </summary>
+    /// <param name="obj">Данные предмета для создания.</param>
     public void Craft(ItemData obj)
     {
         if (availableItems.Contains(obj))
@@ -83,7 +97,10 @@ public class UICraftWindow : Menu
         else Debug.Log("You don't have all items to craft it!");
     }
 
-    public void CheckInventoryAfterRemove() // отличие в том, что не нужна проверка на новый рецепт
+    /// <summary>
+    /// Проверяет доступные рецепты после удаления предметов из инвентаря.
+    /// </summary>
+    public void CheckInventoryAfterRemove()
     {
         HashSet<ItemData> itemsInInventory = new HashSet<ItemData>();
         foreach (string id in Inventory.Instance.GetCurItems().Keys)
@@ -104,6 +121,11 @@ public class UICraftWindow : Menu
             }
         }
     }
+
+    /// <summary>
+    /// Проверяет доступные рецепты после добавления предмета в инвентарь.
+    /// </summary>
+    /// <param name="added">Добавленный предмет.</param>
     public void CheckInventory(ItemData added)
     {
         HashSet<ItemData> itemsInInventory = new HashSet<ItemData>();
@@ -132,10 +154,12 @@ public class UICraftWindow : Menu
                     availableItems.Remove(obj);
                 }
             }
-      
         }
     }
 
+    /// <summary>
+    /// Добавляет новый рецепт и показывает уведомление.
+    /// </summary>
     void AddNewRecipe(ItemData item, ItemSpawnerButton b)
     {
         exploredRecipes.Add(item);

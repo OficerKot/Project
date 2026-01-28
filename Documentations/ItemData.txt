@@ -1,0 +1,11 @@
+Хранит в себе данные о предмете, связывает ID предмета с его игровым префабом, визуальным (UI) префабом и списком предметов для крафта
+
+Поля:
+string Id
+GameObject prefab - игровой префаб
+Gameobject UIprefab - префаб для Canvas
+ItemData[] itemsForCraft - список предметов для крафта. Был добавлен для добавления предметов вручную, через Inspector, что невозможно для HashSet
+HashSet<ItemData> craftSet - множество, дублирующее itemsForCraft
+
+Методы:
+OnEnable() - при запуске игры добавляет все предметы из itemsForCraft в craftSet

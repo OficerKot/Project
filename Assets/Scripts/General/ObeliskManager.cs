@@ -1,7 +1,10 @@
 using System;
 using UnityEngine;
 
-
+/// <summary>
+/// Контроль сбора обелисков.
+/// При сборе полного набора обелисков вызывает завершение игры.
+/// </summary>
 public class ObeliskManager : MonoBehaviour
 {
     public static ObeliskManager Instance;
@@ -19,6 +22,10 @@ public class ObeliskManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Сбор обелиска и вызов соответствующего события. Проверка на победу.
+    /// </summary>
+    /// <param name="c"></param>
     public void Pick(ObeliskColor c)
     {
         obelisksCount--;

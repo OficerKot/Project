@@ -3,9 +3,16 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Управляет игровым процессом: начало, перезагрузка, окончание игры, выход из приложения. 
+/// Хранит в себе объект, находящийся в руке игрока (в будущем будет вынесено в отдельный скрипт)
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    /// <summary>
+    /// Событие, активируемое при установке игры на паузу или снятии с паузы.
+    /// </summary>
     public static event Action<bool> OnGamePaused;
     bool paused = false;
     public bool gameEnd = false;
@@ -26,17 +33,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Перезагрузка уровня
+    /// </summary>
     public void Restart()
     {
         Pause();
         SceneManager.LoadScene(0);
     }
 
+    /// <summary>
+    /// Выход из игры, закрытие приложения.
+    /// </summary>
     public void Exit()
     {
         Application.Quit();
     }
 
+    /// <summary>
+    /// Пауза.
+    /// </summary>
     public void Pause()
     {
         paused = !paused; 
@@ -50,22 +66,33 @@ public class GameManager : MonoBehaviour
         gameOverText.SetActive(false);
     }
 
+    /// <summary>
+    /// Активация события паузы.
+    /// </summary>
+    /// <param name="val">true - игра приостановится, false - игра возообновится</param>
     public void SetGameOnPause(bool val)
     {
         OnGamePaused?.Invoke(val);
     }
 
+    /// <summary>
+    /// Окончание игры с проигрышем.
+    /// </summary>
     public void Loose()
     {
         gameOverText.SetActive(true);
         gameEnd = true;
         Pause();
     }
+    /// <summary>
+    /// Окончание игры с выигрышем.
+    /// </summary>
     public void Win()
     {
         winText.SetActive(true);
         Pause();
     }
+
     public bool IsHandFree()
     {
         return inHand = null;

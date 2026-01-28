@@ -1,11 +1,18 @@
 using UnityEngine;
 
+/// <summary>
+/// Менеджер предметов, предоставляющий доступ ко всем игровым предметам через ScriptableObject.
+/// </summary>
 [CreateAssetMenu(fileName = "ItemManager", menuName = "Inventory/ItemManager")]
 public class ItemManager : ScriptableObject
 {
     public ItemData[] allItems;
 
     private static ItemManager _instance;
+
+    /// <summary>
+    /// Singleton instance менеджера предметов. Автоматически загружается из Resources.
+    /// </summary>
     public static ItemManager Instance
     {
         get
@@ -31,9 +38,14 @@ public class ItemManager : ScriptableObject
             _instance = this;
         }
     }
+
+    /// <summary>
+    /// Возвращает данные предмета по его идентификатору.
+    /// </summary>
+    /// <param name="id">Идентификатор предмета.</param>
+    /// <returns>Данные предмета или null, если предмет не найден.</returns>
     public ItemData GetItemByID(string id)
     {
         return System.Array.Find(allItems, item => item.Id == id);
     }
-
 }

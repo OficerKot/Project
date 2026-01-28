@@ -3,6 +3,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Для тех объектов, которые могут взаимодействовать с клетками
+/// </summary>
 public interface Interactable
 {
     public void Pick();
@@ -10,6 +13,9 @@ public interface Interactable
     public void PutInCell();
 }
 
+/// <summary>
+/// Класс для объектов, которые могут находиться в инвентаре, подбираться с поля и размещаться на поле с определёнными условиями
+/// </summary>
 public class Item : PauseBehaviour, Interactable
 {
     [SerializeField] string ID;
@@ -19,7 +25,7 @@ public class Item : PauseBehaviour, Interactable
 
     public virtual void OnMouseDown()
     {
-        if (!Inventory.Instance.isFull() && isPlaced)
+        if (!Inventory.Instance.IsFull() && isPlaced)
         {
             Pick();
         }
@@ -63,9 +69,20 @@ public class Item : PauseBehaviour, Interactable
             curCell = null;
         }
     }
-    public virtual bool CanPutInCell(Cell c) // у разных предметов могут быть разные условия для их установки
+
+    /// <summary>
+    /// Проверяет, можно ли поместить объект в указанную клетку.
+    /// Базовая реализация разрешает установку только в свободную клетку.
+    /// Может быть переопределён в наследниках для дополнительных условий.
+    /// </summary>
+    /// <param name="c">Клетка, в которую пытаются установить объект.</param>
+    /// <returns>
+    /// True — если объект можно установить в эту клетку,  
+    /// False — если установка запрещена.
+    /// </returns>
+    public virtual bool CanPutInCell(Cell c)
     {
-        return c.IsFree();
+        return c.IsFree(); 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -87,9 +104,12 @@ public class Item : PauseBehaviour, Interactable
     {
         return ID;
     }
+    /// <summary>
+    /// Сбор предмета в инвентарь
+    /// </summary>
     public void Pick()
     {
-        if (!Inventory.Instance.isFull())
+        if (!Inventory.Instance.IsFull())
         {
             Inventory.Instance.AddItem(ItemManager.Instance.GetItemByID(ID));
             AudioManager.Instance.Pickup();
@@ -101,6 +121,9 @@ public class Item : PauseBehaviour, Interactable
         curCell = cell;
         PutInCell();
     }
+    /// <summary>
+    /// Установка предмета в клетку/множество клеток
+    /// </summary>
     public virtual void PutInCell()
     {
         curCell.SetCurItem(gameObject);
