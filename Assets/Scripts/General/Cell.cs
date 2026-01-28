@@ -92,6 +92,7 @@ public class Cell : MonoBehaviour, ICell
         image = domino.data.image;
         number = domino.data.number;
         CheckForDuplications();
+        ClearThePond();
     }
 
     /// <summary>
@@ -123,6 +124,7 @@ public class Cell : MonoBehaviour, ICell
         image = ImageEnumerator.any;
         number = 0;
         CheckForDuplications();
+        SmudgeThePond();
     }
 
     /// <summary>
@@ -293,5 +295,27 @@ public class Cell : MonoBehaviour, ICell
     {
         duplicationBlockers = Mathf.Max(0, duplicationBlockers - 1);
         CheckForDuplications();
+    }
+    void ClearThePond()
+    {
+        if (Physics2D.OverlapCircle(this.transform.position, .01f, LayerMask.GetMask("Pond")))
+        {
+            Collider2D pondCol = Physics2D.OverlapCircle(this.transform.position, .01f, LayerMask.GetMask("Pond"));
+
+            Color alpha = pondCol.gameObject.GetComponent<SpriteRenderer>().color;
+            alpha.a = 0.5f;
+            pondCol.gameObject.GetComponent<SpriteRenderer>().color = alpha;
+        }
+    }
+    void SmudgeThePond()
+    {
+        if (Physics2D.OverlapCircle(this.transform.position, .01f, LayerMask.GetMask("Pond")))
+        {
+            Collider2D pondCol = Physics2D.OverlapCircle(this.transform.position, .01f, LayerMask.GetMask("Pond"));
+
+            Color alpha = pondCol.gameObject.GetComponent<SpriteRenderer>().color;
+            alpha.a = 1f;
+            pondCol.gameObject.GetComponent<SpriteRenderer>().color = alpha;
+        }
     }
 }

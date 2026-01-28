@@ -186,26 +186,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5104395357491924321}
   animations:
-  - name: Stones
+  - name: Rock
     fps: 5
     frames:
-    - {fileID: 2667589067915142571, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: 6898035379108858973, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: -8868248462342347919, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: -1605707320451941170, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
+    - {fileID: 3452003437791708593, guid: d56f5274a72b0d04a8dfd5213edc9997, type: 3}
+    - {fileID: 709247535313551666, guid: d56f5274a72b0d04a8dfd5213edc9997, type: 3}
+    - {fileID: 1013366739975189944, guid: d56f5274a72b0d04a8dfd5213edc9997, type: 3}
+    - {fileID: 8234320154294349295, guid: d56f5274a72b0d04a8dfd5213edc9997, type: 3}
     sequenceCode: 
     cue: 
     triggers: []
   loop: 0
   speedMultiplier: 1
-  playAnimationOnStart: Stones
+  playAnimationOnStart: Rock
 --- !u!114 &5834405823030286673
 MonoBehaviour:
   m_ObjectHideFlags: 0

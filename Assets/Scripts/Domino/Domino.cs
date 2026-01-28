@@ -252,32 +252,14 @@ public class Domino : PauseBehaviour
         TeleportToCells(collider1.transform, collider2.transform);
         AddToCells(part1Playable, part2Playable);
 
-        //Выделить в отдельный класс
-        ClearThePonds();
-
         AudioManager.Instance.Boneplace();
         EnemyManager.Instance.MakeStep();
-    }
-
-    //Выделить в отдельный класс
-    void ClearThePonds()
-    {
-        if (Physics2D.OverlapCircle(this.transform.parent.position, 0.5f, LayerMask.GetMask("Pond")))
-        {
-            Collider2D[] pondCol = Physics2D.OverlapCircleAll(this.transform.parent.position, 0.5f, LayerMask.GetMask("Pond"));
-            foreach (Collider2D col in pondCol)
-            {
-                Color alpha = col.gameObject.GetComponent<SpriteRenderer>().color;
-                Debug.Log(col.gameObject);
-                alpha.a = 0.5f;
-                col.gameObject.GetComponent<SpriteRenderer>().color = alpha;
-            }
-        }
     }
 
     /// <summary>
     /// Привязывает части домино к соответствующим клеткам.
     /// </summary>
+    
     void AddToCells(DominoPart d1, DominoPart d2)
     {
         if (GetDistance2(d1.transform, curCell1.transform) > GetDistance2(d2.transform, curCell1.transform))

@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 5008049512857979019}
   - component: {fileID: 4118183485981944588}
   - component: {fileID: 5842924564486333745}
+  - component: {fileID: -2313685648297407096}
   m_Layer: 7
   m_Name: Leaves1
   m_TagString: Path
@@ -267,3 +268,29 @@ MonoBehaviour:
   isBeingPlaced: 0
   loc: 0
   neighbours: []
+--- !u!114 &-2313685648297407096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8789013147086901380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1251865023238041671}
+  animations:
+  - name: Leaves1
+    fps: 5
+    frames:
+    - {fileID: -3864771739476507756, guid: 8ee53413031270a4184361b169553c4c, type: 3}
+    - {fileID: -5387359820141229281, guid: 8ee53413031270a4184361b169553c4c, type: 3}
+    - {fileID: 2864532517192497105, guid: 8ee53413031270a4184361b169553c4c, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  loop: 0
+  speedMultiplier: 1
+  playAnimationOnStart: Leaves1
