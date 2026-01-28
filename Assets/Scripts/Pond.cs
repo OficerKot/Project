@@ -10,6 +10,6 @@ public class Pond : MonoBehaviour
         ObsSnap = GetComponent<ObstacleSnap>();
         curCell = ObsSnap.curCell;
         curCell.SetFree();
-        this.enabled = false;
+        enabled = false;
     }
 }

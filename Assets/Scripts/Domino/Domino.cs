@@ -1,10 +1,10 @@
-
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
-
-
+/// <summary>
+/// Основной класс управления домино, обрабатывающий перетаскивание, размещение и взаимодействие с клетками.
+/// </summary>
 public class Domino : PauseBehaviour
 {
     DominoPart part1Playable, part2Playable;
@@ -14,6 +14,11 @@ public class Domino : PauseBehaviour
     Cell curCell1, curCell2;
     [SerializeField] float offsetY = 2f;
 
+    /// <summary>
+    /// Инициализирует домино с указанными данными частей.
+    /// </summary>
+    /// <param name="p1">Данные первой части домино.</param>
+    /// <param name="p2">Данные второй части домино.</param>
     public void Initialize(DominoData p1, DominoData p2)
     {
         part1 = p1;
@@ -22,6 +27,9 @@ public class Domino : PauseBehaviour
         SpawnPivot();
     }
 
+    /// <summary>
+    /// Поднимает домино для перетаскивания.
+    /// </summary>
     public void PickUp()
     {
         isBeingGrabbed = true;
@@ -33,17 +41,22 @@ public class Domino : PauseBehaviour
 
             ClearCellData();
         }
-
     }
 
     private void OnDestroy()
     {
         ClearCellData();
     }
+
+    /// <summary>
+    /// Проверяет, размещено ли домино на поле.
+    /// </summary>
+    /// <returns>True если домино размещено, false если находится в руке.</returns>
     public bool isPlaced()
     {
         return !isBeingGrabbed;
     }
+
     private void Update()
     {
         if (isBeingGrabbed)
@@ -56,6 +69,7 @@ public class Domino : PauseBehaviour
             CheckPartRotation();
         }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (isBeingGrabbed && collision.gameObject.layer == 6 && !EventSystem.current.IsPointerOverGameObject())
@@ -63,7 +77,6 @@ public class Domino : PauseBehaviour
             if (!collision.GetComponent<Cell>().IsFreeForDomino())
             {
                 return;
-
             }
 
             ClearCellData();
@@ -81,27 +94,17 @@ public class Domino : PauseBehaviour
                 curCell2.Highlight();
                 return;
             }
-
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (isBeingGrabbed) ClearCellData();
     }
-    //void CheckDominoClick()
-    //{
-    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    //    RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-    //    if (hit.collider != null)
-    //    {
-    //        if (hit.collider.transform.IsChildOf(transform) && !curCell1 && !curCell2 && GameManager.Instance.WhatInHand() == null)
-    //        {
-    //            GameManager.Instance.PutInHand(gameObject);
-    //            PickUp();
-    //        }
-    //    }
-    //}
+    /// <summary>
+    /// Находит ближайшую подходящую клетку для размещения второй части домино.
+    /// </summary>
     Cell FindMinDistCell()
     {
         float minDist = float.MaxValue;
@@ -120,16 +123,21 @@ public class Domino : PauseBehaviour
         return minDistCell;
     }
 
+    /// <summary>
+    /// Проверяет, подходит ли клетка для размещения домино.
+    /// </summary>
     bool CellIsOK(Cell cell1, Cell cell2)
     {
         if (IsSameRotationAngle(cell2.transform.position, curCell1.transform.position))
         {
-
             return cell2.IsFreeForDomino() && CheckCells(cell1, cell2);
         }
         return false;
     }
 
+    /// <summary>
+    /// Проверяет условия размещения домино в двух клетках.
+    /// </summary>
     bool CheckCells(Cell cell1, Cell cell2)
     {
         IBreakableObject itemInCell;
@@ -150,9 +158,9 @@ public class Domino : PauseBehaviour
         bool number2IsOK = cellWithLowerCoords.GetNumber() == 0 || (partWithLowerCoords.data.neighboursNumber == cellWithLowerCoords.GetNumber());
 
         bool item1IsOK = cellWithBiggerCoords.GetCurItem() == null;
-        bool item2IsOK = cellWithLowerCoords.GetCurItem() == null; 
-        
-        if(!item1IsOK)
+        bool item2IsOK = cellWithLowerCoords.GetCurItem() == null;
+
+        if (!item1IsOK)
         {
             itemInCell = cellWithBiggerCoords.GetCurItem().GetComponent<IBreakableObject>();
             if (itemInCell != null)
@@ -171,6 +179,10 @@ public class Domino : PauseBehaviour
 
         return (image1IsOK || number1IsOK) && (image2IsOK || number2IsOK) && item1IsOK && item2IsOK;
     }
+
+    /// <summary>
+    /// Сортирует две клетки по координатам.
+    /// </summary>
     Cell[] GetCellsInOrder(Cell cell)
     {
         Cell[] output = new Cell[2];
@@ -189,6 +201,10 @@ public class Domino : PauseBehaviour
         }
         return output;
     }
+
+    /// <summary>
+    /// Очищает данные о текущих клетках и снимает выделение.
+    /// </summary>
     void ClearCellData()
     {
         if (curCell1)
@@ -209,11 +225,19 @@ public class Domino : PauseBehaviour
         part1Playable.ChangeIsBeingPlacedFlag(false);
         part2Playable.ChangeIsBeingPlacedFlag(false);
     }
+
+    /// <summary>
+    /// Вычисляет квадрат расстояния между двумя трансформами.
+    /// </summary>
     float GetDistance2(Transform pos1, Transform pos2)
     {
         float dist = Mathf.Pow(pos1.position.x - pos2.position.x, 2) + Mathf.Pow(pos1.position.y - pos2.position.y, 2);
         return dist;
     }
+
+    /// <summary>
+    /// Размещает домино в выбранных клетках.
+    /// </summary>
     void PutInTheCells()
     {
         isBeingGrabbed = false;
@@ -228,19 +252,20 @@ public class Domino : PauseBehaviour
         TeleportToCells(collider1.transform, collider2.transform);
         AddToCells(part1Playable, part2Playable);
 
+        //Выделить в отдельный класс
         ClearThePonds();
 
         AudioManager.Instance.Boneplace();
         EnemyManager.Instance.MakeStep();
-
     }
 
+    //Выделить в отдельный класс
     void ClearThePonds()
     {
         if (Physics2D.OverlapCircle(this.transform.parent.position, 0.5f, LayerMask.GetMask("Pond")))
         {
             Collider2D[] pondCol = Physics2D.OverlapCircleAll(this.transform.parent.position, 0.5f, LayerMask.GetMask("Pond"));
-            foreach(Collider2D col in pondCol)
+            foreach (Collider2D col in pondCol)
             {
                 Color alpha = col.gameObject.GetComponent<SpriteRenderer>().color;
                 Debug.Log(col.gameObject);
@@ -250,6 +275,9 @@ public class Domino : PauseBehaviour
         }
     }
 
+    /// <summary>
+    /// Привязывает части домино к соответствующим клеткам.
+    /// </summary>
     void AddToCells(DominoPart d1, DominoPart d2)
     {
         if (GetDistance2(d1.transform, curCell1.transform) > GetDistance2(d2.transform, curCell1.transform))
@@ -263,23 +291,33 @@ public class Domino : PauseBehaviour
             curCell2.SetCurDomino(d2);
         }
     }
+
+    /// <summary>
+    /// Телепортирует домино в центр между двумя клетками.
+    /// </summary>
     void TeleportToCells(Transform pos1, Transform pos2)
     {
         Vector2 targetPos = (pos1.position + pos2.transform.position) / 2f;
         pivot.transform.position = targetPos;
     }
+
+    /// <summary>
+    /// Занимает клетки.
+    /// </summary>
     void TakeFreeSpace()
     {
         curCell1.SetFree(false);
         curCell2.SetFree(false);
         part1Playable.ChangeIsBeingPlacedFlag(true);
         part2Playable.ChangeIsBeingPlacedFlag(true);
-        
     }
 
+    /// <summary>
+    /// Уничтожает объекты в клетках при размещении домино.
+    /// </summary>
     void BreakItemsInCells()
     {
-        if(curCell1.GetCurItem())
+        if (curCell1.GetCurItem())
         {
             IBreakableObject item1 = curCell1.GetCurItem().GetComponent<IBreakableObject>();
             if (item1 != null) item1.Break();
@@ -291,6 +329,10 @@ public class Domino : PauseBehaviour
             if (item2 != null) item2.Break();
         }
     }
+
+    /// <summary>
+    /// Проверяет совпадение направления домино с направлением 2х клеток.
+    /// </summary>
     bool IsSameRotationAngle(Vector3 pos1, Vector3 pos2)
     {
         bool cellsAreHorizontal = Mathf.Abs(pos1.x - pos2.x) > Mathf.Abs(pos1.y - pos2.y);
@@ -298,16 +340,22 @@ public class Domino : PauseBehaviour
         bool dominoIsHorizontal = (dominoAngle >= 45f && dominoAngle <= 135f);
         return cellsAreHorizontal == dominoIsHorizontal;
     }
+
+    /// <summary>
+    /// Нормализует угол в диапазон 0-180 градусов.
+    /// </summary>
     float NormalizeAngle(float angle)
     {
-        // Приводим угол к диапазону 0-360
         angle %= 360f;
         if (angle < 0) angle += 360f;
 
-        // Приводим к диапазону 0-180 
         if (angle > 180f) angle = 360f - angle;
         return angle;
     }
+
+    /// <summary>
+    /// Обрабатывает взаимодействие с домино (перемещение, вращение, размещение).
+    /// </summary>
     void Interact()
     {
         Move();
@@ -329,6 +377,11 @@ public class Domino : PauseBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Вращает домино на указанный угол.
+    /// </summary>
+    /// <param name="degree">Угол вращения в градусах.</param>
     void Rotate(float degree = 90)
     {
         if (!part1Playable || !part2Playable)
@@ -337,8 +390,11 @@ public class Domino : PauseBehaviour
             return;
         }
         pivot.transform.Rotate(0, 0, degree);
-
     }
+
+    /// <summary>
+    /// Перемещает доминош к позиции курсора мыши.
+    /// </summary>
     void Move()
     {
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -346,11 +402,19 @@ public class Domino : PauseBehaviour
 
         pivot.transform.position = Vector3.Lerp(pivot.transform.position, targetPos, 1);
     }
+
+    /// <summary>
+    /// Генерирует части домино на сцене.
+    /// </summary>
     void GenerateParts()
     {
         SpawnParts();
         SpawnPivot();
     }
+
+    /// <summary>
+    /// Создает игровые объекты для частей домино.
+    /// </summary>
     void SpawnParts()
     {
         if (part2Playable != null) Destroy(part1Playable);
@@ -365,6 +429,10 @@ public class Domino : PauseBehaviour
 
         CheckPartRotation();
     }
+
+    /// <summary>
+    /// Создает точку вращения (pivot) для домино.
+    /// </summary>
     void SpawnPivot()
     {
         if (pivot != null) return;
@@ -380,6 +448,10 @@ public class Domino : PauseBehaviour
 
         transform.SetParent(pivot.transform);
     }
+
+    /// <summary>
+    /// Обновляет расположение частей домино (верх/низ/лево/право).
+    /// </summary>
     void CheckPartRotation()
     {
         bool areHorizontal = Mathf.Abs(part1Playable.transform.position.y - part2Playable.transform.position.y) < 0.5f;
@@ -411,6 +483,4 @@ public class Domino : PauseBehaviour
             }
         }
     }
-
-
 }

@@ -99,7 +99,7 @@ public class Building : Item
     }
     void PickResource()
     {
-        if(!Inventory.Instance.isFull())
+        if(!Inventory.Instance.IsFull())
         {
             if (count > 0)
             {
