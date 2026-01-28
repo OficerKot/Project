@@ -112,7 +112,7 @@ public class Sign : MonoBehaviour
             ++i;
             yield return new WaitForSeconds(DestructionTime);
         }
-        StopAllCoroutines();
+        Destroy(this);
     }
 
     RayhitsNature CheckTheNature(RaycastHit2D rayhit) 
