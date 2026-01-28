@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Inventory : MonoBehaviour
 {
     public const int MAX_SIZE = 6;
@@ -9,11 +10,11 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(this);
-     
+
         }
         else
         {
@@ -21,10 +22,9 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
     public void AddItem(ItemData i)
     {
-        if(itemsID.Count < MAX_SIZE)
+        if (itemsID.Count < MAX_SIZE)
         {
             if (!itemsID.ContainsKey(i.Id))
             {
@@ -61,14 +61,14 @@ public class Inventory : MonoBehaviour
             itemsID[i.Id]--;
             UIInventory.Instance.RemoveOneItem(i);
 
-            if (itemsID[i.Id]< 1)
+            if (itemsID[i.Id] < 1)
             {
                 UIInventory.Instance.RemoveItemIcon(i);
                 itemsID.Remove(i.Id);
             }
             UICraftWindow.Instance.CheckInventory(i);
         }
-  
+
     }
 
     public bool Contains(ItemData i)

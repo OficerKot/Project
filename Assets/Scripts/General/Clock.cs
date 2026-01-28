@@ -14,6 +14,7 @@ public class Clock : PauseBehaviour
     [SerializeField] Light2D globalLight;
     [SerializeField] Transform ClockHand;
     public static event Action OnHourPassed;
+    public static event Action NightPassed;
 
     public override void OnGamePaused(bool isGamePaused)
     {
@@ -40,6 +41,7 @@ public class Clock : PauseBehaviour
     public void TimeTick()
     {
         if (!isActive) return;
+        CheckNightPassed();
         time += timeSpeed;
         CheckHourPassed();
 
@@ -56,6 +58,14 @@ public class Clock : PauseBehaviour
 
     }
 
+    void CheckNightPassed()
+    {
+        if(time < 6 && time + timeSpeed >= 6)
+        {
+            Debug.Log("Night passed.");
+            NightPassed?.Invoke();
+        }
+    }
     void CheckHourPassed()
     {
         hourCounter += timeSpeed;
