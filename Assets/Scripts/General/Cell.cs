@@ -216,7 +216,6 @@ public class Cell : MonoBehaviour, ICell
             Collider2D pondCol = Physics2D.OverlapCircle(this.transform.position, .01f, LayerMask.GetMask("Pond"));
 
             Color alpha = pondCol.gameObject.GetComponent<SpriteRenderer>().color;
-            Debug.Log(pondCol.gameObject);
             alpha.a = 0.5f;
             pondCol.gameObject.GetComponent<SpriteRenderer>().color = alpha;
         }
@@ -228,7 +227,6 @@ public class Cell : MonoBehaviour, ICell
             Collider2D pondCol = Physics2D.OverlapCircle(this.transform.position, .01f, LayerMask.GetMask("Pond"));
 
             Color alpha = pondCol.gameObject.GetComponent<SpriteRenderer>().color;
-            Debug.Log(pondCol.gameObject);
             alpha.a = 1f;
             pondCol.gameObject.GetComponent<SpriteRenderer>().color = alpha;
         }
