@@ -17,12 +17,12 @@ public class CharacterStates : MonoBehaviour
         stopperCol = Physics2D.OverlapCircle(transform.position, .01f, StopperLayers);
         if (stopperCol != null && crawledOut == true)
         {
-            if (stopperCol.gameObject.layer == 11)
+            if (stopperCol.gameObject.layer == LayerMask.NameToLayer("Pond"))
             {
                 PutInPond();
                 crawledOut = false;
             }
-            else if (stopperCol.gameObject.layer == 12)
+            else if (stopperCol.gameObject.layer == LayerMask.NameToLayer("Web"))
             {
                 PutInWeb();
                 crawledOut = false;

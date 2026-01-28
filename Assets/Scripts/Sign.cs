@@ -62,17 +62,17 @@ public class Sign : MonoBehaviour
         if (Physics2D.Raycast(transform.position, VDirection, 5f, LayerMask.GetMask("Player")))
         {
             RayCrossed = true;
-            Debug.Log("Player found!");
+            //Debug.Log("Player found!");
             return;
         }
         else if (Physics2D.Raycast(transform.position, VDirection, 5f, LayerMask.GetMask("Default", "DominoPart")))
         {
             RayHitsArray = Physics2D.RaycastAll(transform.position, VDirection, 5f, LayerMask.GetMask("Default", "DominoPart"));
-            Debug.Log($"Ray touched {RayHitsArray.Length} cell-objects");
-            foreach (RaycastHit2D domino in RayHitsArray)
-            {
-                Debug.Log(domino.transform.gameObject);
-            }
+            //Debug.Log($"Ray touched {RayHitsArray.Length} cell-objects");
+            //foreach (RaycastHit2D domino in RayHitsArray)
+            //{
+            //    Debug.Log(domino.transform.gameObject);
+            //}
         }
         if (RayCrossed)
         {

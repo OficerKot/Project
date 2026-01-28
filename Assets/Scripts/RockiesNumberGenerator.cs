@@ -1,16 +1,16 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RockiesNumberGenerator : MonoBehaviour
 {
-    SpriteRenderer spriteRend;
-    public Sprite[] sprites; // �� ������� ��� ���� �� 1 �� 6
+    SpriteAnimator SprAnim; //Заменил SpriteRenderer на SpriteAnimator, так что теперь массив спрайтов немного бесполезен...
+    public Sprite[] sprites; // по порядку для цифр от 1 до 6 
     int count;
 
     public void Generate()
     {
-        spriteRend = GetComponent<SpriteRenderer>();
-        count = Random.Range(1, 6);
-        spriteRend.sprite = sprites[count - 1];
+        SprAnim = GetComponent<SpriteAnimator>();
+        count = Random.Range(1, 7); 
+        SprAnim.ForcePlay("Rockies" + count.ToString());
     }
 
     public int GetCount()

@@ -221,26 +221,76 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3265742574692647083}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a98b50b02c8db494ab4ae00c8f7dc46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5104395357491924321}
   animations:
-  - name: Stones
+  - name: Rockies1
     fps: 5
     frames:
-    - {fileID: 2667589067915142571, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: 6898035379108858973, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: -8868248462342347919, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
-    - {fileID: -1605707320451941170, guid: d5865b6ad5104804ba74db3c7abfe9bb, type: 3}
+    - {fileID: 1511912395368625529, guid: 426005858bc277c4292c02f5eb79907a, type: 3}
+    - {fileID: 6083737205989524441, guid: 426005858bc277c4292c02f5eb79907a, type: 3}
+    - {fileID: 1460849618979141768, guid: 426005858bc277c4292c02f5eb79907a, type: 3}
+    - {fileID: -7234330596657856526, guid: 426005858bc277c4292c02f5eb79907a, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Rockies2
+    fps: 5
+    frames:
+    - {fileID: 3984602618350535770, guid: 74f331bc4bbbab7418dc8f4c013ed3e2, type: 3}
+    - {fileID: 2842576339204462090, guid: 74f331bc4bbbab7418dc8f4c013ed3e2, type: 3}
+    - {fileID: 6184072284037194114, guid: 74f331bc4bbbab7418dc8f4c013ed3e2, type: 3}
+    - {fileID: 8421483008641983608, guid: 74f331bc4bbbab7418dc8f4c013ed3e2, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Rockies3
+    fps: 5
+    frames:
+    - {fileID: -4732848075011825069, guid: 086cbc91de8c7224e952869f9527ed3b, type: 3}
+    - {fileID: -4597884824692123589, guid: 086cbc91de8c7224e952869f9527ed3b, type: 3}
+    - {fileID: -9223193523182770250, guid: 086cbc91de8c7224e952869f9527ed3b, type: 3}
+    - {fileID: -1364697160473002715, guid: 086cbc91de8c7224e952869f9527ed3b, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Rockies4
+    fps: 5
+    frames:
+    - {fileID: 4725093743533934968, guid: a32c6f67747349f4694775725b1177c6, type: 3}
+    - {fileID: 3045770907730722171, guid: a32c6f67747349f4694775725b1177c6, type: 3}
+    - {fileID: 3387464479485692909, guid: a32c6f67747349f4694775725b1177c6, type: 3}
+    - {fileID: 2359378819266566747, guid: a32c6f67747349f4694775725b1177c6, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Rockies5
+    fps: 5
+    frames:
+    - {fileID: -6887698250127692351, guid: e474a78418285274c9f969e422a5aabc, type: 3}
+    - {fileID: -200313687286214095, guid: e474a78418285274c9f969e422a5aabc, type: 3}
+    - {fileID: 2908241878182780292, guid: e474a78418285274c9f969e422a5aabc, type: 3}
+    - {fileID: -557130069765394838, guid: e474a78418285274c9f969e422a5aabc, type: 3}
+    sequenceCode: 
+    cue: 
+    triggers: []
+  - name: Rockies6
+    fps: 5
+    frames:
+    - {fileID: -5253925074632866285, guid: 6e876f5b43e66d64b93814c037442b6e, type: 3}
+    - {fileID: -1386480467864090719, guid: 6e876f5b43e66d64b93814c037442b6e, type: 3}
+    - {fileID: 4018278684329337197, guid: 6e876f5b43e66d64b93814c037442b6e, type: 3}
+    - {fileID: -4254756137621549046, guid: 6e876f5b43e66d64b93814c037442b6e, type: 3}
     sequenceCode: 
     cue: 
     triggers: []
   loop: 0
   speedMultiplier: 1
-  playAnimationOnStart: Stones
+  playAnimationOnStart: 
 --- !u!114 &5834405823030286673
 MonoBehaviour:
   m_ObjectHideFlags: 0

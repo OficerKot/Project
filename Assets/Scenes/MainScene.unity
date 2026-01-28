@@ -10977,6 +10977,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4236839119742949498, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
+      propertyPath: StopperLayers.m_Bits
+      value: 24576
+      objectReference: {fileID: 0}
     - target: {fileID: 4699275572544553292, guid: ee5385b9fb29f5346b99787beb36479e, type: 3}
       propertyPath: m_UIInputModule
       value: 
