@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 
 
@@ -50,11 +51,6 @@ public class Domino : PauseBehaviour
             Interact();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            CheckDominoClick();
-        }
-
         if (part1Playable && part2Playable)
         {
             CheckPartRotation();
@@ -62,7 +58,7 @@ public class Domino : PauseBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isBeingGrabbed && collision.gameObject.layer == 6)
+        if (isBeingGrabbed && collision.gameObject.layer == 6 && !EventSystem.current.IsPointerOverGameObject())
         {
             if (!collision.GetComponent<Cell>().IsFreeForDomino())
             {
@@ -92,20 +88,20 @@ public class Domino : PauseBehaviour
     {
         if (isBeingGrabbed) ClearCellData();
     }
-    void CheckDominoClick()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+    //void CheckDominoClick()
+    //{
+    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-        if (hit.collider != null)
-        {
-            if (hit.collider.transform.IsChildOf(transform) && !curCell1 && !curCell2 && GameManager.Instance.WhatInHand() == null)
-            {
-                GameManager.Instance.PutInHand(gameObject);
-                PickUp();
-            }
-        }
-    }
+    //    if (hit.collider != null)
+    //    {
+    //        if (hit.collider.transform.IsChildOf(transform) && !curCell1 && !curCell2 && GameManager.Instance.WhatInHand() == null)
+    //        {
+    //            GameManager.Instance.PutInHand(gameObject);
+    //            PickUp();
+    //        }
+    //    }
+    //}
     Cell FindMinDistCell()
     {
         float minDist = float.MaxValue;
@@ -231,8 +227,27 @@ public class Domino : PauseBehaviour
 
         TeleportToCells(collider1.transform, collider2.transform);
         AddToCells(part1Playable, part2Playable);
+
+        ClearThePonds();
+
+        AudioManager.Instance.Boneplace();
         EnemyManager.Instance.MakeStep();
 
+    }
+
+    void ClearThePonds()
+    {
+        if (Physics2D.OverlapCircle(this.transform.parent.position, 0.5f, LayerMask.GetMask("Pond")))
+        {
+            Collider2D[] pondCol = Physics2D.OverlapCircleAll(this.transform.parent.position, 0.5f, LayerMask.GetMask("Pond"));
+            foreach(Collider2D col in pondCol)
+            {
+                Color alpha = col.gameObject.GetComponent<SpriteRenderer>().color;
+                Debug.Log(col.gameObject);
+                alpha.a = 0.5f;
+                col.gameObject.GetComponent<SpriteRenderer>().color = alpha;
+            }
+        }
     }
 
     void AddToCells(DominoPart d1, DominoPart d2)
@@ -306,7 +321,7 @@ public class Domino : PauseBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (curCell1 && curCell2)
+            if (curCell1 && curCell2 && !EventSystem.current.IsPointerOverGameObject())
             {
                 curCell1.NoHighlight();
                 curCell2.NoHighlight();

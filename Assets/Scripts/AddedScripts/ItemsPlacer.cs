@@ -43,6 +43,7 @@ public class ItemsPlacer : MonoBehaviour
             if (noise_grid[x][y] == 0 || noise_grid[x][y] == 1)
             {
                 CreateItem(x, y);
+                noise_grid[x][y] = -1;
             }
             else
             {
