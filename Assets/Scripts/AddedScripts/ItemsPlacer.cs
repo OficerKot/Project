@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Скрипт-генератор, точечно размещающий предметы по карте. 
+/// Вызывается после создания игрового поля скриптом PerlinNoiseMap. Ставится на тот же объект, на котором находится PerlinNoiseMap
+/// Метод PlaceItems() вызывается из скрипта PerlinNoiseMap с параметрами Ширина, Длина, Безопасная зона.
+/// Метод GenerateTiles() выбирает случайные координаты x и y в пределе длины и ширины и ставит объект при помощи CreateItem() по этим координатам
+/// 
+/// Дополнительная настройка: Передать на вход объекты для их спавна на карте и их планируемое количество.
+/// </summary>
 public class ItemsPlacer : MonoBehaviour
 {
     int map_width;

@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Скрипт отвечает за воспроизведение звуков при взаимодействии игрока с окружающим миром.
+/// Дополнительная-настройка: Передать скрипту источники звука (в правильном порядке, иначе звуки будут перемешаны)
+/// </summary>
 public class AudioManager : PauseBehaviour
 {
     public static AudioManager Instance;
