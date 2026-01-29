@@ -2,6 +2,13 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Скрипт, управляющий поведением объекта Куст
+/// При нажатии мышью на куст скрипт проверяет, рядом ли находится игрок, при помощи IsNearbyPlayer().
+/// Если рядом, то Interact() выдаёт игроку ягоду, меняет кусту анимацию с куста с ягодами на куст без ягод и уничтожает этот компонент.
+/// 
+/// Дополнительная настройка: Не требуется. Установить на префаб Куст и не трогать.
+/// </summary>
 public class Bush : MonoBehaviour
 {
     public float minDistanceToInteract;

@@ -3,6 +3,10 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Скрипт для управления врагами на карте. Содержит список объектов-врагов, каждому из них посылает команду. Работает в связке с EnemyMovement.
+/// Дополнительная настройка: не требуется.
+/// </summary>
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager Instance;

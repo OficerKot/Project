@@ -1,6 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Скрипт, отвечающий за плавное перемещение игровой камеры за игроком.
+/// Метод FixedUpdate() 50 раз за секунду вызывает метод SmoothDamp класса Vector3, чтобы плавно передвинуть камеру на позицию игрока
+/// 
+/// Дополнительная настройка: Указать игрока в поле targetPosition и скорость смещения в поле damping.
+/// </summary>
 public class SmoothCameraFollow : MonoBehaviour
 {
     [SerializeField] private Vector3 offset;

@@ -1,5 +1,12 @@
 using UnityEngine;
 
+/// <summary>
+/// Скрипт, фиксирующий создаваемые на старте предметы/препятствия в клетках.
+/// При появлении предмета/препятствия в мире, скрипт проверяет, чем является появившийся объект. 
+/// Если предмет - кладёт его в клетку методом PutInCell() класса interactableInterface, если препятствие - занимает клетку методом SetFree(false) класса curCell
+/// 
+/// Дополнительная настройка: не требуется
+/// </summary>
 public class ObstacleSnap : MonoBehaviour
 {
     [SerializeField] public Cell curCell;

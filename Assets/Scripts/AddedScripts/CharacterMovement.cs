@@ -2,6 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Скрипт передвижения персонажа, устанавливается на него. 
+/// Связан со скриптом GameManager - для подчинения его командам.
+/// Дополнительная настройка: Передать скрипту один пустой объект TargetPosition, дочерний персонажу и имеющий нулевые локальные координаты.
+/// </summary>
 public class CharacterMovement : PauseBehaviour
 {
     [SerializeField] float walkSpeed = 7f;
