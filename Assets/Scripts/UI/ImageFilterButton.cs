@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Кнопки фильтрации в меню сигилов. При нажатии в меню остаются только сигилы с соответствующим изображением
+/// </summary>
 public class ImageFilterButton : MonoBehaviour
 {
     public GameObject blurObject;
@@ -14,6 +17,9 @@ public class ImageFilterButton : MonoBehaviour
         b.onClick.AddListener(ApplyFilter);
     }
 
+    /// <summary>
+    /// Нажатие кнопки фильтрации, активация/деактивация фильтра в SigilsMenu
+    /// </summary>
     void ApplyFilter()
     {
         SigilsMenu.Instance.ApplyFilter(image);
