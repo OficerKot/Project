@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Иконки обелисков, отображающиеся в правом верхнем углу. Позволяют отслеживать информацию о количестве собранных обелисков. 
+/// Во время сбора обелиска подсвечивается иконка с его цветом.
+/// </summary>
 public class ObeliskIcon : MonoBehaviour
 {
     [SerializeField] ObeliskColor color;
@@ -14,6 +18,10 @@ public class ObeliskIcon : MonoBehaviour
         ObeliskManager.OnObeliskCollected -= OnObeliskCollected;
     }
 
+    /// <summary>
+    /// Подсветка иконки.
+    /// </summary>
+    /// <param name="c"></param>
     void OnObeliskCollected(ObeliskColor c)
     {
         if(c == color)
