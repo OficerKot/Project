@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void Loose()
     {
+        AudioManager.Play(SoundType.Loose);
         gameOverText.SetActive(true);
         gameEnd = true;
         Pause();
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void Win()
     {
+        AudioManager.Play(SoundType.Win);
         winText.SetActive(true);
         Pause();
     }

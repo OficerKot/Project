@@ -42,14 +42,14 @@ public class Hunger : MonoBehaviour
         if (stepsCounter >= stepsLimit)
         {
             stepsCounter = 0;
-            HungerDown();
+            HungerUp();
         }
     }
 
     /// <summary>
     /// Уменьшает уровень сытости. При достижении максимума вызывает проигрыш.
     /// </summary>
-    void HungerDown()
+    void HungerUp()
     {
         hungerLevel++;
         if (hungerLevel >= hungerLevels.Length)
@@ -59,6 +59,7 @@ public class Hunger : MonoBehaviour
         }
         else
         {
+            AudioManager.Play(SoundType.HungerUp);
             thisImageAnimator.ForcePlay(hungerLevels[hungerLevel]);
         }
     }
@@ -66,10 +67,11 @@ public class Hunger : MonoBehaviour
     /// <summary>
     /// Увеличивает уровень сытости.
     /// </summary>
-    void HungerUp()
+    void HungerDown()
     {
         if (hungerLevel > 0)
             hungerLevel--;
+        AudioManager.Play(SoundType.HungerDown);
         thisImageAnimator.ForcePlay(hungerLevels[hungerLevel]);
     }
 
@@ -78,7 +80,7 @@ public class Hunger : MonoBehaviour
     /// </summary>
     public void CallHungerUp()
     {
-        HungerUp();
+        HungerDown();
     }
 
     /// <summary>
@@ -86,6 +88,6 @@ public class Hunger : MonoBehaviour
     /// </summary>
     public void CallHungerDown()
     {
-        HungerDown();
+        HungerUp();
     }
 }

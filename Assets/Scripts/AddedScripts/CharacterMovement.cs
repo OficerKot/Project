@@ -84,8 +84,9 @@ public class CharacterMovement : PauseBehaviour
             Clock.Instance.TimeTick();
             EnemyManager.Instance.MakeStep();
             Move(destination);
+            AudioManager.Play(SoundType.Step);
         }
-        AudioManager.Instance.Step();
+        
     }
     void Move(Vector2 destination)
     {
