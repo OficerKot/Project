@@ -17,7 +17,6 @@ public class Inventory : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this);
 
         }
         else
@@ -32,8 +31,9 @@ public class Inventory : MonoBehaviour
     /// <param name="i">Данные добавляемого предмета.</param>
     public void AddItem(ItemData i)
     {
-        if (itemsID.Count < MAX_SIZE)
+        if (Contains(i) || itemsID.Count < MAX_SIZE)
         {
+            AudioManager.Play(SoundType.Pickup);
             if (!itemsID.ContainsKey(i.Id))
             {
                 itemsID.Add(i.Id, 0);
@@ -43,6 +43,10 @@ public class Inventory : MonoBehaviour
             UIInventory.Instance.AddOneMoreItem(i);
             UICraftWindow.Instance.CheckInventory(i);
         }
+        else
+        {
+            AudioManager.Play(SoundType.FullInventory);
+        }
     }
     /// <summary>
     /// Добавление нескольких предметов в инвентарь
@@ -51,8 +55,9 @@ public class Inventory : MonoBehaviour
     /// <param name="count">Количество</param>
     public void AddItem(ItemData i, int count)
     {
-        if (itemsID.Count < MAX_SIZE)
+        if (Contains(i) || itemsID.Count < MAX_SIZE)
         {
+            AudioManager.Play(SoundType.Pickup);
             if (!itemsID.ContainsKey(i.Id))
             {
                 itemsID.Add(i.Id, 0);
@@ -113,6 +118,7 @@ public class Inventory : MonoBehaviour
     /// <returns></returns>
     public bool IsFull()
     {
+        if (itemsID.Count >= MAX_SIZE) AudioManager.Play(SoundType.FullInventory);
         return itemsID.Count >= MAX_SIZE;
     }
 }

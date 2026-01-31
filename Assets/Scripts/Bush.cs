@@ -21,7 +21,7 @@ public class Bush : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (!Inventory.Instance.IsFull() && IsNearbyPlayer())
+        if (IsNearbyPlayer() && (Inventory.Instance.Contains(ItemManager.Instance.GetItemByID(itemID)) || !Inventory.Instance.IsFull()) )
         {
             Interact();
         }

@@ -22,7 +22,8 @@ public enum SoundType
     /// <summary>
     /// Уменьшение шкалы сытости
     /// </summary>
-    HungerUp
+    HungerUp,
+    FullInventory
 }
 /// <summary>
 /// Связь названий звуков с их звуковыми компонентами.
