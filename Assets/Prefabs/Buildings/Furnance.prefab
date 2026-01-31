@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1051257574510345545}
   - component: {fileID: 4723998710663762748}
   - component: {fileID: 2148683800900117892}
+  - component: {fileID: 2697699987342607303}
   m_Layer: 0
   m_Name: Furnance
   m_TagString: Untagged
@@ -204,3 +205,17 @@ MonoBehaviour:
   loop: 0
   speedMultiplier: 1
   playAnimationOnStart: Furnace
+--- !u!114 &2697699987342607303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265742574692647083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f840c950cfd432489fab1ce0a91da23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: furnance
+  curCell: {fileID: 0}

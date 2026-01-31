@@ -25,7 +25,7 @@ public class Item : PauseBehaviour, Interactable
 
     public virtual void OnMouseDown()
     {
-        if (!Inventory.Instance.IsFull() && isPlaced)
+        if (isPlaced && (Inventory.Instance.Contains(ItemManager.Instance.GetItemByID(ID)) || !Inventory.Instance.IsFull()))
         {
             Pick();
         }
@@ -109,10 +109,9 @@ public class Item : PauseBehaviour, Interactable
     /// </summary>
     public void Pick()
     {
-        if (!Inventory.Instance.IsFull())
-        {
+        if(Inventory.Instance.Contains(ItemManager.Instance.GetItemByID(ID)) || !Inventory.Instance.IsFull())
+        { 
             Inventory.Instance.AddItem(ItemManager.Instance.GetItemByID(ID));
-            AudioManager.Play(SoundType.Pickup);
             Destroy(gameObject);
         }
     }

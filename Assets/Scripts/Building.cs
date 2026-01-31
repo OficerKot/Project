@@ -138,7 +138,7 @@ public class Building : Item
     /// </summary>
     void PickResource()
     {
-        if (!Inventory.Instance.IsFull())
+        if (Inventory.Instance.Contains(resource) || !Inventory.Instance.IsFull())
         {
             if (count > 0)
             {
@@ -156,4 +156,5 @@ public class Building : Item
             Debug.Log("Full inventory");
         }
     }
+    
 }
