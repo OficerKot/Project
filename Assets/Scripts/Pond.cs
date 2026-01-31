@@ -12,4 +12,22 @@ public class Pond : MonoBehaviour
         curCell.SetFree();
         enabled = false;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            CharacterStates statesComp = collision.GetComponent<CharacterStates>();
+            statesComp.PutInPond();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            CharacterStates statesComp = collision.GetComponent<CharacterStates>();
+            statesComp.DefaultAnim();
+        }
+    }
 }

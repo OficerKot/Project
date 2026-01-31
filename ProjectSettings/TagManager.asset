@@ -39,15 +39,12 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
   m_SortingLayers:
-  - name: UIFront
-    uniqueID: 2278652647
+  - name: Background
+    uniqueID: 3816339811
     locked: 0
-  - name: UI
-    uniqueID: 371786147
+  - name: Cell
+    uniqueID: 2979653835
     locked: 0
   - name: DominoPart
     uniqueID: 1667205227
@@ -55,8 +52,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Cell
-    uniqueID: 2979653835
+  - name: UIFront
+    uniqueID: 2278652647
+    locked: 0
+  - name: UI
+    uniqueID: 371786147
     locked: 0
   - name: Front
     uniqueID: 1795515169

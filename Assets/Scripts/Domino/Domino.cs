@@ -33,6 +33,7 @@ public class Domino : PauseBehaviour
     public void PickUp()
     {
         isBeingGrabbed = true;
+        LayerSorter.Instance.PutInFront(gameObject);
 
         if (curCell1 && curCell2)
         {
@@ -245,6 +246,7 @@ public class Domino : PauseBehaviour
 
         BreakItemsInCells();
         TakeFreeSpace();
+        LayerSorter.Instance.PutBack(gameObject, SortingOrder.domino);
 
         Collider2D collider1 = curCell1.GetComponent<BoxCollider2D>();
         Collider2D collider2 = curCell2.GetComponent<BoxCollider2D>();
@@ -375,7 +377,7 @@ public class Domino : PauseBehaviour
     }
 
     /// <summary>
-    /// Перемещает доминош к позиции курсора мыши.
+    /// Перемещает домино к позиции курсора мыши.
     /// </summary>
     void Move()
     {

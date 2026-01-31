@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2579668071635336274}
   - component: {fileID: 3281152766526569760}
   - component: {fileID: 3124737587054066604}
+  - component: {fileID: 9079831291505681407}
   m_Layer: 9
   m_Name: Domino
   m_TagString: Untagged
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: -1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  protectorsCount: 0
+  protectors: []
   healthStateObject: {fileID: 2411940144463494759}
   healhStates:
   - {fileID: -4932373822334854938, guid: 52fb06ed916c5bb48bc5ba55b4f18487, type: 3}
@@ -203,6 +204,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!210 &9079831291505681407
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431666912444899434}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_SortAtRoot: 0
 --- !u!1 &6619846679481442317
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,8 +289,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1795515169
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

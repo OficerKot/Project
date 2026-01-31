@@ -68,7 +68,7 @@ public class WebDuplicator : MonoBehaviour
     /// </summary>
     bool IsCurCell(Cell cell)
     {
-        return Vector2.Distance(transform.position, cell.transform.position) <= 0.1f;
+        return Vector2.Distance(transform.position, cell.transform.position) <= 0.5f;
     }
 
     /// <summary>
@@ -150,6 +150,7 @@ public class WebDuplicator : MonoBehaviour
         if (!targetCell.GetCurItem() && targetCell.GetCurDomino() != null)
         {
             ItemsPlacer.CreateItem(gameObject, (int)targetCell.transform.position.x, (int)targetCell.transform.position.y);
+            targetCell.SetCurItem(gameObject);
         }
     }
 
