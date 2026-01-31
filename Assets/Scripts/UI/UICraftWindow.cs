@@ -166,5 +166,6 @@ public class UICraftWindow : Menu
         b.GetComponent<Notificationable>().ShowNotification();
         MenuButton categoryButton = categoryButtons.Find(but => but.category == b.category);
         categoryButton.ShowNotification();
+        AudioManager.Play(SoundType.NewReciepe);
     }
 }
