@@ -19,37 +19,37 @@ public class CharacterStates : MonoBehaviour
     }
     public void CheckState()
     {
-        stopperCol = Physics2D.OverlapCircle(transform.position, .01f, StopperLayers);
-        if (stopperCol != null && crawledOut == true)
-        {
-            if (stopperCol.gameObject.layer == LayerMask.NameToLayer("Pond"))
-            {
-                PutInPond();
-                crawledOut = false;
-            }
-            else if (stopperCol.gameObject.layer == LayerMask.NameToLayer("Web"))
-            {
-                PutInWeb();
-                crawledOut = false;
-            }
-        }
-        else
-        {
-            DefaultAnim();
-            crawledOut = true;
-        }
+        //stopperCol = Physics2D.OverlapCircle(transform.position, .01f, StopperLayers);
+        //if (stopperCol != null && crawledOut == true)
+        //{
+        //    if (stopperCol.gameObject.layer == LayerMask.NameToLayer("Pond"))
+        //    {
+        //        PutInPond();
+        //        crawledOut = false;
+        //    }
+        //    else if (stopperCol.gameObject.layer == LayerMask.NameToLayer("Web"))
+        //    {
+        //        PutInWeb();
+        //        crawledOut = false;
+        //    }
+        //}
+        //else
+        //{
+        //    DefaultAnim();
+        //    crawledOut = true;
+        //}
 
     }
 
-    void PutInPond()
+    public void PutInPond()
     {
         SprAnim.ForcePlay("InPond");
     }
-    void PutInWeb()
+    public void PutInWeb()
     {
 
     }
-    void DefaultAnim()
+    public void DefaultAnim()
     {
         SprAnim.ForcePlay("Player");
     }

@@ -8,10 +8,12 @@ using UnityEngine;
 /// </summary>
 public class PlayerStopper : MonoBehaviour
 {
+    bool started = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !started)
         {
+            started = true;
             CharacterMovement character = collision.gameObject.GetComponent<CharacterMovement>();
             StartCoroutine(StopPlayer(character));
         }
